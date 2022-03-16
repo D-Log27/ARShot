@@ -1,5 +1,5 @@
 {
-    "m_SelectedDeviceId": "",
+    "m_SelectedDeviceId": "192.168.1.228:5555",
     "m_SelectedPackage": {
         "deviceId": "",
         "name": "",
@@ -7,7 +7,14 @@
         "exited": false
     },
     "m_SelectedPriority": 0,
-    "m_KnownPackagesForSerialization": [],
+    "m_KnownPackagesForSerialization": [
+        {
+            "deviceId": "192.168.1.124:5555",
+            "name": "com.samsung.android.mediacontroller",
+            "processId": 4632,
+            "exited": false
+        }
+    ],
     "m_Tags": {
         "m_Entries": [
             {
