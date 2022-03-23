@@ -1,5 +1,5 @@
 {
-    "m_SelectedDeviceId": "192.168.1.228:5555",
+    "m_SelectedDeviceId": "223a002327037ece",
     "m_SelectedPackage": {
         "deviceId": "",
         "name": "",
@@ -12,6 +12,18 @@
             "deviceId": "192.168.1.124:5555",
             "name": "com.samsung.android.mediacontroller",
             "processId": 4632,
+            "exited": false
+        },
+        {
+            "deviceId": "223a002327037ece",
+            "name": "com.ARISU.ARShot",
+            "processId": 3608,
+            "exited": true
+        },
+        {
+            "deviceId": "223a002327037ece",
+            "name": "com.sec.android.app.launcher",
+            "processId": 9850,
             "exited": false
         }
     ],
