@@ -79,7 +79,7 @@ public class NetworkAPHelper : MonoBehaviour
             //        }
             //    }
             //    string mac = string.Join("", str);
-                
+
                 //Debug.Log($"1. Mad Address : {mac}");
                 //Debug.Log($"2. SSID : {ApName}");
                 //Debug.Log($"3. Signal : {wlanBssEntry.linkQuality}");
@@ -87,9 +87,9 @@ public class NetworkAPHelper : MonoBehaviour
                 //Debug.Log($"5. wlanBssEntry : {wlanBssEntry.phyId}");
                 //Debug.Log($"7. RSSID : {rss}");
                 //Debug.Log($"======================================");
-                
-            }
+            //}
         }
     }
-
 }
+
+
