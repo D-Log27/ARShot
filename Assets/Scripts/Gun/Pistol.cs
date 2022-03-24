@@ -5,8 +5,9 @@ using UnityEngine;
 /// <summary>
 /// ±ÇÃÑ Å×½ºÆ®
 /// </summary>
-public class Pistol : MonoBehaviour, IPlayerGun, IPlayerAttack
+public class Pistol : MonoBehaviour, IPlayerGun, IPlayerAttack, IPlayer
 {
+    UnitStatusDTO playerStatusDTO;
     AmmoDTO ammoDTO;
     Transform rayStartpoint;
     public GameObject bulletPrefab;
@@ -19,6 +20,7 @@ public class Pistol : MonoBehaviour, IPlayerGun, IPlayerAttack
     void Start()
     {
         ObjectManager.objectDic.Add("Pistol", this.gameObject);
+        playerStatusDTO = new UnitStatusDTO(100, 100);
         lineRenderer = this.GetComponent<LineRenderer>();
         isShottable = true;
         vertical = 0f;
@@ -77,5 +79,38 @@ public class Pistol : MonoBehaviour, IPlayerGun, IPlayerAttack
         yield return new WaitForSeconds(3f);
         isShottable = true;
         print($"### reload complete {isShottable}");
+    }
+
+    public void UnderAttack()
+    {
+        print("### damaged");
+        if (playerStatusDTO.shield > 0)
+        {
+            playerStatusDTO.shield -= 10;
+            print($"### enemy hp : {playerStatusDTO.shield }");
+        }
+        else
+        {
+            playerStatusDTO.hp -= 10;
+
+            print($"### enemy hp : {playerStatusDTO.hp }");
+            if (playerStatusDTO.hp <= 0)
+            {
+                Death();
+            }
+        }
+    }
+
+    public void Kill()
+    {
+        throw new System.NotImplementedException();
+    }
+
+    public void Death()
+    {
+        Destroy(this.gameObject);
+
+        print("### !!! GAME OVER !!! ###");
+        Time.timeScale = 0;
     }
 }

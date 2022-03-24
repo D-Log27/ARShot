@@ -10,10 +10,10 @@ public class GroundEnemy : MonoBehaviour, IEnemy
     enum State { TRACE, ATTACK }
     State state;
     
-    [HideInInspector]
+    //[HideInInspector]
     public Target target;
 
-    EnemyStatusDTO enemyStatusDTO;
+    UnitStatusDTO enemyStatusDTO;
     public Transform targetTransform;
     public GameObject bulletPrefab;
     float currentTime;
@@ -25,8 +25,9 @@ public class GroundEnemy : MonoBehaviour, IEnemy
 
         state = State.TRACE;
         target = Target.VIP;
+        //target = Target.USER;
         ChangeTarget(target);
-        enemyStatusDTO = new EnemyStatusDTO(100, 100, 5);
+        enemyStatusDTO = new UnitStatusDTO(100, 100, 5);
     }
 
     // Update is called once per frame
@@ -48,6 +49,8 @@ public class GroundEnemy : MonoBehaviour, IEnemy
         switch (target)
         {
             case Target.USER:
+                targetTransform = ObjectManager.objectDic["Pistol"].transform;
+                this.transform.LookAt(targetTransform);
                 break;
             case Target.VIP:
                 targetTransform = ObjectManager.objectDic["VIP"].transform;
@@ -86,12 +89,22 @@ public class GroundEnemy : MonoBehaviour, IEnemy
     public void Damaged()
     {
         print("### damaged");
-        enemyStatusDTO.hp -= 10;
-        print($"### enemy hp : {enemyStatusDTO.hp }");
-        if(enemyStatusDTO.hp<= 0)
+        if(enemyStatusDTO.shield > 0)
         {
-            Death();
+            enemyStatusDTO.shield -= 10;
+            print($"### enemy hp : {enemyStatusDTO.shield }");
         }
+        else
+        {
+            enemyStatusDTO.hp -= 10;
+
+            print($"### enemy hp : {enemyStatusDTO.hp }");
+            if (enemyStatusDTO.hp <= 0)
+            {
+                Death();
+            }
+        }
+        
     }
 
     public void Death()

@@ -46,6 +46,14 @@ public class BulletTest : MonoBehaviour
         {
             collision.gameObject.GetComponent<AirEnemy>().Damaged();
         }
+        if (collision.gameObject.CompareTag("VIP"))
+        {
+            collision.gameObject.GetComponent<VIP>().Damaged();
+        }
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            collision.gameObject.GetComponent<IPlayer>().UnderAttack();
+        }
         Destroy(this.gameObject);
     }
 }

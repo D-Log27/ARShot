@@ -13,7 +13,7 @@ public class AirEnemy : MonoBehaviour, IEnemy
     [HideInInspector]
     public Target target;
 
-    EnemyStatusDTO enemyStatusDTO;
+    UnitStatusDTO enemyStatusDTO;
     public Transform targetTransform;
 
     public void ChangeTarget(Target target)
@@ -76,7 +76,7 @@ public class AirEnemy : MonoBehaviour, IEnemy
         targetTransform = ObjectManager. objectDic["VIP"].transform;
         state = State.TRACE;
         this.transform.LookAt(targetTransform);
-        enemyStatusDTO = new EnemyStatusDTO(100, 100, 5);
+        enemyStatusDTO = new UnitStatusDTO(100, 100, 5);
     }
 
     // Update is called once per frame

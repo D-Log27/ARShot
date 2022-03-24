@@ -265,7 +265,7 @@ GameObject:
   - component: {fileID: 562833675}
   m_Layer: 0
   m_Name: VIP_prefab
-  m_TagString: Untagged
+  m_TagString: VIP
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -514,7 +514,7 @@ GameObject:
   - component: {fileID: 902091194}
   m_Layer: 0
   m_Name: Gun_prefab
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
