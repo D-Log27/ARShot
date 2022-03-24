@@ -5,12 +5,13 @@ using System.IO;
 using System.Text;
 using System;
 
+
+public enum OptionType { USER_NAME, AREA_SIZE }
 /// <summary>
 /// Global 설정 저장용 함수
 /// </summary>
 public class JsonHelper : MonoBehaviour
 {
-    public enum OptionType { USER_NAME, AREA_SIZE }
     private static JsonHelper Instance;
     JsonHelper() { }
     const string OPTION_FILE = "optionInfo";
@@ -24,15 +25,15 @@ public class JsonHelper : MonoBehaviour
     {
         return Instance;
     }
-
-    void Start()
+    private void Awake()
     {
         Instance = this;
-
+    }
+    void Start()
+    {
         option = null;
         ReadJson();
         path = new StringBuilder(Application.dataPath).Append("/Resources/").Append(OPTION_FILE).ToString();
-        UpdateJson(OptionType.USER_NAME, "changeTest");
     }
 
     void Update()
