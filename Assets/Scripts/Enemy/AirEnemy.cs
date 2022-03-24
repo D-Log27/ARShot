@@ -7,14 +7,39 @@ using UnityEngine;
 /// </summary>
 public class AirEnemy : MonoBehaviour, IEnemy
 {
+    enum State { TRACE, ATTACK }
+    State state;
+
+    [HideInInspector]
+    public Target target;
+
     EnemyStatusDTO enemyStatusDTO;
-    public Transform target;
-    bool isValidRange;
+    public Transform targetTransform;
+
+    public void ChangeTarget(Target target)
+    {
+        switch (target)
+        {
+            case Target.USER:
+                break;
+            case Target.VIP:
+                targetTransform = ObjectManager.objectDic["VIP"].transform;
+                this.transform.LookAt(targetTransform);
+                break;
+        }
+    }
 
     public void Attack()
     {
+        Quaternion lookOnLook = Quaternion.LookRotation(targetTransform.transform.position - transform.position);
+
+        transform.rotation = Quaternion.Slerp(transform.rotation, lookOnLook, Time.deltaTime);
+        //this.transform.LookAt(target);
         //print("### attack");
+        //RangeCheck();
+        //transform.position = Vector3.zero;
         this.GetComponent<Rigidbody>().velocity = Vector3.zero;
+        
 
     }
 
@@ -36,37 +61,45 @@ public class AirEnemy : MonoBehaviour, IEnemy
 
     public void Trace()
     {
+        Quaternion lookOnLook = Quaternion.LookRotation(targetTransform.transform.position - transform.position);
+
+        transform.rotation = Quaternion.Slerp(transform.rotation, lookOnLook, Time.deltaTime);
         //print("### trace");
-        this.transform.position = Vector3.MoveTowards(this.transform.position, target.transform.position, 0.01f);
+        Vector3 dir = targetTransform.transform.position - this.transform.position;
+        this.transform.position += dir * Time.deltaTime * 0.1f;
+        RangeCheck();
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        isValidRange = false;
+        targetTransform = ObjectManager. objectDic["VIP"].transform;
+        state = State.TRACE;
+        this.transform.LookAt(targetTransform);
         enemyStatusDTO = new EnemyStatusDTO(100, 100, 5);
     }
 
     // Update is called once per frame
     void Update()
     {
-        RangeCheck();
-        if (!isValidRange)
+        switch (state)
         {
-            Trace();
+            case State.TRACE:
+                Trace();
+                break;
+            case State.ATTACK:
+                Attack();
+                break;
         }
-        else
-        {
-            Attack();
-        }
+        
     }
 
     void RangeCheck()
     {
-        Collider[] colls = Physics.OverlapSphere(this.transform.position, enemyStatusDTO.attackRange);
-        foreach (Collider coll in colls)
+        float distance = Vector3.Distance(targetTransform.transform.position, this.transform.position);
+        if(enemyStatusDTO.attackRange > distance)
         {
-            if (coll.gameObject.name.Contains("VIP")) isValidRange = true;
+            state = State.ATTACK;
         }
     }
 }

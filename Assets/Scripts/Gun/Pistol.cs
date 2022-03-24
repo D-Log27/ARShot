@@ -10,6 +10,7 @@ public class Pistol : MonoBehaviour, IPlayerGun, IPlayerAttack
     AmmoDTO ammoDTO;
     Transform rayStartpoint;
     public GameObject bulletPrefab;
+    LineRenderer lineRenderer;
     bool isShottable;
     float vertical;
     float horizontal;
@@ -17,6 +18,8 @@ public class Pistol : MonoBehaviour, IPlayerGun, IPlayerAttack
     // Start is called before the first frame update
     void Start()
     {
+        ObjectManager.objectDic.Add("Pistol", this.gameObject);
+        lineRenderer = this.GetComponent<LineRenderer>();
         isShottable = true;
         vertical = 0f;
         horizontal = 0f;
@@ -27,8 +30,11 @@ public class Pistol : MonoBehaviour, IPlayerGun, IPlayerAttack
     // Update is called once per frame
     void Update()
     {
+        lineRenderer.enabled = false;
         if (Input.GetMouseButtonDown(0) && isShottable)
         {
+            lineRenderer.enabled = true;
+            lineRenderer.positionCount = 2;
             Attack();
         }
         if (Input.GetKeyDown(KeyCode.R)){
@@ -41,17 +47,17 @@ public class Pistol : MonoBehaviour, IPlayerGun, IPlayerAttack
         Vector3 dir = (Vector3.forward * vertical) + (Vector3.right * horizontal);
         this.transform.position += dir.normalized * Time.deltaTime * 1f;
         
-
-
-        
-
 #endif
 
     }
 
     public void Attack()
     {
+
+        Vector3 point = rayStartpoint.position - this.transform.position;
+
         GameObject bullet = Instantiate(bulletPrefab);
+        bullet.GetComponent<BulletTest>().SetTarget(point);
         bullet.transform.position = rayStartpoint.position;
         ammoDTO.currentAmmoCnt--;
         print($"ammo : {ammoDTO.currentAmmoCnt}");
