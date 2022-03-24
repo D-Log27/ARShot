@@ -1,6 +1,8 @@
 /// <summary>
 /// Enemy Interface
 /// </summary>
+
+public enum Target { USER, VIP }
 public interface IEnemy
 {
     /// <summary>
@@ -19,4 +21,8 @@ public interface IEnemy
     /// Enemy Death
     /// </summary>
     void Death();
+    /// <summary>
+    /// Change TraceTarget
+    /// </summary>
+    void ChangeTarget(Target target);
 }

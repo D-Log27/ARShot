@@ -7,7 +7,9 @@ using UnityEngine;
 /// </summary>
 public class BulletTest : MonoBehaviour
 {
+    Vector3 dir = Vector3.zero;
     float bulletSpeed = 10f;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -17,8 +19,15 @@ public class BulletTest : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector3 dir = this.transform.up;
+        
+        if (dir.Equals(Vector3.zero)) dir = this.transform.up;
+        this.transform.LookAt(dir);
         this.transform.position += dir * bulletSpeed * Time.deltaTime;
+    }
+
+    public void SetTarget(Vector3 target)
+    {
+        this.dir = target;
     }
 
     /// <summary>
