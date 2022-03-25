@@ -63,9 +63,14 @@ public class GroundEnemy : MonoBehaviour, IEnemy
     {
         //print("### trace");
         //this.transform.position = Vector3.MoveTowards(this.transform.position, target.transform.position, 0.01f);
-        Vector3 dir = targetTransform.transform.position - this.transform.position;
-        this.transform.position += dir * Time.deltaTime * 0.1f;
-        RangeCheck();
+        if(targetTransform != null)
+        {
+            Vector3 dir = targetTransform.transform.position - this.transform.position;
+            this.transform.position += dir * Time.deltaTime * 0.1f;
+            RangeCheck();
+        }
+        
+        
     }
 
     public void Attack()

@@ -31,9 +31,13 @@ public class AirEnemy : MonoBehaviour, IEnemy
 
     public void Attack()
     {
-        Quaternion lookOnLook = Quaternion.LookRotation(targetTransform.transform.position - transform.position);
+        if(targetTransform != null)
+        {
+            Quaternion lookOnLook = Quaternion.LookRotation(targetTransform.transform.position - transform.position);
 
-        transform.rotation = Quaternion.Slerp(transform.rotation, lookOnLook, Time.deltaTime);
+            transform.rotation = Quaternion.Slerp(transform.rotation, lookOnLook, Time.deltaTime);
+        }
+        
         //this.transform.LookAt(target);
         //print("### attack");
         //RangeCheck();
@@ -61,14 +65,18 @@ public class AirEnemy : MonoBehaviour, IEnemy
 
     public void Trace()
     {
-        Quaternion lookOnLook = Quaternion.LookRotation(targetTransform.transform.position - transform.position);
+        if (targetTransform != null)
+        {
 
-        transform.rotation = Quaternion.Slerp(transform.rotation, lookOnLook, Time.deltaTime);
-        //print("### trace");
-        Vector3 dir = targetTransform.transform.position - this.transform.position;
-        this.transform.position += dir * Time.deltaTime * 0.1f;
-        RangeCheck();
-    }
+            Quaternion lookOnLook = Quaternion.LookRotation(targetTransform.transform.position - transform.position);
+
+            transform.rotation = Quaternion.Slerp(transform.rotation, lookOnLook, Time.deltaTime);
+            //print("### trace");
+            Vector3 dir = targetTransform.transform.position - this.transform.position;
+            this.transform.position += dir * Time.deltaTime * 0.1f;
+            RangeCheck();
+        }
+        }
 
     // Start is called before the first frame update
     void Start()
