@@ -23,6 +23,7 @@ public class JsonHelper : MonoBehaviour
     /// <returns>JsonHelper Instance</returns>
     public static JsonHelper GetInstance()
     {
+        if (Instance == null) Instance = new JsonHelper();
         return Instance;
     }
     private void Awake()

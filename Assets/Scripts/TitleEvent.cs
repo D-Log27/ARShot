@@ -10,13 +10,15 @@ using UnityEngine.UI;
 /// </summary>
 public class TitleEvent : MonoBehaviour
 {
-    Transform optionBtn;
-    Transform exitBtn;
+    public Transform startBtn;
+    public Transform optionBtn;
+    public Transform exitBtn;
+    public Transform loading;
+    
     // Start is called before the first frame update
     void Start()
     {
-        optionBtn = this.transform.Find("Option");
-        exitBtn = this.transform.Find("Exit");
+        startBtn.GetComponent<Button>().onClick.AddListener(() => OnClickStartButton());
         optionBtn.GetComponent<Button>().onClick.AddListener(()=>OnClickOptionButton());
         exitBtn.GetComponent<Button>().onClick.AddListener(()=>OnClickExitButton());
     }
@@ -43,5 +45,28 @@ public class TitleEvent : MonoBehaviour
     {
         print("### exit OnClick Check");
         Application.Quit();
+    }
+
+    /// <summary>
+    /// Title -> Start Click
+    /// </summary>
+    public void OnClickStartButton()
+    {
+        TitleLoadingImage(true);
+        bool isSuccess = PhotonManager.GetInstance().ConnectingRoom();
+        if(isSuccess)
+        {
+            TitleLoadingImage(false);
+            // TODO : load room scene
+        }
+    }
+
+    /// <summary>
+    /// Activate/Deactivate loading image
+    /// </summary>
+    /// <param name="flag"></param>
+    public void TitleLoadingImage(bool flag)
+    {
+        loading.gameObject.SetActive(flag);
     }
 }

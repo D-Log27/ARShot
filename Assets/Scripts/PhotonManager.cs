@@ -5,28 +5,40 @@ using Photon.Pun;
 using Photon.Realtime;
 using PhotonCollection = ExitGames.Client.Photon;
 using System.Text;
+using System;
+
 /// <summary>
 /// Æ÷Åæ ¸Å´ÏÀú
 /// </summary>
 public class PhotonManager : MonoBehaviourPunCallbacks
 {
+    private static PhotonManager Instance;
+    PhotonManager() { }
+
     private readonly string gameVersion = "0.0.1";
     string apName;
     string userName;
+    TitleEvent titleEvent;
     PhotonCollection.Hashtable roomApProperty = new PhotonCollection.Hashtable();
+
+    public static PhotonManager GetInstance ()
+    {
+        return Instance;
+    }
     private void Awake()
     {
         if (PhotonNetwork.IsConnected) PhotonNetwork.Disconnect();
+        Instance = this;
         userName = JsonHelper.GetInstance().ReadValue(OptionType.USER_NAME);
     }
 
     // Start is called before the first frame update
     void Start()
     {
+        titleEvent = GameObject.Find("Manager").GetComponent<TitleEvent>();
         PhotonNetwork.GameVersion = gameVersion;
         PhotonNetwork.NickName = userName;
         PhotonNetwork.AutomaticallySyncScene = true;
-
         if (!PhotonNetwork.IsConnected)
         {
             PhotonNetwork.ConnectUsingSettings();
@@ -39,10 +51,17 @@ public class PhotonManager : MonoBehaviourPunCallbacks
     /// </summary>
     public override void OnConnectedToMaster()
     {
-        print("### photon server connected.");
-        SetApProperty();
-        TypedLobby typedLobby = new TypedLobby(apName,LobbyType.Default);
-        PhotonNetwork.JoinLobby(typedLobby);
+        try
+        {
+            print("### photon server connected.");
+            SetApProperty();
+            TypedLobby typedLobby = new TypedLobby(apName,LobbyType.Default);
+            titleEvent.TitleLoadingImage(true);
+            PhotonNetwork.JoinLobby(typedLobby);
+        } catch (Exception e)
+        {
+            print($"### lobby connect failed , {e}");
+        }
     }
 
     /// <summary>
@@ -51,6 +70,7 @@ public class PhotonManager : MonoBehaviourPunCallbacks
     public override void OnJoinedLobby()
     {
         print($"### Lobby joined , {PhotonNetwork.CurrentLobby.Name}");
+        titleEvent.TitleLoadingImage(false);
     }
 
     /// <summary>
@@ -133,11 +153,20 @@ public class PhotonManager : MonoBehaviourPunCallbacks
     /// <summary>
     /// Title -> Start Click
     /// </summary>
-    public void OnClickStartButton()
+    public bool ConnectingRoom()
     {
-        print("### click start");
-        SetApProperty();
-        PhotonNetwork.JoinRandomRoom();
+        try
+        {
+            print("### click start");
+            SetApProperty();
+            PhotonNetwork.JoinRandomRoom();
+            return true;
+        } catch(Exception e)
+        {
+            print($"### room connect failed , {e}");
+            return false;
+        }
+        
     }
 
     #endregion

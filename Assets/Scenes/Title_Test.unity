@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -342,7 +342,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1303452322
 GameObject:
@@ -385,7 +385,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1362836453
 GameObject:
@@ -399,8 +399,9 @@ GameObject:
   - component: {fileID: 1362836454}
   - component: {fileID: 1362836457}
   - component: {fileID: 1362836456}
+  - component: {fileID: 1362836458}
   m_Layer: 0
-  m_Name: Util
+  m_Name: Manager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -430,7 +431,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1362836456
 MonoBehaviour:
@@ -456,6 +457,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76901855e4d3f5445bfd6ed22191989b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1362836458
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1362836453}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e35edd157bc45d44eaa9102eca670708, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startBtn: {fileID: 2051839488729054250}
+  optionBtn: {fileID: 4919874855752366236}
+  exitBtn: {fileID: 4919874854232131409}
+  loading: {fileID: 1949718129}
 --- !u!1 &1368493626
 GameObject:
   m_ObjectHideFlags: 0
@@ -547,7 +564,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1 &1441365652
 GameObject:
@@ -560,6 +577,7 @@ GameObject:
   - component: {fileID: 1441365653}
   - component: {fileID: 1441365655}
   - component: {fileID: 1441365654}
+  - component: {fileID: 1441365656}
   m_Layer: 0
   m_Name: LoadingImage
   m_TagString: Untagged
@@ -622,6 +640,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1441365652}
   m_CullTransparentMesh: 1
+--- !u!114 &1441365656
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1441365652}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1b40c1924bbdb24b940158d962b92da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1949718128
 GameObject:
   m_ObjectHideFlags: 0
@@ -639,7 +669,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1949718129
 RectTransform:
   m_ObjectHideFlags: 0
@@ -819,8 +849,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1303452323}
-        m_TargetAssemblyTypeName: PhotonManager, Assembly-CSharp
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: TitleEvent, Assembly-CSharp
         m_MethodName: OnClickStartButton
         m_Mode: 1
         m_Arguments:
@@ -840,7 +870,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4388816480875499875}
-  - component: {fileID: 4388816480875499874}
   m_Layer: 0
   m_Name: Menu
   m_TagString: Untagged
@@ -848,18 +877,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &4388816480875499874
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4388816480875499873}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e35edd157bc45d44eaa9102eca670708, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!224 &4388816480875499875
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1373,7 +1390,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4388816480875499874}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: TitleEvent, Assembly-CSharp
         m_MethodName: OnClickOptionButton
         m_Mode: 1
@@ -1636,7 +1653,7 @@ RectTransform:
   - {fileID: 4388816480875499875}
   - {fileID: 1949718129}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
