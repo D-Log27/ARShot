@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using SRandom = System.Random;
+using SysRandom = System.Random;
 
 /// <summary>
 /// 수식 계산 Utility
@@ -12,6 +12,10 @@ public class MathUtil : MonoBehaviour
 
     MathUtil() { }
 
+    private void Awake()
+    {
+        Instance = this;
+    }
     /// <summary>
     /// Singleton Instance
     /// </summary>
@@ -28,6 +32,6 @@ public class MathUtil : MonoBehaviour
     /// <returns></returns>
     public int RandomInt()
     {
-        return new SRandom().Next();
+        return new SysRandom().Next();
     }
 }
