@@ -11,7 +11,7 @@ public class Pistol : MonoBehaviour, IPlayerGun, IPlayerAttack, IPlayer
     AmmoDTO ammoDTO;
     Transform rayStartpoint;
     public GameObject bulletPrefab;
-    LineRenderer lineRenderer;
+    //LineRenderer lineRenderer;
     bool isShottable;
     float vertical;
     float horizontal;
@@ -19,9 +19,9 @@ public class Pistol : MonoBehaviour, IPlayerGun, IPlayerAttack, IPlayer
     // Start is called before the first frame update
     void Start()
     {
-        ObjectManager.objectDic.Add("Pistol", this.gameObject);
+        if(!ObjectManager.objectDic.ContainsKey("Pistol")) ObjectManager.objectDic.Add("Pistol", this.gameObject);
         playerStatusDTO = new UnitStatusDTO(100, 100);
-        lineRenderer = this.GetComponent<LineRenderer>();
+        //lineRenderer = this.GetComponent<LineRenderer>();
         isShottable = true;
         vertical = 0f;
         horizontal = 0f;
@@ -32,11 +32,11 @@ public class Pistol : MonoBehaviour, IPlayerGun, IPlayerAttack, IPlayer
     // Update is called once per frame
     void Update()
     {
-        lineRenderer.enabled = false;
+        //lineRenderer.enabled = false;
         if (Input.GetMouseButtonDown(0) && isShottable)
         {
-            lineRenderer.enabled = true;
-            lineRenderer.positionCount = 2;
+            //lineRenderer.enabled = true;
+            //lineRenderer.positionCount = 2;
             Attack();
         }
         if (Input.GetKeyDown(KeyCode.R)){
@@ -61,6 +61,7 @@ public class Pistol : MonoBehaviour, IPlayerGun, IPlayerAttack, IPlayer
         GameObject bullet = Instantiate(bulletPrefab);
         bullet.GetComponent<BulletTest>().SetTarget(point);
         bullet.transform.position = rayStartpoint.position;
+        bullet.name = "Pistol_bullet";
         ammoDTO.currentAmmoCnt--;
         print($"ammo : {ammoDTO.currentAmmoCnt}");
         if (ammoDTO.currentAmmoCnt == 0) Reload();

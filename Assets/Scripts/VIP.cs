@@ -27,13 +27,13 @@ public class VIP : MonoBehaviour
         if (vipStatusDTO.shield > 0)
         {
             vipStatusDTO.shield -= 10;
-            print($"### enemy hp : {vipStatusDTO.shield }");
+            print($"### VIP hp : {vipStatusDTO.shield }");
         }
         else
         {
             vipStatusDTO.hp -= 10;
 
-            print($"### enemy hp : {vipStatusDTO.hp }");
+            print($"### VIP hp : {vipStatusDTO.hp }");
             if (vipStatusDTO.hp <= 0)
             {
                 GameOver();

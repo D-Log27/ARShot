@@ -9,11 +9,12 @@ public class BulletTest : MonoBehaviour
 {
     Vector3 dir = Vector3.zero;
     float bulletSpeed = 10f;
-    
+    string attcker;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        attcker = this.gameObject.name;
     }
 
     // Update is called once per frame
