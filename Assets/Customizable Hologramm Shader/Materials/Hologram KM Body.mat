@@ -179,7 +179,7 @@ Material:
     - _RandomGlitchConstant: 0
     - _RandomGlitchFeature: 1
     - _RandomGlitchTiling: 2.83
-    - _RandomOffset: 81090.09
+    - _RandomOffset: 79805.51
     - _SoftIntersection: 2
     - _SoftIntersection1Affect: 1
     - _SoftIntersection1Distance: 0
@@ -216,7 +216,7 @@ Material:
     - _LineColor1: {r: 0.620945, g: 1.420074, b: 3.953349, a: 1}
     - _LineColor2: {r: 0.620945, g: 1.420074, b: 3.953349, a: 1}
     - _LineGlitchOffset: {r: 0.03, g: 0, b: 0, a: 0}
-    - _MainColor: {r: 37.58283, g: 210.81827, b: 766.9961, a: 0.05098039}
+    - _MainColor: {r: 0.620945, g: 1.420074, b: 3.953349, a: 0.05098039}
     - _MaskCenter: {r: 0, g: 0, b: 0, a: 0}
     - _MaskSize: {r: 0, g: 0, b: 0, a: 0}
     - _RandomGlitchOffset: {r: -0.5, g: 0, b: 0, a: 0}
