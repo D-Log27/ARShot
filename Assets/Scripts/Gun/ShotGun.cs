@@ -7,7 +7,7 @@ public class ShotGun : MonoBehaviour, IPlayerGun, IPlayerAttack, IPlayer
     UnitStatusDTO playerStatusDTO;
     AmmoDTO ammoDTO;
     Transform rayStartpoint;
-    public GameObject bulletPrefab;
+    public GameObject[] bulletPrefab;
     //LineRenderer lineRenderer;
     bool isShottable;
     float vertical;
@@ -57,10 +57,11 @@ public class ShotGun : MonoBehaviour, IPlayerGun, IPlayerAttack, IPlayer
 
         Vector3 point = rayStartpoint.position - this.transform.position;
 
-        GameObject bullet = Instantiate(bulletPrefab);
-        bullet.GetComponent<BulletTest>().SetTarget(point);
+        GameObject bullet = Instantiate(bulletPrefab[0]);
+        //bullet.GetComponent<BulletTest>().SetTarget(point);
         bullet.transform.position = rayStartpoint.position;
         bullet.name = "ShotGun_bullet";
+        bullet.GetComponent<Rigidbody>().AddForce(bullet.transform.forward * 1000);
         ammoDTO.currentAmmoCnt--;
         print($"ammo : {ammoDTO.currentAmmoCnt}");
         if (ammoDTO.currentAmmoCnt == 0) Reload();

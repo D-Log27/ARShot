@@ -10,16 +10,20 @@ public class Pistol : MonoBehaviour, IPlayerGun, IPlayerAttack, IPlayer
     UnitStatusDTO playerStatusDTO;
     AmmoDTO ammoDTO;
     Transform rayStartpoint;
-    public GameObject bulletPrefab;
+    public GameObject[] bulletPrefab;
     //LineRenderer lineRenderer;
     bool isShottable;
     float vertical;
     float horizontal;
+    Transform weaponPos;
+    Transform reactPivot;
     
     // Start is called before the first frame update
     void Start()
     {
         if(!ObjectManager.objectDic.ContainsKey("Pistol")) ObjectManager.objectDic.Add("Pistol", this.gameObject);
+        weaponPos = this.transform.Find("Pistol");
+        reactPivot = this.transform.Find("ReactPivot");
         playerStatusDTO = new UnitStatusDTO(100, 100);
         //lineRenderer = this.GetComponent<LineRenderer>();
         isShottable = true;
@@ -38,6 +42,7 @@ public class Pistol : MonoBehaviour, IPlayerGun, IPlayerAttack, IPlayer
             //lineRenderer.enabled = true;
             //lineRenderer.positionCount = 2;
             Attack();
+            
         }
         if (Input.GetKeyDown(KeyCode.R)){
             Reload();
@@ -56,15 +61,22 @@ public class Pistol : MonoBehaviour, IPlayerGun, IPlayerAttack, IPlayer
     public void Attack()
     {
 
-        Vector3 point = rayStartpoint.position - this.transform.position;
+        Vector3 point = rayStartpoint.position - weaponPos.transform.position;
 
-        GameObject bullet = Instantiate(bulletPrefab);
-        bullet.GetComponent<BulletTest>().SetTarget(point);
+        GameObject bullet = Instantiate(bulletPrefab[0]);
+        //bullet.GetComponent<BulletTest>().SetTarget(point);
         bullet.transform.position = rayStartpoint.position;
+        bullet.transform.parent = this.transform;
         bullet.name = "Pistol_bullet";
+        bullet.GetComponent<Rigidbody>().AddForce(bullet.transform.forward * 1000);
+
+        //this.transform.RotateAround(reactPivot.position, Vector3.left, 200 * Time.deltaTime);
+
+
         ammoDTO.currentAmmoCnt--;
         print($"ammo : {ammoDTO.currentAmmoCnt}");
         if (ammoDTO.currentAmmoCnt == 0) Reload();
+        
     }
 
     public void Reload()
