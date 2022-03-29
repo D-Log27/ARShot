@@ -21,8 +21,8 @@ public class BulletTest : MonoBehaviour
     void Update()
     {
         
-        if (dir.Equals(Vector3.zero)) dir = this.transform.up;
-        this.transform.LookAt(dir);
+        if (dir.Equals(Vector3.zero)) dir = Vector3.forward;
+        //this.transform.LookAt(dir);
         this.transform.position += dir * bulletSpeed * Time.deltaTime;
     }
 

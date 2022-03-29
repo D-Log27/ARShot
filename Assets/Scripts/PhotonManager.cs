@@ -27,7 +27,6 @@ public class PhotonManager : MonoBehaviourPunCallbacks
     }
     private void Awake()
     {
-        if (PhotonNetwork.IsConnected) PhotonNetwork.Disconnect();
         Instance = this;
         userName = JsonHelper.GetInstance().ReadValue(OptionType.USER_NAME);
     }
@@ -126,11 +125,10 @@ public class PhotonManager : MonoBehaviourPunCallbacks
         print($"### room name : {PhotonNetwork.CurrentRoom.Name}");
 #endif
         // TODO : 방 scene으로 전환
-        //if (PhotonNetwork.IsMasterClient)
-        //{
-        //    
-        //    PhotonNetwork.LoadLevel("Room");
-        //}
+        if (PhotonNetwork.IsMasterClient)
+        {
+            PhotonNetwork.LoadLevel("Room_BSS");
+        }
     }
 
     /// <summary>
