@@ -9,9 +9,8 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: HologramBriefingMan
   m_Shader: {fileID: 4800000, guid: e99f8b80b1693284587af0c131f61f3d, type: 3}
-  m_ShaderKeywords: _COLORGLITCHFEATURE_ON _DISSOLVEFEATURE_ON _FRESNELALPHAFEATURE_ON
-    _FRESNELCOLORFEATURE_ON _FRESNELFEATURE_ON _GLITCHDEBUG_ON _GRAINFEATURE_ON _LINE1FEATURE_ON
-    _LINE2FEATURE_ON _LINEBOTHFEATURE_ON _LINEGLITCHFEATURE_ON _NORMALMAPFEATURE_ON
+  m_ShaderKeywords: _DISSOLVEFEATURE_ON _FRESNELALPHAFEATURE_ON _FRESNELCOLORFEATURE_ON
+    _FRESNELFEATURE_ON _GLITCHDEBUG_ON _LINE2FEATURE_ON _LINEGLITCHFEATURE_ON _NORMALMAPFEATURE_ON
     _POSITIONFEATURE_Y _POSITIONSPACEFEATURE_WORLD _RANDOMGLITCHFEATURE_ON _SOFTINTERSECTION1FEATURE_OFF
     _SOFTINTERSECTION2FEATURE_OFF _SOFTINTERSECTIONFEATURE_COLOR _SOFTINTERSECTION_COLOR
     _ZWRITE_ON
@@ -85,7 +84,7 @@ Material:
     - _AlphaMaskAffect: 0.5
     - _AlphaMaskFeature: 0
     - _ColorGlitchAffect: 0.3
-    - _ColorGlitchFeature: 1
+    - _ColorGlitchFeature: 0
     - _ColorPeriodcTiling: 223
     - _ColorPeriodicSpeed: -15
     - _ColorPeriodicSpeedX: -0.5
@@ -123,12 +122,12 @@ Material:
     - _GlitchRemapMinNew: -0.61
     - _GlitchRemapMinOld: 0
     - _GrainAffect: 1
-    - _GrainFeature: 1
+    - _GrainFeature: 0
     - _GrainPower: 4.4
     - _Hide: -1
     - _Keyword0: 0
     - _Line1Alpha: 0.15
-    - _Line1Feature: 1
+    - _Line1Feature: 0
     - _Line1Frequency: 101
     - _Line1Hardness: 1.45
     - _Line1InvertedThickness: 0
@@ -142,7 +141,7 @@ Material:
     - _LineAlpha: 1
     - _LineAlpha1: 0.15
     - _LineAlpha2: 0.1
-    - _LineBothFeature: 1
+    - _LineBothFeature: 0
     - _LineFrequency: 6
     - _LineFrequency1: 100
     - _LineFrequency2: 1
@@ -179,7 +178,7 @@ Material:
     - _RandomGlitchConstant: 0
     - _RandomGlitchFeature: 1
     - _RandomGlitchTiling: 2.83
-    - _RandomOffset: 73887
+    - _RandomOffset: 91389.516
     - _SoftIntersection: 2
     - _SoftIntersection1Affect: 1
     - _SoftIntersection1Distance: 0

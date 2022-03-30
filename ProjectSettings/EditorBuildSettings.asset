@@ -6,15 +6,15 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 0
-    path: Assets/Scenes/ARPlaneManagerTest_KSY.unity
-    guid: 074cb7a42ccb6be4e8ea5f4f8d9b4ed0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
-    path: Assets/Scenes/HologramBriefingMan_KSY.unity
+    path: Assets/Scenes/01.HologramMan_KSY.unity
     guid: 85dc6258ba8ced446a1d29d295923d72
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Title_Test.unity
     guid: 43df2db910b44824eb162cfdedcad5cd
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Room_BSS.unity
     guid: 6e05fd9677a5b72408ec3910c4bc6d23
   m_configObjects:
