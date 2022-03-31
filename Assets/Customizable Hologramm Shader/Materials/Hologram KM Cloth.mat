@@ -222,3 +222,4 @@ Material:
     - _RandomGlitchOffset: {r: -0.5, g: 0, b: 0, a: 0}
     - _Scale: {r: 0.1, g: 1.01, b: 5, a: 0}
     - _SoftIntersectionColor: {r: 63.999992, g: 9.382197, b: 9.382197, a: 1}
+  m_BuildTextureStacks: []
