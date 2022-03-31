@@ -8,7 +8,7 @@ using UnityEngine.UI;
 /// <summary>
 /// Title 화면 이벤트
 /// </summary>
-public class TitleEvent : MonoBehaviour
+public class TitleManager : MonoBehaviour
 {
     public Transform startBtn;
     public Transform optionBtn;
@@ -35,7 +35,7 @@ public class TitleEvent : MonoBehaviour
     public void OnClickOptionButton()
     {
         print("### option OnClick Check");
-        SceneManager.LoadScene("Options");
+        SceneManager.LoadScene("Options_AL");
     }
 
     /// <summary>
@@ -47,17 +47,29 @@ public class TitleEvent : MonoBehaviour
         Application.Quit();
     }
 
+        float threeSec = 3;
     /// <summary>
     /// Title -> Start Click
     /// </summary>
     public void OnClickStartButton()
     {
         TitleLoadingImage(true);
-        bool isSuccess = PhotonManager.GetInstance().ConnectingRoom();
+        threeSec -= Time.deltaTime;
+        //아래 함수에 테스트용으로 if만 입힘
+        //if (threeSec < 0)
+        //{
+        //    bool isSuccess = true;//PhotonManager.GetInstance().ConnectingRoom();
+        //    if (isSuccess)
+        //    {
+        //        TitleLoadingImage(false);
+        //        SceneManager.LoadScene("Room_AL");
+        //    }
+        //}
+        bool isSuccess = true;//PhotonManager.GetInstance().ConnectingRoom();
         if (isSuccess)
         {
             TitleLoadingImage(false);
-            // TODO : load room scene
+            SceneManager.LoadScene("Room_AL");
         }
     }
 
