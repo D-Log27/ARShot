@@ -1,21 +1,28 @@
+using FXV;
+using QFX.SFX;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HeavymachineGun : MonoBehaviour, IPlayerGun, IPlayerAttack, IPlayer
+public class HeavymachineGun : MonoBehaviour, IPlayerGun, IPlayer
 {
+    CharacterInfoDTO characterInfoDTO;
     UnitStatusDTO playerStatusDTO;
     AmmoDTO ammoDTO;
     Transform rayStartpoint;
     public GameObject[] bulletPrefab;
-    //LineRenderer lineRenderer;
     bool isShottable;
+    public Transform skillTransform;
+    SFX_MouseControlledObjectLauncher dealerSkill;
+
+    // FOR DEVELOP
     float vertical;
     float horizontal;
-
+    
     // Start is called before the first frame update
     void Start()
     {
+        characterInfoDTO = new CharacterInfoDTO("Tanker", 100, 100);
         if (!ObjectManager.objectDic.ContainsKey("HeavymachineGun")) ObjectManager.objectDic.Add("HeavymachineGun", this.gameObject);
         playerStatusDTO = new UnitStatusDTO(100, 100);
         //lineRenderer = this.GetComponent<LineRenderer>();
@@ -24,6 +31,7 @@ public class HeavymachineGun : MonoBehaviour, IPlayerGun, IPlayerAttack, IPlayer
         horizontal = 0f;
         ammoDTO = new AmmoDTO(7, 7);
         rayStartpoint = this.transform.Find("GunRayPoint").transform;
+        dealerSkill = skillTransform.Find("DealerSkill").GetComponentInChildren<SFX_MouseControlledObjectLauncher>();
     }
 
     // Update is called once per frame
@@ -39,6 +47,12 @@ public class HeavymachineGun : MonoBehaviour, IPlayerGun, IPlayerAttack, IPlayer
         if (Input.GetKeyDown(KeyCode.R))
         {
             Reload();
+        }
+
+        if (Input.GetMouseButtonDown(1))
+        {
+            dealerSkill.isShotGun = false;
+            Skill();
         }
 #if UNITY_EDITOR
 
@@ -112,5 +126,25 @@ public class HeavymachineGun : MonoBehaviour, IPlayerGun, IPlayerAttack, IPlayer
 
         print("### !!! GAME OVER !!! ###");
         Time.timeScale = 0;
+    }
+
+    public void Skill()
+    {
+        RaycastHit hit;
+        //Ray ray = GetComponentInChildren<Camera>().ScreenPointToRay(rayStartpoint.position);
+        Ray ray = new Ray(Camera.main.transform.position, Camera.main.transform.forward);
+        //Debug.DrawRay(ray.origin, ray.direction * 10, Color.yellow);
+
+        if (Physics.Raycast(ray, out hit))
+        {
+            if (hit.collider != null)
+            {
+                GameObject skill = skillTransform.Find("TankerSkill").gameObject;
+                Vector3 pos = new Vector3(this.transform.position.x, 0, this.transform.position.z);
+                skill.transform.position = pos;
+                skill.GetComponent<ParticleSystem>().Play();
+
+            }
+        }
     }
 }

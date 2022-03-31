@@ -32,18 +32,26 @@ namespace QFX.SFX
             get { return new List<Vector3>(_markedPositions); }
         }
 
+
         public override void Run()
         {
             base.Run();
 
-            var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            // TODO : 여기를 고치면 타겟 위치가 변경된다.
+            //var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            Ray ray = new Ray(Camera.main.transform.position, Camera.main.transform.forward);
             RaycastHit hit;
 
             if (!Physics.Raycast(ray, out hit))
                 return;
+ 
+
 
             if (MarkFx != null)
+            {
                 SFX_FxObjectInstancer.InstantiateFx(MarkFx, hit.point, hit.normal);
+            }
+                
 
             if (MarkTargetMode == MarkMode.GameObject)
             {

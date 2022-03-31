@@ -47,7 +47,7 @@ namespace FXV
             if (Physics.Raycast(ray, out rhi, offset.magnitude))
             {
                 needDestroy = true;
-
+                print($"### Check collider name : {rhi.collider.name}");
                 FXVShield shield = rhi.collider.gameObject.GetComponentInParent<FXVShield>();
 
                 if (shield && !shield.GetIsDuringActivationAnim())

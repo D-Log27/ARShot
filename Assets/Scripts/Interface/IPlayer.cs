@@ -4,6 +4,11 @@
 public interface IPlayer 
 {
     /// <summary>
+    /// player attack
+    /// </summary>
+    void Skill();
+
+    /// <summary>
     /// Under attack
     /// </summary>
     void UnderAttack();

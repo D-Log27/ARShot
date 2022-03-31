@@ -7,6 +7,11 @@ using UnityEngine;
 /// </summary>
 public class Dealer : MonoBehaviour, IPlayer
 {
+    public void Skill()
+    {
+        throw new System.NotImplementedException();
+    }
+
     public void Death()
     {
         throw new System.NotImplementedException();

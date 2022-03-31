@@ -18,7 +18,7 @@ public class PhotonManager : MonoBehaviourPunCallbacks
     private readonly string gameVersion = "0.0.1";
     string apName;
     string userName;
-    TitleManager titleEvent;
+    TitleEvent titleEvent;
     PhotonCollection.Hashtable roomApProperty = new PhotonCollection.Hashtable();
 
     public static PhotonManager GetInstance ()
@@ -34,7 +34,7 @@ public class PhotonManager : MonoBehaviourPunCallbacks
     // Start is called before the first frame update
     void Start()
     {
-        titleEvent = GameObject.Find("Manager").GetComponent<TitleManager>();
+        titleEvent = GameObject.Find("Manager").GetComponent<TitleEvent>();
         PhotonNetwork.GameVersion = gameVersion;
         PhotonNetwork.NickName = userName;
         PhotonNetwork.AutomaticallySyncScene = true;

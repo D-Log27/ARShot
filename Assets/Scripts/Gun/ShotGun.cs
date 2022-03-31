@@ -1,21 +1,26 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-public class ShotGun : MonoBehaviour, IPlayerGun, IPlayerAttack, IPlayer
+using QFX.SFX;
+public class ShotGun : MonoBehaviour, IPlayerGun, IPlayer
 {
+    CharacterInfoDTO characterInfoDTO;
     UnitStatusDTO playerStatusDTO;
     AmmoDTO ammoDTO;
     Transform rayStartpoint;
     public GameObject[] bulletPrefab;
-    //LineRenderer lineRenderer;
     bool isShottable;
+    public Transform skillTransform;
+    SFX_MouseControlledObjectLauncher dealerSkill;
+
+    //FOR DEVELOP
     float vertical;
     float horizontal;
 
     // Start is called before the first frame update
     void Start()
     {
+        characterInfoDTO = new CharacterInfoDTO("Dealer", 100, 100);
         // 키 확인후 넣기
         if (!ObjectManager.objectDic.ContainsKey("ShotGun")) ObjectManager.objectDic.Add("ShotGun", this.gameObject);
         playerStatusDTO = new UnitStatusDTO(100, 100);
@@ -25,6 +30,7 @@ public class ShotGun : MonoBehaviour, IPlayerGun, IPlayerAttack, IPlayer
         horizontal = 0f;
         ammoDTO = new AmmoDTO(10, 10);
         rayStartpoint = this.transform.Find("GunRayPoint").transform;
+        dealerSkill = skillTransform.Find("DealerSkill").GetComponentInChildren<SFX_MouseControlledObjectLauncher>();
     }
 
     // Update is called once per frame
@@ -40,6 +46,11 @@ public class ShotGun : MonoBehaviour, IPlayerGun, IPlayerAttack, IPlayer
         if (Input.GetKeyDown(KeyCode.R))
         {
             Reload();
+        }
+        if (Input.GetMouseButtonDown(1))
+        {
+            dealerSkill.isShotGun = true;
+            Skill();
         }
 #if UNITY_EDITOR
 
@@ -113,5 +124,27 @@ public class ShotGun : MonoBehaviour, IPlayerGun, IPlayerAttack, IPlayer
 
         print("### !!! GAME OVER !!! ###");
         Time.timeScale = 0;
+    }
+
+    public void Skill()
+    {
+
+        
+        RaycastHit hit;
+        //Ray ray = GetComponentInChildren<Camera>().ScreenPointToRay(rayStartpoint.position);
+        Ray ray = new Ray(Camera.main.transform.position, Camera.main.transform.forward);
+        //Debug.DrawRay(ray.origin, ray.direction * 10, Color.yellow);
+
+        if (Physics.Raycast(ray, out hit))
+        {
+            if (hit.collider != null)
+            {
+                GameObject skill = skillTransform.Find("DealerSkill").gameObject;
+                Vector3 pos = new Vector3(this.transform.position.x, 0, this.transform.position.z);
+                //skill.transform.position = pos;
+                skill.GetComponentInChildren<SFX_PhysicsHomingMissileLauncher>().targetPos = hit.point;
+
+            }
+        }
     }
 }
