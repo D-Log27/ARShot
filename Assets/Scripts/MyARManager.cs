@@ -2,8 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-// 카메라(화면중앙)가 향한 곳에 마커가 있다면
-// 그곳에 오브젝트를 배치하고 싶다.
+// 카메라(화면중앙)가 향한 곳에 바닥이 있다면
+// 그곳에 인디케이터를 배치하고 싶다.
 // 인디케이터가 보여질때 인디케이터를 클릭(터치)하면
 // 그 위치에 물체를 배치하고 싶다.
 

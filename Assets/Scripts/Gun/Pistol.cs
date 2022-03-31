@@ -1,3 +1,5 @@
+using FXV;
+using QFX.SFX;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,23 +7,28 @@ using UnityEngine;
 /// <summary>
 /// ±ÇÃÑ Å×½ºÆ®
 /// </summary>
-public class Pistol : MonoBehaviour, IPlayerGun, IPlayerAttack, IPlayer
+public class Pistol : MonoBehaviour, IPlayerGun, IPlayer
 {
+    CharacterInfoDTO characterInfoDTO;
     UnitStatusDTO playerStatusDTO;
     AmmoDTO ammoDTO;
     Transform rayStartpoint;
     public GameObject[] bulletPrefab;
-    //LineRenderer lineRenderer;
     bool isShottable;
-    float vertical;
-    float horizontal;
     Transform weaponPos;
     Transform reactPivot;
+    public Transform skillTransform;
+    SFX_MouseControlledObjectLauncher dealerSkill;
+
+    // FOR DEVELOP
+    float vertical;
+    float horizontal;
     
     // Start is called before the first frame update
     void Start()
     {
-        if(!ObjectManager.objectDic.ContainsKey("Pistol")) ObjectManager.objectDic.Add("Pistol", this.gameObject);
+        characterInfoDTO = new CharacterInfoDTO("Healer", 100, 100);
+        if (!ObjectManager.objectDic.ContainsKey("Pistol")) ObjectManager.objectDic.Add("Pistol", this.gameObject);
         weaponPos = this.transform.Find("Pistol");
         reactPivot = this.transform.Find("ReactPivot");
         playerStatusDTO = new UnitStatusDTO(100, 100);
@@ -31,22 +38,27 @@ public class Pistol : MonoBehaviour, IPlayerGun, IPlayerAttack, IPlayer
         horizontal = 0f;
         ammoDTO = new AmmoDTO(7,7);
         rayStartpoint = this.transform.Find("GunRayPoint").transform;
+        dealerSkill = skillTransform.Find("DealerSkill").GetComponentInChildren<SFX_MouseControlledObjectLauncher>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        //lineRenderer.enabled = false;
         if (Input.GetMouseButtonDown(0) && isShottable)
         {
-            //lineRenderer.enabled = true;
-            //lineRenderer.positionCount = 2;
             Attack();
             
         }
         if (Input.GetKeyDown(KeyCode.R)){
             Reload();
         }
+
+        if (Input.GetMouseButtonDown(1))
+        {
+            dealerSkill.isShotGun = false;
+            Skill();
+        }
+
 #if UNITY_EDITOR
 
         vertical = Input.GetAxis("Vertical");
@@ -71,7 +83,6 @@ public class Pistol : MonoBehaviour, IPlayerGun, IPlayerAttack, IPlayer
         bullet.GetComponent<Rigidbody>().AddForce(bullet.transform.forward * 1000);
 
         //this.transform.RotateAround(reactPivot.position, Vector3.left, 200 * Time.deltaTime);
-
 
         ammoDTO.currentAmmoCnt--;
         print($"ammo : {ammoDTO.currentAmmoCnt}");
@@ -116,7 +127,7 @@ public class Pistol : MonoBehaviour, IPlayerGun, IPlayerAttack, IPlayer
 
     public void Kill()
     {
-        throw new System.NotImplementedException();
+        // TODO : Add Score;
     }
 
     public void Death()
@@ -126,4 +137,23 @@ public class Pistol : MonoBehaviour, IPlayerGun, IPlayerAttack, IPlayer
         print("### !!! GAME OVER !!! ###");
         Time.timeScale = 0;
     }
+
+    public void Skill()
+    {
+        RaycastHit hit;
+        //Ray ray = GetComponentInChildren<Camera>().ScreenPointToRay(rayStartpoint.position);
+        Ray ray = new Ray(Camera.main.transform.position, Camera.main.transform.forward);
+        //Debug.DrawRay(ray.origin, ray.direction * 10, Color.yellow);
+
+        if(Physics.Raycast(ray,out hit)){
+            if(hit.collider != null)
+            {
+                GameObject skill = skillTransform.Find("HealerSkill").gameObject;
+                skill.GetComponent<FXVShield>().SetShieldActive(true);
+                skill.transform.position = hit.point;
+
+            }
+        }
+    }
+
 }

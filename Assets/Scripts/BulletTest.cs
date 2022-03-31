@@ -37,7 +37,7 @@ public class BulletTest : MonoBehaviour
     /// <param name="collision"></param>
     private void OnCollisionEnter(Collision collision)
     {
-        //print($"### collision name check : {collision.gameObject.name}");
+        print($"### bullet collision name check : {collision.gameObject.name}");
         if (collision.gameObject.name.Contains("Ground"))
         {
             collision.gameObject.GetComponent<GroundEnemy>().Damaged();

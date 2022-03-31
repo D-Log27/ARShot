@@ -18,6 +18,7 @@ namespace QFX.SFX
         public float InstantiateMissileDelay;
         public float FocusOnTargetDelay;
         public float RandomSphereSize;
+        public Vector3 targetPos { get; set; }
 
         private SFX_TargetMarker m_sfxTargetMarker;
 
@@ -72,6 +73,10 @@ namespace QFX.SFX
                         if (m_sfxTargetMarker.MarkTargetMode == SFX_TargetMarker.MarkMode.GameObject)
                             homingMissile.TargetTransform = targetsGameObjects[targetIdx++].transform;
                         else homingMissile.TargetPosition = targetsPositions[targetIdx++];
+
+                    } else
+                    {
+                        homingMissile.TargetPosition = targetPos;
                     }
                 }
 

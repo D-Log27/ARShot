@@ -68,11 +68,18 @@ namespace QFX.SFX
 
             Vector3 targetPosition;
             if (FollowTarget)
+            {
                 targetPosition = TargetTransform != null
-                    ? TargetTransform.transform.position
-                    : transform.position + transform.forward;
+                                    ? TargetTransform.transform.position
+                                    : transform.position + transform.forward;
+            }
+
             else
+            {
                 targetPosition = TargetPosition;
+                //print($"### non FollowTarget targetPosition: {targetPosition}");
+            }
+                
 
             m_sfxDistanceCollisionDetector.TargetPosition = targetPosition;
 

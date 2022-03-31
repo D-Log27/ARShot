@@ -7,4 +7,9 @@ public interface IPlayerGun
     /// Gun Reload
     /// </summary>
     void Reload();
+
+    /// <summary>
+    /// player attack
+    /// </summary>
+    void Attack();
 }

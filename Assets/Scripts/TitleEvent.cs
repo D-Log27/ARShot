@@ -14,19 +14,19 @@ public class TitleEvent : MonoBehaviour
     public Transform optionBtn;
     public Transform exitBtn;
     public Transform loading;
-
+    
     // Start is called before the first frame update
     void Start()
     {
         startBtn.GetComponent<Button>().onClick.AddListener(() => OnClickStartButton());
-        optionBtn.GetComponent<Button>().onClick.AddListener(() => OnClickOptionButton());
-        exitBtn.GetComponent<Button>().onClick.AddListener(() => OnClickExitButton());
+        optionBtn.GetComponent<Button>().onClick.AddListener(()=>OnClickOptionButton());
+        exitBtn.GetComponent<Button>().onClick.AddListener(()=>OnClickExitButton());
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        
     }
 
     /// <summary>
@@ -54,7 +54,7 @@ public class TitleEvent : MonoBehaviour
     {
         TitleLoadingImage(true);
         bool isSuccess = PhotonManager.GetInstance().ConnectingRoom();
-        if (isSuccess)
+        if(isSuccess)
         {
             TitleLoadingImage(false);
             // TODO : load room scene

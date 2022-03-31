@@ -17,6 +17,11 @@ public class Supporter : MonoBehaviour, IPlayer
         throw new System.NotImplementedException();
     }
 
+    public void Skill()
+    {
+        throw new System.NotImplementedException();
+    }
+
     public void UnderAttack()
     {
         throw new System.NotImplementedException();

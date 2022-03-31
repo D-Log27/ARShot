@@ -1,0 +1,9 @@
+diff a/Assets/FXVShieldEffect.meta b/Assets/FXVShieldEffect.meta	(rejected hunks)
+@@ -1,6 +1,6 @@
+ fileFormatVersion: 2
+ <<<<<<<< HEAD:Assets/Scenes/02.DefenceObject_KSY.unity.meta
+-guid: 2a69a45a976aea043992d69129c64077
++guid: a3d5bc8fd4e38a245a37c14d451b2f61
+ ========
+ guid: 676c6c1f02404474ca2dd7a998a6eba2
+ folderAsset: yes

@@ -9,21 +9,31 @@ namespace QFX.SFX
         public SFX_ControlledObject[] ControlledObjects;
         public int MouseButtonCode;
         public bool CallStop = true;
+        public bool isShotGun { get; set; }
 
-        private void Update()
+        public void SkillAction()
         {
-            if (Input.GetMouseButtonDown(MouseButtonCode))
+            if (isShotGun)
             {
                 foreach (var controlledObject in ControlledObjects)
                 {
                     controlledObject.Setup();
                     controlledObject.Run();
+                    //controlledObject.Stop();
                 }
             }
-            else if (CallStop && Input.GetMouseButtonUp(MouseButtonCode))
+        }
+
+        private void Update()
+        {
+            if (Input.GetMouseButtonDown(MouseButtonCode) && isShotGun)
             {
                 foreach (var controlledObject in ControlledObjects)
+                {
+                    controlledObject.Setup();
+                    controlledObject.Run();
                     controlledObject.Stop();
+                }
             }
         }
     }

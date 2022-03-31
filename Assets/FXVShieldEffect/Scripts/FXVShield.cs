@@ -57,6 +57,7 @@ namespace FXV
 
         void Awake()
         {
+            print($"### this object is :{this.gameObject.name}");
             myRenderer = GetComponent<Renderer>();
             activationTimeProperty = Shader.PropertyToID("_ActivationTime");
             shieldDirectionProperty = Shader.PropertyToID("_ShieldDirection");
@@ -365,6 +366,7 @@ namespace FXV
 
         public void OnHit(Vector3 hitPos, float hitScale)
         {
+            print("### shield on hit called");
             AddHitMeshAtPos(gameObject.GetComponent<MeshFilter>().mesh, hitPos, hitScale);
 
             if (renderSides == FXVRenderSidesOptions.OUTSIDE_AND_INSIDE || renderSides == FXVRenderSidesOptions.INSIDE_ONLY)
