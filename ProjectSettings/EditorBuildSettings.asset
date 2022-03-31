@@ -5,31 +5,16 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/KSY/01.HologramMan_KSY.unity
     guid: 85dc6258ba8ced446a1d29d295923d72
-<<<<<<< HEAD
   - enabled: 1
-    path: Assets/Scenes/InGame_AL.unity
-    guid: 5031ff57f2b1c6c47b776274a96bc801
+    path: Assets/Scenes/KSY/02.DefenceObject_KSY.unity
+    guid: c759377623731ad438c202e958e49615
+  - enabled: 1
+    path: Assets/Scenes/Title_Test.unity
+    guid: 43df2db910b44824eb162cfdedcad5cd
   - enabled: 1
     path: Assets/Scenes/Room_AL.unity
     guid: 922dcaa36df0e18438bec8ffcd393f5c
-  - enabled: 1
-    path: Assets/Scenes/Title_AL.unity
-    guid: 126a4e66e9f8e8b41aff4884eb3e282f
-=======
-  - enabled: 0
-    path: Assets/Scenes/Title_Test.unity
-    guid: 43df2db910b44824eb162cfdedcad5cd
-  - enabled: 0
-    path: Assets/Scenes/Room_BSS.unity
-    guid: 6e05fd9677a5b72408ec3910c4bc6d23
->>>>>>> 27932b04be1191740d3b1dc7145ff2eae5c98749
-  m_configObjects:
-    AR Foundation RemoteARFoundationRemoteLoaderSettings: {fileID: 11400000, guid: 6b099c2395ac6764e8b0678f7e3f6b67, type: 2}
-    UnityEditor.XR.ARCore.ARCoreSettings: {fileID: 11400000, guid: 8c77fb1aeafb04646bcac395cf535831, type: 2}
-    com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 169bd886722cb3a428b2989fe2a140a5, type: 2}
+  m_configObjects: {}
