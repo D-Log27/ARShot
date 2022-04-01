@@ -6,11 +6,11 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/KSY/01.Intro_KSY.unity
+    path: Assets/Scenes/01.Intro_KSY.unity
     guid: 85dc6258ba8ced446a1d29d295923d72
-  - enabled: 1
-    path: Assets/Scenes/KSY/02.DefenceObject_KSY.unity
-    guid: c759377623731ad438c202e958e49615
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/Title_Test.unity
     guid: 43df2db910b44824eb162cfdedcad5cd
