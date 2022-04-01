@@ -1,0 +1,49 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 848409ee8ba454f42a5ddff137688a27, type: 3}
+  m_Name: ReferenceImageLibraryMulti
+  m_EditorClassIdentifier: 
+  m_GuidLow: 5491738799572635554
+  m_GuidHigh: 4694938063199359385
+  m_DataStore:
+    m_Storage: []
+  m_Images:
+  - m_SerializedGuid:
+      m_GuidLow: 5512381226718850267
+      m_GuidHigh: 14860177186546971828
+    m_SerializedTextureGuid:
+      m_GuidLow: 7950208137512552033
+      m_GuidHigh: 1310787814032522010
+    m_Size: {x: 0, y: 0}
+    m_SpecifySize: 0
+    m_Name: earth
+    m_Texture: {fileID: 0}
+  - m_SerializedGuid:
+      m_GuidLow: 4811137188337510989
+      m_GuidHigh: 4306276023246399655
+    m_SerializedTextureGuid:
+      m_GuidLow: 1073247326625672763
+      m_GuidHigh: 11470102210477421851
+    m_Size: {x: 0, y: 0}
+    m_SpecifySize: 0
+    m_Name: mario
+    m_Texture: {fileID: 0}
+  - m_SerializedGuid:
+      m_GuidLow: 5032797172553385591
+      m_GuidHigh: 16419354018827140234
+    m_SerializedTextureGuid:
+      m_GuidLow: 5662242398933456328
+      m_GuidHigh: 7265461285607335931
+    m_Size: {x: 0, y: 0}
+    m_SpecifySize: 0
+    m_Name: unitylogo
+    m_Texture: {fileID: 0}
