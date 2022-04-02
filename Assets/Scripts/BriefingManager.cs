@@ -32,14 +32,14 @@ public class BriefingManager : MonoBehaviour
         ending.SetActive(false);
     }
 
-    void Update()
-    {
-        SetHologramPosition(Camera.main.transform);
-    }
+    //void Update()
+    //{
+    //    SetHologramPosition(Camera.main.transform);
+    //}
 
-    void SetHologramPosition(Transform anchor)
-    {
-        Vector3 Offset = anchor.forward * 0.5f + anchor.up * -0.2f;
-        transform.position = anchor.position + Offset;
-    }
+    //void SetHologramPosition(Transform anchor)
+    //{
+    //    Vector3 Offset = anchor.forward * 0.5f + anchor.up * -0.2f;
+    //    transform.position = anchor.position + Offset;
+    //}
 }

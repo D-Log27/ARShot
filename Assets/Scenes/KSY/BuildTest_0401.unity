@@ -330,12 +330,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 778490075}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4dea56a9eaadd1c439095de4f9a371cb, type: 3}
+  m_Script: {fileID: 11500000, guid: e1760703bbd54c04488a8d10600262ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_SerializedLibrary: {fileID: 11400000, guid: df87c21dff077544696bd636ed80bc24, type: 2}
-  m_MaxNumberOfMovingImages: 0
-  m_TrackedImagePrefab: {fileID: 4664351719533509642, guid: 21518d9e635b03b48aeba96d735a0f2b, type: 3}
+  m_PlanePrefab: {fileID: 6457750282935104946, guid: 896cdf28b953f8d49bd8169ceb2d5d29, type: 3}
+  m_DetectionMode: -1
 --- !u!1 &1487792579
 GameObject:
   m_ObjectHideFlags: 0
