@@ -63,6 +63,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 3378819533870510903}
+  - {fileID: 3824405077184202363}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -81,7 +82,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3378819534280713456}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -124,7 +125,7 @@ BoxCollider:
   m_GameObject: {fileID: 3378819534280713456}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
@@ -140,7 +141,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c2acff8c5f049b4dbc08bab5e044cdb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
+  target: 0
+  targetTransform: {fileID: 0}
   bulletPrefab: {fileID: 5629550194947935878, guid: 158245c5053132241a8b65461c8f4988, type: 3}
 --- !u!54 &3378819534280713470
 Rigidbody:
@@ -158,3 +160,65 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!1001 &3820152432077763849
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 3378819534280713468}
+    m_Modifications:
+    - target: {fileID: 1930530679487652, guid: 91c7e9dceec9e044d95b42c56f899147, type: 3}
+      propertyPath: m_Name
+      value: SFSpaceShip01_Low
+      objectReference: {fileID: 0}
+    - target: {fileID: 4763368562176882, guid: 91c7e9dceec9e044d95b42c56f899147, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4763368562176882, guid: 91c7e9dceec9e044d95b42c56f899147, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4763368562176882, guid: 91c7e9dceec9e044d95b42c56f899147, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.677
+      objectReference: {fileID: 0}
+    - target: {fileID: 4763368562176882, guid: 91c7e9dceec9e044d95b42c56f899147, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4763368562176882, guid: 91c7e9dceec9e044d95b42c56f899147, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4763368562176882, guid: 91c7e9dceec9e044d95b42c56f899147, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4763368562176882, guid: 91c7e9dceec9e044d95b42c56f899147, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4763368562176882, guid: 91c7e9dceec9e044d95b42c56f899147, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4763368562176882, guid: 91c7e9dceec9e044d95b42c56f899147, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4763368562176882, guid: 91c7e9dceec9e044d95b42c56f899147, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4763368562176882, guid: 91c7e9dceec9e044d95b42c56f899147, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 91c7e9dceec9e044d95b42c56f899147, type: 3}
+--- !u!4 &3824405077184202363 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4763368562176882, guid: 91c7e9dceec9e044d95b42c56f899147, type: 3}
+  m_PrefabInstance: {fileID: 3820152432077763849}
+  m_PrefabAsset: {fileID: 0}
