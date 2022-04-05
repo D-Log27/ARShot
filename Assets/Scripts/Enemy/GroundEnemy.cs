@@ -131,5 +131,9 @@ public class GroundEnemy : MonoBehaviour, IEnemy
         }
     }
 
-    
+    private void OnCollisionEnter(Collision collision)
+    {
+        print("### ground enemy collision check");
+    }
+
 }
