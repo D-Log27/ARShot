@@ -42,6 +42,4 @@ public class BriefingManager : MonoBehaviour
     //    Vector3 Offset = anchor.forward * 0.5f + anchor.up * -0.2f;
     //    transform.position = anchor.position + Offset;
     //}
-
-
 }
