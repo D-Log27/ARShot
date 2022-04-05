@@ -8,6 +8,7 @@ public class DragDrop : MonoBehaviour
     Vector3 lastPositon;
     Vector3 curPositon;
     Vector3 doPosition;
+    GameObject go;
 
     Collision col;
     RectTransform rTr;
@@ -17,6 +18,7 @@ public class DragDrop : MonoBehaviour
         rTr = GetComponent<RectTransform>();
         rTr.position = new Vector3(698, 298, 0);
     }
+    
 
     // Update is called once per frame
     void Update()

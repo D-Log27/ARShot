@@ -12,7 +12,7 @@ using UnityEngine.SceneManagement;
 
 public class RoomManager : MonoBehaviour
 {
-    
+
     //뒤로 가기 버튼
     public Button btnBackToTitle;
 
@@ -104,8 +104,12 @@ public class RoomManager : MonoBehaviour
     /// </summary>
     public void OnClickReady(GameObject currentSelectedGameObject)
     {
+        //현재 누른 버튼의 부모의 CanvasGroupComponent: GettingReady Panel의 CanvasGroup
         CanvasGroup cGrp1 = currentSelectedGameObject.GetComponentInParent<CanvasGroup>();
+
+        //현재 누른 버튼의 부모의 부모의 2번째 자식의 CanvasGroupComponent: Ready Panel의 CanvasGroup
         CanvasGroup cGrp2 = currentSelectedGameObject.transform.parent.parent.GetChild(1).GetComponent<CanvasGroup>();
+
         CanvasGroupOnOff(cGrp1, Off);
         CanvasGroupOnOff(cGrp2, On);
 
@@ -163,7 +167,7 @@ public class RoomManager : MonoBehaviour
         canvasGrp2.interactable = true;
         canvasGrp2.blocksRaycasts = true;
     }*/
-    
+
 
     public void OnClickBackToTitle()
     {
@@ -171,7 +175,7 @@ public class RoomManager : MonoBehaviour
         //SceneManager.LoadScene("Title_Test");
         SceneManager.LoadScene("Title_AL");
     }
-    
+
     /// <summary>
     /// CanvasGroup 설정 변경 간소화
     /// </summary>
@@ -189,7 +193,8 @@ public class RoomManager : MonoBehaviour
             cGrp.interactable = false;
             cGrp.blocksRaycasts = false;
         }
-    }string On = "On"; string Off = "Off";
+    }
+    string On = "On"; string Off = "Off";
 
     //void SetActive(var i, bool )
     //{
