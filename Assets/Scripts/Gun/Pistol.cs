@@ -18,6 +18,7 @@ public class Pistol : MonoBehaviour, IPlayerGun, IPlayer
     Transform weaponPos;
     Transform reactPivot;
     public Transform skillTransform;
+    public GameObject skill;
     SFX_MouseControlledObjectLauncher dealerSkill;
 
     // FOR DEVELOP
@@ -148,9 +149,10 @@ public class Pistol : MonoBehaviour, IPlayerGun, IPlayer
         if(Physics.Raycast(ray,out hit)){
             if(hit.collider != null)
             {
-                GameObject skill = skillTransform.Find("HealerSkill").gameObject;
+                //GameObject skill = skillTransform.Find("HealerSkill").gameObject;
+                GameObject skill = Instantiate(this.skill, hit.point, Quaternion.identity);
                 skill.GetComponent<FXVShield>().SetShieldActive(true);
-                skill.transform.position = hit.point;
+                //skill.transform.position = hit.point;
 
             }
         }
