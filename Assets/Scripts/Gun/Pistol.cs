@@ -78,7 +78,7 @@ public class Pistol : MonoBehaviour, IPlayerGun, IPlayer
         GameObject bullet = Instantiate(bulletPrefab[0]);
         //bullet.GetComponent<BulletTest>().SetTarget(point);
         bullet.transform.position = rayStartpoint.position;
-        bullet.transform.parent = this.transform;
+        //bullet.transform.parent = this.transform;
         bullet.name = "Pistol_bullet";
         bullet.GetComponent<Rigidbody>().AddForce(bullet.transform.forward * 1000);
 
