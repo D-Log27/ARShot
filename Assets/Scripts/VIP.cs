@@ -9,7 +9,7 @@ public class VIP : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        ObjectManager.objectDic.Add("VIP", this.gameObject);
+        ObjectManager.SaveObject("VIP", this.gameObject);
         vipStatusDTO = new UnitStatusDTO(100, 100);
     }
 
@@ -18,8 +18,6 @@ public class VIP : MonoBehaviour
     {
         
     }
-
-    
 
     internal void Damaged()
     {

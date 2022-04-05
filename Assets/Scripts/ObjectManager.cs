@@ -17,4 +17,29 @@ public class ObjectManager : MonoBehaviour
     }
     [HideInInspector]
     public static Dictionary<string, GameObject> objectDic;
+
+    public static void SaveObject(string name, GameObject obj)
+    {
+        if (!objectDic.ContainsKey(name))
+        {
+            objectDic.Add(name, obj);
+            print($"### OBJECT SAVED : {name}");
+        }
+        else
+        {
+            return;
+        }
+    }
+
+    public static GameObject LoadObject(string name)
+    {
+        if (objectDic.ContainsKey(name))
+        {
+            return objectDic[name];
+        }
+        else
+        {
+            return null;
+        }
+    }
 }

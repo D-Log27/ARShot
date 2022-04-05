@@ -1,7 +1,7 @@
 /// <summary>
 /// Player Gun Interface
 /// </summary>
-public interface IPlayerGun
+public interface IPlayerGun : IPlayer
 {
     /// <summary>
     /// Gun Reload

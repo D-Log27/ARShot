@@ -17,11 +17,11 @@ TagManager:
   - 
   - Indicator
   - Floor
-  - 
-  - 
-  - 
-  - 
-  - 
+  - HealingSkill
+  - Bullet_player
+  - Enemy
+  - TankerSkill
+  - Bullet_enemy
   - 
   - 
   - 

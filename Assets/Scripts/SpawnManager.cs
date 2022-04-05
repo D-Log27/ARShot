@@ -12,6 +12,8 @@ public class SpawnManager : MonoBehaviour
     Transform spawnArea_2;
     Transform spawnArea_3;
     Transform spawnArea_4;
+    int totalEnemyCnt = 3;
+    int enemyCnt = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,24 +28,32 @@ public class SpawnManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        currentTime += Time.deltaTime;
-        if(currentTime > 1)
+
+        if(enemyCnt < totalEnemyCnt)
         {
-            currentTime = 0;
-            GameObject enemy;
-            Vector3 pos;
-            if (enemyTypeFlag)
+            currentTime += Time.deltaTime;
+            if(currentTime > 1)
             {
-                enemy = Instantiate(airEnemy);
-                pos = GetRandomPositionInArea(Random.Range(1, 4)) + (Vector3.up * 5f);
-            } else
-            {
-                enemy = Instantiate(groundEnemy);
-                pos = GetRandomPositionInArea(Random.Range(1, 4));
+                currentTime = 0;
+                GameObject enemy;
+                Vector3 pos;
+                if (enemyTypeFlag)
+                {
+                    enemy = Instantiate(airEnemy);
+                    pos = GetRandomPositionInArea(Random.Range(1, 4)) + (Vector3.up * 5f);
+                } else
+                {
+                    //enemy = Instantiate(groundEnemy);
+                    //pos = GetRandomPositionInArea(Random.Range(1, 4));
+
+                    enemy = Instantiate(airEnemy);
+                    pos = GetRandomPositionInArea(Random.Range(1, 4)) + (Vector3.up * 5f);
+                }
+                enemyCnt++;
+                enemy.transform.position = pos;
+                enemy.transform.parent = this.transform;
+                enemyTypeFlag = !enemyTypeFlag;
             }
-            enemy.transform.position = pos;
-            enemy.transform.parent = this.transform;
-            enemyTypeFlag = !enemyTypeFlag;
         }
     }
 

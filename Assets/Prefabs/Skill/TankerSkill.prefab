@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5139861532260127193}
   - component: {fileID: 5009156986903094083}
   - component: {fileID: 5009820577039670989}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Quads
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4894,7 +4894,7 @@ GameObject:
   - component: {fileID: 5137357389621538991}
   - component: {fileID: 5009350318525278927}
   - component: {fileID: 5008446361616397315}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: GroudQuad
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9777,7 +9777,7 @@ GameObject:
   - component: {fileID: 5140018867556681329}
   - component: {fileID: 5009616903699777381}
   - component: {fileID: 5008270309430339911}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: StartSide3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14660,7 +14660,7 @@ GameObject:
   - component: {fileID: 5140288200067901329}
   - component: {fileID: 5042540826493143001}
   - component: {fileID: 5009954338762297029}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: StartSide1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19543,7 +19543,7 @@ GameObject:
   - component: {fileID: 5137134767056780861}
   - component: {fileID: 5009366772817943335}
   - component: {fileID: 5008424809764749065}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: StartSide2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24426,7 +24426,7 @@ GameObject:
   - component: {fileID: 5137427924734243435}
   - component: {fileID: 5009652922789659867}
   - component: {fileID: 5008246798047429677}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: StartQuads
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29309,7 +29309,7 @@ GameObject:
   - component: {fileID: 5137418979179580859}
   - component: {fileID: 5010117259130166859}
   - component: {fileID: 5009779737114590529}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Shield
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34199,9 +34199,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5137368168127274571}
+  - component: {fileID: -5414588486066878494}
   - component: {fileID: 5042581399352006703}
   - component: {fileID: 5008914283712605051}
-  m_Layer: 0
+  - component: {fileID: 1058630355178162148}
+  m_Layer: 13
   m_Name: TankerSkill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34229,6 +34231,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
+--- !u!114 &-5414588486066878494
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5136026926082125845}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0eb871f91cde0f54788e8eb59ae9c8e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!198 &5042581399352006703
 ParticleSystem:
   m_ObjectHideFlags: 0
@@ -39080,3 +39094,16 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
+--- !u!65 &1058630355178162148
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5136026926082125845}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4, y: 4, z: 3.9426003}
+  m_Center: {x: 0, y: -1.1123962e-14, z: 2.0287004}
