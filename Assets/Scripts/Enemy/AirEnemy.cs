@@ -110,4 +110,9 @@ public class AirEnemy : MonoBehaviour, IEnemy
             state = State.ATTACK;
         }
     }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        print("### air enemy collision check");
+    }
 }
