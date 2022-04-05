@@ -18,10 +18,10 @@ TagManager:
   - Indicator
   - Floor
   - HealingSkill
-  - Bullet
-  - 
-  - 
-  - 
+  - Bullet_player
+  - Enemy
+  - TankerSkill
+  - Bullet_enemy
   - 
   - 
   - 

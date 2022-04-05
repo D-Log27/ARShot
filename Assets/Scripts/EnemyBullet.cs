@@ -2,10 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-/// <summary>
-/// �׽�Ʈ źȯ
-/// </summary>
-public class BulletTest : MonoBehaviour
+public class EnemyBullet : MonoBehaviour
 {
     Vector3 dir = Vector3.zero;
     float bulletSpeed = 10f;
@@ -20,6 +17,7 @@ public class BulletTest : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         if (dir.Equals(Vector3.zero)) dir = Vector3.forward;
         //this.transform.LookAt(dir);
         this.transform.position += dir * bulletSpeed * Time.deltaTime;
@@ -36,19 +34,10 @@ public class BulletTest : MonoBehaviour
     /// <param name="collision"></param>
     private void OnCollisionEnter(Collision collision)
     {
-        print($"### bullet collision name check : {collision.gameObject.name}");
-        if (collision.gameObject.name.Contains("Ground"))
-        {
-            collision.gameObject.GetComponent<IEnemy>().Damaged();
-
-        }
-        else if(collision.gameObject.name.Contains("Air"))
-        {
-            collision.gameObject.GetComponent<IEnemy>().Damaged();
-        }
+        print($"### enemy bullet collision name check : {collision.gameObject.name}");
         if (collision.gameObject.CompareTag("VIP"))
         {
-            collision.gameObject.GetComponent<VIP>().Damaged();
+            collision.gameObject.GetComponent<IEnemy>().Damaged();
         }
         if (collision.gameObject.CompareTag("Player"))
         {

@@ -29,10 +29,10 @@ public class Pistol : MonoBehaviour, IPlayerGun
     void Start()
     {
         characterInfoDTO = new CharacterInfoDTO("Healer");
-        if (!ObjectManager.objectDic.ContainsKey("Pistol")) ObjectManager.objectDic.Add("Pistol", this.gameObject);
+        ObjectManager.SaveObject("Pistol", this.gameObject);
         weaponPos = this.transform.Find("Pistol");
         reactPivot = this.transform.Find("ReactPivot");
-        playerStatusDTO = new UnitStatusDTO(50, 100);
+        playerStatusDTO = new UnitStatusDTO(100, 100);
         //lineRenderer = this.GetComponent<LineRenderer>();
         isShottable = true;
         vertical = 0f;

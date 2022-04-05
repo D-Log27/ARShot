@@ -60,7 +60,7 @@ public class HeavymachineGun : MonoBehaviour, IPlayerGun
         vertical = Input.GetAxis("Vertical");
         horizontal = Input.GetAxis("Horizontal");
         Vector3 dir = (Vector3.forward * vertical) + (Vector3.right * horizontal);
-        this.transform.position += dir.normalized * Time.deltaTime * 1f;
+        this.transform.position += dir.normalized * Time.deltaTime * 3f;
 
 #endif
 

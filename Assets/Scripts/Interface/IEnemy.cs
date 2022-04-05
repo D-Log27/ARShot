@@ -16,7 +16,7 @@ public interface IEnemy
     /// <summary>
     /// Enemy damaged
     /// </summary>
-    void Damaged();
+    void Damaged(int damage = 15);
     /// <summary>
     /// Enemy Death
     /// </summary>
