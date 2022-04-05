@@ -18,14 +18,6 @@ public class CharacterInfoDTO : MonoBehaviour
     /// 점수
     /// </summary>
     public int score { get; set; }
-    /// <summary>
-    /// 플레이어 체력
-    /// </summary>
-    public int hp { get; set; }
-    /// <summary>
-    /// 플레이어 쉴드
-    /// </summary>
-    public int shield { get; set; }
 
     /// <summary>
     /// Constructor
@@ -33,12 +25,10 @@ public class CharacterInfoDTO : MonoBehaviour
     /// <param name="playerName">플레이어 이름</param>
     /// <param name="hp">체력</param>
     /// <param name="shield">쉴드</param>
-    public CharacterInfoDTO(string playerName, int hp, int shield)
+    public CharacterInfoDTO(string playerName)
     {
         this.playerName = playerName;
         this.killCnt = 0;
         this.score = 0;
-        this.hp = hp;
-        this.shield = shield;
     }
 }

@@ -64,11 +64,21 @@ namespace QFX.SFX
                 _wasCollided = true;
 
             if (OnCollision != null)
+            {
                 OnCollision.Invoke(new SFX_CollisionPoint
                 {
                     Point = point,
                     Normal = normal
                 });
+                Collider[] colls = Physics.OverlapSphere(point, 3f);
+                foreach(Collider col in colls)
+                {   
+                    if(col.gameObject.layer == LayerMask.NameToLayer("Enemy"))
+                    {
+                        col.gameObject.GetComponent<IEnemy>().Damaged(50);
+                    }
+                }
+            }
         }
 
         public enum DistanceComparisonMode

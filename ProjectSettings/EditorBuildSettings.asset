@@ -5,6 +5,18 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
+<<<<<<< HEAD
+=======
+  - enabled: 1
+    path: Assets/Scenes/KSY/Title_StartButton_KSY.unity
+    guid: 07bf588403b0f3243ab94f9c73fbde81
+  - enabled: 1
+    path: Assets/Scenes/KSY/InGame_KSY.unity
+    guid: cda579a3c2319194193fa6345f88c1e3
+  - enabled: 1
+    path: Assets/Scenes/AL/InGame_AL.unity
+    guid: 5031ff57f2b1c6c47b776274a96bc801
+>>>>>>> ed8c52f05bd77777b5f0e0658cd183995e4f5856
   - enabled: 1
     path: Assets/Scenes/AL/Title_AL.unity
     guid: 338981eb4e456704da9628a8f1f45cf7

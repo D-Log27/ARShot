@@ -20,4 +20,10 @@ public interface IPlayer
     /// Player Dead
     /// </summary>
     void Death();
+
+    /// <summary>
+    /// Heal player
+    /// </summary>
+    /// <param name="point">Healing ammount. default is 10</param>
+    void Heal(int point = 10);
 }

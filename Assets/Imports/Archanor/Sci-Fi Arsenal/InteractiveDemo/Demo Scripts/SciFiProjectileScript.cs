@@ -28,6 +28,7 @@ namespace SciFiArsenal
 
         void OnCollisionEnter(Collision hit)
         {
+            print($"### bullet collision to : {hit.collider.name}");
             if (!hit.collider.name.Contains("Skill")) { 
         
                 if (!hasCollided)

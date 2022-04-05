@@ -14169,6 +14169,7 @@ GameObject:
   - component: {fileID: 114187621239605422}
   - component: {fileID: 114668092806415144}
   - component: {fileID: 114536478374944806}
+  - component: {fileID: 2030050290477172090}
   m_Layer: 0
   m_Name: Missile
   m_TagString: Untagged
@@ -14280,6 +14281,20 @@ MonoBehaviour:
   RunAtStart: 1
   Delay: 0
   LifeTime: 5
+--- !u!136 &2030050290477172090
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1429951055001210}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.14298284
+  m_Height: 0.6224811
+  m_Direction: 2
+  m_Center: {x: -0.0000007333762, y: 0.0013872385, z: 0.18875945}
 --- !u!1 &1742254842183000
 GameObject:
   m_ObjectHideFlags: 0

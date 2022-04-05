@@ -1,0 +1,565 @@
+[33mcommit 5e85ef847d802b7cbe17c49bba136691348be640[m[33m ([m[1;36mHEAD -> [m[1;32mdevelop[m[33m, [m[1;32mdev/KSY[m[33m)[m
+Author: Seon <21codewar@gmail.com>
+Date:   Tue Apr 5 13:21:01 2022 +0900
+
+    중간 작업 병합
+
+[33mcommit 5edbf06529c838b59bca2c35a824c15f27ef0643[m
+Merge: d5d36e7 cab4776
+Author: Seon <21codewar@gmail.com>
+Date:   Tue Apr 5 11:34:34 2022 +0900
+
+    충돌해결
+
+[33mcommit cab4776a28239de957e06a5c179963d9def4fe52[m
+Merge: 03ca96b 8ee48fd
+Author: Seon <21codewar@gmail.com>
+Date:   Tue Apr 5 11:29:51 2022 +0900
+
+    Merge branch 'develop' of https://github.com/tmdtn1608/ARShot into develop
+
+[33mcommit d5d36e7e4824fc992c584ee0abe1fbfdd4f038f9[m
+Author: Seon <21codewar@gmail.com>
+Date:   Tue Apr 5 11:18:56 2022 +0900
+
+    시간여행
+
+[33mcommit 03ca96bbb2e4353c21218c99ca79e200b238f031[m
+Author: Seon <21codewar@gmail.com>
+Date:   Tue Apr 5 11:04:40 2022 +0900
+
+    중간 병합
+
+[33mcommit fe5a5049c94c3125529c5eefee87fe79f8df5bc9[m
+Author: Seon <21codewar@gmail.com>
+Date:   Tue Apr 5 09:53:28 2022 +0900
+
+    승수님꺼 합침
+
+[33mcommit 8ee48fd45ad2f0fa4cf817e841059a3238e16f0c[m
+Author: Seungsu Baek <tmdtn1608@gmail.com>
+Date:   Tue Apr 5 09:46:58 2022 +0900
+
+    220405 중간작업
+
+[33mcommit a1ba2e53b26c8ed68d9bf5388025875e49642c66[m
+Author: Seungsu Baek <tmdtn1608@gmail.com>
+Date:   Tue Apr 5 07:34:55 2022 +0900
+
+    Prefab 폴더 재정리
+
+[33mcommit 67e696325dc9a4f0034fc87f423efcd68f93dc94[m
+Merge: 3512192 25c66ab
+Author: Seon <21codewar@gmail.com>
+Date:   Mon Apr 4 22:43:07 2022 +0900
+
+    Merge branch 'dev/KSY' into develop
+
+[33mcommit 25c66ab80573dccd5b7042ac020023170991cab0[m
+Author: Seon <21codewar@gmail.com>
+Date:   Mon Apr 4 22:41:39 2022 +0900
+
+    모바일 터치로 씬 전환 작동 테스트
+    테스트용으로 쓸 Start버튼 만들어서 모바일 환경에서 터치 시 InGame씬으로
+    넘어가는 거 확인했습니다.
+
+[33mcommit 351219230fafe133518dc7a58703892e2adfab08[m
+Merge: 7503d5f 85fe721
+Author: Seon <21codewar@gmail.com>
+Date:   Sun Apr 3 21:04:48 2022 +0900
+
+    Merge branch 'develop' of https://github.com/tmdtn1608/ARShot into develop
+
+[33mcommit 7503d5f35eabb3ea11d513b8f8965c3bcedef1bc[m
+Author: Seon <21codewar@gmail.com>
+Date:   Sun Apr 3 21:01:18 2022 +0900
+
+    플레이어, 적, 지켜야할 대상 AR로 구현
+
+[33mcommit 85fe721dbc5917d92ede7cac5afcb1c0b4c377ee[m
+Merge: 5976abf dc9245d
+Author: avjg123 <98581287+avjg123@users.noreply.github.com>
+Date:   Sun Apr 3 20:58:29 2022 +0900
+
+    Merge branch 'dev/AL' into develop
+
+[33mcommit dc9245d900188e295e285ea4323ff3c7e9324390[m
+Author: avjg123 <98581287+avjg123@users.noreply.github.com>
+Date:   Sun Apr 3 20:57:47 2022 +0900
+
+    InGame 스킬 버튼 드래그&드랍 구현
+
+[33mcommit 5976abf68b244099e9dc9b60b4319b54a9033760[m
+Author: Seon <21codewar@gmail.com>
+Date:   Sun Apr 3 19:36:07 2022 +0900
+
+    크로스헤어 추가
+
+[33mcommit b7b7dfeca1df63bda7ee72db140cf4ef2dda96b1[m
+Author: Seon <21codewar@gmail.com>
+Date:   Sun Apr 3 14:52:22 2022 +0900
+
+    적 구현을 위한 플레이어 샘플 제작
+    - 적 구현 후 테스트를 하려면 플레이어가 필요한데 기존 플레이어가 증강이
+      안되서 제가 테스트용으로 사용할 플레이어를 제작했습니다. 이제 적
+      구현하겠습니다.
+
+[33mcommit 59412a65239d771f46c4c4d01562eaa07e90f355[m
+Author: Seon <21codewar@gmail.com>
+Date:   Sun Apr 3 10:27:53 2022 +0900
+
+    빌드 테스트를 위한 조이스틱 에셋 다운로드
+    - 에셋명은 "Sci-Fi UI"
+
+[33mcommit fee267c4042a629f6135727ef7d70f039635e178[m
+Author: Seon <21codewar@gmail.com>
+Date:   Sun Apr 3 07:58:25 2022 +0900
+
+    InGame AR작업 시작
+    1. UI 배치
+    2. Core를 카메라 상단에 고정
+
+[33mcommit 9bdab9f83985c70f7bb3d98004add184e85b3e0f[m
+Author: Seon <21codewar@gmail.com>
+Date:   Sat Apr 2 18:09:43 2022 +0900
+
+    빌드할때 오류나는 쉐이더(QFX) 삭제 함
+
+[33mcommit 04d0087f3a8e35fd32c6c2b50ec3485d7bece3aa[m
+Merge: 14d3fba 95e24a1
+Author: Seon <21codewar@gmail.com>
+Date:   Fri Apr 1 18:13:22 2022 +0900
+
+    Merge branch 'develop' of https://github.com/tmdtn1608/ARShot into develop
+
+[33mcommit 14d3fbac98ada0968e490c6bde7187b4de451a12[m
+Author: Seon <21codewar@gmail.com>
+Date:   Fri Apr 1 18:11:42 2022 +0900
+
+    홀로그램이 카메라 앞에 위치하게 수정
+
+[33mcommit 95e24a1c70c81c298f645a38f5e152e9ea51691d[m
+Author: avjg123 <98581287+avjg123@users.noreply.github.com>
+Date:   Fri Apr 1 18:09:59 2022 +0900
+
+    Room 1차 완성, InGame UI 찾는 중
+
+[33mcommit 53c10f8ce7d7199f546d795d7acc4733de67b3d1[m
+Author: Seon <21codewar@gmail.com>
+Date:   Fri Apr 1 09:06:54 2022 +0900
+
+    병합
+
+[33mcommit 3a6021405e490af29c7897172df7213af11c1ffe[m[33m ([m[1;31morigin/dev/BSS[m[33m)[m
+Merge: fbc9329 db16106
+Author: Seungsu Baek <tmdtn1608@gmail.com>
+Date:   Fri Apr 1 07:41:00 2022 +0900
+
+    Merge branch 'develop' into dev/BSS
+
+[33mcommit db16106794143be4912dc5c4ff510002a1b0157e[m
+Author: Seon <21codewar@gmail.com>
+Date:   Fri Apr 1 05:05:44 2022 +0900
+
+    병합
+
+[33mcommit 49ea56023247f7315c0f84d00f901ed01b34e714[m
+Merge: fc9d8be 21e8b9e
+Author: Seon <21codewar@gmail.com>
+Date:   Fri Apr 1 05:05:28 2022 +0900
+
+    충돌해결
+
+[33mcommit fc9d8be45e79f6fb994f32d4c2ece1090c9b7e33[m
+Author: Seon <21codewar@gmail.com>
+Date:   Fri Apr 1 04:53:44 2022 +0900
+
+    씬 수정
+
+[33mcommit fbc9329d502708ffa53a96090fd6b2db35e2feff[m
+Author: Seungsu Baek <tmdtn1608@gmail.com>
+Date:   Thu Mar 31 20:41:37 2022 +0900
+
+    dev/BSS new commit
+
+[33mcommit 21e8b9e5980ce373248fcc8325510cc03369d5e7[m
+Author: Seungsu Baek <tmdtn1608@gmail.com>
+Date:   Thu Mar 31 20:16:26 2022 +0900
+
+    dev/BSS Backup package import
+
+[33mcommit 1fbb4d4d621052c3f98bbf1f97ebebd64c174f73[m
+Author: Seungsu Baek <tmdtn1608@gmail.com>
+Date:   Thu Mar 31 19:14:49 2022 +0900
+
+    resolve EditorBuildSettings.asset conflict
+
+[33mcommit d7a7731487479ae222f23969b16ccf32df9fb15b[m
+Merge: 252337a 625b959
+Author: Seungsu Baek <tmdtn1608@gmail.com>
+Date:   Thu Mar 31 19:11:11 2022 +0900
+
+    Merge branch 'develop' into OldConflict
+
+[33mcommit 252337a78d06435d2d7eef55489952b452048e0e[m
+Merge: 79de046 27932b0
+Author: Seungsu Baek <tmdtn1608@gmail.com>
+Date:   Thu Mar 31 19:10:57 2022 +0900
+
+    Merge commit '27932b04be1191740d3b1dc7145ff2eae5c98749' into OldConflict
+    
+    # Conflicts:
+    #       Assets/FXVShieldEffect.meta
+
+[33mcommit 79de046b7685f5f3efa113a20552cd75d45ffc62[m
+Author: Seungsu Baek <tmdtn1608@gmail.com>
+Date:   Thu Mar 31 19:02:13 2022 +0900
+
+    conflict asset re-import
+
+[33mcommit a6064ce1d8dabaed9351a538df36aa33d8e1cad2[m
+Author: Seungsu Baek <tmdtn1608@gmail.com>
+Date:   Thu Mar 31 18:34:02 2022 +0900
+
+    old conflict 추가
+
+[33mcommit 625b9592a82d691f0fa2960e0cc501f4699d37b4[m
+Merge: 1d3fe4b 27932b0
+Author: avjg123 <98581287+avjg123@users.noreply.github.com>
+Date:   Thu Mar 31 18:09:00 2022 +0900
+
+    충돌 해결 빌드 세팅 설정
+
+[33mcommit 1d3fe4ba01920e521ce5ab7e56e8e743b2c8e8cd[m
+Merge: cbb5a6b daa2b98
+Author: avjg123 <98581287+avjg123@users.noreply.github.com>
+Date:   Thu Mar 31 18:02:08 2022 +0900
+
+    충돌해결 직전 작업내용 날아감..
+
+[33mcommit cbb5a6bf5271ac16f02a5e0ae800b09540424d50[m
+Author: avjg123 <98581287+avjg123@users.noreply.github.com>
+Date:   Thu Mar 31 17:56:02 2022 +0900
+
+    UI 연결 완료
+
+[33mcommit daa2b98c9e62d335d1e489df7d924b3130bf47e9[m
+Author: avjg123 <98581287+avjg123@users.noreply.github.com>
+Date:   Thu Mar 31 17:54:52 2022 +0900
+
+    UI 연결 완료
+
+[33mcommit 27932b04be1191740d3b1dc7145ff2eae5c98749[m
+Merge: a529c5c f238225
+Author: Seon <21codewar@gmail.com>
+Date:   Thu Mar 31 16:52:36 2022 +0900
+
+    충돌해결
+
+[33mcommit a529c5cb681bc1c163f677677b7406e7fbdb9f1f[m
+Author: Seon <21codewar@gmail.com>
+Date:   Thu Mar 31 16:35:42 2022 +0900
+
+    홀로그램 브리핑씬 추가
+
+[33mcommit 4d8b999ad2bae9b6ac57a16a8ff2ccacbef84697[m
+Author: Seon <21codewar@gmail.com>
+Date:   Thu Mar 31 01:49:47 2022 +0900
+
+    재 업로드
+
+[33mcommit c0a6575389f9bc194a91c1522c99fb4348348291[m
+Author: Seon <21codewar@gmail.com>
+Date:   Thu Mar 31 01:39:21 2022 +0900
+
+    인트로 AR 홀로그램씬 프로토타입 완성
+
+[33mcommit f23822567e285b3bbf06253d62d71766e998d2e1[m
+Author: avjg123 <98581287+avjg123@users.noreply.github.com>
+Date:   Wed Mar 30 22:46:12 2022 +0900
+
+    룸UI 버튼 클릭 실패 해결 중
+
+[33mcommit 3d78e83cc038b00fb5ffa908b060e0fa7ee901b2[m
+Merge: 4e64861 4dd513b
+Author: avjg123 <98581287+avjg123@users.noreply.github.com>
+Date:   Wed Mar 30 18:21:01 2022 +0900
+
+    Merge branch 'develop' of https://github.com/tmdtn1608/ARShot into develop
+
+[33mcommit 4e64861453387149a5f45b455608e3ace4352e37[m
+Author: avjg123 <98581287+avjg123@users.noreply.github.com>
+Date:   Wed Mar 30 18:20:23 2022 +0900
+
+    충돌해결
+
+[33mcommit 92f094babd601616042b77c9acc12250c71eaa17[m
+Author: avjg123 <98581287+avjg123@users.noreply.github.com>
+Date:   Wed Mar 30 17:57:19 2022 +0900
+
+    룸 UI 작업 중
+
+[33mcommit 4dd513b0578753833ea84dfbf4085d88b3967616[m
+Author: Seungsu Baek <tmdtn1608@gmail.com>
+Date:   Wed Mar 30 14:36:58 2022 +0900
+
+    스킬용 에셋 추가
+
+[33mcommit 3f6ce7c5aa80f8133448d7b4d1a257c4720644dc[m
+Merge: 17c977d ce80e59
+Author: Seon <21codewar@gmail.com>
+Date:   Tue Mar 29 19:31:34 2022 +0900
+
+    Merge branch 'develop' of https://github.com/tmdtn1608/ARShot into develop
+
+[33mcommit 17c977d7aae404ec7de715b650308d6e2128739f[m
+Author: Seon <21codewar@gmail.com>
+Date:   Tue Mar 29 19:25:02 2022 +0900
+
+    인트로씬 홀로그램 디자인 변경
+
+[33mcommit ce80e593d259cc5a408d6514f611b8262aebd94e[m
+Author: Seungsu Baek <tmdtn1608@gmail.com>
+Date:   Tue Mar 29 19:21:22 2022 +0900
+
+    curved ui 에셋 추가 및 title-room scene 연결
+
+[33mcommit 9cf2941170aaef984c66c6882b89b6c27a619651[m
+Merge: a0ea4bf cdc455f
+Author: Seungsu Baek <tmdtn1608@gmail.com>
+Date:   Tue Mar 29 16:14:56 2022 +0900
+
+    Merge branch 'dev/BSS' into develop
+
+[33mcommit cdc455f3d2c0c0ede90bd30d39a2ea02670b6b76[m
+Author: Seungsu Baek <tmdtn1608@gmail.com>
+Date:   Tue Mar 29 16:12:46 2022 +0900
+
+    총기 및 총알 에셋, 이펙트 추가
+
+[33mcommit a0ea4bf9a1d0f5a81d23b8e733c67dcd27206284[m
+Merge: 10eb614 09d2f8b
+Author: avjg123 <98581287+avjg123@users.noreply.github.com>
+Date:   Tue Mar 29 15:33:44 2022 +0900
+
+    충돌해결
+
+[33mcommit 10eb61485cda66491afdbc6d811f63a50f8ebcaa[m
+Author: avjg123 <98581287+avjg123@users.noreply.github.com>
+Date:   Tue Mar 29 14:49:05 2022 +0900
+
+    룸, 인게임, 타이틀 씬 작업
+
+[33mcommit 09d2f8b6fdeb1f91b130dc24c6b9e92cc7ed56c2[m
+Author: Seon <21codewar@gmail.com>
+Date:   Tue Mar 29 12:40:44 2022 +0900
+
+    AR 인트로 씬에 쓸 프리팹 옮김
+
+[33mcommit 85b4682a057d90b6f1c9f0a18c5407168118ef3d[m
+Author: Seungsu Baek <tmdtn1608@gmail.com>
+Date:   Tue Mar 29 10:53:47 2022 +0900
+
+    구매에셋 추가 및 미사용 에셋 삭제 / Alpha버전 총기 추가작업 진행중
+
+[33mcommit 5834bfcffa831e3a7f263d7dda8915733060ca77[m
+Author: Seungsu Baek <tmdtn1608@gmail.com>
+Date:   Sun Mar 27 15:07:32 2022 +0900
+
+    Photon 로비 접속 및 방 접속시 loading 표시 추가
+
+[33mcommit c4894b97e289b4eecabe45a0045ceff419ba73bd[m
+Merge: d781cd6 f57d8d9
+Author: Seon <21codewar@gmail.com>
+Date:   Sat Mar 26 15:40:03 2022 +0900
+
+    오류해결
+
+[33mcommit d781cd64dee1022d92bf9c8c6fc99ce4fe2712f7[m
+Author: Seon <21codewar@gmail.com>
+Date:   Sat Mar 26 14:35:11 2022 +0900
+
+    홀로그램브리핑추가
+
+[33mcommit f57d8d930a4dc7b2fa34798be15c78bb4c3618fb[m
+Author: Seungsu Baek <tmdtn1608@gmail.com>
+Date:   Fri Mar 25 14:51:07 2022 +0900
+
+    사망 및 게임오버 기능 구현
+
+[33mcommit 83efa883bf320f3f97af2c61e18c242a5c1014ba[m
+Author: Seon <21codewar@gmail.com>
+Date:   Fri Mar 25 08:56:57 2022 +0900
+
+    세로축 평면에 지킬 대상이 위치하도록 작업
+
+[33mcommit a4d96b743f03e8d559a1aff44541172401ccd336[m
+Author: Seungsu Baek <tmdtn1608@gmail.com>
+Date:   Thu Mar 24 18:56:27 2022 +0900
+
+    적 쉴드 추가 / VIP 및 플레이어 체력쉴드 / 사망 및 게임오버 기능 구현중 (MissingReferenceException)
+
+[33mcommit 1b4cf931f977276dd6bb462b23a05b0969e3fee2[m
+Merge: db14a06 8c9b290
+Author: Seungsu Baek <tmdtn1608@gmail.com>
+Date:   Thu Mar 24 17:16:46 2022 +0900
+
+    Merge branch 'dev/BSS' into develop
+
+[33mcommit 8c9b2904b12d641116a4cdda66b4781483ad27a1[m
+Author: Seungsu Baek <tmdtn1608@gmail.com>
+Date:   Thu Mar 24 17:14:45 2022 +0900
+
+    Enemy spawn 및 공격기능 for alpha
+
+[33mcommit db14a064ec49815ab43c53f3855e514f77ae036f[m
+Merge: 69b5736 27fd2fb
+Author: Seon <21codewar@gmail.com>
+Date:   Thu Mar 24 14:10:57 2022 +0900
+
+    충돌 해결 - ProjectSettings
+
+[33mcommit 69b5736e322c37ba0fc8429c99dbd1e114292f87[m
+Author: Seon <21codewar@gmail.com>
+Date:   Thu Mar 24 14:05:37 2022 +0900
+
+    UserSettings 폴더 삭제
+
+[33mcommit 4e6a153aa50d33e77140c30d4ea8de35689f3383[m
+Author: Seon <21codewar@gmail.com>
+Date:   Thu Mar 24 13:52:51 2022 +0900
+
+    Photon 추가됨
+
+[33mcommit 6327c5fed192bbf3c8b84267f882f3dc117a8c27[m
+Author: Seon <21codewar@gmail.com>
+Date:   Wed Mar 23 21:20:23 2022 +0900
+
+    홀로그램 크기 및 머테리얼 수정했음
+
+[33mcommit bc19878ecaec29884663644778eead44bf240a69[m
+Author: Seon <21codewar@gmail.com>
+Date:   Wed Mar 23 17:44:17 2022 +0900
+
+    마커인식으로 브리핑 홀로그램을 AR로 구현한 씬 추가
+
+[33mcommit 27fd2fbfa925be6c4703af68735569586e41b710[m
+Author: Seungsu Baek <tmdtn1608@gmail.com>
+Date:   Wed Mar 23 16:55:01 2022 +0900
+
+    comment typo
+
+[33mcommit 0b6e1000374d9849ede7eb15f76bc3ad47901f7d[m
+Merge: d9ce5c3 a1fc87c
+Author: Seungsu Baek <tmdtn1608@gmail.com>
+Date:   Wed Mar 23 16:44:51 2022 +0900
+
+    Merge branch 'develop' into dev/BSS
+    
+    # Conflicts:
+    #       ProjectSettings/EditorBuildSettings.asset
+
+[33mcommit d9ce5c31e3ec1d5843f82e03994378e7833a8e11[m
+Author: Seungsu Baek <tmdtn1608@gmail.com>
+Date:   Wed Mar 23 16:41:36 2022 +0900
+
+    포톤네트워크 서버 연결
+
+[33mcommit a1fc87c7686b04a3a2b67c34071f18e7780892d3[m
+Author: Seon <21codewar@gmail.com>
+Date:   Wed Mar 23 14:57:58 2022 +0900
+
+    홀로그램 작업
+
+[33mcommit bef12a0568a8da07e44bc1394d1167044c46fff1[m
+Author: Seon <21codewar@gmail.com>
+Date:   Wed Mar 23 09:56:57 2022 +0900
+
+    마커인식으로 AR 홀로그램 구현 테스트
+
+[33mcommit 242ddbc69d1aa81aac4750baea44687253eccb2c[m
+Author: Seungsu Baek <tmdtn1608@gmail.com>
+Date:   Tue Mar 22 16:41:21 2022 +0900
+
+    유니티 기반 alpha 버전 제작
+
+[33mcommit f63515fd4b7f984ee27b9fe6589cfea00b667721[m
+Merge: da71dfb 31bc6b7
+Author: Seon <21codewar@gmail.com>
+Date:   Mon Mar 21 17:53:37 2022 +0900
+
+    Merge branch 'develop' of https://github.com/tmdtn1608/ARShot into develop
+
+[33mcommit 31bc6b71fce7804970ffe4e3dd3ae349e30e0b01[m
+Author: Seungsu Baek <tmdtn1608@gmail.com>
+Date:   Mon Mar 21 16:29:23 2022 +0900
+
+    글로벌 설정 json화 기능 추가
+
+[33mcommit 716b46301cfda48a512ff574bc29d840dd1bac41[m
+Merge: 0f406ba 017a31f
+Author: Seungsu Baek <tmdtn1608@gmail.com>
+Date:   Mon Mar 21 12:39:30 2022 +0900
+
+    Merge remote-tracking branch 'origin/develop' into dev/BSS
+
+[33mcommit 0f406ba0e81ca38edd1c750d01850c91c9138e02[m
+Author: Seungsu Baek <tmdtn1608@gmail.com>
+Date:   Mon Mar 21 11:58:42 2022 +0900
+
+    220321 오전작업
+
+[33mcommit da71dfb7c2d5a13fb05ee4cf0ea23eaa85fa7227[m
+Author: Seon <21codewar@gmail.com>
+Date:   Mon Mar 21 09:29:58 2022 +0900
+
+    AR 테스트 씬 추가
+
+[33mcommit 017a31f6fe2782b771e5908ed52c2eea5d36f478[m
+Author: avjg123 <98581287+avjg123@users.noreply.github.com>
+Date:   Thu Mar 17 17:55:50 2022 +0900
+
+    Room UI 작업 중
+
+[33mcommit d33da2d1e22de7bba2ba854f74e4195c054bcb3e[m
+Merge: 32c4537 a75bb21
+Author: Seon <21codewar@gmail.com>
+Date:   Thu Mar 17 09:40:19 2022 +0900
+
+    Merge branch 'develop' of https://github.com/tmdtn1608/ARShot into develop
+
+[33mcommit a75bb212f0c7e1f82f0f594674bdbcee90499269[m
+Author: Seungsu Baek <tmdtn1608@gmail.com>
+Date:   Thu Mar 17 09:34:18 2022 +0900
+
+    add gitignore usersettings
+
+[33mcommit 32c453731e6c047681e2a54edb3ba98b29e30b3a[m
+Author: Seon <21codewar@gmail.com>
+Date:   Thu Mar 17 09:33:25 2022 +0900
+
+    Title씬과 Option씬 추가
+
+[33mcommit 492f0cb216aadf5548aae96bb2193e9c0b7c6be4[m
+Author: Seungsu Baek <tmdtn1608@gmail.com>
+Date:   Wed Mar 16 16:05:41 2022 +0900
+
+    wifi AP 정보 스크립트 작성
+
+[33mcommit cad1efdfc141eabe03ce9a2441b27baee628012b[m
+Author: Seungsu Baek <tmdtn1608@gmail.com>
+Date:   Wed Mar 16 07:58:43 2022 +0900
+
+    프로젝트 기본 설정
+
+[33mcommit ffb703ff2b302645df43612fc588bf40711ee17b[m
+Author: Seungsu Baek <tmdtn1608@gmail.com>
+Date:   Tue Mar 15 08:29:55 2022 +0900
+
+    add gitattributes
+
+[33mcommit ee1cc4ef09b3224b456412e51cd86cf68d391b04[m[33m ([m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: Seungsu Baek <tmdtn1608@gmail.com>
+Date:   Mon Mar 14 17:53:01 2022 +0900
+
+    Initial commit
