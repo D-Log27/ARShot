@@ -12,6 +12,10 @@ using UnityEngine.SceneManagement;
 
 public class RoomManager : MonoBehaviour
 {
+    
+    //뒤로 가기 버튼
+    public Button btnBackToTitle;
+
     //Starting in n Seconds
     public TMP_Text loadingGame;
 
@@ -34,18 +38,13 @@ public class RoomManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //초기 설정; unity play 전에 설정 잘 해 놓으면 사실 start 함수 전체 필요 없음
         canvasChanging.gameObject.SetActive(false);
         for (int i = 0; i < 4; i++)
         {
-            playerGettingReady[i].alpha = 1;
-            playerGettingReady[i].interactable = true;
-            playerGettingReady[i].blocksRaycasts = true;
-            playerReady[i].alpha = 0;
-            playerReady[i].interactable = false;
-            playerReady[i].blocksRaycasts = false;
-            playerReadyed[i].alpha = 0;
-            playerReadyed[i].interactable = false;
-            playerReadyed[i].blocksRaycasts = false;
+            CanvasGroupOnOff(playerGettingReady[i], On);
+            CanvasGroupOnOff(playerReady[i], Off);
+            CanvasGroupOnOff(playerReadyed[i], Off);
         }
     }
 
@@ -67,7 +66,7 @@ public class RoomManager : MonoBehaviour
                 case "Btn_NextClass": OnClickNextClass(btn); btn = null; break;
                 case "Btn_SetReady": OnClickReady(btn); btn = null; break;
                 case "Btn_ReadyCancel": OnClickReadyCancel(btn); btn = null; break;
-                case "Btn_ReadyedCancel": OnClickReadyedCancel(btn); btn = null; break;
+                //case "Btn_ReadyedCancel": OnClickReadyedCancel(btn); btn = null; break;
                 default: break;
             }
         }
@@ -105,35 +104,23 @@ public class RoomManager : MonoBehaviour
     /// </summary>
     public void OnClickReady(GameObject currentSelectedGameObject)
     {
-        print("1. 함수 시작");
         CanvasGroup cGrp1 = currentSelectedGameObject.GetComponentInParent<CanvasGroup>();
         CanvasGroup cGrp2 = currentSelectedGameObject.transform.parent.parent.GetChild(1).GetComponent<CanvasGroup>();
-        cGrp1.alpha = 0;
-        cGrp1.interactable = false;
-        cGrp1.blocksRaycasts = false;
-        cGrp2.alpha = 1;
-        cGrp2.interactable = true;
-        cGrp2.blocksRaycasts = true;
+        CanvasGroupOnOff(cGrp1, Off);
+        CanvasGroupOnOff(cGrp2, On);
 
-        print("2. if 전");
         if (playerReady[0].alpha == 1 && playerReady[1].alpha == 1 && playerReady[2].alpha == 1 && playerReady[3].alpha == 1)
         {
-            print("3. if 들어옴");
             for (int i = 0; i < 4; i++)
             {
-                playerReady[i].alpha = 0;
-                playerReady[i].interactable = false;
-                playerReady[i].blocksRaycasts = false;
-                playerReadyed[i].alpha = 1;
-                playerReadyed[i].interactable = true;
-                playerReadyed[i].blocksRaycasts = true;
+                CanvasGroupOnOff(playerReady[i], Off);
+                CanvasGroupOnOff(playerReadyed[i], On);
             }
 
-            print("포문 끝남");
             loadingGame.text = "Starting in 5 Seconds";
             sec = 5;
             canvasChanging.gameObject.SetActive(true);
-            print("if 안 마지막 문장");
+            btnBackToTitle.gameObject.SetActive(false);
         }
     }
 
@@ -144,14 +131,11 @@ public class RoomManager : MonoBehaviour
     {
         CanvasGroup cGrp1 = currentSelectedGameObject.GetComponentInParent<CanvasGroup>();
         CanvasGroup cGrp2 = currentSelectedGameObject.transform.parent.parent.GetChild(0).GetComponent<CanvasGroup>();
-        cGrp1.alpha = 0;
-        cGrp1.interactable = false;
-        cGrp1.blocksRaycasts = false;
-        cGrp2.alpha = 1;
-        cGrp2.interactable = true;
-        cGrp2.blocksRaycasts = true;
+        CanvasGroupOnOff(cGrp1, Off);
+        CanvasGroupOnOff(cGrp2, On);
     }
 
+    /*ReadyedCancel(미사용)
     /// <summary>
     /// 게임 로딩 중인 상황에서 준비 취소
     /// </summary>
@@ -178,11 +162,37 @@ public class RoomManager : MonoBehaviour
         canvasGrp2.alpha = 1;
         canvasGrp2.interactable = true;
         canvasGrp2.blocksRaycasts = true;
-    }
+    }*/
+    
 
     public void OnClickBackToTitle()
     {
-        PhotonNetwork.LeaveRoom();
-        SceneManager.LoadScene("Title_Test");
+        //PhotonNetwork.LeaveRoom();
+        //SceneManager.LoadScene("Title_Test");
+        SceneManager.LoadScene("Title_AL");
     }
+    
+    /// <summary>
+    /// CanvasGroup 설정 변경 간소화
+    /// </summary>
+    void CanvasGroupOnOff(CanvasGroup cGrp, String OnOff)
+    {
+        if (OnOff == On)
+        {
+            cGrp.alpha = 1;
+            cGrp.interactable = true;
+            cGrp.blocksRaycasts = true;
+        }
+        else
+        {
+            cGrp.alpha = 0;
+            cGrp.interactable = false;
+            cGrp.blocksRaycasts = false;
+        }
+    }string On = "On"; string Off = "Off";
+
+    //void SetActive(var i, bool )
+    //{
+    //    i.gameObject.SetActive();
+    //}
 }
