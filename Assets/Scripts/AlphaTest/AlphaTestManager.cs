@@ -5,10 +5,27 @@ using UnityEngine;
 public class AlphaTestManager : MonoBehaviour
 {
     Transform guns;
+    private void Awake()
+    {
+
+        
+
+  
+    }
     // Start is called before the first frame update
     void Start()
     {
         guns = GameObject.Find("Gun").transform;
+#if UNITY_EDITOR
+        foreach (Camera camera in Camera.allCameras)
+        {
+            camera.gameObject.SetActive(true);
+        }
+        print(GameObject.Find("AR Session Origin"));
+        //GameObject.Find("AR Session Origin").SetActive(true);
+#elif PLATFORM_ANDROID
+
+#endif     
     }
 
     // Update is called once per frame

@@ -3647,7 +3647,6 @@ MonoBehaviour:
   - {fileID: 196444, guid: 5120dcf2ecf476e4cab8de664d1e7a67, type: 3}
   - {fileID: 154426, guid: fbd12447a13aad5439cdba265fadb8a4, type: 3}
   skillTransform: {fileID: 358977094}
-  skill: {fileID: 2714759993312264325, guid: 4eb5a8d057e276440b0187eff7d6b829, type: 3}
 --- !u!4 &921411254 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5366678251301100291, guid: 940f1c8c3d2ae41c1be4d264b8072c5a, type: 3}
@@ -3997,7 +3996,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1049200102
 Transform:
   m_ObjectHideFlags: 0
@@ -4278,7 +4277,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1161371195
 Transform:
   m_ObjectHideFlags: 0

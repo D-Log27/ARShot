@@ -8,10 +8,10 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/KSY/Title_StartButton_KSY.unity
     guid: 07bf588403b0f3243ab94f9c73fbde81
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/KSY/InGame_KSY.unity
     guid: cda579a3c2319194193fa6345f88c1e3
   - enabled: 1
