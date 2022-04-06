@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 13550246}
   - component: {fileID: 5477538}
   - component: {fileID: 11442042}
+  - component: {fileID: -6832217183543888411}
   m_Layer: 11
   m_Name: PistolBullet_5
   m_TagString: Untagged
@@ -88,3 +89,15 @@ MonoBehaviour:
   muzzleParticle: {fileID: 109106, guid: 3fcbc3d2087395d4abd3ca66488a608d, type: 3}
   trailParticles: []
   impactNormal: {x: 0, y: 0, z: 0}
+--- !u!114 &-6832217183543888411
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 154426}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cee3e410175d630449fad62fa8b4ff1e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

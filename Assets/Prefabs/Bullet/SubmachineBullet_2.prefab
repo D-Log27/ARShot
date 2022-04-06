@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 13502978}
   - component: {fileID: 5492658}
   - component: {fileID: 11436952}
+  - component: {fileID: 7921795016943574307}
   m_Layer: 11
   m_Name: SubmachineBullet_2
   m_TagString: Untagged
@@ -88,3 +89,15 @@ MonoBehaviour:
   muzzleParticle: {fileID: 155370, guid: 305b569edd0d3064dbacb12c18cd793c, type: 3}
   trailParticles: []
   impactNormal: {x: 0, y: 0, z: 0}
+--- !u!114 &7921795016943574307
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 176594}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cee3e410175d630449fad62fa8b4ff1e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
