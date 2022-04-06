@@ -11,7 +11,11 @@ public class TankerSkill : MonoBehaviour
     void Start()
     {
         skillStatusDTO = new SkillStatusDTO();
-        GetComponent<ParticleSystem>().Stop();
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        print($"collision name  : {collision.collider.name}");
     }
 
     // Update is called once per frame

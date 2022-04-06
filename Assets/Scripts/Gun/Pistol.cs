@@ -7,7 +7,7 @@ using UnityEngine;
 /// <summary>
 /// ±ÇÃÑ Å×½ºÆ®
 /// </summary>
-public class Pistol : MonoBehaviour, IPlayerGun, IPlayer
+public class Pistol : MonoBehaviour, IPlayerGun
 {
     CharacterInfoDTO characterInfoDTO;
     UnitStatusDTO playerStatusDTO;
@@ -18,6 +18,7 @@ public class Pistol : MonoBehaviour, IPlayerGun, IPlayer
     Transform weaponPos;
     Transform reactPivot;
     public Transform skillTransform;
+    public GameObject skill;
     SFX_MouseControlledObjectLauncher dealerSkill;
 
     // FOR DEVELOP
@@ -27,8 +28,8 @@ public class Pistol : MonoBehaviour, IPlayerGun, IPlayer
     // Start is called before the first frame update
     void Start()
     {
-        characterInfoDTO = new CharacterInfoDTO("Healer", 100, 100);
-        if (!ObjectManager.objectDic.ContainsKey("Pistol")) ObjectManager.objectDic.Add("Pistol", this.gameObject);
+        characterInfoDTO = new CharacterInfoDTO("Healer");
+        ObjectManager.SaveObject("Pistol", this.gameObject);
         weaponPos = this.transform.Find("Pistol");
         reactPivot = this.transform.Find("ReactPivot");
         playerStatusDTO = new UnitStatusDTO(100, 100);
@@ -38,7 +39,7 @@ public class Pistol : MonoBehaviour, IPlayerGun, IPlayer
         horizontal = 0f;
         ammoDTO = new AmmoDTO(7,7);
         rayStartpoint = this.transform.Find("GunRayPoint").transform;
-        dealerSkill = skillTransform.Find("DealerSkill").GetComponentInChildren<SFX_MouseControlledObjectLauncher>();
+        //dealerSkill = skillTransform.Find("DealerSkill").GetComponentInChildren<SFX_MouseControlledObjectLauncher>();
     }
 
     // Update is called once per frame
@@ -55,7 +56,7 @@ public class Pistol : MonoBehaviour, IPlayerGun, IPlayer
 
         if (Input.GetMouseButtonDown(1))
         {
-            dealerSkill.isShotGun = false;
+            //dealerSkill.isShotGun = false;
             Skill();
         }
 
@@ -64,7 +65,7 @@ public class Pistol : MonoBehaviour, IPlayerGun, IPlayer
         vertical = Input.GetAxis("Vertical");
         horizontal = Input.GetAxis("Horizontal");
         Vector3 dir = (Vector3.forward * vertical) + (Vector3.right * horizontal);
-        this.transform.position += dir.normalized * Time.deltaTime * 1f;
+        this.transform.position += dir.normalized * Time.deltaTime * 3f;
         
 #endif
 
@@ -78,7 +79,7 @@ public class Pistol : MonoBehaviour, IPlayerGun, IPlayer
         GameObject bullet = Instantiate(bulletPrefab[0]);
         //bullet.GetComponent<BulletTest>().SetTarget(point);
         bullet.transform.position = rayStartpoint.position;
-        bullet.transform.parent = this.transform;
+        //bullet.transform.parent = this.transform;
         bullet.name = "Pistol_bullet";
         bullet.GetComponent<Rigidbody>().AddForce(bullet.transform.forward * 1000);
 
@@ -149,6 +150,7 @@ public class Pistol : MonoBehaviour, IPlayerGun, IPlayer
             if(hit.collider != null)
             {
                 GameObject skill = skillTransform.Find("HealerSkill").gameObject;
+                //GameObject skill = Instantiate(this.skill, hit.point, Quaternion.identity);
                 skill.GetComponent<FXVShield>().SetShieldActive(true);
                 skill.transform.position = hit.point;
 
@@ -156,4 +158,8 @@ public class Pistol : MonoBehaviour, IPlayerGun, IPlayer
         }
     }
 
+    public void Heal(int point)
+    {
+        if (playerStatusDTO.hp < 100) playerStatusDTO.hp += point;
+    }
 }

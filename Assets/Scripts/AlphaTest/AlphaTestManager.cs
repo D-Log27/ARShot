@@ -5,10 +5,17 @@ using UnityEngine;
 public class AlphaTestManager : MonoBehaviour
 {
     Transform guns;
+    private void Awake()
+    {
+
+        
+
+  
+    }
     // Start is called before the first frame update
     void Start()
     {
-        guns = GameObject.Find("Gun").transform;
+        guns = GameObject.Find("Gun").transform;   
     }
 
     // Update is called once per frame

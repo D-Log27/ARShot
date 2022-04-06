@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2737032491067900069}
   - component: {fileID: 2611634245491933967}
   - component: {fileID: 2615458275276758479}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: HealerSkill
   m_TagString: Untagged
   m_Icon: {fileID: 0}

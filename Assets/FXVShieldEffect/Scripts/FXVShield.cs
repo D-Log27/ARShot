@@ -57,7 +57,6 @@ namespace FXV
 
         void Awake()
         {
-            print($"### this object is :{this.gameObject.name}");
             myRenderer = GetComponent<Renderer>();
             activationTimeProperty = Shader.PropertyToID("_ActivationTime");
             shieldDirectionProperty = Shader.PropertyToID("_ShieldDirection");
@@ -154,6 +153,11 @@ namespace FXV
 
             SetMaterial(myRenderer.material);
             SetHitMaterial(hitMaterial);
+        }
+
+        private void Start()
+        {
+            //SetShieldActive(true);
         }
 
         void OnDestroy()

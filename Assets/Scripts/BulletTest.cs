@@ -20,7 +20,6 @@ public class BulletTest : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
         if (dir.Equals(Vector3.zero)) dir = Vector3.forward;
         //this.transform.LookAt(dir);
         this.transform.position += dir * bulletSpeed * Time.deltaTime;
@@ -40,12 +39,12 @@ public class BulletTest : MonoBehaviour
         print($"### bullet collision name check : {collision.gameObject.name}");
         if (collision.gameObject.name.Contains("Ground"))
         {
-            collision.gameObject.GetComponent<GroundEnemy>().Damaged();
+            collision.gameObject.GetComponent<IEnemy>().Damaged();
 
         }
         else if(collision.gameObject.name.Contains("Air"))
         {
-            collision.gameObject.GetComponent<AirEnemy>().Damaged();
+            collision.gameObject.GetComponent<IEnemy>().Damaged();
         }
         if (collision.gameObject.CompareTag("VIP"))
         {
