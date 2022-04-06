@@ -25094,7 +25094,7 @@ GameObject:
   - component: {fileID: 4664351719533509643}
   - component: {fileID: 4664351719533509640}
   m_Layer: 0
-  m_Name: BriefingManager
+  m_Name: Briefing
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
