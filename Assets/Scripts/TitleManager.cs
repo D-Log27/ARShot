@@ -35,7 +35,7 @@ public class TitleManager : MonoBehaviour
     public void OnClickOptionButton()
     {
         print("### option OnClick Check");
-        SceneManager.LoadScene("Options_AL");
+        SceneManager.LoadScene("Option_AL");
     }
 
     /// <summary>
