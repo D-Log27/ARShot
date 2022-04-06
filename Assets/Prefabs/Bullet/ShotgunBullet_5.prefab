@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 13595516}
   - component: {fileID: 5424318}
   - component: {fileID: 11450830}
+  - component: {fileID: 1300519173346580467}
   m_Layer: 11
   m_Name: ShotgunBullet_5
   m_TagString: Untagged
@@ -88,3 +89,15 @@ MonoBehaviour:
   muzzleParticle: {fileID: 146450, guid: 189837baf0e34034881c61044f6b2aaa, type: 3}
   trailParticles: []
   impactNormal: {x: 0, y: 0, z: 0}
+--- !u!114 &1300519173346580467
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 158282}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cee3e410175d630449fad62fa8b4ff1e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
