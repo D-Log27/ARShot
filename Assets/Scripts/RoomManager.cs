@@ -1,4 +1,4 @@
-using Photon.Pun;
+//using Photon.Pun;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,12 +12,20 @@ using UnityEngine.SceneManagement;
 
 public class RoomManager : MonoBehaviour
 {
-
     //뒤로 가기 버튼
     public Button btnBackToTitle;
 
     //Starting in n Seconds
     public TMP_Text loadingGame;
+
+    //방제목
+    public TMP_Text roomID;
+
+    //클래스 선택 버튼 및 캔버스그룹
+    public Button[] btnPrevious;
+    public Button[] btnNext;
+    public CanvasGroup[] cGrpPrevious;
+    public CanvasGroup[] cGrpNext;
 
     //InGame 로딩 시간
     float sec;
@@ -31,6 +39,12 @@ public class RoomManager : MonoBehaviour
 
     //게임 로드시 플레이어 패널
     public CanvasGroup[] playerReadyed;
+
+    //클래스 선택
+    public CanvasGroup[] playerClass;
+    public CanvasGroup[] player_1Class;
+    public CanvasGroup[] player_2Class;
+    public CanvasGroup[] player_3Class;
 
     //값이 변하는 UI가 있는 캔버스 트랜스폼(현재 씬에서는 InGame 로딩 텍스트가 유일)
     public Transform canvasChanging;
@@ -62,8 +76,8 @@ public class RoomManager : MonoBehaviour
         {
             switch (btn.name)
             {
-                case "Btn_PreviousClass": OnClickPreviousClass(btn); btn = null; break;
-                case "Btn_NextClass": OnClickNextClass(btn); btn = null; break;
+                case "Btn_PreviousClass": OnClickPrevious(btn); btn = null; break;
+                case "Btn_NextClass": OnClickNext(btn); btn = null; break;
                 case "Btn_SetReady": OnClickReady(btn); btn = null; break;
                 case "Btn_ReadyCancel": OnClickReadyCancel(btn); btn = null; break;
                 //case "Btn_ReadyedCancel": OnClickReadyedCancel(btn); btn = null; break;
@@ -86,15 +100,18 @@ public class RoomManager : MonoBehaviour
     /// <summary>
     /// 버튼 클릭시 이전 클래스 보임
     /// </summary>
-    public void OnClickPreviousClass(GameObject currentSelectedGameObject)
+    public void OnClickPrevious(GameObject currentSelectedGameObject)
     {
-
+        //if (player1Class[0].alpha == 1)
+        //{
+            
+        //}
     }
 
     /// <summary>
     /// 버튼 클릭시 다음 클래스 보임
     /// </summary>
-    public void OnClickNextClass(GameObject currentSelectedGameObject)
+    public void OnClickNext(GameObject currentSelectedGameObject)
     {
 
     }

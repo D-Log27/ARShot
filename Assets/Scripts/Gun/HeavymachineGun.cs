@@ -72,10 +72,11 @@ public class HeavymachineGun : MonoBehaviour, IPlayerGun
         Vector3 point = rayStartpoint.position - this.transform.position;
 
         GameObject bullet = Instantiate(bulletPrefab[0]);
-        //bullet.GetComponent<BulletTest>().SetTarget(point);
-        bullet.transform.position = rayStartpoint.position;
         bullet.name = "HeavymachineGun_bullet";
-        bullet.GetComponent<Rigidbody>().AddForce(bullet.transform.forward * 1000);
+        bullet.transform.LookAt(Camera.main.transform.forward);
+        bullet.transform.position = rayStartpoint.position;
+        //bullet.GetComponent<Rigidbody>().AddForce(bullet.transform.forward * 1000);
+        bullet.GetComponent<Rigidbody>().AddForce(Camera.main.transform.forward * 1000);
         ammoDTO.currentAmmoCnt--;
         print($"ammo : {ammoDTO.currentAmmoCnt}");
         if (ammoDTO.currentAmmoCnt == 0) Reload();

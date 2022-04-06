@@ -6,6 +6,21 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/AL/Title_AL.unity
+    guid: 338981eb4e456704da9628a8f1f45cf7
+  - enabled: 1
+    path: Assets/Scenes/AL/Option_AL.unity
+    guid: 6eca59bf43eadd84fa3c62b10d748726
+  - enabled: 1
+    path: Assets/Scenes/AL/Room_AL.unity
+    guid: 922dcaa36df0e18438bec8ffcd393f5c
+  - enabled: 1
+    path: Assets/Scenes/AL/InGame_AL.unity
+    guid: 5031ff57f2b1c6c47b776274a96bc801
+  - enabled: 0
+    path: Assets/Scenes/AlphaTestScene.unity
+    guid: 655e359c3ddc57c4caae7556447f89eb
+  - enabled: 1
     path: Assets/Scenes/S2B/InGame_S2B.unity
     guid: 9dcdabb8f0bf02041ae1222d1cb37ab7
   m_configObjects:

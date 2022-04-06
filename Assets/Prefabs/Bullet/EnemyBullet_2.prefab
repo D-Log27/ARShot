@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 13563056}
   - component: {fileID: 5468472}
   - component: {fileID: 11496924}
+  - component: {fileID: 7499469082560051815}
   m_Layer: 11
   m_Name: EnemyBullet_2
   m_TagString: Untagged
@@ -88,3 +89,15 @@ MonoBehaviour:
   muzzleParticle: {fileID: 160584, guid: 6e7013877cd25ea429426b84ad103215, type: 3}
   trailParticles: []
   impactNormal: {x: 0, y: 0, z: 0}
+--- !u!114 &7499469082560051815
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 141064}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57ca7dd30a5ee2c42b92a7d9f58edefd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -303,9 +303,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48265437f5954824da4305ffcc825bd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startBtn: {fileID: 0}
-  optionBtn: {fileID: 0}
-  exitBtn: {fileID: 0}
+  startBtn: {fileID: 1055704866}
+  optionBtn: {fileID: 1584880554}
+  exitBtn: {fileID: 1176835653}
   loading: {fileID: 1949718129}
 --- !u!4 &626550384
 Transform:
@@ -476,7 +476,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1040783901}
   m_Layer: 0
-  m_Name: Menu_1
+  m_Name: Menu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -517,7 +517,7 @@ GameObject:
   - component: {fileID: 1055704868}
   - component: {fileID: 1055704867}
   m_Layer: 0
-  m_Name: Start
+  m_Name: Btn_Start
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -650,7 +650,7 @@ GameObject:
   - component: {fileID: 1176835655}
   - component: {fileID: 1176835654}
   m_Layer: 0
-  m_Name: Exit
+  m_Name: Btn_Exit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -962,7 +962,7 @@ GameObject:
   - component: {fileID: 1584880556}
   - component: {fileID: 1584880555}
   m_Layer: 0
-  m_Name: Option
+  m_Name: Btn_Option
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
