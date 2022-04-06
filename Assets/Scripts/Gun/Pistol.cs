@@ -3,11 +3,12 @@ using QFX.SFX;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.XR.ARFoundation;
 
 /// <summary>
 /// ±ÇÃÑ Å×½ºÆ®
 /// </summary>
-public class Pistol : MonoBehaviour, IPlayerGun, IPlayer
+public class Pistol : MonoBehaviour, IPlayerGun
 {
     CharacterInfoDTO characterInfoDTO;
     UnitStatusDTO playerStatusDTO;
@@ -18,7 +19,7 @@ public class Pistol : MonoBehaviour, IPlayerGun, IPlayer
     Transform weaponPos;
     Transform reactPivot;
     public Transform skillTransform;
-    SFX_MouseControlledObjectLauncher dealerSkill;
+    public GameObject skill;
 
     // FOR DEVELOP
     float vertical;
@@ -27,8 +28,8 @@ public class Pistol : MonoBehaviour, IPlayerGun, IPlayer
     // Start is called before the first frame update
     void Start()
     {
-        characterInfoDTO = new CharacterInfoDTO("Healer", 100, 100);
-        if (!ObjectManager.objectDic.ContainsKey("Pistol")) ObjectManager.objectDic.Add("Pistol", this.gameObject);
+        characterInfoDTO = new CharacterInfoDTO("Healer");
+        ObjectManager.SaveObject("Pistol", this.gameObject);
         weaponPos = this.transform.Find("Pistol");
         reactPivot = this.transform.Find("ReactPivot");
         playerStatusDTO = new UnitStatusDTO(100, 100);
@@ -38,12 +39,13 @@ public class Pistol : MonoBehaviour, IPlayerGun, IPlayer
         horizontal = 0f;
         ammoDTO = new AmmoDTO(7,7);
         rayStartpoint = this.transform.Find("GunRayPoint").transform;
-        dealerSkill = skillTransform.Find("DealerSkill").GetComponentInChildren<SFX_MouseControlledObjectLauncher>();
+        //dealerSkill = skillTransform.Find("DealerSkill").GetComponentInChildren<SFX_MouseControlledObjectLauncher>();
     }
 
     // Update is called once per frame
     void Update()
     {
+
         if (Input.GetMouseButtonDown(0) && isShottable)
         {
             Attack();
@@ -55,39 +57,39 @@ public class Pistol : MonoBehaviour, IPlayerGun, IPlayer
 
         if (Input.GetMouseButtonDown(1))
         {
-            dealerSkill.isShotGun = false;
+            //dealerSkill.isShotGun = false;
             Skill();
         }
 
 #if UNITY_EDITOR
-
         vertical = Input.GetAxis("Vertical");
         horizontal = Input.GetAxis("Horizontal");
         Vector3 dir = (Vector3.forward * vertical) + (Vector3.right * horizontal);
-        this.transform.position += dir.normalized * Time.deltaTime * 1f;
-        
+        this.transform.position += dir.normalized * Time.deltaTime * 3f;
+
 #endif
 
     }
 
     public void Attack()
     {
-
+        print($"### ATTACK CHECK, bullet pos : {rayStartpoint.position}");
         Vector3 point = rayStartpoint.position - weaponPos.transform.position;
 
         GameObject bullet = Instantiate(bulletPrefab[0]);
-        //bullet.GetComponent<BulletTest>().SetTarget(point);
-        bullet.transform.position = rayStartpoint.position;
-        bullet.transform.parent = this.transform;
         bullet.name = "Pistol_bullet";
-        bullet.GetComponent<Rigidbody>().AddForce(bullet.transform.forward * 1000);
+        bullet.transform.LookAt(Camera.main.transform.forward);
+        bullet.transform.position = rayStartpoint.position;
+        //bullet.transform.parent = this.transform;
+        
+        //bullet.GetComponent<Rigidbody>().AddForce(bullet.transform.forward * 1000);
+        bullet.GetComponent<Rigidbody>().AddForce(Camera.main.transform.forward * 1000);
 
         //this.transform.RotateAround(reactPivot.position, Vector3.left, 200 * Time.deltaTime);
 
         ammoDTO.currentAmmoCnt--;
         print($"ammo : {ammoDTO.currentAmmoCnt}");
         if (ammoDTO.currentAmmoCnt == 0) Reload();
-        
     }
 
     public void Reload()
@@ -149,6 +151,7 @@ public class Pistol : MonoBehaviour, IPlayerGun, IPlayer
             if(hit.collider != null)
             {
                 GameObject skill = skillTransform.Find("HealerSkill").gameObject;
+                //GameObject skill = Instantiate(this.skill, hit.point, Quaternion.identity);
                 skill.GetComponent<FXVShield>().SetShieldActive(true);
                 skill.transform.position = hit.point;
 
@@ -156,4 +159,8 @@ public class Pistol : MonoBehaviour, IPlayerGun, IPlayer
         }
     }
 
+    public void Heal(int point)
+    {
+        if (playerStatusDTO.hp < 100) playerStatusDTO.hp += point;
+    }
 }

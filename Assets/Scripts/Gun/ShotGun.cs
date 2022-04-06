@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using QFX.SFX;
-public class ShotGun : MonoBehaviour, IPlayerGun, IPlayer
+public class ShotGun : MonoBehaviour, IPlayerGun
 {
     CharacterInfoDTO characterInfoDTO;
     UnitStatusDTO playerStatusDTO;
@@ -11,6 +11,7 @@ public class ShotGun : MonoBehaviour, IPlayerGun, IPlayer
     public GameObject[] bulletPrefab;
     bool isShottable;
     public Transform skillTransform;
+    public GameObject skill;
     SFX_MouseControlledObjectLauncher dealerSkill;
 
     //FOR DEVELOP
@@ -20,7 +21,7 @@ public class ShotGun : MonoBehaviour, IPlayerGun, IPlayer
     // Start is called before the first frame update
     void Start()
     {
-        characterInfoDTO = new CharacterInfoDTO("Dealer", 100, 100);
+        characterInfoDTO = new CharacterInfoDTO("Dealer");
         // 키 확인후 넣기
         if (!ObjectManager.objectDic.ContainsKey("ShotGun")) ObjectManager.objectDic.Add("ShotGun", this.gameObject);
         playerStatusDTO = new UnitStatusDTO(100, 100);
@@ -30,7 +31,7 @@ public class ShotGun : MonoBehaviour, IPlayerGun, IPlayer
         horizontal = 0f;
         ammoDTO = new AmmoDTO(10, 10);
         rayStartpoint = this.transform.Find("GunRayPoint").transform;
-        dealerSkill = skillTransform.Find("DealerSkill").GetComponentInChildren<SFX_MouseControlledObjectLauncher>();
+        //dealerSkill = skillTransform.Find("DealerSkill").GetComponentInChildren<SFX_MouseControlledObjectLauncher>();
     }
 
     // Update is called once per frame
@@ -49,7 +50,7 @@ public class ShotGun : MonoBehaviour, IPlayerGun, IPlayer
         }
         if (Input.GetMouseButtonDown(1))
         {
-            dealerSkill.isShotGun = true;
+            //dealerSkill.isShotGun = true;
             Skill();
         }
 #if UNITY_EDITOR
@@ -69,10 +70,12 @@ public class ShotGun : MonoBehaviour, IPlayerGun, IPlayer
         Vector3 point = rayStartpoint.position - this.transform.position;
 
         GameObject bullet = Instantiate(bulletPrefab[0]);
-        //bullet.GetComponent<BulletTest>().SetTarget(point);
-        bullet.transform.position = rayStartpoint.position;
         bullet.name = "ShotGun_bullet";
-        bullet.GetComponent<Rigidbody>().AddForce(bullet.transform.forward * 1000);
+        bullet.transform.LookAt(Camera.main.transform.forward);
+        bullet.transform.position = rayStartpoint.position;
+
+        //bullet.GetComponent<Rigidbody>().AddForce(bullet.transform.forward * 1000);
+        bullet.GetComponent<Rigidbody>().AddForce(Camera.main.transform.forward * 1000);
         ammoDTO.currentAmmoCnt--;
         print($"ammo : {ammoDTO.currentAmmoCnt}");
         if (ammoDTO.currentAmmoCnt == 0) Reload();
@@ -128,8 +131,8 @@ public class ShotGun : MonoBehaviour, IPlayerGun, IPlayer
 
     public void Skill()
     {
-
         
+
         RaycastHit hit;
         //Ray ray = GetComponentInChildren<Camera>().ScreenPointToRay(rayStartpoint.position);
         Ray ray = new Ray(Camera.main.transform.position, Camera.main.transform.forward);
@@ -139,12 +142,17 @@ public class ShotGun : MonoBehaviour, IPlayerGun, IPlayer
         {
             if (hit.collider != null)
             {
-                GameObject skill = skillTransform.Find("DealerSkill").gameObject;
-                Vector3 pos = new Vector3(this.transform.position.x, 0, this.transform.position.z);
-                //skill.transform.position = pos;
+                GameObject skill = Instantiate(this.skill, new Vector3(this.transform.position.x, 0f, this.transform.position.z), Quaternion.identity);
+                dealerSkill = skill.GetComponentInChildren<SFX_MouseControlledObjectLauncher>();
+                dealerSkill.isShotGun = true;
                 skill.GetComponentInChildren<SFX_PhysicsHomingMissileLauncher>().targetPos = hit.point;
 
             }
         }
+    }
+
+    public void Heal(int point)
+    {
+        throw new System.NotImplementedException();
     }
 }

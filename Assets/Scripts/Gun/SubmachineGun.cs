@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SubmachineGun : MonoBehaviour, IPlayerGun, IPlayer
+public class SubmachineGun : MonoBehaviour, IPlayerGun
 {
     CharacterInfoDTO characterInfoDTO;
     UnitStatusDTO playerStatusDTO;
@@ -12,6 +12,7 @@ public class SubmachineGun : MonoBehaviour, IPlayerGun, IPlayer
     public GameObject[] bulletPrefab;
     bool isShottable;
     public Transform skillTransform;
+    public GameObject skill;
     SFX_MouseControlledObjectLauncher dealerSkill;
 
     // FOR DEVELOP
@@ -21,7 +22,7 @@ public class SubmachineGun : MonoBehaviour, IPlayerGun, IPlayer
     // Start is called before the first frame update
     void Start()
     {
-        characterInfoDTO = new CharacterInfoDTO("Supporter",100,100);
+        characterInfoDTO = new CharacterInfoDTO("Supporter");
         if (!ObjectManager.objectDic.ContainsKey("SubmachineGun")) ObjectManager.objectDic.Add("SubmachineGun", this.gameObject);
         playerStatusDTO = new UnitStatusDTO(100, 100);
         //lineRenderer = this.GetComponent<LineRenderer>();
@@ -30,7 +31,7 @@ public class SubmachineGun : MonoBehaviour, IPlayerGun, IPlayer
         horizontal = 0f;
         ammoDTO = new AmmoDTO(30, 30);
         rayStartpoint = this.transform.Find("GunRayPoint").transform;
-        dealerSkill = skillTransform.Find("DealerSkill").GetComponentInChildren<SFX_MouseControlledObjectLauncher>();
+        //dealerSkill = skillTransform.Find("DealerSkill").GetComponentInChildren<SFX_MouseControlledObjectLauncher>();
     }
 
     // Update is called once per frame
@@ -45,7 +46,7 @@ public class SubmachineGun : MonoBehaviour, IPlayerGun, IPlayer
         }
         if (Input.GetMouseButtonDown(1))
         {
-            dealerSkill.isShotGun = false;
+            //dealerSkill.isShotGun = false;
             Skill();
         }
         if (Input.GetKeyDown(KeyCode.R))
@@ -68,10 +69,11 @@ public class SubmachineGun : MonoBehaviour, IPlayerGun, IPlayer
         Vector3 point = rayStartpoint.position - this.transform.position;
 
         GameObject bullet = Instantiate(bulletPrefab[0]);
-        //bullet.GetComponent<BulletTest>().SetTarget(point);
-        bullet.transform.position = rayStartpoint.position;
         bullet.name = "SubmachineGun_bullet";
-        bullet.GetComponent<Rigidbody>().AddForce(bullet.transform.forward * 1000);
+        bullet.transform.LookAt(Camera.main.transform.forward);
+        bullet.transform.position = rayStartpoint.position;
+        //bullet.GetComponent<Rigidbody>().AddForce(bullet.transform.forward * 1000);
+        bullet.GetComponent<Rigidbody>().AddForce(Camera.main.transform.forward * 1000);
         ammoDTO.currentAmmoCnt--;
         print($"ammo : {ammoDTO.currentAmmoCnt}");
         if (ammoDTO.currentAmmoCnt == 0) Reload();
@@ -136,11 +138,13 @@ public class SubmachineGun : MonoBehaviour, IPlayerGun, IPlayer
         {
             if (hit.collider != null)
             {
-                GameObject skill = skillTransform.Find("SupporterSkill").gameObject;
-                Vector3 pos = new Vector3(this.transform.position.x, 0, this.transform.position.z);
-                skill.transform.position = pos;
-
+                GameObject skill = Instantiate(this.skill, new Vector3(this.transform.position.x, 0, this.transform.position.z), Quaternion.Euler(-90,0,0));
             }
         }
+    }
+
+    public void Heal(int point)
+    {
+        throw new System.NotImplementedException();
     }
 }

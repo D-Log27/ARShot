@@ -2,48 +2,72 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class InGameManager : MonoBehaviour
 {
-    public Transform GameOver;
+    public Transform gameOver;
+    public CanvasGroup clearCGrp;
+    public CanvasGroup failCGrp;
 
-    public Button Attack;
-    public Button Skill;
-    public Button Alpha;
-    public Button Title;
-    public Button Restart;
-    public Button EndGame;
+    public Button clear;
+    public Button fail;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
-    
-    public void OnClickAlpha()
+
+    public void OnClickClassSkill()
     {
-        Alpha.gameObject.SetActive(false);
-        GameOver.gameObject.SetActive(true);
+        if (!Input.GetKey(KeyCode.Mouse0))
+        {
+            print("Skill");
+        }
+    }
+
+    public void OnClickOption()
+    {
+        SceneManager.LoadScene("Option_AL");
+    }
+
+    public void OnClickClear()
+    {
+        clear.gameObject.SetActive(false);
+        fail.gameObject.SetActive(false);
+        gameOver.gameObject.SetActive(true);
+        clearCGrp.alpha = 1;
+        failCGrp.alpha = 0;
+    }
+    public void OnClickFail()
+    {
+        clear.gameObject.SetActive(false);
+        fail.gameObject.SetActive(false);
+        gameOver.gameObject.SetActive(true);
+        clearCGrp.alpha = 0;
+        failCGrp.alpha = 1;
     }
 
     public void OnClickAttack()
     {
-
+        print("Attack");
     }
 
     public void OnClickTitle()
     {
-        UnityEngine.SceneManagement.SceneManager.LoadScene("Title_AL");
+        SceneManager.LoadScene("Title_AL");
     }
+
     public void OnClickRestart()
     {
-        //UnityEngine.SceneManagement.SceneManager.LoadScene("Title_Test");
+        SceneManager.LoadScene("InGame_AL");
     }
 
     public void OnClickEndGame()

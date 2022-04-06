@@ -10,7 +10,7 @@ public class GroundEnemy : MonoBehaviour, IEnemy
     enum State { TRACE, ATTACK }
     State state;
     
-    //[HideInInspector]
+    [HideInInspector]
     public Target target;
 
     UnitStatusDTO enemyStatusDTO;
@@ -21,12 +21,12 @@ public class GroundEnemy : MonoBehaviour, IEnemy
     // Start is called before the first frame update
     void Start()
     {
-        //targetTransform = ObjectManager.objectDic["VIP"].transform;
+        targetTransform = ObjectManager.LoadObject("VIP").transform;
 
         state = State.TRACE;
         target = Target.VIP;
         //target = Target.USER;
-        ChangeTarget(target);
+        //ChangeTarget(target);
         enemyStatusDTO = new UnitStatusDTO(100, 100, 5);
     }
 
@@ -46,14 +46,13 @@ public class GroundEnemy : MonoBehaviour, IEnemy
 
     public void ChangeTarget(Target target)
     {
+        //targetTransform = ObjectManager.LoadObject("VIP").transform;
         switch (target)
         {
             case Target.USER:
-                targetTransform = ObjectManager.objectDic["Pistol"].transform;
-                this.transform.LookAt(targetTransform);
                 break;
             case Target.VIP:
-                targetTransform = ObjectManager.objectDic["VIP"].transform;
+                targetTransform = ObjectManager.LoadObject("VIP").transform;
                 this.transform.LookAt(targetTransform);
                 break;
         }
@@ -61,9 +60,10 @@ public class GroundEnemy : MonoBehaviour, IEnemy
 
     public void Trace()
     {
+        targetTransform = ObjectManager.LoadObject("VIP").transform;
         //print("### trace");
         //this.transform.position = Vector3.MoveTowards(this.transform.position, target.transform.position, 0.01f);
-        if(targetTransform != null)
+        if (targetTransform != null)
         {
             Vector3 dir = targetTransform.transform.position - this.transform.position;
             this.transform.position += dir * Time.deltaTime * 0.1f;
@@ -75,35 +75,37 @@ public class GroundEnemy : MonoBehaviour, IEnemy
 
     public void Attack()
     {
+        targetTransform = ObjectManager.LoadObject("VIP").transform;
+        if (targetTransform != null)
+        {
+            Quaternion lookOnLook = Quaternion.LookRotation(targetTransform.transform.position - transform.position);
+
+            transform.rotation = Quaternion.Slerp(transform.rotation, lookOnLook, Time.deltaTime);
+        }
+
+        //this.transform.LookAt(target);
+        //print("### attack");
+        //RangeCheck();
+        //transform.position = Vector3.zero;
         this.GetComponent<Rigidbody>().velocity = Vector3.zero;
 
-        currentTime += Time.deltaTime;
-        if(currentTime > 2)
-        {
-            GameObject bullet = Instantiate(bulletPrefab);
-            Vector3 attackDir = this.transform.Find("AttackPoint").transform.position - this.transform.position;
-            bullet.GetComponent<BulletTest>().SetTarget(attackDir);
-            bullet.transform.position = this.transform.Find("AttackPoint").transform.position;
-            currentTime = 0;
-        }
-        //print("### attack");
-        
-        
+
     }
 
-    public void Damaged()
+    public void Damaged(int damage)
     {
         print("### damaged");
+
         if(enemyStatusDTO.shield > 0)
         {
             enemyStatusDTO.shield -= 10;
-            print($"### enemy hp : {enemyStatusDTO.shield }");
+            print($"### ground enemy shield : {enemyStatusDTO.shield }");
         }
         else
         {
             enemyStatusDTO.hp -= 10;
 
-            print($"### enemy hp : {enemyStatusDTO.hp }");
+            print($"### ground enemy hp : {enemyStatusDTO.hp }");
             if (enemyStatusDTO.hp <= 0)
             {
                 Death();
@@ -117,13 +119,9 @@ public class GroundEnemy : MonoBehaviour, IEnemy
         Destroy(this.gameObject);
     }
 
-    
-
-    
-
     void RangeCheck()
     {
-        
+        targetTransform = ObjectManager.LoadObject("VIP").transform;
         float distance = Vector3.Distance(targetTransform.transform.position, this.transform.position);
         if (enemyStatusDTO.attackRange > distance)
         {
@@ -131,5 +129,9 @@ public class GroundEnemy : MonoBehaviour, IEnemy
         }
     }
 
-    
+    private void OnCollisionEnter(Collision collision)
+    {
+        print("### ground enemy collision check");
+    }
+
 }
