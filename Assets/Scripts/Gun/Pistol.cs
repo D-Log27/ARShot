@@ -45,6 +45,7 @@ public class Pistol : MonoBehaviour, IPlayerGun
     // Update is called once per frame
     void Update()
     {
+
         if (Input.GetMouseButtonDown(0) && isShottable)
         {
             Attack();
@@ -60,15 +61,19 @@ public class Pistol : MonoBehaviour, IPlayerGun
             Skill();
         }
 
+#if UNITY_EDITOR
         vertical = Input.GetAxis("Vertical");
         horizontal = Input.GetAxis("Horizontal");
         Vector3 dir = (Vector3.forward * vertical) + (Vector3.right * horizontal);
         this.transform.position += dir.normalized * Time.deltaTime * 3f;
 
+#endif
+
     }
 
     public void Attack()
     {
+        print($"### ATTACK CHECK, bullet pos : {rayStartpoint.position}");
         Vector3 point = rayStartpoint.position - weaponPos.transform.position;
 
         GameObject bullet = Instantiate(bulletPrefab[0]);
