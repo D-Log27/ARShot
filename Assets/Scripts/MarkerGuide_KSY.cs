@@ -15,14 +15,21 @@ public class MarkerGuide_KSY : MonoBehaviour
 {
     ARTrackedImageManager hologramMarker;
     public GameObject markerGuide;
+    public bool isBriefFinish;
 
     private void Awake()
     {
+        isBriefFinish = false;
         //1) ARTrackedImageManager컴포넌트를 가져와서 hologramMarker라고 한다.
         hologramMarker = GetComponent<ARTrackedImageManager>();
 
         //2) hologramMarker에 trackedImagesChanged 델리게이트를 달면 함수를 연결할 수 있기 때문에 DisenableMarkerGuide라는 함수를 만들어서 연결(+=)함
         hologramMarker.trackedImagesChanged += DisenableMarkerGuide; 
+    }
+
+    private void Start()
+    {
+        ObjectManager.SaveObject("MarkerGuide", this.gameObject);
     }
 
     //3) 만들어진 DisenableMarkerGuide 함수에서  

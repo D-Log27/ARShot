@@ -22312,6 +22312,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4664351719533509643}
   - component: {fileID: 4664351719533509640}
+  - component: {fileID: 5638271075854476113}
   m_Layer: 0
   m_Name: Hologram
   m_TagString: Untagged
@@ -22351,6 +22352,20 @@ MonoBehaviour:
   defence: {fileID: 4664351720487885853}
   enemy: {fileID: 3559145795355958390}
   ending: {fileID: 3559145794185373723}
+  playScreen: {fileID: 6306499665753782593, guid: 47a1432f1cfda3a4987afc4a205b8aef, type: 3}
+  weapon: {fileID: 1459339986734364992, guid: 697de0406ea32ef42afce9b6f39d6398, type: 3}
+--- !u!114 &5638271075854476113
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4664351719533509642}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 173e724bc45dcae448615a8a798e63a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4664351720363313624
 GameObject:
   m_ObjectHideFlags: 0

@@ -136,9 +136,10 @@ public class PhotonManager : MonoBehaviourPunCallbacks
     /// </summary>
     void SetApProperty()
     {
-        if(NetworkAPHelper.GetInstance().ApName == "" || NetworkAPHelper.GetInstance().ApName == null) NetworkAPHelper.GetInstance().GetAPInfo();
-        apName = NetworkAPHelper.GetInstance().ApName;
-        print(apName);
+        //if(NetworkAPHelper.GetInstance().ApName == "" || NetworkAPHelper.GetInstance().ApName == null) NetworkAPHelper.GetInstance().GetAPInfo();
+        //apName = NetworkAPHelper.GetInstance().ApName;
+        apName = "test";
+        print($"### ap name : {apName}");
         roomApProperty = new PhotonCollection.Hashtable()
         {
             { "ApName",apName }

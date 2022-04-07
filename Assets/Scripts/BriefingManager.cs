@@ -8,6 +8,10 @@ public class BriefingManager : MonoBehaviour
     public GameObject enemy;
     public GameObject ending;
 
+    public GameObject playScreen;
+    public GameObject weapon;
+    
+
     void Start()
     {
         Invoke("Defence", 5f);
@@ -30,6 +34,8 @@ public class BriefingManager : MonoBehaviour
     void Ending()
     {
         ending.SetActive(false);
+        // TODO : Inplay gun & UI load
+        ObjectManager.LoadObject("MarkerGuide").GetComponent<MarkerGuide_KSY>().isBriefFinish = true;
     }
 
     //void Update()
