@@ -15,11 +15,9 @@ public class MarkerGuide_KSY : MonoBehaviour
 {
     ARTrackedImageManager hologramMarker;
     public GameObject markerGuide;
-    public bool isBriefFinish;
 
     private void Awake()
     {
-        isBriefFinish = false;
         //1) ARTrackedImageManager컴포넌트를 가져와서 hologramMarker라고 한다.
         hologramMarker = GetComponent<ARTrackedImageManager>();
 
