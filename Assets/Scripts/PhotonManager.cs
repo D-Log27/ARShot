@@ -18,7 +18,7 @@ public class PhotonManager : MonoBehaviourPunCallbacks
     private readonly string gameVersion = "0.0.1";
     string apName;
     string userName;
-    TitleEvent titleEvent;
+    TitleManager titleManager;
     PhotonCollection.Hashtable roomApProperty = new PhotonCollection.Hashtable();
 
     public static PhotonManager GetInstance ()
@@ -34,7 +34,7 @@ public class PhotonManager : MonoBehaviourPunCallbacks
     // Start is called before the first frame update
     void Start()
     {
-        titleEvent = GameObject.Find("Manager").GetComponent<TitleEvent>();
+        titleManager = GameObject.Find("TitleManager").GetComponent<TitleManager>();
         PhotonNetwork.GameVersion = gameVersion;
         PhotonNetwork.NickName = userName;
         PhotonNetwork.AutomaticallySyncScene = true;
@@ -55,7 +55,7 @@ public class PhotonManager : MonoBehaviourPunCallbacks
             print("### photon server connected.");
             SetApProperty();
             TypedLobby typedLobby = new TypedLobby(apName,LobbyType.Default);
-            titleEvent.TitleLoadingImage(true);
+            titleManager.TitleLoadingImage(true);
             PhotonNetwork.JoinLobby(typedLobby);
         } catch (Exception e)
         {
@@ -69,7 +69,7 @@ public class PhotonManager : MonoBehaviourPunCallbacks
     public override void OnJoinedLobby()
     {
         print($"### Lobby joined , {PhotonNetwork.CurrentLobby.Name}");
-        titleEvent.TitleLoadingImage(false);
+        titleManager.TitleLoadingImage(false);
     }
 
     /// <summary>

@@ -7,10 +7,11 @@ using UnityEngine.EventSystems;
 using System;
 using TMPro;
 using UnityEngine.SceneManagement;
+using Photon.Pun;
 
 //Touch로 바꾸기
 
-public class RoomManager : MonoBehaviour
+public class RoomManager : MonoBehaviourPunCallbacks
 {
     //뒤로 가기 버튼
     public Button btnBackToTitle;
@@ -52,6 +53,8 @@ public class RoomManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        print(PhotonNetwork.CurrentLobby.Name);
+        print(PhotonNetwork.CurrentRoom.Name);
         //초기 설정; unity play 전에 설정 잘 해 놓으면 사실 start 함수 전체 필요 없음
         canvasChanging.gameObject.SetActive(false);
         for (int i = 0; i < 4; i++)
