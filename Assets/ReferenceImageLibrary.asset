@@ -21,9 +21,9 @@ MonoBehaviour:
       m_GuidLow: 4988335526198636937
       m_GuidHigh: 1390943902969734305
     m_SerializedTextureGuid:
-      m_GuidLow: 325413635257059776
-      m_GuidHigh: 6300216722203983306
-    m_Size: {x: 0.0015, y: 0.0015061644}
-    m_SpecifySize: 1
-    m_Name: IntroMarker
+      m_GuidLow: 676868922631636867
+      m_GuidHigh: 1113593215682262328
+    m_Size: {x: 0, y: 0}
+    m_SpecifySize: 0
+    m_Name: Hologram
     m_Texture: {fileID: 0}

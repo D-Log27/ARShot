@@ -65,11 +65,11 @@ public class TitleManager : MonoBehaviour
         //        SceneManager.LoadScene("Room_AL");
         //    }
         //}
-        bool isSuccess = true;//PhotonManager.GetInstance().ConnectingRoom();
+        bool isSuccess = PhotonManager.GetInstance().ConnectingRoom();
         if (isSuccess)
         {
             TitleLoadingImage(false);
-            SceneManager.LoadScene("Room_AL");
+            //SceneManager.LoadScene("Room_AL");
         }
     }
 
