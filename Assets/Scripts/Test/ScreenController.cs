@@ -8,7 +8,7 @@ public class ScreenController : MonoBehaviour
     public Transform brief;
     public Transform GameUI;
     public Transform weapons;
-    public Transform spawnZone;
+    public Transform gameArea;
 
     ScreenController() { }
     public static ScreenController GetInstance()
@@ -16,11 +16,11 @@ public class ScreenController : MonoBehaviour
         return Instance;
     }
 
-    IEnumerator Start()
+    public void Start()
     {
+        Screen.sleepTimeout = SleepTimeout.NeverSleep;
         Instance = this;
-
-        yield return new WaitForSeconds(3.0f);
+        //FinishBrief();
     }
 
     public void FinishBrief()
@@ -30,6 +30,6 @@ public class ScreenController : MonoBehaviour
         GameUI.GetComponent<Canvas>().enabled = true;
         weapons.Find("Pistol").gameObject.SetActive(true);
         // NOT OK
-        spawnZone.gameObject.SetActive(true);
+        gameArea.gameObject.SetActive(true);
     }
 }
