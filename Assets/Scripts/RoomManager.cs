@@ -8,10 +8,11 @@ using System;
 using TMPro;
 using UnityEngine.SceneManagement;
 
-//Touch로 바꾸기
-
 public class RoomManager : MonoBehaviour
 {
+    //클래스선택 버튼의 부모 이름: 변수명 줄이기 위해 선언함
+    string btnClassParentName;
+
     //뒤로 가기 버튼
     public Button btnBackToTitle;
 
@@ -102,10 +103,96 @@ public class RoomManager : MonoBehaviour
     /// </summary>
     public void OnClickPrevious(GameObject currentSelectedGameObject)
     {
-        //if (player1Class[0].alpha == 1)
-        //{
-            
-        //}
+        btnClassParentName = currentSelectedGameObject.transform.parent.parent.name;
+
+        if (btnClassParentName == "Player")
+        {
+            if (playerClass[3].alpha == 1)
+            {
+                CanvasGroupOnOff(playerClass[3], Off);
+                CanvasGroupOnOff(playerClass[2], On);
+                btnNext[0].enabled = true;
+            }
+            else if (playerClass[2].alpha == 1)
+            {
+                CanvasGroupOnOff(playerClass[2], Off);
+                CanvasGroupOnOff(playerClass[1], On);
+            }
+            else
+            {
+                CanvasGroupOnOff(playerClass[1], Off);
+                CanvasGroupOnOff(playerClass[0], On);
+
+                //이거 완전 비활성화라기보단 회색빛으로 나타나게 해야함
+                btnPrevious[0].enabled = false;
+            }
+        }
+        else if (btnClassParentName == "Player_1")
+        {
+            if (player_1Class[3].alpha == 1)
+            {
+                CanvasGroupOnOff(player_1Class[3], Off);
+                CanvasGroupOnOff(player_1Class[2], On);
+                btnNext[1].enabled = true;
+            }
+            else if (player_1Class[2].alpha == 1)
+            {
+                CanvasGroupOnOff(player_1Class[2], Off);
+                CanvasGroupOnOff(player_1Class[1], On);
+            }
+            else
+            {
+                CanvasGroupOnOff(player_1Class[1], Off);
+                CanvasGroupOnOff(player_1Class[0], On);
+
+                //이거 완전 비활성화라기보단 회색빛으로 나타나게 해야함
+                btnPrevious[1].enabled = false;
+            }
+        }
+        else if (btnClassParentName == "Player_2")
+        {
+            if (player_2Class[3].alpha == 1)
+            {
+                CanvasGroupOnOff(player_2Class[3], Off);
+                CanvasGroupOnOff(player_2Class[2], On);
+                btnNext[2].enabled = true;
+            }
+            else if (player_2Class[2].alpha == 1)
+            {
+                CanvasGroupOnOff(player_2Class[2], Off);
+                CanvasGroupOnOff(player_2Class[1], On);
+            }
+            else
+            {
+                CanvasGroupOnOff(player_2Class[1], Off);
+                CanvasGroupOnOff(player_2Class[0], On);
+
+                //이거 완전 비활성화라기보단 회색빛으로 나타나게 해야함
+                btnPrevious[2].enabled = false;
+            }
+        }
+        else
+        {
+            if (player_3Class[3].alpha == 1)
+            {
+                CanvasGroupOnOff(player_3Class[3], Off);
+                CanvasGroupOnOff(player_3Class[2], On);
+                btnNext[3].enabled = true;
+            }
+            else if (player_3Class[2].alpha == 1)
+            {
+                CanvasGroupOnOff(player_3Class[2], Off);
+                CanvasGroupOnOff(player_3Class[1], On);
+            }
+            else
+            {
+                CanvasGroupOnOff(player_3Class[1], Off);
+                CanvasGroupOnOff(player_3Class[0], On);
+
+                //이거 완전 비활성화라기보단 회색빛으로 나타나게 해야함
+                btnPrevious[3].enabled = false;
+            }
+        }
     }
 
     /// <summary>
@@ -114,6 +201,95 @@ public class RoomManager : MonoBehaviour
     public void OnClickNext(GameObject currentSelectedGameObject)
     {
 
+        btnClassParentName = currentSelectedGameObject.transform.parent.parent.name;
+        if (btnClassParentName == "Player")
+        {
+            if (playerClass[0].alpha == 1)
+            {
+                CanvasGroupOnOff(playerClass[0], Off);
+                CanvasGroupOnOff(playerClass[1], On);
+                btnPrevious[0].enabled = true;
+            }
+            else if (playerClass[1].alpha == 1)
+            {
+                CanvasGroupOnOff(playerClass[1], Off);
+                CanvasGroupOnOff(playerClass[2], On);
+            }
+            else
+            {
+                CanvasGroupOnOff(playerClass[2], Off);
+                CanvasGroupOnOff(playerClass[3], On);
+
+                //이거 완전 비활성화라기보단 회색빛으로 나타나게 해야함
+                btnNext[0].enabled = false;
+            }
+        }
+        else if (btnClassParentName == "Player_1")
+        {
+            if (player_1Class[0].alpha == 1)
+            {
+                CanvasGroupOnOff(player_1Class[0], Off);
+                CanvasGroupOnOff(player_1Class[1], On);
+                btnPrevious[1].enabled = true;
+            }
+            else if (player_1Class[1].alpha == 1)
+            {
+                CanvasGroupOnOff(player_1Class[1], Off);
+                CanvasGroupOnOff(player_1Class[2], On);
+            }
+            else
+            {
+                CanvasGroupOnOff(player_1Class[2], Off);
+                CanvasGroupOnOff(player_1Class[3], On);
+
+                //이거 완전 비활성화라기보단 회색빛으로 나타나게 해야함
+                btnNext[1].enabled = false;
+            }
+        }
+        else if (btnClassParentName == "Player_2")
+        {
+            if (player_2Class[0].alpha == 1)
+            {
+                CanvasGroupOnOff(player_2Class[0], Off);
+                CanvasGroupOnOff(player_2Class[1], On);
+                btnPrevious[2].enabled = true;
+            }
+            else if (player_2Class[1].alpha == 1)
+            {
+                CanvasGroupOnOff(player_2Class[1], Off);
+                CanvasGroupOnOff(player_2Class[2], On);
+            }
+            else
+            {
+                CanvasGroupOnOff(player_2Class[2], Off);
+                CanvasGroupOnOff(player_2Class[3], On);
+
+                //이거 완전 비활성화라기보단 회색빛으로 나타나게 해야함
+                btnNext[2].enabled = false;
+            }
+        }
+        else
+        {
+            if (player_3Class[0].alpha == 1)
+            {
+                CanvasGroupOnOff(player_3Class[0], Off);
+                CanvasGroupOnOff(player_3Class[1], On);
+                btnPrevious[3].enabled = true;
+            }
+            else if (player_3Class[1].alpha == 1)
+            {
+                CanvasGroupOnOff(player_3Class[1], Off);
+                CanvasGroupOnOff(player_3Class[2], On);
+            }
+            else
+            {
+                CanvasGroupOnOff(player_3Class[2], Off);
+                CanvasGroupOnOff(player_3Class[3], On);
+
+                //이거 완전 비활성화라기보단 회색빛으로 나타나게 해야함
+                btnNext[3].enabled = false;
+            }
+        }
     }
 
     /// <summary>
@@ -185,7 +361,6 @@ public class RoomManager : MonoBehaviour
         canvasGrp2.blocksRaycasts = true;
     }*/
 
-
     public void OnClickBackToTitle()
     {
         //PhotonNetwork.LeaveRoom();
@@ -212,9 +387,4 @@ public class RoomManager : MonoBehaviour
         }
     }
     string On = "On"; string Off = "Off";
-
-    //void SetActive(var i, bool )
-    //{
-    //    i.gameObject.SetActive();
-    //}
 }
