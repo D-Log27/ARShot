@@ -1,0 +1,4652 @@
+fileFormatVersion: 2
+guid: d87a59a56dd138146aa4ef46f44133df
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 21300000
+    second: HUDDESIGNER_ANIMATED_SP_28_0
+  - first:
+      213: 21300002
+    second: HUDDESIGNER_ANIMATED_SP_28_1
+  - first:
+      213: 21300004
+    second: HUDDESIGNER_ANIMATED_SP_28_2
+  - first:
+      213: 21300006
+    second: HUDDESIGNER_ANIMATED_SP_28_3
+  - first:
+      213: 21300008
+    second: HUDDESIGNER_ANIMATED_SP_28_4
+  - first:
+      213: 21300010
+    second: HUDDESIGNER_ANIMATED_SP_28_5
+  - first:
+      213: 21300012
+    second: HUDDESIGNER_ANIMATED_SP_28_6
+  - first:
+      213: 21300014
+    second: HUDDESIGNER_ANIMATED_SP_28_7
+  - first:
+      213: 21300016
+    second: HUDDESIGNER_ANIMATED_SP_28_8
+  - first:
+      213: 21300018
+    second: HUDDESIGNER_ANIMATED_SP_28_9
+  - first:
+      213: 21300020
+    second: HUDDESIGNER_ANIMATED_SP_28_10
+  - first:
+      213: 21300022
+    second: HUDDESIGNER_ANIMATED_SP_28_11
+  - first:
+      213: 21300024
+    second: HUDDESIGNER_ANIMATED_SP_28_12
+  - first:
+      213: 21300026
+    second: HUDDESIGNER_ANIMATED_SP_28_13
+  - first:
+      213: 21300028
+    second: HUDDESIGNER_ANIMATED_SP_28_14
+  - first:
+      213: 21300030
+    second: HUDDESIGNER_ANIMATED_SP_28_15
+  - first:
+      213: 21300032
+    second: HUDDESIGNER_ANIMATED_SP_28_16
+  - first:
+      213: 21300034
+    second: HUDDESIGNER_ANIMATED_SP_28_17
+  - first:
+      213: 21300036
+    second: HUDDESIGNER_ANIMATED_SP_28_18
+  - first:
+      213: 21300038
+    second: HUDDESIGNER_ANIMATED_SP_28_19
+  - first:
+      213: 21300040
+    second: HUDDESIGNER_ANIMATED_SP_28_20
+  - first:
+      213: 21300042
+    second: HUDDESIGNER_ANIMATED_SP_28_21
+  - first:
+      213: 21300044
+    second: HUDDESIGNER_ANIMATED_SP_28_22
+  - first:
+      213: 21300046
+    second: HUDDESIGNER_ANIMATED_SP_28_23
+  - first:
+      213: 21300048
+    second: HUDDESIGNER_ANIMATED_SP_28_24
+  - first:
+      213: 21300050
+    second: HUDDESIGNER_ANIMATED_SP_28_25
+  - first:
+      213: 21300052
+    second: HUDDESIGNER_ANIMATED_SP_28_26
+  - first:
+      213: 21300054
+    second: HUDDESIGNER_ANIMATED_SP_28_27
+  - first:
+      213: 21300056
+    second: HUDDESIGNER_ANIMATED_SP_28_28
+  - first:
+      213: 21300058
+    second: HUDDESIGNER_ANIMATED_SP_28_29
+  - first:
+      213: 21300060
+    second: HUDDESIGNER_ANIMATED_SP_28_30
+  - first:
+      213: 21300062
+    second: HUDDESIGNER_ANIMATED_SP_28_31
+  - first:
+      213: 21300064
+    second: HUDDESIGNER_ANIMATED_SP_28_32
+  - first:
+      213: 21300066
+    second: HUDDESIGNER_ANIMATED_SP_28_33
+  - first:
+      213: 21300068
+    second: HUDDESIGNER_ANIMATED_SP_28_34
+  - first:
+      213: 21300070
+    second: HUDDESIGNER_ANIMATED_SP_28_35
+  - first:
+      213: 21300072
+    second: HUDDESIGNER_ANIMATED_SP_28_36
+  - first:
+      213: 21300074
+    second: HUDDESIGNER_ANIMATED_SP_28_37
+  - first:
+      213: 21300076
+    second: HUDDESIGNER_ANIMATED_SP_28_38
+  - first:
+      213: 21300078
+    second: HUDDESIGNER_ANIMATED_SP_28_39
+  - first:
+      213: 21300080
+    second: HUDDESIGNER_ANIMATED_SP_28_40
+  - first:
+      213: 21300082
+    second: HUDDESIGNER_ANIMATED_SP_28_41
+  - first:
+      213: 21300084
+    second: HUDDESIGNER_ANIMATED_SP_28_42
+  - first:
+      213: 21300086
+    second: HUDDESIGNER_ANIMATED_SP_28_43
+  - first:
+      213: 21300088
+    second: HUDDESIGNER_ANIMATED_SP_28_44
+  - first:
+      213: 21300090
+    second: HUDDESIGNER_ANIMATED_SP_28_45
+  - first:
+      213: 21300092
+    second: HUDDESIGNER_ANIMATED_SP_28_46
+  - first:
+      213: 21300094
+    second: HUDDESIGNER_ANIMATED_SP_28_47
+  - first:
+      213: 21300096
+    second: HUDDESIGNER_ANIMATED_SP_28_48
+  - first:
+      213: 21300098
+    second: HUDDESIGNER_ANIMATED_SP_28_49
+  - first:
+      213: 21300100
+    second: HUDDESIGNER_ANIMATED_SP_28_50
+  - first:
+      213: 21300102
+    second: HUDDESIGNER_ANIMATED_SP_28_51
+  - first:
+      213: 21300104
+    second: HUDDESIGNER_ANIMATED_SP_28_52
+  - first:
+      213: 21300106
+    second: HUDDESIGNER_ANIMATED_SP_28_53
+  - first:
+      213: 21300108
+    second: HUDDESIGNER_ANIMATED_SP_28_54
+  - first:
+      213: 21300110
+    second: HUDDESIGNER_ANIMATED_SP_28_55
+  - first:
+      213: 21300112
+    second: HUDDESIGNER_ANIMATED_SP_28_56
+  - first:
+      213: 21300114
+    second: HUDDESIGNER_ANIMATED_SP_28_57
+  - first:
+      213: 21300116
+    second: HUDDESIGNER_ANIMATED_SP_28_58
+  - first:
+      213: 21300118
+    second: HUDDESIGNER_ANIMATED_SP_28_59
+  - first:
+      213: 21300120
+    second: HUDDESIGNER_ANIMATED_SP_28_60
+  - first:
+      213: 21300122
+    second: HUDDESIGNER_ANIMATED_SP_28_61
+  - first:
+      213: 21300124
+    second: HUDDESIGNER_ANIMATED_SP_28_62
+  - first:
+      213: 21300126
+    second: HUDDESIGNER_ANIMATED_SP_28_63
+  - first:
+      213: 21300128
+    second: HUDDESIGNER_ANIMATED_SP_28_64
+  - first:
+      213: 21300130
+    second: HUDDESIGNER_ANIMATED_SP_28_65
+  - first:
+      213: 21300132
+    second: HUDDESIGNER_ANIMATED_SP_28_66
+  - first:
+      213: 21300134
+    second: HUDDESIGNER_ANIMATED_SP_28_67
+  - first:
+      213: 21300136
+    second: HUDDESIGNER_ANIMATED_SP_28_68
+  - first:
+      213: 21300138
+    second: HUDDESIGNER_ANIMATED_SP_28_69
+  - first:
+      213: 21300140
+    second: HUDDESIGNER_ANIMATED_SP_28_70
+  - first:
+      213: 21300142
+    second: HUDDESIGNER_ANIMATED_SP_28_71
+  - first:
+      213: 21300144
+    second: HUDDESIGNER_ANIMATED_SP_28_72
+  - first:
+      213: 21300146
+    second: HUDDESIGNER_ANIMATED_SP_28_73
+  - first:
+      213: 21300148
+    second: HUDDESIGNER_ANIMATED_SP_28_74
+  - first:
+      213: 21300150
+    second: HUDDESIGNER_ANIMATED_SP_28_75
+  - first:
+      213: 21300152
+    second: HUDDESIGNER_ANIMATED_SP_28_76
+  - first:
+      213: 21300154
+    second: HUDDESIGNER_ANIMATED_SP_28_77
+  - first:
+      213: 21300156
+    second: HUDDESIGNER_ANIMATED_SP_28_78
+  - first:
+      213: 21300158
+    second: HUDDESIGNER_ANIMATED_SP_28_79
+  - first:
+      213: 21300160
+    second: HUDDESIGNER_ANIMATED_SP_28_80
+  - first:
+      213: 21300162
+    second: HUDDESIGNER_ANIMATED_SP_28_81
+  - first:
+      213: 21300164
+    second: HUDDESIGNER_ANIMATED_SP_28_82
+  - first:
+      213: 21300166
+    second: HUDDESIGNER_ANIMATED_SP_28_83
+  - first:
+      213: 21300168
+    second: HUDDESIGNER_ANIMATED_SP_28_84
+  - first:
+      213: 21300170
+    second: HUDDESIGNER_ANIMATED_SP_28_85
+  - first:
+      213: 21300172
+    second: HUDDESIGNER_ANIMATED_SP_28_86
+  - first:
+      213: 21300174
+    second: HUDDESIGNER_ANIMATED_SP_28_87
+  - first:
+      213: 21300176
+    second: HUDDESIGNER_ANIMATED_SP_28_88
+  - first:
+      213: 21300178
+    second: HUDDESIGNER_ANIMATED_SP_28_89
+  - first:
+      213: 21300180
+    second: HUDDESIGNER_ANIMATED_SP_28_90
+  - first:
+      213: 21300182
+    second: HUDDESIGNER_ANIMATED_SP_28_91
+  - first:
+      213: 21300184
+    second: HUDDESIGNER_ANIMATED_SP_28_92
+  - first:
+      213: 21300186
+    second: HUDDESIGNER_ANIMATED_SP_28_93
+  - first:
+      213: 21300188
+    second: HUDDESIGNER_ANIMATED_SP_28_94
+  - first:
+      213: 21300190
+    second: HUDDESIGNER_ANIMATED_SP_28_95
+  - first:
+      213: 21300192
+    second: HUDDESIGNER_ANIMATED_SP_28_96
+  - first:
+      213: 21300194
+    second: HUDDESIGNER_ANIMATED_SP_28_97
+  - first:
+      213: 21300196
+    second: HUDDESIGNER_ANIMATED_SP_28_98
+  - first:
+      213: 21300198
+    second: HUDDESIGNER_ANIMATED_SP_28_99
+  - first:
+      213: 21300200
+    second: HUDDESIGNER_ANIMATED_SP_28_100
+  - first:
+      213: 21300202
+    second: HUDDESIGNER_ANIMATED_SP_28_101
+  - first:
+      213: 21300204
+    second: HUDDESIGNER_ANIMATED_SP_28_102
+  - first:
+      213: 21300206
+    second: HUDDESIGNER_ANIMATED_SP_28_103
+  - first:
+      213: 21300208
+    second: HUDDESIGNER_ANIMATED_SP_28_104
+  - first:
+      213: 21300210
+    second: HUDDESIGNER_ANIMATED_SP_28_105
+  - first:
+      213: 21300212
+    second: HUDDESIGNER_ANIMATED_SP_28_106
+  - first:
+      213: 21300214
+    second: HUDDESIGNER_ANIMATED_SP_28_107
+  - first:
+      213: 21300216
+    second: HUDDESIGNER_ANIMATED_SP_28_108
+  - first:
+      213: 21300218
+    second: HUDDESIGNER_ANIMATED_SP_28_109
+  - first:
+      213: 21300220
+    second: HUDDESIGNER_ANIMATED_SP_28_110
+  - first:
+      213: 21300222
+    second: HUDDESIGNER_ANIMATED_SP_28_111
+  - first:
+      213: 21300224
+    second: HUDDESIGNER_ANIMATED_SP_28_112
+  - first:
+      213: 21300226
+    second: HUDDESIGNER_ANIMATED_SP_28_113
+  - first:
+      213: 21300228
+    second: HUDDESIGNER_ANIMATED_SP_28_114
+  - first:
+      213: 21300230
+    second: HUDDESIGNER_ANIMATED_SP_28_115
+  - first:
+      213: 21300232
+    second: HUDDESIGNER_ANIMATED_SP_28_116
+  - first:
+      213: 21300234
+    second: HUDDESIGNER_ANIMATED_SP_28_117
+  - first:
+      213: 21300236
+    second: HUDDESIGNER_ANIMATED_SP_28_118
+  - first:
+      213: 21300238
+    second: HUDDESIGNER_ANIMATED_SP_28_119
+  - first:
+      213: 21300240
+    second: HUDDESIGNER_ANIMATED_SP_28_120
+  - first:
+      213: 21300242
+    second: HUDDESIGNER_ANIMATED_SP_28_121
+  - first:
+      213: 21300244
+    second: HUDDESIGNER_ANIMATED_SP_28_122
+  - first:
+      213: 21300246
+    second: HUDDESIGNER_ANIMATED_SP_28_123
+  - first:
+      213: 21300248
+    second: HUDDESIGNER_ANIMATED_SP_28_124
+  - first:
+      213: 21300250
+    second: HUDDESIGNER_ANIMATED_SP_28_125
+  - first:
+      213: 21300252
+    second: HUDDESIGNER_ANIMATED_SP_28_126
+  - first:
+      213: 21300254
+    second: HUDDESIGNER_ANIMATED_SP_28_127
+  - first:
+      213: 21300256
+    second: HUDDESIGNER_ANIMATED_SP_28_128
+  - first:
+      213: 21300258
+    second: HUDDESIGNER_ANIMATED_SP_28_129
+  - first:
+      213: 21300260
+    second: HUDDESIGNER_ANIMATED_SP_28_130
+  - first:
+      213: 21300262
+    second: HUDDESIGNER_ANIMATED_SP_28_131
+  - first:
+      213: 21300264
+    second: HUDDESIGNER_ANIMATED_SP_28_132
+  - first:
+      213: 21300266
+    second: HUDDESIGNER_ANIMATED_SP_28_133
+  - first:
+      213: 21300268
+    second: HUDDESIGNER_ANIMATED_SP_28_134
+  - first:
+      213: 21300270
+    second: HUDDESIGNER_ANIMATED_SP_28_135
+  - first:
+      213: 21300272
+    second: HUDDESIGNER_ANIMATED_SP_28_136
+  - first:
+      213: 21300274
+    second: HUDDESIGNER_ANIMATED_SP_28_137
+  - first:
+      213: 21300276
+    second: HUDDESIGNER_ANIMATED_SP_28_138
+  - first:
+      213: 21300278
+    second: HUDDESIGNER_ANIMATED_SP_28_139
+  - first:
+      213: 21300280
+    second: HUDDESIGNER_ANIMATED_SP_28_140
+  - first:
+      213: 21300282
+    second: HUDDESIGNER_ANIMATED_SP_28_141
+  - first:
+      213: 21300284
+    second: HUDDESIGNER_ANIMATED_SP_28_142
+  - first:
+      213: 21300286
+    second: HUDDESIGNER_ANIMATED_SP_28_143
+  - first:
+      213: 21300288
+    second: HUDDESIGNER_ANIMATED_SP_28_144
+  - first:
+      213: 21300290
+    second: HUDDESIGNER_ANIMATED_SP_28_145
+  - first:
+      213: 21300292
+    second: HUDDESIGNER_ANIMATED_SP_28_146
+  - first:
+      213: 21300294
+    second: HUDDESIGNER_ANIMATED_SP_28_147
+  - first:
+      213: 21300296
+    second: HUDDESIGNER_ANIMATED_SP_28_148
+  - first:
+      213: 21300298
+    second: HUDDESIGNER_ANIMATED_SP_28_149
+  - first:
+      213: 21300300
+    second: HUDDESIGNER_ANIMATED_SP_28_150
+  - first:
+      213: 21300302
+    second: HUDDESIGNER_ANIMATED_SP_28_151
+  - first:
+      213: 21300304
+    second: HUDDESIGNER_ANIMATED_SP_28_152
+  - first:
+      213: 21300306
+    second: HUDDESIGNER_ANIMATED_SP_28_153
+  - first:
+      213: 21300308
+    second: HUDDESIGNER_ANIMATED_SP_28_154
+  - first:
+      213: 21300310
+    second: HUDDESIGNER_ANIMATED_SP_28_155
+  - first:
+      213: 21300312
+    second: HUDDESIGNER_ANIMATED_SP_28_156
+  - first:
+      213: 21300314
+    second: HUDDESIGNER_ANIMATED_SP_28_157
+  - first:
+      213: 21300316
+    second: HUDDESIGNER_ANIMATED_SP_28_158
+  - first:
+      213: 21300318
+    second: HUDDESIGNER_ANIMATED_SP_28_159
+  - first:
+      213: 21300320
+    second: HUDDESIGNER_ANIMATED_SP_28_160
+  - first:
+      213: 21300322
+    second: HUDDESIGNER_ANIMATED_SP_28_161
+  - first:
+      213: 21300324
+    second: HUDDESIGNER_ANIMATED_SP_28_162
+  - first:
+      213: 21300326
+    second: HUDDESIGNER_ANIMATED_SP_28_163
+  - first:
+      213: 21300328
+    second: HUDDESIGNER_ANIMATED_SP_28_164
+  - first:
+      213: 21300330
+    second: HUDDESIGNER_ANIMATED_SP_28_165
+  - first:
+      213: 21300332
+    second: HUDDESIGNER_ANIMATED_SP_28_166
+  - first:
+      213: 21300334
+    second: HUDDESIGNER_ANIMATED_SP_28_167
+  - first:
+      213: 21300336
+    second: HUDDESIGNER_ANIMATED_SP_28_168
+  - first:
+      213: 21300338
+    second: HUDDESIGNER_ANIMATED_SP_28_169
+  - first:
+      213: 21300340
+    second: HUDDESIGNER_ANIMATED_SP_28_170
+  - first:
+      213: 21300342
+    second: HUDDESIGNER_ANIMATED_SP_28_171
+  - first:
+      213: 21300344
+    second: HUDDESIGNER_ANIMATED_SP_28_172
+  - first:
+      213: 21300346
+    second: HUDDESIGNER_ANIMATED_SP_28_173
+  - first:
+      213: 21300348
+    second: HUDDESIGNER_ANIMATED_SP_28_174
+  - first:
+      213: 21300350
+    second: HUDDESIGNER_ANIMATED_SP_28_175
+  - first:
+      213: 21300352
+    second: HUDDESIGNER_ANIMATED_SP_28_176
+  - first:
+      213: 21300354
+    second: HUDDESIGNER_ANIMATED_SP_28_177
+  - first:
+      213: 21300356
+    second: HUDDESIGNER_ANIMATED_SP_28_178
+  - first:
+      213: 21300358
+    second: HUDDESIGNER_ANIMATED_SP_28_179
+  - first:
+      213: 21300360
+    second: HUDDESIGNER_ANIMATED_SP_28_180
+  - first:
+      213: 21300362
+    second: HUDDESIGNER_ANIMATED_SP_28_181
+  - first:
+      213: 21300364
+    second: HUDDESIGNER_ANIMATED_SP_28_182
+  - first:
+      213: 21300366
+    second: HUDDESIGNER_ANIMATED_SP_28_183
+  - first:
+      213: 21300368
+    second: HUDDESIGNER_ANIMATED_SP_28_184
+  - first:
+      213: 21300370
+    second: HUDDESIGNER_ANIMATED_SP_28_185
+  - first:
+      213: 21300372
+    second: HUDDESIGNER_ANIMATED_SP_28_186
+  - first:
+      213: 21300374
+    second: HUDDESIGNER_ANIMATED_SP_28_187
+  - first:
+      213: 21300376
+    second: HUDDESIGNER_ANIMATED_SP_28_188
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: -1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 1
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: HUDDESIGNER_ANIMATED_SP_28_0
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 1962.6666
+        width: 256
+        height: 85.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 553775e6ecbe88a489bd8d619b02af63
+      internalID: 21300000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUDDESIGNER_ANIMATED_SP_28_1
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 1962.6666
+        width: 256
+        height: 85.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb003d25e92784046934fb746e08cbb4
+      internalID: 21300002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUDDESIGNER_ANIMATED_SP_28_2
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 1962.6666
+        width: 256
+        height: 85.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 677f5b9e8a1b1904193b1a4827f2dc94
+      internalID: 21300004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUDDESIGNER_ANIMATED_SP_28_3
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 1962.6666
+        width: 256
+        height: 85.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 280f2f228e68db046acdaaf05972c93e
+      internalID: 21300006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUDDESIGNER_ANIMATED_SP_28_4
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 1962.6666
+        width: 256
+        height: 85.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 896037a9a6e15ae4cb4ceb875efbfb72
+      internalID: 21300008
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUDDESIGNER_ANIMATED_SP_28_5
+      rect:
+        serializedVersion: 2
+        x: 1792
+        y: 1962.6666
+        width: 256
+        height: 85.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5526d4105a8d1cb47afc98e03b008b04
+      internalID: 21300010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUDDESIGNER_ANIMATED_SP_28_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1877.6666
+        width: 256
+        height: 85.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a0a8e3ec67ac98448f5202fdcbc357f
+      internalID: 21300012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUDDESIGNER_ANIMATED_SP_28_7
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 1877.6666
+        width: 256
+        height: 85.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e5c89381415bc74a9d2037c79e48b94
+      internalID: 21300014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUDDESIGNER_ANIMATED_SP_28_8
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 1877.6666
+        width: 256
+        height: 85.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e749c1f7c9b78b46accbf2b36c23672
+      internalID: 21300016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUDDESIGNER_ANIMATED_SP_28_9
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 1877.6666
+        width: 256
+        height: 85.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0b1a872b67a85549b1a13396dfa79ff
+      internalID: 21300018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUDDESIGNER_ANIMATED_SP_28_10
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 1877.6666
+        width: 256
+        height: 85.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0631820bbb86b254c8c5ebcd81ca75f0
+      internalID: 21300020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUDDESIGNER_ANIMATED_SP_28_11
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 1877.6666
+        width: 256
+        height: 85.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f18b29a1bbac01440a03bffcd253dbf6
+      internalID: 21300022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUDDESIGNER_ANIMATED_SP_28_12
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 1877.6666
+        width: 256
+        height: 85.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d5ea4b07d22d094dabe0b2eb63267a8
+      internalID: 21300024
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUDDESIGNER_ANIMATED_SP_28_13
+      rect:
+        serializedVersion: 2
+        x: 1792
+        y: 1877.6666
+        width: 256
+        height: 85.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cfcd8551f700d974ab0f29ade8d04845
+      internalID: 21300026
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUDDESIGNER_ANIMATED_SP_28_14
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1792.6666
+        width: 256
+        height: 85.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4edb3c20684c85b4fb43dcb3b50f9b6e
+      internalID: 21300028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUDDESIGNER_ANIMATED_SP_28_15
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 1792.6666
+        width: 256
+        height: 85.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e08ebbb32c13f764ea74d313909d8fd9
+      internalID: 21300030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUDDESIGNER_ANIMATED_SP_28_16
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 1792.6666
+        width: 256
+        height: 85.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: feb001c693e68184d884ea0d87238893
+      internalID: 21300032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUDDESIGNER_ANIMATED_SP_28_17
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 1792.6666
+        width: 256
+        height: 85.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 20c206235c0fcca46832c77d6aca4df5
+      internalID: 21300034
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUDDESIGNER_ANIMATED_SP_28_18
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 1792.6666
+        width: 256
+        height: 85.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e61e2b3f52ae1b34eaddc54feb0408fc
+      internalID: 21300036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUDDESIGNER_ANIMATED_SP_28_19
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 1792.6666
+        width: 256
+        height: 85.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb2ecb2ef53062b4d9592456a11702c7
+      internalID: 21300038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUDDESIGNER_ANIMATED_SP_28_20
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 1792.6666
+        width: 256
+        height: 85.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7212d4e980bbf61458d6534e2c91b95c
+      internalID: 21300040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUDDESIGNER_ANIMATED_SP_28_21
+      rect:
+        serializedVersion: 2
+        x: 1792
+        y: 1792.6666
+        width: 256
+        height: 85.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 630ae331a0d2eb24186551ec6ca7a3c8
+      internalID: 21300042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUDDESIGNER_ANIMATED_SP_28_22
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1707.6666
+        width: 256
+        height: 85.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 491aac0f5a8287c4f892af390d50d79c
+      internalID: 21300044
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUDDESIGNER_ANIMATED_SP_28_23
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 1707.6666
+        width: 256
+        height: 85.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 63d4324fdb46b534d8e2695858e5d89f
+      internalID: 21300046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUDDESIGNER_ANIMATED_SP_28_24
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 1707.6666
+        width: 256
+        height: 85.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 507e58518cc1a7f418259346140a39e2
+      internalID: 21300048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUDDESIGNER_ANIMATED_SP_28_25
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 1707.6666
+        width: 256
+        height: 85.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42d5b6f2ee110574a8bc6ba546ee6f6f
+      internalID: 21300050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUDDESIGNER_ANIMATED_SP_28_26
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 1707.6666
+        width: 256
+        height: 85.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7384ce3b0ddbc5646842975c5d3b316e
+      internalID: 21300052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUDDESIGNER_ANIMATED_SP_28_27
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 1707.6666
+        width: 256
+        height: 85.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2347943c9f08517449052a89143a2ecb
+      internalID: 21300054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUDDESIGNER_ANIMATED_SP_28_28
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 1707.6666
+        width: 256
+        height: 85.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a8b08ad048142c49bcb3f8d2e53e354
+      internalID: 21300056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUDDESIGNER_ANIMATED_SP_28_29
+      rect:
+        serializedVersion: 2
+        x: 1792
+        y: 1707.6666
+        width: 256
+        height: 85.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2af84ea6339a2814e82413ec16b645c5
+      internalID: 21300058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUDDESIGNER_ANIMATED_SP_28_30
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1622.6666
+        width: 256
+        height: 85.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7846f4750152aa349ae0d7a55b8f1888
+      internalID: 21300060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUDDESIGNER_ANIMATED_SP_28_31
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 1622.6666
+        width: 256
+        height: 85.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d8b422928e4439a4ab9db45224af8e2e
+      internalID: 21300062
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUDDESIGNER_ANIMATED_SP_28_32
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 1622.6666
+        width: 256
+        height: 85.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 64a9f1d2be59db14b9bf5c1fc3d01759
+      internalID: 21300064
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUDDESIGNER_ANIMATED_SP_28_33
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 1622.6666
+        width: 256
+        height: 85.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6cb69187e0d7b0f4092a57bff34bd06f
+      internalID: 21300066
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUDDESIGNER_ANIMATED_SP_28_34
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 1622.6666
+        width: 256
+        height: 85.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a30b5fd000fd3049950c7c6cda049cf
+      internalID: 21300068
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUDDESIGNER_ANIMATED_SP_28_35
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 1622.6666
+        width: 256
+        height: 85.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9f1cbd10068647438ceb2446d23f03e
+      internalID: 21300070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUDDESIGNER_ANIMATED_SP_28_36
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 1622.6666
+        width: 256
+        height: 85.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08a9c9fbc22ebcf4fb05b3b81e6e3d6c
+      internalID: 21300072
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUDDESIGNER_ANIMATED_SP_28_37
+      rect:
+        serializedVersion: 2
+        x: 1792
+        y: 1622.6666
+        width: 256
+        height: 85.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1119f743070bdbf4faf3393e65e452ee
+      internalID: 21300074
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUDDESIGNER_ANIMATED_SP_28_38
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1537.6666
+        width: 256
+        height: 85.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9354a992fc4a9954cb0b51542b55e23c
+      internalID: 21300076
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUDDESIGNER_ANIMATED_SP_28_39
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 1537.6666
+        width: 256
+        height: 85.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a67a5df2f8361d4ca899c228cc53037
+      internalID: 21300078
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUDDESIGNER_ANIMATED_SP_28_40
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 1537.6666
+        width: 256
+        height: 85.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28cc2afdf4c07924eb87c4443cee9dca
+      internalID: 21300080
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUDDESIGNER_ANIMATED_SP_28_41
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 1537.6666
+        width: 256
+        height: 85.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6fd5007626ec33645aa406771405f6d1
+      internalID: 21300082
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUDDESIGNER_ANIMATED_SP_28_42
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 1537.6666
+        width: 256
+        height: 85.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7218a20322b4ce848ac2fb30823964c6
+      internalID: 21300084
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUDDESIGNER_ANIMATED_SP_28_43
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 1537.6666
+        width: 256
+        height: 85.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9aaef991e0b40f84b8977b0b738f9aa2
+      internalID: 21300086
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUDDESIGNER_ANIMATED_SP_28_44
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 1537.6666
+        width: 256
+        height: 85.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b1e94f6db5c8eb48a863025c362af68
+      internalID: 21300088
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUDDESIGNER_ANIMATED_SP_28_45
+      rect:
+        serializedVersion: 2
+        x: 1792
+        y: 1537.6666
+        width: 256
+        height: 85.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 633a09f3de411744e931913f5208dd30
+      internalID: 21300090
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUDDESIGNER_ANIMATED_SP_28_46
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1452.6666
+        width: 256
+        height: 85.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c5b6f658c09e8a4e98bdbab04004d3e
+      internalID: 21300092
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUDDESIGNER_ANIMATED_SP_28_47
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 1452.6666
+        width: 256
+        height: 85.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21093af2c18f82745b7e57129fc45b2e
+      internalID: 21300094
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUDDESIGNER_ANIMATED_SP_28_48
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 1452.6666
+        width: 256
+        height: 85.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 123589f24d8122f4ba78cb50b7d6d790
+      internalID: 21300096
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUDDESIGNER_ANIMATED_SP_28_49
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 1452.6666
+        width: 256
+        height: 85.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc05d1a0e3454bf448cdc7b16f60b9e1
+      internalID: 21300098
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUDDESIGNER_ANIMATED_SP_28_50
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 1452.6666
+        width: 256
+        height: 85.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b75b186a8137324418f4808eac28cf36
+      internalID: 21300100
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUDDESIGNER_ANIMATED_SP_28_51
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 1452.6666
+        width: 256
+        height: 85.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15739ccd1f30e9147bbe128ef95b346e
+      internalID: 21300102
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUDDESIGNER_ANIMATED_SP_28_52
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 1452.6666
+        width: 256
+        height: 85.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c78db95c201c30347a8938dafc4f3e29
+      internalID: 21300104
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUDDESIGNER_ANIMATED_SP_28_53
+      rect:
+        serializedVersion: 2
+        x: 1792
+        y: 1452.6666
+        width: 256
+        height: 85.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05f93640415d1254ba8afff1512981b0
+      internalID: 21300106
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUDDESIGNER_ANIMATED_SP_28_54
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1367.6666
+        width: 256
+        height: 85.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea6e0255cee41f049a815b9943532691
+      internalID: 21300108
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUDDESIGNER_ANIMATED_SP_28_55
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 1367.6666
+        width: 256
+        height: 85.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 773d3fb9656c6344ba523061a383bfee
+      internalID: 21300110
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUDDESIGNER_ANIMATED_SP_28_56
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 1367.6666
+        width: 256
+        height: 85.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c03a8d169cfa90e48b9bd3c1e7654d5f
+      internalID: 21300112
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUDDESIGNER_ANIMATED_SP_28_57
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 1367.6666
+        width: 256
+        height: 85.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e6b519237d15154da7fd6b97dff32d3
+      internalID: 21300114
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUDDESIGNER_ANIMATED_SP_28_58
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 1367.6666
+        width: 256
+        height: 85.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9157278f065afb4d8f052903e634e9e
+      internalID: 21300116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUDDESIGNER_ANIMATED_SP_28_59
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 1367.6666
+        width: 256
+        height: 85.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 017a696c2fb9a804c85f3dd9de52bef3
+      internalID: 21300118
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUDDESIGNER_ANIMATED_SP_28_60
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 1367.6666
+        width: 256
+        height: 85.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5365fa198e2c7d438c2e9c72e3bd148
+      internalID: 21300120
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUDDESIGNER_ANIMATED_SP_28_61
+      rect:
+        serializedVersion: 2
+        x: 1792
+        y: 1367.6666
+        width: 256
+        height: 85.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0de4efb1b9d756e4185fb3043432d5b2
+      internalID: 21300122
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUDDESIGNER_ANIMATED_SP_28_62
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1282.6666
+        width: 256
+        height: 85.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c2a0a450dacb3a4f8d2544ba46de6eb
+      internalID: 21300124
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUDDESIGNER_ANIMATED_SP_28_63
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 1282.6666
+        width: 256
+        height: 85.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4438887c386bba64ba7174d74d527b05
+      internalID: 21300126
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUDDESIGNER_ANIMATED_SP_28_64
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 1282.6666
+        width: 256
+        height: 85.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 410c2ab9f68123d43983545273fabceb
+      internalID: 21300128
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUDDESIGNER_ANIMATED_SP_28_65
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 1282.6666
+        width: 256
+        height: 85.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6da2c5eff7f6a1841a69862a67565806
+      internalID: 21300130
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUDDESIGNER_ANIMATED_SP_28_66
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 1282.6666
+        width: 256
+        height: 85.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cba373eac01eed1499b5eb373c0e2c6b
+      internalID: 21300132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUDDESIGNER_ANIMATED_SP_28_67
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 1282.6666
+        width: 256
+        height: 85.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4bfc64bf245ff5748a9ff3d5ba9c7e8c
+      internalID: 21300134
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUDDESIGNER_ANIMATED_SP_28_68
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 1282.6666
+        width: 256
+        height: 85.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf9ce28dea75a854183f43f82965b55c
+      internalID: 21300136
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUDDESIGNER_ANIMATED_SP_28_69
+      rect:
+        serializedVersion: 2
+        x: 1792
+        y: 1282.6666
+        width: 256
+        height: 85.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1361eb62f6d8a44499e1f86f327f2385
+      internalID: 21300138
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUDDESIGNER_ANIMATED_SP_28_70
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1197.6666
+        width: 256
+        height: 85.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d7fd4e7bb07d7904e92c6581cb75d4c8
+      internalID: 21300140
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUDDESIGNER_ANIMATED_SP_28_71
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 1197.6666
+        width: 256
+        height: 85.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2acf445e0e0041c4a8d2f2b47579495c
+      internalID: 21300142
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUDDESIGNER_ANIMATED_SP_28_72
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 1197.6666
+        width: 256
+        height: 85.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23816bea165c69c4aa7b81f8d3131b99
+      internalID: 21300144
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUDDESIGNER_ANIMATED_SP_28_73
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 1197.6666
+        width: 256
+        height: 85.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 987dd8d58e21ffe4fa7553b3c6e75178
+      internalID: 21300146
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUDDESIGNER_ANIMATED_SP_28_74
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 1197.6666
+        width: 256
+        height: 85.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05d1ec4d2124bc2469aca2fdf6f18390
+      internalID: 21300148
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUDDESIGNER_ANIMATED_SP_28_75
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 1197.6666
+        width: 256
+        height: 85.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 29114c3c0f35ab8478867dc480328674
+      internalID: 21300150
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUDDESIGNER_ANIMATED_SP_28_76
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 1197.6666
+        width: 256
+        height: 85.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e8b31c0673b5b54abf796d532c846f9
+      internalID: 21300152
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUDDESIGNER_ANIMATED_SP_28_77
+      rect:
+        serializedVersion: 2
+        x: 1792
+        y: 1197.6666
+        width: 256
+        height: 85.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 46d0708530eb2be489ceac8899f8f84f
+      internalID: 21300154
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUDDESIGNER_ANIMATED_SP_28_78
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1112.6666
+        width: 256
+        height: 85.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8be7921cf8d69f84784dbf4c61b22fef
+      internalID: 21300156
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUDDESIGNER_ANIMATED_SP_28_79
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 1112.6666
+        width: 256
+        height: 85.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81a08238ecba53e4b83cbbb0441419c4
+      internalID: 21300158
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUDDESIGNER_ANIMATED_SP_28_80
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 1112.6666
+        width: 256
+        height: 85.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5219c2235212eef4a8c867e1b605a4f9
+      internalID: 21300160
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUDDESIGNER_ANIMATED_SP_28_81
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 1112.6666
+        width: 256
+        height: 85.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7bbad4ede30415f4ea434b3166a484ab
+      internalID: 21300162
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUDDESIGNER_ANIMATED_SP_28_82
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 1112.6666
+        width: 256
+        height: 85.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b8617accc7c71664abb25d8d1324256c
+      internalID: 21300164
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUDDESIGNER_ANIMATED_SP_28_83
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 1112.6666
+        width: 256
+        height: 85.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6879afc955e8ed449bff3a1a2625ea1
+      internalID: 21300166
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUDDESIGNER_ANIMATED_SP_28_84
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 1112.6666
+        width: 256
+        height: 85.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd075a6714aa2df4e8144eae88a6e0bc
+      internalID: 21300168
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUDDESIGNER_ANIMATED_SP_28_85
+      rect:
+        serializedVersion: 2
+        x: 1792
+        y: 1112.6666
+        width: 256
+        height: 85.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77f8b799b9b48b8439ec6865746445bd
+      internalID: 21300170
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUDDESIGNER_ANIMATED_SP_28_86
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1027.6666
+        width: 256
+        height: 85.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b43188f1b1be394cb8a95935b7984b6
+      internalID: 21300172
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUDDESIGNER_ANIMATED_SP_28_87
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 1027.6666
+        width: 256
+        height: 85.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f83e4fcf8b3b7e4cb87a59d16ba43c6
+      internalID: 21300174
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUDDESIGNER_ANIMATED_SP_28_88
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 1027.6666
+        width: 256
+        height: 85.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 60f52a4ef4dd23c43adc78aeca6da700
+      internalID: 21300176
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUDDESIGNER_ANIMATED_SP_28_89
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 1027.6666
+        width: 256
+        height: 85.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d856d9f564c2ea446bee1b946459a8de
+      internalID: 21300178
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUDDESIGNER_ANIMATED_SP_28_90
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 1027.6666
+        width: 256
+        height: 85.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 217b1a766f9db584dacdea1da4933249
+      internalID: 21300180
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUDDESIGNER_ANIMATED_SP_28_91
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 1027.6666
+        width: 256
+        height: 85.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 06cb245a22f7f8a49a1e9f28bd78a04c
+      internalID: 21300182
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUDDESIGNER_ANIMATED_SP_28_92
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 1027.6666
+        width: 256
+        height: 85.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83b71e3c1cc902c4da9751f7d16d2897
+      internalID: 21300184
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUDDESIGNER_ANIMATED_SP_28_93
+      rect:
+        serializedVersion: 2
+        x: 1792
+        y: 1027.6666
+        width: 256
+        height: 85.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d3ecea593099584d9740a0e6c9bb6b1
+      internalID: 21300186
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUDDESIGNER_ANIMATED_SP_28_94
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 942.6667
+        width: 256
+        height: 85.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f708e12dcbffb84ba8281bff67c9393
+      internalID: 21300188
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUDDESIGNER_ANIMATED_SP_28_95
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 942.6667
+        width: 256
+        height: 85.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2e5b040bec2a8e46a384dab086d59c9
+      internalID: 21300190
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUDDESIGNER_ANIMATED_SP_28_96
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 942.6667
+        width: 256
+        height: 85.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13a8fef52ba1ff54faae1cedd0dd3f77
+      internalID: 21300192
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUDDESIGNER_ANIMATED_SP_28_97
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 942.6667
+        width: 256
+        height: 85.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13fb277bb49beb54db6d87e429ab8ba9
+      internalID: 21300194
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUDDESIGNER_ANIMATED_SP_28_98
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 942.6667
+        width: 256
+        height: 85.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b45f58008c4c93c4099ee4f12d16ee08
+      internalID: 21300196
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUDDESIGNER_ANIMATED_SP_28_99
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 942.6667
+        width: 256
+        height: 85.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 007291ca9492456438f2398eef91cafc
+      internalID: 21300198
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUDDESIGNER_ANIMATED_SP_28_100
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 942.6667
+        width: 256
+        height: 85.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a020acef18353f94797f615106da9213
+      internalID: 21300200
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUDDESIGNER_ANIMATED_SP_28_101
+      rect:
+        serializedVersion: 2
+        x: 1792
+        y: 942.6667
+        width: 256
+        height: 85.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37ee4144ab350aa4fbd5bb10a67627d3
+      internalID: 21300202
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUDDESIGNER_ANIMATED_SP_28_102
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 857.6667
+        width: 256
+        height: 85.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c465d8594bcb01943a1e9fcdf18265fc
+      internalID: 21300204
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUDDESIGNER_ANIMATED_SP_28_103
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 857.6667
+        width: 256
+        height: 85.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9274f477fdb11f49ab664bde605e223
+      internalID: 21300206
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUDDESIGNER_ANIMATED_SP_28_104
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 857.6667
+        width: 256
+        height: 85.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9af567b266858b14cab8a9820498c65f
+      internalID: 21300208
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUDDESIGNER_ANIMATED_SP_28_105
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 857.6667
+        width: 256
+        height: 85.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f6eaf4bb28b876478a7b14c872c57b4
+      internalID: 21300210
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUDDESIGNER_ANIMATED_SP_28_106
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 857.6667
+        width: 256
+        height: 85.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7491ad8e6b877704c85218e8c366ccd1
+      internalID: 21300212
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUDDESIGNER_ANIMATED_SP_28_107
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 857.6667
+        width: 256
+        height: 85.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a502090e1f485a34599d9fcfe8230a76
+      internalID: 21300214
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUDDESIGNER_ANIMATED_SP_28_108
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 857.6667
+        width: 256
+        height: 85.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef1946ced0a396c418ec4b941da7cade
+      internalID: 21300216
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUDDESIGNER_ANIMATED_SP_28_109
+      rect:
+        serializedVersion: 2
+        x: 1792
+        y: 857.6667
+        width: 256
+        height: 85.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 29c3b558ecf18ff478377077875cb651
+      internalID: 21300218
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUDDESIGNER_ANIMATED_SP_28_110
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 772.6667
+        width: 256
+        height: 85.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 487464c3b6a11ac45ad1ff3664ec96c9
+      internalID: 21300220
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUDDESIGNER_ANIMATED_SP_28_111
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 772.6667
+        width: 256
+        height: 85.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e9c880ac5927554eadd3c56674f9ea4
+      internalID: 21300222
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUDDESIGNER_ANIMATED_SP_28_112
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 772.6667
+        width: 256
+        height: 85.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d907b5ee6f655784286773d77e96c032
+      internalID: 21300224
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUDDESIGNER_ANIMATED_SP_28_113
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 772.6667
+        width: 256
+        height: 85.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cda574dd539eb7445a95d4f1fe781b6b
+      internalID: 21300226
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUDDESIGNER_ANIMATED_SP_28_114
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 772.6667
+        width: 256
+        height: 85.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 354e3237bb49a3c41b899962d86ccaab
+      internalID: 21300228
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUDDESIGNER_ANIMATED_SP_28_115
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 772.6667
+        width: 256
+        height: 85.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c403a1881d74a8141a4973cc7ad8cae7
+      internalID: 21300230
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUDDESIGNER_ANIMATED_SP_28_116
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 772.6667
+        width: 256
+        height: 85.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83055afe14188ba4587c02c167348a68
+      internalID: 21300232
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUDDESIGNER_ANIMATED_SP_28_117
+      rect:
+        serializedVersion: 2
+        x: 1792
+        y: 772.6667
+        width: 256
+        height: 85.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 46ad7106f0d760c4c855a9abc4ff7151
+      internalID: 21300234
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUDDESIGNER_ANIMATED_SP_28_118
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 687.6667
+        width: 256
+        height: 85.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4bbf5f7541b862549853a7ea7f9bc5fb
+      internalID: 21300236
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUDDESIGNER_ANIMATED_SP_28_119
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 687.6667
+        width: 256
+        height: 85.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b311c78025c9d0a48a22957aba15082f
+      internalID: 21300238
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUDDESIGNER_ANIMATED_SP_28_120
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 687.6667
+        width: 256
+        height: 85.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9dc18e9617f296045ac73963fad36445
+      internalID: 21300240
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUDDESIGNER_ANIMATED_SP_28_121
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 687.6667
+        width: 256
+        height: 85.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e0d0efb742407014a8f516878e572413
+      internalID: 21300242
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUDDESIGNER_ANIMATED_SP_28_122
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 687.6667
+        width: 256
+        height: 85.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b42ba64e3015344ea529d9823cb21a3
+      internalID: 21300244
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUDDESIGNER_ANIMATED_SP_28_123
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 687.6667
+        width: 256
+        height: 85.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7711c8e60ca06c441a4f08d79c9a7b1e
+      internalID: 21300246
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUDDESIGNER_ANIMATED_SP_28_124
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 687.6667
+        width: 256
+        height: 85.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 823b9da6581fd9841902c58c0ff627f0
+      internalID: 21300248
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUDDESIGNER_ANIMATED_SP_28_125
+      rect:
+        serializedVersion: 2
+        x: 1792
+        y: 687.6667
+        width: 256
+        height: 85.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ba63368e16fd7f498f09cac49dd0166
+      internalID: 21300250
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUDDESIGNER_ANIMATED_SP_28_126
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 602.6667
+        width: 256
+        height: 85.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9d9712d84232db4fb246a435b5449cd
+      internalID: 21300252
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUDDESIGNER_ANIMATED_SP_28_127
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 602.6667
+        width: 256
+        height: 85.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 46d7844b0e347334da7df16f495a832a
+      internalID: 21300254
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUDDESIGNER_ANIMATED_SP_28_128
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 602.6667
+        width: 256
+        height: 85.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c56ab8cd573606f4f9ddf8df7afc8b77
+      internalID: 21300256
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUDDESIGNER_ANIMATED_SP_28_129
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 602.6667
+        width: 256
+        height: 85.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ad7708e009a38747bb9e2c3657b8fae
+      internalID: 21300258
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUDDESIGNER_ANIMATED_SP_28_130
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 602.6667
+        width: 256
+        height: 85.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b743933e7b8a16b4f91269e538921fe2
+      internalID: 21300260
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUDDESIGNER_ANIMATED_SP_28_131
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 602.6667
+        width: 256
+        height: 85.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba214da8fde8a8844ba0d96de8455a9a
+      internalID: 21300262
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUDDESIGNER_ANIMATED_SP_28_132
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 602.6667
+        width: 256
+        height: 85.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c2aff3c9464ea9a4ab01131e53edb8c1
+      internalID: 21300264
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUDDESIGNER_ANIMATED_SP_28_133
+      rect:
+        serializedVersion: 2
+        x: 1792
+        y: 602.6667
+        width: 256
+        height: 85.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c08fb26d9cb354458d213fd4f73d863
+      internalID: 21300266
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUDDESIGNER_ANIMATED_SP_28_134
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 517.6667
+        width: 256
+        height: 85.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a70b06b122b8a5439edd3d91106dcdb
+      internalID: 21300268
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUDDESIGNER_ANIMATED_SP_28_135
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 517.6667
+        width: 256
+        height: 85.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f07fc5d9fa84ca4da6eaaaacc4ef0d2
+      internalID: 21300270
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUDDESIGNER_ANIMATED_SP_28_136
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 517.6667
+        width: 256
+        height: 85.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0df180dd69b05074b96f353b31182ac2
+      internalID: 21300272
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUDDESIGNER_ANIMATED_SP_28_137
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 517.6667
+        width: 256
+        height: 85.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be1fc97b7de4f9145a1bf730472fa484
+      internalID: 21300274
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUDDESIGNER_ANIMATED_SP_28_138
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 517.6667
+        width: 256
+        height: 85.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 785e8c3cfaa888e40a9952a96a625756
+      internalID: 21300276
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUDDESIGNER_ANIMATED_SP_28_139
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 517.6667
+        width: 256
+        height: 85.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 080cccb436e2a464cb119b918cf31f4a
+      internalID: 21300278
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUDDESIGNER_ANIMATED_SP_28_140
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 517.6667
+        width: 256
+        height: 85.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54e742a35d4d5ca4791c77c0200e7f12
+      internalID: 21300280
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUDDESIGNER_ANIMATED_SP_28_141
+      rect:
+        serializedVersion: 2
+        x: 1792
+        y: 517.6667
+        width: 256
+        height: 85.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 26fdf4aeb9cfc9b44b729e48f3ae91cd
+      internalID: 21300282
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUDDESIGNER_ANIMATED_SP_28_142
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 432.66666
+        width: 256
+        height: 85.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 468092598a169714c92434ac8a0e55b1
+      internalID: 21300284
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUDDESIGNER_ANIMATED_SP_28_143
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 432.66666
+        width: 256
+        height: 85.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98dedc4ee4937f64d9c9527826fa0293
+      internalID: 21300286
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUDDESIGNER_ANIMATED_SP_28_144
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 432.66666
+        width: 256
+        height: 85.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 937d781026d117a4e942af8b295762b5
+      internalID: 21300288
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUDDESIGNER_ANIMATED_SP_28_145
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 432.66666
+        width: 256
+        height: 85.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1da6617de1d5e9e499cac2917dabefe4
+      internalID: 21300290
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUDDESIGNER_ANIMATED_SP_28_146
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 432.66666
+        width: 256
+        height: 85.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b8be02ce85a0273429b73d96f7c92b6a
+      internalID: 21300292
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUDDESIGNER_ANIMATED_SP_28_147
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 432.66666
+        width: 256
+        height: 85.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ae1d97e56bf3484b9c93d2c6262b562
+      internalID: 21300294
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUDDESIGNER_ANIMATED_SP_28_148
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 432.66666
+        width: 256
+        height: 85.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83187a4207d07b942a46ca63c6b654d5
+      internalID: 21300296
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUDDESIGNER_ANIMATED_SP_28_149
+      rect:
+        serializedVersion: 2
+        x: 1792
+        y: 432.66666
+        width: 256
+        height: 85.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00f4a847ebdfdb844a27dffcb57da78a
+      internalID: 21300298
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUDDESIGNER_ANIMATED_SP_28_150
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 347.66666
+        width: 256
+        height: 85.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a55b6ff525c1da4e9141c620fc8b4fb
+      internalID: 21300300
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUDDESIGNER_ANIMATED_SP_28_151
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 347.66666
+        width: 256
+        height: 85.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c89337c193910184483dba9130dfabb2
+      internalID: 21300302
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUDDESIGNER_ANIMATED_SP_28_152
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 347.66666
+        width: 256
+        height: 85.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b8076146cf2bff344bff6420f05da4cc
+      internalID: 21300304
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUDDESIGNER_ANIMATED_SP_28_153
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 347.66666
+        width: 256
+        height: 85.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75d09f0a5b2889f4faefc4a9e65cee00
+      internalID: 21300306
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUDDESIGNER_ANIMATED_SP_28_154
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 347.66666
+        width: 256
+        height: 85.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5cc62719f998cad4ca03e8433aca52c4
+      internalID: 21300308
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUDDESIGNER_ANIMATED_SP_28_155
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 347.66666
+        width: 256
+        height: 85.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 629ac0f7948ac5047bd0f27801dd8d3a
+      internalID: 21300310
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUDDESIGNER_ANIMATED_SP_28_156
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 347.66666
+        width: 256
+        height: 85.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 10513dba3b75d6240a271a9591858f4a
+      internalID: 21300312
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUDDESIGNER_ANIMATED_SP_28_157
+      rect:
+        serializedVersion: 2
+        x: 1792
+        y: 347.66666
+        width: 256
+        height: 85.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 088aef2c903c95146ae5770b2939895c
+      internalID: 21300314
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUDDESIGNER_ANIMATED_SP_28_158
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 262.66666
+        width: 256
+        height: 85.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ddb730a493746843b3ea8093da49f19
+      internalID: 21300316
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUDDESIGNER_ANIMATED_SP_28_159
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 262.66666
+        width: 256
+        height: 85.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98e6abec66516ae44a37aeed56d95fd3
+      internalID: 21300318
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUDDESIGNER_ANIMATED_SP_28_160
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 262.66666
+        width: 256
+        height: 85.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a3302f51e0ff4a4ebdae346c7474a77
+      internalID: 21300320
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUDDESIGNER_ANIMATED_SP_28_161
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 262.66666
+        width: 256
+        height: 85.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 074c07ccc1fae384da2e737ecb2d4500
+      internalID: 21300322
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUDDESIGNER_ANIMATED_SP_28_162
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 262.66666
+        width: 256
+        height: 85.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f8bad5038b31f0449d6d19b1f236826
+      internalID: 21300324
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUDDESIGNER_ANIMATED_SP_28_163
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 262.66666
+        width: 256
+        height: 85.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d38ccaa9301e024cad92ed184bbd43d
+      internalID: 21300326
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUDDESIGNER_ANIMATED_SP_28_164
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 262.66666
+        width: 256
+        height: 85.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19aec3ab6feb25744a5863268b4a85ac
+      internalID: 21300328
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUDDESIGNER_ANIMATED_SP_28_165
+      rect:
+        serializedVersion: 2
+        x: 1792
+        y: 262.66666
+        width: 256
+        height: 85.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 707d641df9f136c44a1fc45e448083af
+      internalID: 21300330
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUDDESIGNER_ANIMATED_SP_28_166
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 177.66666
+        width: 256
+        height: 85.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2aff344b6544c741855df2591925bf8
+      internalID: 21300332
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUDDESIGNER_ANIMATED_SP_28_167
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 177.66666
+        width: 256
+        height: 85.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 44425407eebf0f44b8860fb136da4103
+      internalID: 21300334
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUDDESIGNER_ANIMATED_SP_28_168
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 177.66666
+        width: 256
+        height: 85.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1d1932f46d911147b858330f740b391
+      internalID: 21300336
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUDDESIGNER_ANIMATED_SP_28_169
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 177.66666
+        width: 256
+        height: 85.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d889b3403fa46d4fb05fefa2a256a1b
+      internalID: 21300338
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUDDESIGNER_ANIMATED_SP_28_170
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 177.66666
+        width: 256
+        height: 85.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91df3bdee9fb128419019801a722906c
+      internalID: 21300340
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUDDESIGNER_ANIMATED_SP_28_171
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 177.66666
+        width: 256
+        height: 85.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 201f198f5bc53514e9449ecf8892f870
+      internalID: 21300342
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUDDESIGNER_ANIMATED_SP_28_172
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 177.66666
+        width: 256
+        height: 85.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3ca62fa266d13245bd417ad87f275af
+      internalID: 21300344
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUDDESIGNER_ANIMATED_SP_28_173
+      rect:
+        serializedVersion: 2
+        x: 1792
+        y: 177.66666
+        width: 256
+        height: 85.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00ee42803452ff24e9bb37a5db56e6f0
+      internalID: 21300346
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUDDESIGNER_ANIMATED_SP_28_174
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 92.666664
+        width: 256
+        height: 85.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e4bbd645230ad3543a65caf503bceb9f
+      internalID: 21300348
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUDDESIGNER_ANIMATED_SP_28_175
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 92.666664
+        width: 256
+        height: 85.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3aac67d9272ced34981750eee5f78ef1
+      internalID: 21300350
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUDDESIGNER_ANIMATED_SP_28_176
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 92.666664
+        width: 256
+        height: 85.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 89e89a1c23d28ab4f86aff0a2e8ec08b
+      internalID: 21300352
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUDDESIGNER_ANIMATED_SP_28_177
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 92.666664
+        width: 256
+        height: 85.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f175fbdae42e2446b4d64462c6c6d20
+      internalID: 21300354
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUDDESIGNER_ANIMATED_SP_28_178
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 92.666664
+        width: 256
+        height: 85.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f123f1f107de3434ba36caf48d5de63c
+      internalID: 21300356
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUDDESIGNER_ANIMATED_SP_28_179
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 92.666664
+        width: 256
+        height: 85.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5fa46d42a36b1b24aa2f5cc92d3e70c7
+      internalID: 21300358
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUDDESIGNER_ANIMATED_SP_28_180
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 92.666664
+        width: 256
+        height: 85.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a710560b2f5662458d82403ec8151f5
+      internalID: 21300360
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUDDESIGNER_ANIMATED_SP_28_181
+      rect:
+        serializedVersion: 2
+        x: 1792
+        y: 92.666664
+        width: 256
+        height: 85.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81371fe16f2299549a7837c631f962e7
+      internalID: 21300362
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUDDESIGNER_ANIMATED_SP_28_182
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 7.666664
+        width: 256
+        height: 85.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b70c2a05ed72834bb5ceb2317ff37f1
+      internalID: 21300364
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUDDESIGNER_ANIMATED_SP_28_183
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 7.666664
+        width: 256
+        height: 85.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4bb130da6dffdea44ad084a92d22cf02
+      internalID: 21300366
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUDDESIGNER_ANIMATED_SP_28_184
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 7.666664
+        width: 256
+        height: 85.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a84176b8e75493c4994d2a5fe518dbed
+      internalID: 21300368
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUDDESIGNER_ANIMATED_SP_28_185
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 7.666664
+        width: 256
+        height: 85.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d820b810f5ce5df41adb2cf1d46c3813
+      internalID: 21300370
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUDDESIGNER_ANIMATED_SP_28_186
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 7.666664
+        width: 256
+        height: 85.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 703c0303afee567418bac2c4c2597052
+      internalID: 21300372
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUDDESIGNER_ANIMATED_SP_28_187
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 7.666664
+        width: 256
+        height: 85.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: abda627091a86584da226e8f91440132
+      internalID: 21300374
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUDDESIGNER_ANIMATED_SP_28_188
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 7.666664
+        width: 256
+        height: 85.333336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9816225566d274745b8d3d20361bd93e
+      internalID: 21300376
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 85cd3412bc293ad4c87aa934460f6dae
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
