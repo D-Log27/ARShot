@@ -6,6 +6,15 @@ using UnityEngine.SceneManagement;
 
 public class InGameManager : MonoBehaviour
 {
+    private static InGameManager Instance;
+
+    InGameManager() { }
+
+    public static InGameManager GetInstance()
+    {
+        return Instance;
+    }
+
     public Transform gameOver;
     public CanvasGroup clearCGrp;
     public CanvasGroup failCGrp;
@@ -16,7 +25,7 @@ public class InGameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        Instance = this;
     }
 
     // Update is called once per frame
@@ -73,5 +82,10 @@ public class InGameManager : MonoBehaviour
     public void OnClickEndGame()
     {
         Application.Quit();
+    }
+
+    public void BriefEnd()
+    {
+        ScreenController.GetInstance().FinishBrief();
     }
 }

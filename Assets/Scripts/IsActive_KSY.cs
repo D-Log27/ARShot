@@ -5,9 +5,8 @@ using UnityEngine;
 public class IsActive_KSY : MonoBehaviour
 {
     float currentTime;
-    public float createTime = 16;
+    public float createTime = 3;
     public GameObject gameObject;
-    public GameObject gun;
 
     void Update()
     {
@@ -15,7 +14,6 @@ public class IsActive_KSY : MonoBehaviour
         if (currentTime > createTime)
         {
             gameObject.SetActive(true);
-            gun.SetActive(true);
         }
     }
 }
