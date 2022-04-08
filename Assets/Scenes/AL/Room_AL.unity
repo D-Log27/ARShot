@@ -1003,10 +1003,10 @@ MonoBehaviour:
       - m_Target: {fileID: 155785180}
         m_TargetAssemblyTypeName: RoomManager, Assembly-CSharp
         m_MethodName: OnClickReadyCancel
-        m_Mode: 2
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -3013,10 +3013,10 @@ MonoBehaviour:
       - m_Target: {fileID: 155785180}
         m_TargetAssemblyTypeName: RoomManager, Assembly-CSharp
         m_MethodName: OnClickNext
-        m_Mode: 2
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -5341,7 +5341,7 @@ GameObject:
   - component: {fileID: 522061894}
   - component: {fileID: 522061893}
   m_Layer: 5
-  m_Name: Btn_SetReady
+  m_Name: Btn_Ready
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5414,10 +5414,10 @@ MonoBehaviour:
       - m_Target: {fileID: 155785180}
         m_TargetAssemblyTypeName: RoomManager, Assembly-CSharp
         m_MethodName: OnClickReady
-        m_Mode: 2
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -6727,10 +6727,10 @@ MonoBehaviour:
       - m_Target: {fileID: 155785180}
         m_TargetAssemblyTypeName: RoomManager, Assembly-CSharp
         m_MethodName: OnClickNext
-        m_Mode: 2
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -6923,10 +6923,10 @@ MonoBehaviour:
       - m_Target: {fileID: 155785180}
         m_TargetAssemblyTypeName: RoomManager, Assembly-CSharp
         m_MethodName: OnClickReadyCancel
-        m_Mode: 2
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -7941,10 +7941,10 @@ MonoBehaviour:
       - m_Target: {fileID: 155785180}
         m_TargetAssemblyTypeName: RoomManager, Assembly-CSharp
         m_MethodName: OnClickPrevious
-        m_Mode: 2
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -8802,7 +8802,7 @@ GameObject:
   - component: {fileID: 860197606}
   - component: {fileID: 860197605}
   m_Layer: 5
-  m_Name: Btn_SetReady
+  m_Name: Btn_Ready
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8875,10 +8875,10 @@ MonoBehaviour:
       - m_Target: {fileID: 155785180}
         m_TargetAssemblyTypeName: RoomManager, Assembly-CSharp
         m_MethodName: OnClickReady
-        m_Mode: 2
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -10197,10 +10197,10 @@ MonoBehaviour:
       - m_Target: {fileID: 155785180}
         m_TargetAssemblyTypeName: RoomManager, Assembly-CSharp
         m_MethodName: OnClickNext
-        m_Mode: 2
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -11083,10 +11083,10 @@ MonoBehaviour:
       - m_Target: {fileID: 155785180}
         m_TargetAssemblyTypeName: RoomManager, Assembly-CSharp
         m_MethodName: OnClickPrevious
-        m_Mode: 2
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -11644,10 +11644,10 @@ MonoBehaviour:
       - m_Target: {fileID: 155785180}
         m_TargetAssemblyTypeName: RoomManager, Assembly-CSharp
         m_MethodName: OnClickPrevious
-        m_Mode: 2
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -12571,7 +12571,7 @@ GameObject:
   - component: {fileID: 1207706503}
   - component: {fileID: 1207706502}
   m_Layer: 5
-  m_Name: Btn_SetReady
+  m_Name: Btn_Ready
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12644,10 +12644,10 @@ MonoBehaviour:
       - m_Target: {fileID: 155785180}
         m_TargetAssemblyTypeName: RoomManager, Assembly-CSharp
         m_MethodName: OnClickReady
-        m_Mode: 2
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -14387,10 +14387,10 @@ MonoBehaviour:
       - m_Target: {fileID: 155785180}
         m_TargetAssemblyTypeName: RoomManager, Assembly-CSharp
         m_MethodName: OnClickReadyCancel
-        m_Mode: 2
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -20563,10 +20563,10 @@ MonoBehaviour:
       - m_Target: {fileID: 155785180}
         m_TargetAssemblyTypeName: RoomManager, Assembly-CSharp
         m_MethodName: OnClickReadyCancel
-        m_Mode: 2
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -20846,10 +20846,10 @@ MonoBehaviour:
       - m_Target: {fileID: 155785180}
         m_TargetAssemblyTypeName: RoomManager, Assembly-CSharp
         m_MethodName: OnClickPrevious
-        m_Mode: 2
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -22297,10 +22297,10 @@ MonoBehaviour:
       - m_Target: {fileID: 155785180}
         m_TargetAssemblyTypeName: RoomManager, Assembly-CSharp
         m_MethodName: OnClickNext
-        m_Mode: 2
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -22406,7 +22406,7 @@ GameObject:
   - component: {fileID: 2061470241}
   - component: {fileID: 2061470240}
   m_Layer: 5
-  m_Name: Btn_SetReady
+  m_Name: Btn_Ready
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -22479,10 +22479,10 @@ MonoBehaviour:
       - m_Target: {fileID: 155785180}
         m_TargetAssemblyTypeName: RoomManager, Assembly-CSharp
         m_MethodName: OnClickReady
-        m_Mode: 2
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
