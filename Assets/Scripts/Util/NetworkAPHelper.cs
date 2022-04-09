@@ -1,12 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using NativeWifi;
+using System;
 /// <summary>
 /// AP 정보 헬퍼
 /// </summary>
 public class NetworkAPHelper : MonoBehaviour
 {
+#if UNITY_IPHONE
+   
+           // On iOS plugins are statically linked into
+           // the executable, so we have to use __Internal as the
+           // library name.
+           [DllImport ("__Internal")]
+
+#elif UNITY_ANDROID
+
+#endif
     /// <summary>
     /// AP 정보 헬퍼 인스턴스
     /// </summary>
@@ -14,6 +24,17 @@ public class NetworkAPHelper : MonoBehaviour
 
     NetworkAPHelper() { }
 
+    AndroidRuntimePermissions.Permission[] permissions;
+    const string pluginName = "com.example.wifigetter.WifiHelper";
+    string[] permissionList = {
+        "android.permission.INTERNET",
+        "android.permission.ACCESS_NETWORK_STATE", 
+        "android.permission.ACCESS_WIFI_STATE",
+        "android.permission.ACCESS_COARSE_LOCATION",
+        "android.permission.ACCESS_FINE_LOCATION",
+        "android.permission.CHANGE_WIFI_STATE",
+        "android.permission.CAMERA"
+    };
     /// <summary>
     /// AP 정보 헬퍼 인스턴스 반환
     /// </summary>
@@ -36,6 +57,8 @@ public class NetworkAPHelper : MonoBehaviour
 
     void Start()
     {
+        permissions = AndroidRuntimePermissions.RequestPermissions(permissionList);
+
         this.GetAPInfo();
     }
 
@@ -49,46 +72,111 @@ public class NetworkAPHelper : MonoBehaviour
     /// </summary>
     public void GetAPInfo()
     {
-        var wlanClient = new WlanClient();
-
-        foreach (WlanClient.WlanInterface wlanInterface in wlanClient.Interfaces)
+        try
         {
-            Wlan.Dot11Ssid ssid = wlanInterface.CurrentConnection.wlanAssociationAttributes.dot11Ssid;
-            ApName = System.Text.ASCIIEncoding.ASCII.GetString(ssid.SSID);
-            print($"### CHECK : {System.Text.ASCIIEncoding.ASCII.GetString(ssid.SSID)}");
-            //Wlan.WlanBssEntry[] wlanBssEntries = wlanInterface.GetNetworkBssList();
-            //foreach (Wlan.WlanBssEntry wlanBssEntry in wlanBssEntries)
-            //{
-            //    int rss = wlanBssEntry.rssi;
-            //    ApName = System.Text.ASCIIEncoding.ASCII.GetString(wlanBssEntry.dot11Ssid.SSID);
-            //    byte[] macAddr = wlanBssEntry.dot11Bssid;
-            //    var macAddrLen = (uint)macAddr.Length;
-            //    var str = new string[(int)macAddrLen];
-            //    var strOrigin = new string[(int)macAddrLen];
-            //    for (int i = 0; i < macAddrLen; i++)
-            //    {
-            //        if (i == macAddrLen - 1)
-            //        {
-            //            str[i] = macAddr[i].ToString("X2");
-            //            strOrigin[i] = macAddr[i].ToString();
-            //        }
-            //        else
-            //        {
-            //            str[i] = macAddr[i].ToString("X2") + ":";
-            //            strOrigin[i] = macAddr[i].ToString() + ":";
-            //        }
-            //    }
-            //    string mac = string.Join("", str);
+            bool isGranted = true;
+            permissions = AndroidRuntimePermissions.RequestPermissions(permissionList);
+            foreach (AndroidRuntimePermissions.Permission _permission in permissions)
+            {
+                if (_permission.Equals(AndroidRuntimePermissions.Permission.Granted)) isGranted = true;
+                else isGranted = false;
+            }
 
-                //Debug.Log($"1. Mad Address : {mac}");
-                //Debug.Log($"2. SSID : {ApName}");
-                //Debug.Log($"3. Signal : {wlanBssEntry.linkQuality}");
-                //Debug.Log($"4. BSS Type : {wlanBssEntry.dot11BssType}");
-                //Debug.Log($"5. wlanBssEntry : {wlanBssEntry.phyId}");
-                //Debug.Log($"7. RSSID : {rss}");
-                //Debug.Log($"======================================");
-            //}
+            if (isGranted)
+            {
+                // solution 1 : wlanapi.dll
+                /*
+                                using (var activity = new AndroidJavaClass(pluginName).GetStatic<AndroidJavaObject>("currentActivity"))
+                                {
+                                    using (var wifiManager = activity.Call<AndroidJavaObject>("getSystemService", "wifi"))
+                                    {
+                                        ApName = wifiManager.Call<AndroidJavaObject>("getConnectionInfo").Call<string>("getMacAddress");
+                                    }
+                                }
+                */
+
+
+                // Solution 2 : android native
+                var helperClass = new AndroidJavaClass(pluginName);
+                AndroidJavaObject helperInstance = helperClass.CallStatic<AndroidJavaObject>("getInstance");
+                ApName = helperInstance.Call<string>("getApName");
+                print($"### new test : {ApName}");
+                
+
+
+
+                /*
+                AndroidJavaObject activity = new AndroidJavaClass(pluginName).GetStatic<AndroidJavaObject>("currentActivity");
+                print($"### activity is null ? {activity == null}");
+
+                // under api level 31
+                AndroidJavaObject supplicantState = activity.GetStatic<AndroidJavaObject>("SupplicantState");
+                AndroidJavaObject wifiManager = activity.Call<AndroidJavaObject>("getSystemService", "wifi");
+                AndroidJavaObject wifiInfo = wifiManager.Call<AndroidJavaObject>("getConnectionInfo");
+                var supplicateState = wifiInfo.Call<AndroidJavaObject>("getSupplicantState");
+                ApName = wifiManager.Call<AndroidJavaObject>("getConnectionInfo").Call<string>("getSSID");
+                */
+                // equal or over api level 31
+                /*
+                AndroidJavaObject connectivityManager = activity.Call<AndroidJavaObject>("getSystemService", "connectivity");
+                print($"### connectivityManager ? {connectivityManager == null}");
+                AndroidJavaObject test = connectivityManager.Call<AndroidJavaObject>("getNetworkCapabilities").Call<AndroidJavaObject>("getTransportInfo");
+                print($"### test : {test == null}");
+                */
+
+                //print($"### device Namce Check : {SystemInfo.deviceName}");
+                String strHostName = string.Empty;
+                
+/*
+                foreach (NetworkInterface adapter in NetworkInterface.GetAllNetworkInterfaces())
+                {
+                    foreach (var x in adapter.GetIPProperties().UnicastAddresses)
+                    {
+                        if (x.IPv4Mask.ToString().Equals("255.255.255.0"))
+                        {
+                            print($"### IPAddress : {x.Address} / IPv4Mask : {x.IPv4Mask}");
+                        }
+                    }
+                    foreach(var y in adapter.GetIPProperties().GatewayAddresses)
+                    {
+                        print($"### GateWay : {y.Address}");
+                    }
+                }
+*/
+
+
+
+
+            }
+
         }
+        catch (Exception e)
+        {
+            print($"### GET API Info Exception :{e}");
+        }
+        
+/*
+        try
+        {
+            print("### create WlanClient");
+            var wlanClient = gameObject.AddComponent<WlanClient>();
+            print("### createed wlan client");
+            foreach (WlanClient.WlanInterface wlanInterface in wlanClient.Interfaces)
+            {
+                print("### wlanInterface check start");
+                Wlan.Dot11Ssid ssid = wlanInterface.CurrentConnection.wlanAssociationAttributes.dot11Ssid;
+                ApName = System.Text.ASCIIEncoding.ASCII.GetString(ssid.SSID);
+                print($"### CHECK : {System.Text.ASCIIEncoding.ASCII.GetString(ssid.SSID)}");
+            }
+
+            print($"### ApName : {ApName}");
+        } 
+        catch(Exception e)
+        {
+            print($"### GET API Info Exception :{e.StackTrace}");
+        }
+       */ 
+        
     }
 }
 

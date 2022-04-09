@@ -34,6 +34,12 @@ public class PhotonManager : MonoBehaviourPunCallbacks
     // Start is called before the first frame update
     void Start()
     {
+
+        if (Application.internetReachability == NetworkReachability.NotReachable)
+        {
+            print("### NOT CONNECTED AP");
+            //Application.Quit();
+        }
         titleManager = GameObject.Find("TitleManager").GetComponent<TitleManager>();
         PhotonNetwork.GameVersion = gameVersion;
         PhotonNetwork.NickName = userName;
@@ -136,9 +142,9 @@ public class PhotonManager : MonoBehaviourPunCallbacks
     /// </summary>
     void SetApProperty()
     {
-        //if(NetworkAPHelper.GetInstance().ApName == "" || NetworkAPHelper.GetInstance().ApName == null) NetworkAPHelper.GetInstance().GetAPInfo();
-        //apName = NetworkAPHelper.GetInstance().ApName;
-        apName = "test";
+        if(NetworkAPHelper.GetInstance().ApName == "" || NetworkAPHelper.GetInstance().ApName == null) NetworkAPHelper.GetInstance().GetAPInfo();
+        apName = NetworkAPHelper.GetInstance().ApName;
+        //apName = "test";
         print($"### ap name : {apName}");
         roomApProperty = new PhotonCollection.Hashtable()
         {
