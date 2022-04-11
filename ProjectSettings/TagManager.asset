@@ -6,6 +6,7 @@ TagManager:
   tags:
   - SpawnZone
   - VIP
+  - Intro
   layers:
   - Default
   - TransparentFX
