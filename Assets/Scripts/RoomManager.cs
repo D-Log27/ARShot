@@ -8,9 +8,25 @@ using TMPro;
 using UnityEngine.SceneManagement;
 using Photon.Pun;
 using Photon.Realtime;
+using UnityEditor.UIElements;
+using PhotonHashTable = ExitGames.Client.Photon.Hashtable;
 
 public class RoomManager : MonoBehaviourPunCallbacks
 {
+    // 플레이 가능한 클래스 타입
+    enum PlayerClassType { Tanker, Dealer, Healer, Supporter }
+
+    // 플레이어 상태
+    enum PlayerReadyType { SELECTING, READY }
+    
+    // 플레이어 선택한 클래스
+    private PlayerClassType _playerClass;
+    
+    // 플레이어 상태
+    private PlayerReadyType _playerReadyType;
+
+    private PhotonHashTable playerInfo;
+    
     private PhotonView _photonView;
     
     //클래스선택 버튼의 부모 이름: 변수명 줄이기 위해 선언함
@@ -57,9 +73,14 @@ public class RoomManager : MonoBehaviourPunCallbacks
     public Transform player1_nickname;
     public Transform player2_nickname;
     
+    // 방 접속자 정보
+    private List<Player> userList;
+    
     // Start is called before the first frame update
     void Start()
     {
+        userList = new List<Player>();
+        Screen.sleepTimeout = SleepTimeout.NeverSleep;
         _photonView = GetComponent<PhotonView>();
         //초기 설정; unity play 전에 설정 잘 해 놓으면 사실 필요 없음
         canvasChanging.gameObject.SetActive(false);
@@ -84,9 +105,14 @@ public class RoomManager : MonoBehaviourPunCallbacks
         
         Dictionary<int, Player> _players = PhotonNetwork.CurrentRoom.Players;
         print($"### players count in room : {_players.Count}");
-        
-        NicknameDisplay();
 
+        playerInfo = new PhotonHashTable();        
+        // Hashtable<string, int> playerInfo = new Hashtable<string, int>();
+        playerInfo.Add("class", PlayerClassType.Dealer);
+        playerInfo.Add("status",PlayerReadyType.SELECTING);
+        PhotonNetwork.LocalPlayer.CustomProperties = playerInfo;
+        
+        photonView.RPC("NicknameDisplay",RpcTarget.AllBufferedViaServer);
     }
 
     // Update is called once per frame
@@ -99,7 +125,7 @@ public class RoomManager : MonoBehaviourPunCallbacks
             loadingGame.text = "Starting in " + Mathf.Ceil(sec) + " Seconds";
             if (sec < 0)
             {
-                SceneManager.LoadScene("InGame_AL");
+                PhotonNetwork.LoadLevel("InGame_AL");
             }
         }
     }
@@ -113,32 +139,32 @@ public class RoomManager : MonoBehaviourPunCallbacks
 
         if (btnClassParentName == "Player")
         {
-            if (playerClass[3].alpha == 1)
+            int nowClassIdx = (int)PhotonNetwork.LocalPlayer.CustomProperties["class"];
+            switch (nowClassIdx)
             {
-                CanvasGroupOnOff(playerClass[3], false);
-                CanvasGroupOnOff(playerClass[2], true);
-                btnNext[0].enabled = true;
-            }
-            else if (playerClass[2].alpha == 1)
-            {
-                CanvasGroupOnOff(playerClass[2], false);
-                CanvasGroupOnOff(playerClass[1], true);
-            }
-            else if(playerClass[1].alpha == 1)
-            {
-                CanvasGroupOnOff(playerClass[1], false);
-                CanvasGroupOnOff(playerClass[0], true);
-            }
-            else // playerClass[0].alpha == 0
-            {
-                CanvasGroupOnOff(playerClass[0], false);
-                CanvasGroupOnOff(playerClass[3], true);
+                case (int)PlayerClassType.Supporter :
+                    print("### dealder <- supporter");
+                    ChangeClass(PlayerClassType.Healer);
+                    break;
+                case (int)PlayerClassType.Healer:
+                    ChangeClass(PlayerClassType.Tanker);
+                    print("### Supporter <- Healer");
+                    break;
+                case (int)PlayerClassType.Tanker:
+                    ChangeClass(PlayerClassType.Dealer);
+                    print("### Healer <- Tanker");
+                    break;
+                case (int)PlayerClassType.Dealer :
+                    ChangeClass(PlayerClassType.Supporter);
+                    print("### dealder <- supporter");
+                    break;
+                
             }
             
             //이거 완전 비활성화라기보단 회색빛으로 나타나게 해야함
             // btnPrevious[0].enabled = false;
         }
-        ChangePlayerReadyStatus();
+        
     }
 
     /// <summary>
@@ -150,29 +176,25 @@ public class RoomManager : MonoBehaviourPunCallbacks
 
         if (btnClassParentName == "Player")
         {
-            if (playerClass[0].alpha == 1)
+            int nowClassIdx = (int)PhotonNetwork.LocalPlayer.CustomProperties["class"];
+            switch (nowClassIdx)
             {
-                CanvasGroupOnOff(playerClass[0], false);
-                CanvasGroupOnOff(playerClass[1], true);
-                btnPrevious[0].enabled = true;
+                case (int)PlayerClassType.Supporter :
+                    ChangeClass(PlayerClassType.Dealer);
+                    break;
+                case (int)PlayerClassType.Healer:
+                    ChangeClass(PlayerClassType.Supporter);
+                    break;
+                case (int)PlayerClassType.Tanker:
+                    ChangeClass(PlayerClassType.Healer);
+                    break;
+                case (int)PlayerClassType.Dealer :
+                    ChangeClass(PlayerClassType.Tanker);
+                    break;
+                
             }
-            else if (playerClass[1].alpha == 1)
-            {
-                CanvasGroupOnOff(playerClass[1], false);
-                CanvasGroupOnOff(playerClass[2], true);
-            }
-            else if(playerClass[2].alpha == 1)
-            {
-                CanvasGroupOnOff(playerClass[2], false);
-                CanvasGroupOnOff(playerClass[3], true);
-            }
-            else // playerClass[3].alpha == 1
-            {
-                CanvasGroupOnOff(playerClass[3], false);
-                CanvasGroupOnOff(playerClass[0], true);
-            }
+            
         }
-        ChangePlayerReadyStatus();
     }
 
     /// <summary>
@@ -180,31 +202,21 @@ public class RoomManager : MonoBehaviourPunCallbacks
     /// </summary>
     public void OnClickReady()
     {
-        //현재 누른 버튼의 부모의 CanvasGroupComponent: GettingReady Panel의 CanvasGroup
-        CanvasGroup cGrp1 = EventSystem.current.currentSelectedGameObject.GetComponentInParent<CanvasGroup>();
-
-        //현재 누른 버튼의 부모의 부모의 2번째 자식의 CanvasGroupComponent: Ready Panel의 CanvasGroup
-        CanvasGroup cGrp2 = EventSystem.current.currentSelectedGameObject.transform.parent.parent.GetChild(1).GetComponent<CanvasGroup>();
-
-        CanvasGroupOnOff(cGrp1, false);
-        CanvasGroupOnOff(cGrp2, true);
-
-        // TODO : 플레이어 인원수에 따라 조건 다변화
-        if (playerReady[0].alpha == 1 && playerReady[1].alpha == 1 && playerReady[2].alpha == 1 && playerReady[3].alpha == 1)
-        {
-            for (int i = 0; i < 4; i++)
-            {
-                CanvasGroupOnOff(playerReady[i], false);
-                CanvasGroupOnOff(playerReadyed[i], true);
-            }
-
-            loadingGame.text = "Starting in 5 Seconds";
-            sec = 5;
-            canvasChanging.gameObject.SetActive(true);
-            btnBackToTitle.gameObject.SetActive(false);
-        }
+        // btnClassParentName = EventSystem.current.currentSelectedGameObject?.transform.parent.parent.name;
+        //
+        // if (btnClassParentName == "Player")
+        // {
+        //     //현재 누른 버튼의 부모의 CanvasGroupComponent: GettingReady Panel의 CanvasGroup
+        //     CanvasGroup cGrp1 = EventSystem.current.currentSelectedGameObject.GetComponentInParent<CanvasGroup>();
+        //
+        //     //현재 누른 버튼의 부모의 부모의 2번째 자식의 CanvasGroupComponent: Ready Panel의 CanvasGroup
+        //     CanvasGroup cGrp2 = EventSystem.current.currentSelectedGameObject.transform.parent.parent.GetChild(1).GetComponent<CanvasGroup>();
+        //
+        //     CanvasGroupOnOff(cGrp1, false);
+        //     CanvasGroupOnOff(cGrp2, true);
+            GamePlayReady(true);
+        // }
         
-        // TODO : PhotonView RPC 호출
     }
 
     /// <summary>
@@ -212,11 +224,11 @@ public class RoomManager : MonoBehaviourPunCallbacks
     /// </summary>
     public void OnClickReadyCancel()
     {
-        CanvasGroup cGrp1 = EventSystem.current.currentSelectedGameObject.GetComponentInParent<CanvasGroup>();
-        CanvasGroup cGrp2 = EventSystem.current.currentSelectedGameObject.transform.parent.parent.GetChild(0).GetComponent<CanvasGroup>();
-        CanvasGroupOnOff(cGrp1, false);
-        CanvasGroupOnOff(cGrp2, true);
-        // TODO : PhotonView RPC 호출
+        // CanvasGroup cGrp1 = EventSystem.current.currentSelectedGameObject.GetComponentInParent<CanvasGroup>();
+        // CanvasGroup cGrp2 = EventSystem.current.currentSelectedGameObject.transform.parent.parent.GetChild(0).GetComponent<CanvasGroup>();
+        // CanvasGroupOnOff(cGrp1, false);
+        // CanvasGroupOnOff(cGrp2, true);
+        GamePlayReady(false);
     }
 
     
@@ -299,7 +311,7 @@ public class RoomManager : MonoBehaviourPunCallbacks
 
     /// <summary>
     /// 방 나가기
-    /// </summary>
+    /// </summary>                                                                                      
     public void OnClickBackToTitle()
     {
         //PhotonNetwork.LeaveRoom();
@@ -307,9 +319,6 @@ public class RoomManager : MonoBehaviourPunCallbacks
         // SceneManager.LoadScene("Title_AL");
         
         PhotonNetwork.LeaveRoom();
-        SceneManager.LoadScene("Title_AL");
-        // TODO : 참여자 re-sorting
-        NicknameDisplay();
         
     }
 
@@ -319,7 +328,14 @@ public class RoomManager : MonoBehaviourPunCallbacks
     /// <param name="otherPlayer"></param>
     public override void OnPlayerLeftRoom(Player otherPlayer)
     {
-        print("### other palyer room left");
+        print("### other player room left");
+        // TODO : 참여자 re-sorting
+        NicknameDisplay();
+    }
+
+    public override void OnLeftRoom()
+    {
+        SceneManager.LoadScene("Title_AL");
     }
 
     /// <summary>
@@ -330,47 +346,156 @@ public class RoomManager : MonoBehaviourPunCallbacks
     {
         if (photonView.Owner.ActorNumber == newMasterClient.ActorNumber)
         {
-            //this.SendKillMessage($"<color=#ffff00>[{photonView.Owner.NickName}]</color>���� �������� ����Ǿ����ϴ�");
+            // TODO : 참여자 re-sorting
+
+            // TODO : 참여자 정보 screen 초기화
+
         }
     }
     
     /// <summary>
     /// 플레이어 클래스 변경
     /// </summary>
-    [PunRPC]
-    private void ChangeClass()
+    private void ChangeClass(PlayerClassType classType)
     {
+        Player thisPlayer = PhotonNetwork.LocalPlayer;
+        PhotonHashTable temp = thisPlayer.CustomProperties;
+        temp["class"] = classType;
+        PhotonNetwork.LocalPlayer.CustomProperties = temp;
         
+        _photonView.RPC("ChangePlayersStatus", RpcTarget.AllBufferedViaServer, new System.Object[] {thisPlayer,temp});
     }
+    
+    
 
     /// <summary>
     /// 플레이어 준비상태 변경
     /// </summary>
     /// <param name="isReady"></param>
-    [PunRPC]
     private void GamePlayReady(bool isReady)
     {
-        // TODO : 각 플레이어 준비상태 플래그 확인.
+        Player thisPlayer = PhotonNetwork.LocalPlayer;
+        PhotonHashTable temp = thisPlayer.CustomProperties;
+        if (isReady) temp["status"] = PlayerReadyType.READY;
+        else temp["status"] = PlayerReadyType.SELECTING;
         
-        // TODO : 전부 준비상태라면 -> 카운트다운 시작
+        
+        
+
+        
+        _photonView.RPC("ChangePlayersStatus", RpcTarget.AllBufferedViaServer, new System.Object[] {thisPlayer,temp});
     }
 
     /// <summary>
-    /// 플레이어 클래스 선택/준비상태 변경 표시
+    /// 플레이어 상태 RPC 연동
     /// </summary>
-    /// <exception cref="NotImplementedException"></exception>
+    /// <param name="player"></param>
+    /// <param name="hash"></param>
     [PunRPC]
-    private void ChangePlayerReadyStatus()
+    private void ChangePlayersStatus(Player player, PhotonHashTable hash)
     {
         
+        // 플레이어 상태를 모두에게 적용
+        foreach (Player _player in PhotonNetwork.PlayerList)
+        {
+            if (player.Equals(_player)) _player.CustomProperties = hash;
+        }
+        // TODO : 해당하는 플레이어의 상태를 화면에 출력
+        ChangeScreen();
     }
+
+    private void ChangeScreen()
+    {
+        int isAllReady = 1;
+        foreach (var player in PhotonNetwork.CurrentRoom.Players)
+        {
+            // class canvas 초기화
+            foreach (CanvasGroup canvas in playerClass)
+            {
+                CanvasGroupOnOff(canvas, false);
+            }
+            
+            // TODO : 상태에 따라 클래스 표시 변경
+            
+            switch (player.Value.CustomProperties["class"])
+            {
+                case (int)PlayerClassType.Dealer:
+                    CanvasGroupOnOff(playerClass[0], true);
+                    break;
+                case (int)PlayerClassType.Tanker:
+                    CanvasGroupOnOff(playerClass[1], true);
+                    break;
+                case (int)PlayerClassType.Healer:
+                    CanvasGroupOnOff(playerClass[2], true);
+                    break;
+                case (int)PlayerClassType.Supporter:
+                    CanvasGroupOnOff(playerClass[3], true);
+                    break;
+            }
+            
+            // TODO : 상태 따라 Ready 표시 변경
+            switch (player.Value.CustomProperties["status"])
+            {
+                case PlayerReadyType.READY:
+                    btnClassParentName = EventSystem.current.currentSelectedGameObject?.transform.parent.parent.name;
+
+                    if (btnClassParentName == "Player")
+                    {
+                        //현재 누른 버튼의 부모의 CanvasGroupComponent: GettingReady Panel의 CanvasGroup
+                        CanvasGroup cGrp1 = EventSystem.current.currentSelectedGameObject.GetComponentInParent<CanvasGroup>();
+
+                        //현재 누른 버튼의 부모의 부모의 2번째 자식의 CanvasGroupComponent: Ready Panel의 CanvasGroup
+                        CanvasGroup cGrp2 = EventSystem.current.currentSelectedGameObject.transform.parent.parent.GetChild(1).GetComponent<CanvasGroup>();
+
+                        CanvasGroupOnOff(cGrp1, false);
+                        CanvasGroupOnOff(cGrp2, true);
+                    }
+                    break;
+                case PlayerReadyType.SELECTING:
+                    btnClassParentName = EventSystem.current.currentSelectedGameObject?.transform.parent.parent.name;
+
+                    if (btnClassParentName == "Player")
+                    {
+                        CanvasGroup cGrp1 = EventSystem.current.currentSelectedGameObject.GetComponentInParent<CanvasGroup>();
+                        CanvasGroup cGrp2 = EventSystem.current.currentSelectedGameObject.transform.parent.parent.GetChild(0).GetComponent<CanvasGroup>();
+                        CanvasGroupOnOff(cGrp1, false);
+                        CanvasGroupOnOff(cGrp2, true);
+                    }                         
+
+                    break;
+            }
+            
     
+            // CanvasGroupOnOff(playerReady[i], false);
+            // CanvasGroupOnOff(playerReadyed[i], true);
+            
+            // 한명이라도 준비상태가 있다면 카운트다운을 하지 않는다
+
+            if (player.Value.CustomProperties["status"].Equals(PlayerReadyType.READY)) isAllReady *= 1;
+            else isAllReady *= 0;
+        }
+
+        // TODO : 전부 준비상태라면 -> 카운트다운 시작
+        if (isAllReady == 1) StartCountDown();
+        else return;
+    }
+
+
     /// <summary>
     /// 게임 시작 카운트다운
     /// </summary>
-    [PunRPC]
     private void StartCountDown()
     {
-        PhotonNetwork.LoadLevel("InGame_AL");
+        // for (int i = 0; i < 4; i++)
+        // {
+        //     CanvasGroupOnOff(playerReady[i], false);
+        //     CanvasGroupOnOff(playerReadyed[i], true);
+        // }
+
+        loadingGame.text = "Starting in 5 Seconds";
+        sec = 5;
+        canvasChanging.gameObject.SetActive(true);
+        btnBackToTitle.gameObject.SetActive(false);
+        
     }
 }

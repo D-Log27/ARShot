@@ -15,6 +15,7 @@ public class TitleManager : MonoBehaviour
 
     public static TitleManager GetInstance()
     {
+        Screen.sleepTimeout = SleepTimeout.NeverSleep;
         return _instance;
     }
     
