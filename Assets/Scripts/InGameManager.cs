@@ -18,6 +18,7 @@ public class InGameManager : MonoBehaviour
     public Transform gameOver;
     public CanvasGroup clearCGrp;
     public CanvasGroup failCGrp;
+    public Image skillGuideLine;
 
     public Button clear;
     public Button fail;
@@ -52,7 +53,7 @@ public class InGameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        skillGuideLine.color = Color.gray;
     }
 
     public void OnClickAttack()
