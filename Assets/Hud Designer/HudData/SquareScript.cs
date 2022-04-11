@@ -1,0 +1,7 @@
+﻿using UnityEngine;
+
+public class SquareScript : MonoBehaviour {
+
+	/// DO NOT DELETE THIS SCRIPT FILE ///
+	/// DELETING THIS SCRIPT FILE WILL STOP HUD DESIGNER FROM RECOGNISING THIS GAME OBJECT ///
+}
