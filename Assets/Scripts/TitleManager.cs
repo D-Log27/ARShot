@@ -6,10 +6,19 @@ using UnityEngine.UI;
 //using UnityEngine.UIElements;
 
 /// <summary>
-/// Title È­¸é ÀÌº¥Æ®
+/// Title È­ï¿½ï¿½ ï¿½Ìºï¿½Æ®
 /// </summary>
 public class TitleManager : MonoBehaviour
 {
+    private static TitleManager _instance;
+    TitleManager() { }
+
+    public static TitleManager GetInstance()
+    {
+        Screen.sleepTimeout = SleepTimeout.NeverSleep;
+        return _instance;
+    }
+    
     public Transform startBtn;
     public Transform optionBtn;
     public Transform exitBtn;
@@ -18,6 +27,7 @@ public class TitleManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        _instance = this;
         startBtn.GetComponent<Button>().onClick.AddListener(() => OnClickStartButton());
         optionBtn.GetComponent<Button>().onClick.AddListener(() => OnClickOptionButton());
         exitBtn.GetComponent<Button>().onClick.AddListener(() => OnClickExitButton());
@@ -55,7 +65,7 @@ public class TitleManager : MonoBehaviour
     {
         TitleLoadingImage(true);
         threeSec -= Time.deltaTime;
-        //¾Æ·¡ ÇÔ¼ö¿¡ Å×½ºÆ®¿ëÀ¸·Î if¸¸ ÀÔÈû
+        //ï¿½Æ·ï¿½ ï¿½Ô¼ï¿½ï¿½ï¿½ ï¿½×½ï¿½Æ®ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ifï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
         //if (threeSec < 0)
         //{
         //    bool isSuccess = true;//PhotonManager.GetInstance().ConnectingRoom();
