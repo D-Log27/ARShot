@@ -22,11 +22,32 @@ public class InGameManager : MonoBehaviour
     public Button clear;
     public Button fail;
 
+    //UIDrawer 여는 버튼
+    public Transform drawerOpener;
+
+    //UIDrawer 닫는 버튼
+    public Transform drawerCloser;
+
+    //숨겨진 UI들 모음
+    public Transform uiBox;
+
+    //여닫이 버튼의 캔버스그룹
+    public CanvasGroup cGrpDrawerOpener;
+    public CanvasGroup cGrpDrawerCloser;
+
+    Vector3 drawerOpenerPos;
+    Vector3 drawerCloserPos;
+    Vector3 uiBoxPos;
+
     // Start is called before the first frame update
     void Start()
     {
         Instance = this;
+        drawerOpenerPos = drawerOpener.position;
+        drawerCloserPos = drawerCloser.position;
+        uiBoxPos = uiBox.position;
     }
+
 
     // Update is called once per frame
     void Update()
@@ -34,11 +55,61 @@ public class InGameManager : MonoBehaviour
 
     }
 
+    public void OnClickAttack()
+    {
+        print("Attack");
+    }
+
     public void OnClickClassSkill()
     {
-        if (!Input.GetKey(KeyCode.Mouse0))
+        if (Input.GetKeyUp(KeyCode.Mouse0))
         {
             print("Skill");
+        }
+    }
+
+    /// <summary>
+    /// UI 보이기
+    /// </summary>
+    public void OnClickDrawerOpener()
+    {
+        drawerOpener.position = Vector3.MoveTowards(drawerOpener.position, drawerCloserPos, 1);
+        print("전");
+        uiBox.position = Vector3.MoveTowards(uiBox.position, new Vector3(uiBox.position.x, uiBoxPos.y + drawerOpenerPos.y - drawerCloserPos.y, uiBox.position.z), 1);
+        print("후");
+        CanvasGroupOnOff(cGrpDrawerCloser, true);
+        CanvasGroupOnOff(cGrpDrawerOpener, false);
+    }
+
+    /// <summary>
+    /// UI 숨기기
+    /// </summary>
+    public void OnClickDrawerCloser()
+    {
+        drawerCloser.position = Vector3.MoveTowards(drawerCloser.position, drawerOpenerPos, 1);
+        uiBox.position = Vector3.MoveTowards(uiBox.position, new Vector3(uiBox.position.x, uiBoxPos.y + drawerCloserPos.y - drawerOpenerPos.y, uiBox.position.z), 1);
+        CanvasGroupOnOff(cGrpDrawerOpener, true);
+        CanvasGroupOnOff(cGrpDrawerCloser, false);
+    }
+
+    /// <summary>
+    /// 캔버스그룹의 3가지 속성을 한번에 제어
+    /// </summary>
+    /// <param name="cGrp"></param>
+    /// <param name="isOn"></param>
+    void CanvasGroupOnOff(CanvasGroup cGrp, bool isOn)
+    {
+        if (isOn)
+        {
+            cGrp.alpha = 1;
+            cGrp.interactable = true;
+            cGrp.blocksRaycasts = true;
+        }
+        else
+        {
+            cGrp.alpha = 0;
+            cGrp.interactable = false;
+            cGrp.blocksRaycasts = false;
         }
     }
 
@@ -55,6 +126,7 @@ public class InGameManager : MonoBehaviour
         clearCGrp.alpha = 1;
         failCGrp.alpha = 0;
     }
+
     public void OnClickFail()
     {
         clear.gameObject.SetActive(false);
@@ -62,11 +134,6 @@ public class InGameManager : MonoBehaviour
         gameOver.gameObject.SetActive(true);
         clearCGrp.alpha = 0;
         failCGrp.alpha = 1;
-    }
-
-    public void OnClickAttack()
-    {
-        print("Attack");
     }
 
     public void OnClickTitle()
