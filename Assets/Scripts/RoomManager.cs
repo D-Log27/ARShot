@@ -39,13 +39,7 @@ public class RoomManager : MonoBehaviourPunCallbacks
 
     //방제목
     public TMP_Text roomID;
-
-    //클래스 선택 버튼 및 캔버스그룹
-    public Button[] btnPrevious;
-    public Button[] btnNext;
-    public CanvasGroup[] cGrpPrevious;
-    public CanvasGroup[] cGrpNext;
-
+    
     //InGame 로딩시간
     float sec;
 
@@ -112,10 +106,6 @@ public class RoomManager : MonoBehaviourPunCallbacks
                 player.Value.CustomProperties["class"] = PlayerClassType.Dealer;
                 player.Value.CustomProperties["status"] = PlayerReadyType.SELECTING;
             }
-            else
-            {
-                continue;
-            }
         }
 
         
@@ -135,7 +125,7 @@ public class RoomManager : MonoBehaviourPunCallbacks
     {
         //TODO :  플레이어 입장시 슬롯번호 갱신
         
-        //photonView.RPC("NicknameDisplay",RpcTarget.AllBufferedViaServer);
+        photonView.RPC("NicknameDisplay",RpcTarget.AllBufferedViaServer);
     }
 
     // Update is called once per frame
@@ -156,54 +146,92 @@ public class RoomManager : MonoBehaviourPunCallbacks
     
 
     /// <summary>
-    /// 버튼 클릭시 이전 클래스 보임
+    /// 클래스 변경 : 이전 버튼 클릭시
     /// </summary>
     public void OnClickPrevious()
     {
+        int num = 0;
+        foreach (var player in PhotonNetwork.CurrentRoom.Players)
+        {
+            if (player.Value.NickName.Equals(PhotonNetwork.LocalPlayer.NickName))
+            {
+                num = player.Key;
+                break;
+            }
+        }
         btnClassParentName = EventSystem.current.currentSelectedGameObject?.transform.parent.parent.name;
-        if (!btnClassParentName.Contains(slotNum.ToString())) return;
-        print("### valid click");
+        // print($"### current User : {PhotonNetwork.LocalPlayer.NickName}");
+        // print($"### key check : {num}");
+        // print($"### btnClassParentName : {btnClassParentName}");
+        print($"### btnClassParentName is Exist ? {btnClassParentName}");
+        if (!btnClassParentName.Contains(num.ToString())) return;
+        print($"### Before Click, class : {PhotonNetwork.LocalPlayer.CustomProperties["class"]}");
+        print($"### Before Click, reday state : {PhotonNetwork.LocalPlayer.CustomProperties["status"]}");
         int nowClassIdx = (int)PhotonNetwork.LocalPlayer.CustomProperties["class"];
+        // print($"### now class idx {nowClassIdx}");
         switch (nowClassIdx)
         {
             case (int)PlayerClassType.Supporter :
-                ChangeClass(PhotonNetwork.LocalPlayer,PlayerClassType.Healer);
+                // ChangeClass(PhotonNetwork.LocalPlayer,PlayerClassType.Healer);
+                _photonView.RPC("ChangeClass", RpcTarget.AllBufferedViaServer,new System.Object[]{PhotonNetwork.LocalPlayer,PlayerClassType.Healer});
                 break;
             case (int)PlayerClassType.Healer:
-                ChangeClass(PhotonNetwork.LocalPlayer,PlayerClassType.Tanker);
+                // ChangeClass(PhotonNetwork.LocalPlayer,PlayerClassType.Tanker);
+                _photonView.RPC("ChangeClass", RpcTarget.AllBufferedViaServer,new System.Object[]{PhotonNetwork.LocalPlayer,PlayerClassType.Tanker});
                 break;
             case (int)PlayerClassType.Tanker:
-                ChangeClass(PhotonNetwork.LocalPlayer,PlayerClassType.Dealer);
+                // ChangeClass(PhotonNetwork.LocalPlayer,PlayerClassType.Dealer);
+                _photonView.RPC("ChangeClass", RpcTarget.AllBufferedViaServer,new System.Object[]{PhotonNetwork.LocalPlayer,PlayerClassType.Dealer});
                 break;
             case (int)PlayerClassType.Dealer :
-                ChangeClass(PhotonNetwork.LocalPlayer,PlayerClassType.Supporter);
+                // ChangeClass(PhotonNetwork.LocalPlayer,PlayerClassType.Supporter);
+                _photonView.RPC("ChangeClass", RpcTarget.AllBufferedViaServer,new System.Object[]{PhotonNetwork.LocalPlayer,PlayerClassType.Supporter});
                 break;
                 
         }
-        
+        _photonView.RPC("ChangeClass", RpcTarget.AllBufferedViaServer,new System.Object[]{PhotonNetwork.LocalPlayer,PlayerClassType.Dealer});    
     }
 
+    
     /// <summary>
-    /// 버튼 클릭시 다음 클래스 보임
+    /// 클래스 변경 : 다음 버튼 클릭시 
     /// </summary>
     public void OnClickNext()
     {
+        int num = 0;
+        CanvasGroup[] canvasGroups = null;
+
+        foreach (var player in PhotonNetwork.CurrentRoom.Players)
+        {
+            if (player.Value.NickName.Equals(PhotonNetwork.LocalPlayer.NickName))
+            {
+                num = player.Key;
+                break;
+            }
+        }
+        
+
         btnClassParentName = EventSystem.current.currentSelectedGameObject?.transform.parent.parent.name;
-        if (!btnClassParentName.Contains(slotNum.ToString())) return;
+        if (!btnClassParentName.Contains(num.ToString())) return;
         int nowClassIdx = (int)PhotonNetwork.LocalPlayer.CustomProperties["class"];
+        // print($"### now class idx {nowClassIdx}");
         switch (nowClassIdx)
         {
             case (int)PlayerClassType.Supporter :
-                ChangeClass(PhotonNetwork.LocalPlayer,PlayerClassType.Dealer);
+                //ChangeClass(PhotonNetwork.LocalPlayer,PlayerClassType.Dealer);
+                _photonView.RPC("ChangeClass", RpcTarget.AllBufferedViaServer,new System.Object[]{PhotonNetwork.LocalPlayer,PlayerClassType.Dealer});
                 break;
             case (int)PlayerClassType.Healer:
-                ChangeClass(PhotonNetwork.LocalPlayer,PlayerClassType.Supporter);
+                // ChangeClass(PhotonNetwork.LocalPlayer,PlayerClassType.Supporter);
+                _photonView.RPC("ChangeClass", RpcTarget.AllBufferedViaServer,new System.Object[]{PhotonNetwork.LocalPlayer,PlayerClassType.Supporter});
                 break;
             case (int)PlayerClassType.Tanker:
-                ChangeClass(PhotonNetwork.LocalPlayer,PlayerClassType.Healer);
+                // ChangeClass(PhotonNetwork.LocalPlayer,PlayerClassType.Healer);
+                _photonView.RPC("ChangeClass", RpcTarget.AllBufferedViaServer,new System.Object[]{PhotonNetwork.LocalPlayer,PlayerClassType.Healer});
                 break;
             case (int)PlayerClassType.Dealer :
-                ChangeClass(PhotonNetwork.LocalPlayer,PlayerClassType.Tanker);
+                // ChangeClass(PhotonNetwork.LocalPlayer,PlayerClassType.Tanker);
+                _photonView.RPC("ChangeClass", RpcTarget.AllBufferedViaServer,new System.Object[]{PhotonNetwork.LocalPlayer,PlayerClassType.Tanker});
                 break;
                 
         }
@@ -214,9 +242,26 @@ public class RoomManager : MonoBehaviourPunCallbacks
     /// </summary>
     public void OnClickReady()
     {
+        int num = 0;
+        CanvasGroup[] canvasGroups = null;
+
+        foreach (var player in PhotonNetwork.CurrentRoom.Players)
+        {
+            if (player.Value.NickName.Equals(PhotonNetwork.LocalPlayer.NickName))
+            {
+                print($"### nickname {PhotonNetwork.LocalPlayer.NickName}");
+                print($"### num : {player.Key}");
+                num = player.Key;
+                break;
+            }
+        }
+        print($"### ");
+        
         btnClassParentName = EventSystem.current.currentSelectedGameObject?.transform.parent.parent.name;
-        if (!btnClassParentName.Contains(slotNum.ToString())) return;
-        GamePlayReady(PhotonNetwork.LocalPlayer,true);
+        
+        if (!btnClassParentName.Contains(num.ToString())) return;
+        _photonView.RPC("GamePlayReady",RpcTarget.AllBufferedViaServer,new System.Object[]{PhotonNetwork.LocalPlayer,true});
+        // GamePlayReady(PhotonNetwork.LocalPlayer,true);
     }
 
     /// <summary>
@@ -224,9 +269,22 @@ public class RoomManager : MonoBehaviourPunCallbacks
     /// </summary>
     public void OnClickReadyCancel()
     {
+        int num = 0;
+        CanvasGroup[] canvasGroups = null;
+
+        foreach (var player in PhotonNetwork.CurrentRoom.Players)
+        {
+            if (player.Value.NickName.Equals(PhotonNetwork.LocalPlayer.NickName))
+            {
+                num = player.Key;
+                break;
+            }
+        }
+
+        
         btnClassParentName = EventSystem.current.currentSelectedGameObject?.transform.parent.parent.name;
-        if (!btnClassParentName.Contains(slotNum.ToString())) return;
-        GamePlayReady(PhotonNetwork.LocalPlayer,false);
+        if (!btnClassParentName.Contains(num.ToString())) return;
+        _photonView.RPC("GamePlayReady",RpcTarget.AllBufferedViaServer,new System.Object[]{PhotonNetwork.LocalPlayer,false});
     }
 
     /// <summary>
@@ -266,26 +324,7 @@ public class RoomManager : MonoBehaviourPunCallbacks
 
         foreach (var customRoomPlayer in PhotonNetwork.CurrentRoom.Players)
         {
-            print($"### customRoomPlayer.Value.Nickname : {customRoomPlayer.Value.NickName}");
-            print($"### customRoomPlayer.key : {customRoomPlayer.Key}");
-            print($"### customRoomPlayer.Value.CustomProperties[slotNum] : {customRoomPlayer.Value.CustomProperties["slotNum"]}");
-            
             playerLabelSlots[customRoomPlayer.Key-1].GetComponent<Text>().text = customRoomPlayer.Value.NickName;
-            // 자기자신
-            /*switch (customRoomPlayer.Value.CustomProperties["slotNum"])
-            {
-                case 1:
-                    player1_nickname.GetComponent<Text>().text = customRoomPlayer.Value.NickName;
-                    break;
-                case 2:
-                    player2_nickname.GetComponent<Text>().text = customRoomPlayer.Value.NickName;
-                    break;
-                case3:
-                    break;
-                case4:
-                    break;
-            }*/
-
         }
     }
 
@@ -299,7 +338,7 @@ public class RoomManager : MonoBehaviourPunCallbacks
         // SceneManager.LoadScene("Title_AL");
         PhotonNetwork.LocalPlayer.CustomProperties.Clear();
         PhotonNetwork.LeaveRoom();
-        _photonView.RPC("NicknameDisplay",RpcTarget.AllBufferedViaServer);
+        
         
     }
 
@@ -310,7 +349,7 @@ public class RoomManager : MonoBehaviourPunCallbacks
     public override void OnPlayerLeftRoom(Player otherPlayer)
     {
         print("### other player room left");
-        // TODO : 참여자 re-sorting
+        _photonView.RPC("NicknameDisplay",RpcTarget.AllBufferedViaServer);
     }
 
     public override void OnLeftRoom()
@@ -334,34 +373,34 @@ public class RoomManager : MonoBehaviourPunCallbacks
     }
     
     /// <summary>
-    /// 플레이어 클래스 변경
+    /// 플레이어 클래스 프로퍼티 변경
     /// </summary>
     /// <param name="player">어떤 플레이어</param>
     /// <param name="classType">어떤 클래스</param>
+    [PunRPC]
     private void ChangeClass(Player player, PlayerClassType classType)
     {
-        print($"### player change class : {classType}");
 
         foreach (var currentRoomPlayer in PhotonNetwork.CurrentRoom.Players)
         {
-            if(currentRoomPlayer.Value.NickName.Equals(currentRoomPlayer.Value.NickName)) currentRoomPlayer.Value.CustomProperties["class"] = classType;
+            if(currentRoomPlayer.Value.NickName.Equals(player.NickName)) currentRoomPlayer.Value.CustomProperties["class"] = classType;
         }
             
         // Player thisPlayer = PhotonNetwork.LocalPlayer;
         // PhotonHashTable temp = thisPlayer.CustomProperties;
         // temp["class"] = classType;
         // PhotonNetwork.LocalPlayer.CustomProperties = temp;
-        
-        _photonView.RPC("ChangePlayersStatus", RpcTarget.AllBufferedViaServer, new System.Object[] {player,playerInfo});
+        ChangeScreen();
+        // _photonView.RPC("ChangeScreen", RpcTarget.AllBufferedViaServer);
     }
     
     /// <summary>
-    /// 플레이어 준비상태 변경
+    /// 플레이어 준비상태 프로퍼티 변경
     /// </summary>
     /// <param name="isReady"></param>
+    [PunRPC]
     private void GamePlayReady(Player player, bool isReady)
     {
-        print($"### player change ready status :{isReady}");
         if (isReady)
         {
             foreach (var currentRoomPlayer in PhotonNetwork.CurrentRoom.Players)
@@ -383,23 +422,6 @@ public class RoomManager : MonoBehaviourPunCallbacks
         // if (isReady) temp["status"] = PlayerReadyType.READY;
         // else temp["status"] = PlayerReadyType.SELECTING;
 
-        _photonView.RPC("ChangePlayersStatus", RpcTarget.AllBufferedViaServer, new System.Object[] {player,playerInfo});
-    }
-
-    /// <summary>
-    /// 플레이어 상태 RPC 연동
-    /// </summary>
-    /// <param name="player"></param>
-    /// <param name="hash"></param>
-    [PunRPC]
-    private void ChangePlayersStatus(Player player, PhotonHashTable hash)
-    {
-        // 플레이어 상태 변경사항 적용
-        foreach (var _player in PhotonNetwork.CurrentRoom.Players)
-        {
-            if (_player.Value.NickName.Equals(player.NickName)) _player.Value.CustomProperties = hash;
-        }
-        // 해당하는 플레이어의 상태를 화면에 출력
         ChangeScreen();
     }
 
@@ -408,81 +430,99 @@ public class RoomManager : MonoBehaviourPunCallbacks
     /// </summary>
     private void ChangeScreen()
     {
+        CanvasGroup[] userClassCanvas = null;
         int isAllReady = 1;
+        
         foreach (var player in PhotonNetwork.CurrentRoom.Players)
         {
-            print($"### Player property, nick : {player.Value.NickName}");
-            print($"### Player property, status : {player.Value.CustomProperties["status"]}");
-            print($"### Player property, class : {player.Value.CustomProperties["class"]}");
+            print($"### player key check :{player.Key}");
+            switch (player.Key)
+            {
+                case 1:
+                    userClassCanvas = playerClass;
+                    break;
+                case 2:
+                    userClassCanvas = player_1Class;
+                    break;
+                case 3:
+                    userClassCanvas = player_2Class;
+                    break;
+                case 4:
+                    userClassCanvas = player_3Class;
+                    break;
+                
+            }
+
+            if (userClassCanvas == null) throw new Exception($"### Key not valid for canvas, player.key:{player.Key}");
+            
             // class canvas 초기화
-            foreach (CanvasGroup canvas in playerClass)
+            foreach (CanvasGroup canvas in userClassCanvas)
             {
                 CanvasGroupOnOff(canvas, false);
             }
             
+            //playerSlots[player.Key-1].GetComponent<Text>().text = player.Value.NickName;
+            
             // TODO : 상태에 따라 클래스 표시 변경
+            print($"### selected class : {player.Value.CustomProperties["class"]}");
             
             switch (player.Value.CustomProperties["class"])
             {
-                case (int)PlayerClassType.Dealer:
-                    CanvasGroupOnOff(playerClass[0], true);
+                case PlayerClassType.Dealer:
+                    CanvasGroupOnOff(userClassCanvas[0], true);
                     break;
-                case (int)PlayerClassType.Tanker:
-                    CanvasGroupOnOff(playerClass[1], true);
+                case PlayerClassType.Tanker:
+                    CanvasGroupOnOff(userClassCanvas[1], true);
                     break;
-                case (int)PlayerClassType.Healer:
-                    CanvasGroupOnOff(playerClass[2], true);
+                case PlayerClassType.Healer:
+                    CanvasGroupOnOff(userClassCanvas[2], true);
                     break;
-                case (int)PlayerClassType.Supporter:
-                    CanvasGroupOnOff(playerClass[3], true);
+                case PlayerClassType.Supporter:
+                    CanvasGroupOnOff(userClassCanvas[3], true);
                     break;
+                default:
+                    print($"### player nickname : {player.Value.NickName}");
+                    print($"### player status : {player.Value.CustomProperties["status"]}");
+                    throw new Exception($"NOT VALID CLASS ENUM :{player.Value.CustomProperties["class"]}");
+                    
             }
+
+            
             
             // Ready 표시 변경
-            switch (player.Value.CustomProperties["status"])
+            if (player.Value.CustomProperties["status"].Equals(PlayerReadyType.READY))
             {
-                case PlayerReadyType.READY:
-                    btnClassParentName = EventSystem.current.currentSelectedGameObject?.transform.parent.parent.name;
+                //현재 누른 버튼의 부모의 CanvasGroupComponent: GettingReady Panel의 CanvasGroup
+                CanvasGroup cGrp1 = EventSystem.current.currentSelectedGameObject.GetComponentInParent<CanvasGroup>();
 
-                    if (btnClassParentName == "Player")
-                    {
-                        //현재 누른 버튼의 부모의 CanvasGroupComponent: GettingReady Panel의 CanvasGroup
-                        CanvasGroup cGrp1 = EventSystem.current.currentSelectedGameObject.GetComponentInParent<CanvasGroup>();
-
-                        //현재 누른 버튼의 부모의 부모의 2번째 자식의 CanvasGroupComponent: Ready Panel의 CanvasGroup
-                        CanvasGroup cGrp2 = EventSystem.current.currentSelectedGameObject.transform.parent.parent.GetChild(1).GetComponent<CanvasGroup>();
-
-                        CanvasGroupOnOff(cGrp1, false);
-                        CanvasGroupOnOff(cGrp2, true);
-                    }
-                    break;
-                case PlayerReadyType.SELECTING:
-                    btnClassParentName = EventSystem.current.currentSelectedGameObject?.transform.parent.parent.name;
-
-                    if (btnClassParentName == "Player")
-                    {
-                        CanvasGroup cGrp1 = EventSystem.current.currentSelectedGameObject.GetComponentInParent<CanvasGroup>();
-                        CanvasGroup cGrp2 = EventSystem.current.currentSelectedGameObject.transform.parent.parent.GetChild(0).GetComponent<CanvasGroup>();
-                        CanvasGroupOnOff(cGrp1, false);
-                        CanvasGroupOnOff(cGrp2, true);
-                    }                         
-
-                    break;
+                //현재 누른 버튼의 부모의 부모의 2번째 자식의 CanvasGroupComponent: Ready Panel의 CanvasGroup
+                CanvasGroup cGrp2 = EventSystem.current.currentSelectedGameObject.transform.parent.parent.GetChild(1).GetComponent<CanvasGroup>();
+            
+                CanvasGroupOnOff(cGrp1, false);
+                CanvasGroupOnOff(cGrp2, true);
+            }
+            else
+            {
+                CanvasGroup cGrp1 = EventSystem.current.currentSelectedGameObject.GetComponentInParent<CanvasGroup>();
+                CanvasGroup cGrp2 = EventSystem.current.currentSelectedGameObject.transform.parent.parent.GetChild(0).GetComponent<CanvasGroup>();
+                CanvasGroupOnOff(cGrp1, false);
+                CanvasGroupOnOff(cGrp2, true);
             }
             
-    
+            
+            
             // CanvasGroupOnOff(playerReady[i], false);
             // CanvasGroupOnOff(playerReadyed[i], true);
             
             // 카운트다운 확인
 
-            if (player.Value.CustomProperties["status"].Equals(PlayerReadyType.READY)) isAllReady *= 1;
-            else isAllReady *= 0;
+            // if (player.Value.CustomProperties["status"].Equals(PlayerReadyType.READY)) isAllReady *= 1;
+            // else isAllReady *= 0;
         }
 
         // TODO : 전부 준비상태라면 -> 카운트다운 시작
-        if (isAllReady == 1) StartCountDown();
-        else return;
+        // if (isAllReady == 1) StartCountDown();
+        // else return;
     }
 
 

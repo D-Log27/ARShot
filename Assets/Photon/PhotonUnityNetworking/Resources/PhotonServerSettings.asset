@@ -45,6 +45,7 @@ MonoBehaviour:
   - StartCountDown
   - ChangePlayerReadyStatus
   - ChangePlayersStatus
+  - ChangeScreen
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1
