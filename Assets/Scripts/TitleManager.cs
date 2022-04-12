@@ -54,6 +54,7 @@ public class TitleManager : MonoBehaviour
     public void OnClickStartButton()
     {
         TitleLoadingImage(true);
+<<<<<<< HEAD
         threeSec -= Time.deltaTime;
         //아래 함수에 테스트용으로 if만 입힘
         //if (threeSec < 0)
@@ -65,11 +66,12 @@ public class TitleManager : MonoBehaviour
         //        SceneManager.LoadScene("Room_AL");
         //    }
         //}
+=======
+>>>>>>> 97c0e2f267f53e72f4a1700c1c3cf7a101afe33e
         bool isSuccess = PhotonManager.GetInstance().ConnectingRoom();
         if (isSuccess)
         {
             TitleLoadingImage(false);
-            //SceneManager.LoadScene("Room_AL");
         }
     }
 

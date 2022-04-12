@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -31,15 +32,31 @@ public class InGameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+<<<<<<< HEAD
+=======
+    }
+>>>>>>> 97c0e2f267f53e72f4a1700c1c3cf7a101afe33e
 
     }
 
+<<<<<<< HEAD
     public void OnClickClassSkill()
     {
         if (!Input.GetKey(KeyCode.Mouse0))
         {
             print("Skill");
         }
+=======
+    /// <summary>
+    /// 캔버스그룹의 3가지 속성을 한번에 제어
+    /// </summary>
+    /// <param name="cGrp"></param>
+    /// <param name="isOn"></param>
+    void CanvasGroupOnOff(CanvasGroup cGrp, bool isOn)
+    {
+        cGrp.alpha = Convert.ToSingle(isOn);
+        cGrp.interactable = cGrp.blocksRaycasts = isOn;
+>>>>>>> 97c0e2f267f53e72f4a1700c1c3cf7a101afe33e
     }
 
     public void OnClickOption()

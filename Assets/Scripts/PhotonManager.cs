@@ -69,6 +69,14 @@ public class PhotonManager : MonoBehaviourPunCallbacks
         }
     }
 
+    public override void OnRoomListUpdate(List<RoomInfo> roomList)
+    {
+        foreach (RoomInfo roomInfo in roomList)
+        {
+            print($"### roomInfo : {roomInfo.Name}");
+        }
+    }
+
     /// <summary>
     /// 로비 접속후 callback
     /// </summary>
@@ -91,7 +99,7 @@ public class PhotonManager : MonoBehaviourPunCallbacks
         roomOptions.IsOpen = true;
         roomOptions.IsVisible = true;
         roomOptions.MaxPlayers = 4;
-        roomOptions.CustomRoomPropertiesForLobby = new string[] { "ApName"};
+        roomOptions.CustomRoomPropertiesForLobby = new string[] { "ApName" };
         SetApProperty();
         roomOptions.CustomRoomProperties = roomApProperty;
 
@@ -114,7 +122,11 @@ public class PhotonManager : MonoBehaviourPunCallbacks
     /// </summary>
     public override void OnCreatedRoom()
     {
+<<<<<<< HEAD
         print($"### room created : {PhotonNetwork.CurrentRoom.Name}");
+=======
+        
+>>>>>>> 97c0e2f267f53e72f4a1700c1c3cf7a101afe33e
     }
 
     /// <summary>
@@ -162,9 +174,31 @@ public class PhotonManager : MonoBehaviourPunCallbacks
     {
         try
         {
+<<<<<<< HEAD
             print("### click start");
+=======
+            # region TEST
+>>>>>>> 97c0e2f267f53e72f4a1700c1c3cf7a101afe33e
             SetApProperty();
-            PhotonNetwork.JoinRandomRoom();
+            if (PhotonNetwork.CountOfRooms == 0)
+            {
+                print($"### Room Not Exist, create room");
+                RoomOptions roomOptions = new RoomOptions();
+                roomOptions.IsOpen = true;
+                roomOptions.IsVisible = true;
+                roomOptions.MaxPlayers = 4;
+                PhotonNetwork.CreateRoom("TEST", roomOptions,TypedLobby.Default);
+            }
+            else
+            {
+                print($"### Room Exist. join room");
+                PhotonNetwork.JoinRoom("TEST");
+            }
+            
+            
+            
+            # endregion
+            //PhotonNetwork.JoinRandomRoom();
             return true;
         } catch(Exception e)
         {
