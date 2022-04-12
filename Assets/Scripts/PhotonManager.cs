@@ -71,6 +71,14 @@ public class PhotonManager : MonoBehaviourPunCallbacks
         }
     }
 
+    public override void OnRoomListUpdate(List<RoomInfo> roomList)
+    {
+        foreach (RoomInfo roomInfo in roomList)
+        {
+            print($"### roomInfo : {roomInfo.Name}");
+        }
+    }
+
     /// <summary>
     /// 로비 입장 후 callback
     /// </summary>
@@ -93,7 +101,7 @@ public class PhotonManager : MonoBehaviourPunCallbacks
         roomOptions.IsOpen = true;
         roomOptions.IsVisible = true;
         roomOptions.MaxPlayers = 4;
-        roomOptions.CustomRoomPropertiesForLobby = new string[] { "ApName"};
+        roomOptions.CustomRoomPropertiesForLobby = new string[] { "ApName" };
         SetApProperty();
         roomOptions.CustomRoomProperties = roomApProperty;
 
@@ -115,7 +123,7 @@ public class PhotonManager : MonoBehaviourPunCallbacks
     /// </summary>
     public override void OnCreatedRoom()
     {
-        print($"### create");
+        
     }
 
     /// <summary>
@@ -155,8 +163,27 @@ public class PhotonManager : MonoBehaviourPunCallbacks
     {
         try
         {
+            # region TEST
             SetApProperty();
-            PhotonNetwork.JoinRandomRoom();
+            if (PhotonNetwork.CountOfRooms == 0)
+            {
+                print($"### Room Not Exist, create room");
+                RoomOptions roomOptions = new RoomOptions();
+                roomOptions.IsOpen = true;
+                roomOptions.IsVisible = true;
+                roomOptions.MaxPlayers = 4;
+                PhotonNetwork.CreateRoom("TEST", roomOptions,TypedLobby.Default);
+            }
+            else
+            {
+                print($"### Room Exist. join room");
+                PhotonNetwork.JoinRoom("TEST");
+            }
+            
+            
+            
+            # endregion
+            //PhotonNetwork.JoinRandomRoom();
             return true;
         } catch(Exception e)
         {

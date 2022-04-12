@@ -139,7 +139,7 @@ public class NetworkAPHelper : MonoBehaviour
                     {
                         if (x.IPv4Mask.ToString().Equals("255.255.255.0"))
                         {
-                            //print($"### IPAddress : {x.Address} / IPv4Mask : {x.IPv4Mask}");
+                            print($"### IPAddress : {x.Address} / IPv4Mask : {x.IPv4Mask}");
                             ApName = x.Address.ToString();
                         }
                     }

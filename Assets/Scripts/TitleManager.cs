@@ -64,22 +64,10 @@ public class TitleManager : MonoBehaviour
     public void OnClickStartButton()
     {
         TitleLoadingImage(true);
-        threeSec -= Time.deltaTime;
-        //�Ʒ� �Լ��� �׽�Ʈ������ if�� ����
-        //if (threeSec < 0)
-        //{
-        //    bool isSuccess = true;//PhotonManager.GetInstance().ConnectingRoom();
-        //    if (isSuccess)
-        //    {
-        //        TitleLoadingImage(false);
-        //        SceneManager.LoadScene("Room_AL");
-        //    }
-        //}
         bool isSuccess = PhotonManager.GetInstance().ConnectingRoom();
         if (isSuccess)
         {
             TitleLoadingImage(false);
-            //SceneManager.LoadScene("Room_AL");
         }
     }
 
