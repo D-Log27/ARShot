@@ -26,7 +26,7 @@ public class SliderRunTo1 : MonoBehaviour
 			
         if(time>1)
 		{
-           
+                    b = false;
 			time=0;
 		}
     }

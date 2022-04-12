@@ -8,7 +8,7 @@ using System.Text;
 using System;
 
 /// <summary>
-/// í¬í†¤ ë§¤ë‹ˆì €
+/// Æ÷Åæ ¸Å´ÏÀú
 /// </summary>
 public class PhotonManager : MonoBehaviourPunCallbacks
 {
@@ -34,11 +34,10 @@ public class PhotonManager : MonoBehaviourPunCallbacks
     // Start is called before the first frame update
     void Start()
     {
-        TitleManager.GetInstance().TitleLoadingImage(true);
 
         if (Application.internetReachability == NetworkReachability.NotReachable)
         {
-            //print("### NOT CONNECTED AP");
+            print("### NOT CONNECTED AP");
             //Application.Quit();
         }
         titleManager = GameObject.Find("TitleManager").GetComponent<TitleManager>();
@@ -53,7 +52,7 @@ public class PhotonManager : MonoBehaviourPunCallbacks
     }
 
     /// <summary>
-    /// Photon ì„œë²„ ì ‘ì† í›„ callback
+    /// Photon Å¬¶ó¿ìµå Á¢¼Ó ÈÄ callback
     /// </summary>
     public override void OnConnectedToMaster()
     {
@@ -63,8 +62,7 @@ public class PhotonManager : MonoBehaviourPunCallbacks
             SetApProperty();
             TypedLobby typedLobby = new TypedLobby(apName,LobbyType.Default);
             titleManager.TitleLoadingImage(true);
-            // PhotonNetwork.JoinLobby(typedLobby);
-            PhotonNetwork.JoinLobby();
+            PhotonNetwork.JoinLobby(typedLobby);
         } catch (Exception e)
         {
             print($"### lobby connect failed , {e}");
@@ -72,19 +70,19 @@ public class PhotonManager : MonoBehaviourPunCallbacks
     }
 
     /// <summary>
-    /// ë¡œë¹„ ì…ì¥ í›„ callback
+    /// ·Îºñ Á¢¼ÓÈÄ callback
     /// </summary>
     public override void OnJoinedLobby()
     {
+        print($"### Lobby joined , {PhotonNetwork.CurrentLobby.Name}");
         titleManager.TitleLoadingImage(false);
-        TitleManager.GetInstance().TitleLoadingImage(false);
     }
 
     /// <summary>
-    /// ë°© ì…ì¥ ì‹¤íŒ¨ í›„ callback
+    /// ¹æ Á¢¼Ó ½ÇÆĞ ÈÄ Äİ¹é
     /// </summary>
-    /// <param name="returnCode">ï¿½ï¿½ï¿½ï¿½ï¿½Úµï¿½</param>
-    /// <param name="message">ï¿½Ş½ï¿½ï¿½ï¿½</param>
+    /// <param name="returnCode">¿¡·¯ÄÚµå</param>
+    /// <param name="message">¸Ş½ÃÁö</param>
     public override void OnJoinRoomFailed(short returnCode, string message)
     {
         print($"### join Random room failed , code : {returnCode}, message : {message}");
@@ -98,32 +96,41 @@ public class PhotonManager : MonoBehaviourPunCallbacks
         roomOptions.CustomRoomProperties = roomApProperty;
 
         int randomNum = MathUtil.GetInstance().RandomInt();
+        print($"### random num check : {randomNum}");
         PhotonNetwork.CreateRoom(randomNum.ToString(), roomOptions, null);
     }
     /// <summary>
-    /// ì„ì˜ì˜ ë°© ì…ì¥ ì‹¤íŒ¨ í›„ callback
+    /// ·£´ı ¹æ Á¢¼Ó ½ÇÆĞ ÈÄ Äİ¹é
     /// </summary>
-    /// <param name="returnCode">ï¿½ï¿½ï¿½ï¿½ï¿½Úµï¿½</param>
-    /// <param name="message">ï¿½Ş½ï¿½ï¿½ï¿½</param>
+    /// <param name="returnCode">¿¡·¯ÄÚµå</param>
+    /// <param name="message">¸Ş½ÃÁö</param>
     public override void OnJoinRandomFailed(short returnCode, string message)
     {
         OnJoinRoomFailed(returnCode, message);
     }
 
     /// <summary>
-    /// ë°© ìƒì„±
+    /// ¹æ »ı¼º ÈÄ Äİ¹é
     /// </summary>
     public override void OnCreatedRoom()
     {
-        print($"### create");
+        print($"### room created : {PhotonNetwork.CurrentRoom.Name}");
     }
 
     /// <summary>
-    /// ë°© ì…ì¥
+    /// ¹æ ÀÔÀå ÈÄ Äİ¹é
     /// </summary>
     public override void OnJoinedRoom()
     {
-        print($"### joined : {PhotonNetwork.CurrentRoom.Name}");
+# if UNITY_EDITOR
+        PhotonCollection.Hashtable testPair = PhotonNetwork.CurrentRoom.CustomProperties;
+
+        print($"### Lobby name : {PhotonNetwork.CurrentLobby.Name}");
+        print($"### room cotains apname ? {testPair.ContainsKey("ApName")}");
+        print($"### room apname : {testPair["ApName"]}");
+        print($"### room name : {PhotonNetwork.CurrentRoom.Name}");
+#endif
+        // TODO : ¹æ sceneÀ¸·Î ÀüÈ¯
         if (PhotonNetwork.IsMasterClient)
         {
             PhotonNetwork.LoadLevel("Room_AL");
@@ -131,19 +138,19 @@ public class PhotonManager : MonoBehaviourPunCallbacks
     }
 
     /// <summary>
-    /// AP íšë“
+    /// AP Á¤º¸ ¼³Á¤
     /// </summary>
     void SetApProperty()
     {
         if(NetworkAPHelper.GetInstance().ApName == "" || NetworkAPHelper.GetInstance().ApName == null) NetworkAPHelper.GetInstance().GetAPInfo();
         apName = NetworkAPHelper.GetInstance().ApName;
         //apName = "test";
-        // APê¸°ë°˜ ë¯¸ì‚¬ìš©ì‹œ IP -> ì„ì‹œë‹‰ë„¤ì„ìœ¼ë¡œ ì„¤ì •
-        PhotonNetwork.NickName = apName;
+        print($"### ap name : {apName}");
         roomApProperty = new PhotonCollection.Hashtable()
         {
             { "ApName",apName }
         };
+        print($"room property check : {roomApProperty["ApName"]}");
         return;
     }
 
@@ -155,6 +162,7 @@ public class PhotonManager : MonoBehaviourPunCallbacks
     {
         try
         {
+            print("### click start");
             SetApProperty();
             PhotonNetwork.JoinRandomRoom();
             return true;
