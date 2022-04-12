@@ -6,30 +6,31 @@ using UnityEngine;
 //UIDrawer란 평상시에는 닫혔다가 당길 때 열리는 서랍과 같은 UI
 public class UIDrawer : MonoBehaviour
 {
-    //UIDrawer 여는 버튼
-    public Transform drawerOpener;
+    //UIDrawer 열고 닫는 버튼
+    public GameObject drawerOpener;
+    public GameObject drawerCloser;
 
-    //UIDrawer 닫는 버튼
-    public Transform drawerCloser;
+    //각 개체의 원위치
+    Transform drawerOpenerTrAtStart;
+    Transform drawerCloserTrAtStart;
+    Transform uiBoxTrAtStart;
 
     //숨겨진 UI들 모음
     public Transform uiBox;
 
-    //여닫이 버튼의 캔버스그룹
-    public CanvasGroup cGrpDrawerOpener;
-    public CanvasGroup cGrpDrawerCloser;
-
     // Start is called before the first frame update
     void Start()
     {
-
+        drawerOpenerTrAtStart = drawerOpener.transform;
+        drawerCloserTrAtStart = drawerCloser.transform;
+        uiBoxTrAtStart = uiBox;
     }
 
     // Update is called once per frame
     void Update()
     {
         OpenDrawer();
-        CloseDrawer();
+        //CloseDrawer();
     }
 
 
@@ -38,10 +39,10 @@ public class UIDrawer : MonoBehaviour
     /// </summary>
     private void OpenDrawer()
     {
-        drawerOpener.position = Vector3.MoveTowards(drawerOpener.position, new Vector3(drawerOpener.position.x, drawerOpener.position.y - 10, drawerOpener.position.z), 1);
-        uiBox.position = Vector3.MoveTowards(uiBox.position, new Vector3(uiBox.position.x, uiBox.position.y - 10, uiBox.position.z), 1);
-        CanvasGroupOnOff(cGrpDrawerCloser, true);
-        CanvasGroupOnOff(cGrpDrawerOpener, false);
+        drawerOpener.transform.position = Vector3.MoveTowards(drawerOpenerTrAtStart.position, new Vector3(drawerOpenerTrAtStart.position.x, drawerOpenerTrAtStart.position.y - 10, drawerOpenerTrAtStart.position.z), 1);
+        uiBox.position = Vector3.MoveTowards(uiBoxTrAtStart.position, new Vector3(uiBoxTrAtStart.position.x, uiBoxTrAtStart.position.y - 10, uiBoxTrAtStart.position.z), 1);
+        drawerCloser.SetActive(true);
+        drawerOpener.SetActive(false);
     }
 
     /// <summary>
@@ -49,30 +50,9 @@ public class UIDrawer : MonoBehaviour
     /// </summary>
     private void CloseDrawer()
     {
-        drawerCloser.position = Vector3.MoveTowards(drawerCloser.position, new Vector3(drawerCloser.position.x, drawerCloser.position.y - 10, drawerCloser.position.z), 1);
-        uiBox.position = Vector3.MoveTowards(uiBox.position, new Vector3(uiBox.position.x, uiBox.position.y - 10, uiBox.position.z), 1);
-        CanvasGroupOnOff(cGrpDrawerOpener, true);
-        CanvasGroupOnOff(cGrpDrawerCloser, false);
-    }
-
-    /// <summary>
-    /// 캔버스그룹의 3가지 속성을 한번에 제어
-    /// </summary>
-    /// <param name="cGrp"></param>
-    /// <param name="isOn"></param>
-    void CanvasGroupOnOff(CanvasGroup cGrp, bool isOn)
-    {
-        if (isOn)
-        {
-            cGrp.alpha = 1;
-            cGrp.interactable = true;
-            cGrp.blocksRaycasts = true;
-        }
-        else
-        {
-            cGrp.alpha = 0;
-            cGrp.interactable = false;
-            cGrp.blocksRaycasts = false;
-        }
+        drawerCloser.transform.position = Vector3.MoveTowards(drawerCloserTrAtStart.position, new Vector3(drawerCloserTrAtStart.position.x, drawerCloserTrAtStart.position.y - 10, drawerCloserTrAtStart.position.z), 1);
+        uiBox.position = Vector3.MoveTowards(uiBoxTrAtStart.position, new Vector3(uiBoxTrAtStart.position.x, uiBoxTrAtStart.position.y - 10, uiBoxTrAtStart.position.z), 1);
+        drawerCloser.SetActive(false);
+        drawerOpener.SetActive(true);
     }
 }
