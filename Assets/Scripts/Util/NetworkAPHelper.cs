@@ -145,7 +145,7 @@ public class NetworkAPHelper : MonoBehaviour
                     }
                     foreach(var y in adapter.GetIPProperties().GatewayAddresses)
                     {
-                        print($"### GateWay : {y.Address}");
+                        //print($"### GateWay : {y.Address}");
                     }
                 }
 
