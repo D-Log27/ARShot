@@ -11,32 +11,20 @@ public class MarkerGuide_KSY : MonoBehaviour //
 {
     private GameObject tagVIP;
     public GameObject markerLine;
-    //public GameObject tagTest; //delete!!
-    //public GameObject tagTestFactory; //delete!! 
 
     private void Update()
     {
         tagVIP = GameObject.FindWithTag("VIP");
-        this.gameObject.SetActive(tagVIP == null); //조건이 true니까 켠다???
-       
-
-        ////tagTest = GameObject.FindWithTag("VIP"); //delete!!
- 
-        ////Invoke("TagTest", 5.0f); //delete!!
-
-        //if (tagVIP != null)
-        //{
-        //    markerLine.gameObject.SetActive(false);
-        //}
+        //tagTest = GameObject.FindWithTag("VIP"); //delete!!
     }
 
-    //void TagTest() //delete ~ 
-    //{
-    //    tagTest.gameObject.SetActive(true);
-    //    if (tagVIP != null)
-    //    {
-    //        markerLine.gameObject.SetActive(false);
-    //    }
+    private void Update()
+    {
+        //Invoke("TagTest", 5.0f); //delete!!
 
-    //} // ~ delete
+        if (tagVIP != null)
+        {
+            markerLine.gameObject.SetActive(false);
+        }
+    }
 }

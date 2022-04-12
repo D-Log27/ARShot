@@ -7,81 +7,131 @@ using System;
 using TMPro;
 using UnityEngine.SceneManagement;
 using Photon.Pun;
+using Photon.Realtime;
+using UnityEditor.UIElements;
+using PhotonHashTable = ExitGames.Client.Photon.Hashtable;
 
 public class RoomManager : MonoBehaviourPunCallbacks
 {
-    //Å¬·¡½º¼±ÅÃ ¹öÆ°ÀÇ ºÎ¸ğ ÀÌ¸§: º¯¼ö¸í ÁÙÀÌ±â À§ÇØ ¼±¾ğÇÔ
+    // í”Œë ˆì´ ê°€ëŠ¥í•œ í´ë˜ìŠ¤ íƒ€ì…
+    enum PlayerClassType { Tanker, Dealer, Healer, Supporter }
+
+    // í”Œë ˆì´ì–´ ìƒíƒœ
+    enum PlayerReadyType { SELECTING, READY }
+    
+    // í”Œë ˆì´ì–´ ì„ íƒí•œ í´ë˜ìŠ¤
+    private PlayerClassType _playerClass;
+    
+    // í”Œë ˆì´ì–´ ìƒíƒœ
+    private PlayerReadyType _playerReadyType;
+
+    private PhotonHashTable playerInfo;
+    
+    private PhotonView _photonView;
+    
+    //í´ë˜ìŠ¤ì„ íƒ ë²„íŠ¼ì˜ ë¶€ëª¨ ì´ë¦„: ë³€ìˆ˜ëª… ì¤„ì´ê¸° ìœ„í•´ ì„ ì–¸í•¨
     string btnClassParentName;
 
-    //µÚ·Î °¡±â ¹öÆ°
+    //ë’¤ë¡œ ê°€ê¸° ë²„íŠ¼
     public Button btnBackToTitle;
 
     //Starting in n Seconds
     public TMP_Text loadingGame;
 
-    //¹æÁ¦¸ñ
+    //ë°©ì œëª©
     public TMP_Text roomID;
 
-    //Å¬·¡½º ¼±ÅÃ ¹öÆ° ¹× Äµ¹ö½º±×·ì
+    //í´ë˜ìŠ¤ ì„ íƒ ë²„íŠ¼ ë° ìº”ë²„ìŠ¤ê·¸ë£¹
     public Button[] btnPrevious;
     public Button[] btnNext;
     public CanvasGroup[] cGrpPrevious;
     public CanvasGroup[] cGrpNext;
 
-    //InGame ·Îµù ½Ã°£
+    //InGame ë¡œë”©ì‹œê°„
     float sec;
 
-    //ÇöÀç Å¬¸¯ÇÑ ¹öÆ°(Update¿¡¼­ °è¼Ó ¹Ù²ñ)
+    //í˜„ì¬ í´ë¦­í•œ ë²„íŠ¼(Updateì—ì„œ ê³„ì† ë°”ë€œ)
     GameObject btn;
 
-    //ÇÃ·¹ÀÌ¾î ÁØºñÁß, ÁØºñ¿Ï·á ÆĞ³Î
+    //í”Œë ˆì´ì–´ ì¤€ë¹„ì¤‘, ì¤€ë¹„ì™„ë£Œ íŒ¨ë„
     public CanvasGroup[] playerGettingReady;
     public CanvasGroup[] playerReady;
 
-    //°ÔÀÓ ·Îµå½Ã ÇÃ·¹ÀÌ¾î ÆĞ³Î
+    //ê²Œì„ ë¡œë“œì‹œ í”Œë ˆì´ì–´ íŒ¨ë„
     public CanvasGroup[] playerReadyed;
 
-    //Å¬·¡½º ¼±ÅÃ
+    //í´ë˜ìŠ¤ ì„ íƒ
     public CanvasGroup[] playerClass;
     public CanvasGroup[] player_1Class;
     public CanvasGroup[] player_2Class;
     public CanvasGroup[] player_3Class;
 
-    //°ªÀÌ º¯ÇÏ´Â UI°¡ ÀÖ´Â Äµ¹ö½º Æ®·£½ºÆû(ÇöÀç ¾À¿¡¼­´Â InGame ·Îµù ÅØ½ºÆ®°¡ À¯ÀÏ)
+    //ê°’ì´ ë³€í•˜ëŠ” UIê°€ ìˆëŠ” ìº”ë²„ìŠ¤ íŠ¸ëœìŠ¤í¼(í˜„ì¬ ì”¬ì—ì„œëŠ” InGame ë¡œë”© í…ìŠ¤íŠ¸ê°€ ìœ ì¼)
     public Transform canvasChanging;
 
+    // FOR TEST
+    public Transform player1_nickname;
+    public Transform player2_nickname;
+    
+    // ë°© ì ‘ì†ì ì •ë³´
+    private List<Player> userList;
+    
     // Start is called before the first frame update
     void Start()
     {
-        print(PhotonNetwork.CurrentLobby.Name);
-        print(PhotonNetwork.CurrentRoom.Name);
-        //ÃÊ±â ¼³Á¤; unity play Àü¿¡ ¼³Á¤ Àß ÇØ ³õÀ¸¸é »ç½Ç ÇÊ¿ä ¾øÀ½
+        userList = new List<Player>();
+        Screen.sleepTimeout = SleepTimeout.NeverSleep;
+        _photonView = GetComponent<PhotonView>();
+        //ì´ˆê¸° ì„¤ì •; unity play ì „ì— ì„¤ì • ì˜ í•´ ë†“ìœ¼ë©´ ì‚¬ì‹¤ í•„ìš” ì—†ìŒ
         canvasChanging.gameObject.SetActive(false);
         for (int i = 0; i < 4; i++)
         {
-            CanvasGroupOnOff(playerGettingReady[i], On);
-            CanvasGroupOnOff(playerReady[i], Off);
-            CanvasGroupOnOff(playerReadyed[i], Off);
+            CanvasGroupOnOff(playerGettingReady[i], true);
+            CanvasGroupOnOff(playerReady[i], false);
+            CanvasGroupOnOff(playerReadyed[i], false);
         }
+
+        StartRoom();
+    }
+
+    /// <summary>
+    /// ì…ì¥ì‹œ
+    /// </summary>
+    private void StartRoom()
+    {
+        print($"### Lobby : {PhotonNetwork.CurrentLobby.Name}");
+        print($"### Room : {PhotonNetwork.CurrentRoom.Name}");
+        print($"### User NickName : {PhotonNetwork.NickName}");
+        
+        Dictionary<int, Player> _players = PhotonNetwork.CurrentRoom.Players;
+        print($"### players count in room : {_players.Count}");
+
+        playerInfo = new PhotonHashTable();        
+        // Hashtable<string, int> playerInfo = new Hashtable<string, int>();
+        playerInfo.Add("class", PlayerClassType.Dealer);
+        playerInfo.Add("status",PlayerReadyType.SELECTING);
+        PhotonNetwork.LocalPlayer.CustomProperties = playerInfo;
+        
+        photonView.RPC("NicknameDisplay",RpcTarget.AllBufferedViaServer);
     }
 
     // Update is called once per frame
     void Update()
     {
-        //InGame ·Îµù ½Ã°£ Ç¥½Ã ¹× ´ÙÀ½ ¾À ¿¬°á ÇÔ¼ö
+        //InGame ë¡œë”© ì‹œê°„ í‘œì‹œ ë° ë‹¤ìŒ ì”¬ ì—°ê²° í•¨ìˆ˜
         if (canvasChanging.gameObject.activeSelf)
         {
             sec -= Time.deltaTime;
             loadingGame.text = "Starting in " + Mathf.Ceil(sec) + " Seconds";
             if (sec < 0)
             {
-                SceneManager.LoadScene("InGame_AL");
+                PhotonNetwork.LoadLevel("InGame_AL");
             }
         }
     }
 
     /// <summary>
-    /// ¹öÆ° Å¬¸¯½Ã ÀÌÀü Å¬·¡½º º¸ÀÓ
+    /// ë²„íŠ¼ í´ë¦­ì‹œ ì´ì „ í´ë˜ìŠ¤ ë³´ì„
     /// </summary>
     public void OnClickPrevious()
     {
@@ -89,96 +139,36 @@ public class RoomManager : MonoBehaviourPunCallbacks
 
         if (btnClassParentName == "Player")
         {
-            if (playerClass[3].alpha == 1)
+            int nowClassIdx = (int)PhotonNetwork.LocalPlayer.CustomProperties["class"];
+            switch (nowClassIdx)
             {
-                CanvasGroupOnOff(playerClass[3], Off);
-                CanvasGroupOnOff(playerClass[2], On);
-                btnNext[0].enabled = true;
+                case (int)PlayerClassType.Supporter :
+                    print("### dealder <- supporter");
+                    ChangeClass(PlayerClassType.Healer);
+                    break;
+                case (int)PlayerClassType.Healer:
+                    ChangeClass(PlayerClassType.Tanker);
+                    print("### Supporter <- Healer");
+                    break;
+                case (int)PlayerClassType.Tanker:
+                    ChangeClass(PlayerClassType.Dealer);
+                    print("### Healer <- Tanker");
+                    break;
+                case (int)PlayerClassType.Dealer :
+                    ChangeClass(PlayerClassType.Supporter);
+                    print("### dealder <- supporter");
+                    break;
+                
             }
-            else if (playerClass[2].alpha == 1)
-            {
-                CanvasGroupOnOff(playerClass[2], Off);
-                CanvasGroupOnOff(playerClass[1], On);
-            }
-            else
-            {
-                CanvasGroupOnOff(playerClass[1], Off);
-                CanvasGroupOnOff(playerClass[0], On);
-
-                //ÀÌ°Å ¿ÏÀü ºñÈ°¼ºÈ­¶ó±âº¸´Ü È¸»öºûÀ¸·Î ³ªÅ¸³ª°Ô ÇØ¾ßÇÔ
-                btnPrevious[0].enabled = false;
-            }
+            
+            //ì´ê±° ì™„ì „ ë¹„í™œì„±í™”ë¼ê¸°ë³´ë‹¨ íšŒìƒ‰ë¹›ìœ¼ë¡œ ë‚˜íƒ€ë‚˜ê²Œ í•´ì•¼í•¨
+            // btnPrevious[0].enabled = false;
         }
-        else if (btnClassParentName == "Player_1")
-        {
-            if (player_1Class[3].alpha == 1)
-            {
-                CanvasGroupOnOff(player_1Class[3], Off);
-                CanvasGroupOnOff(player_1Class[2], On);
-                btnNext[1].enabled = true;
-            }
-            else if (player_1Class[2].alpha == 1)
-            {
-                CanvasGroupOnOff(player_1Class[2], Off);
-                CanvasGroupOnOff(player_1Class[1], On);
-            }
-            else
-            {
-                CanvasGroupOnOff(player_1Class[1], Off);
-                CanvasGroupOnOff(player_1Class[0], On);
-
-                //ÀÌ°Å ¿ÏÀü ºñÈ°¼ºÈ­¶ó±âº¸´Ü È¸»öºûÀ¸·Î ³ªÅ¸³ª°Ô ÇØ¾ßÇÔ
-                btnPrevious[1].enabled = false;
-            }
-        }
-        else if (btnClassParentName == "Player_2")
-        {
-            if (player_2Class[3].alpha == 1)
-            {
-                CanvasGroupOnOff(player_2Class[3], Off);
-                CanvasGroupOnOff(player_2Class[2], On);
-                btnNext[2].enabled = true;
-            }
-            else if (player_2Class[2].alpha == 1)
-            {
-                CanvasGroupOnOff(player_2Class[2], Off);
-                CanvasGroupOnOff(player_2Class[1], On);
-            }
-            else
-            {
-                CanvasGroupOnOff(player_2Class[1], Off);
-                CanvasGroupOnOff(player_2Class[0], On);
-
-                //ÀÌ°Å ¿ÏÀü ºñÈ°¼ºÈ­¶ó±âº¸´Ü È¸»öºûÀ¸·Î ³ªÅ¸³ª°Ô ÇØ¾ßÇÔ
-                btnPrevious[2].enabled = false;
-            }
-        }
-        else
-        {
-            if (player_3Class[3].alpha == 1)
-            {
-                CanvasGroupOnOff(player_3Class[3], Off);
-                CanvasGroupOnOff(player_3Class[2], On);
-                btnNext[3].enabled = true;
-            }
-            else if (player_3Class[2].alpha == 1)
-            {
-                CanvasGroupOnOff(player_3Class[2], Off);
-                CanvasGroupOnOff(player_3Class[1], On);
-            }
-            else
-            {
-                CanvasGroupOnOff(player_3Class[1], Off);
-                CanvasGroupOnOff(player_3Class[0], On);
-
-                //ÀÌ°Å ¿ÏÀü ºñÈ°¼ºÈ­¶ó±âº¸´Ü È¸»öºûÀ¸·Î ³ªÅ¸³ª°Ô ÇØ¾ßÇÔ
-                btnPrevious[3].enabled = false;
-            }
-        }
+        
     }
 
     /// <summary>
-    /// ¹öÆ° Å¬¸¯½Ã ´ÙÀ½ Å¬·¡½º º¸ÀÓ
+    /// ë²„íŠ¼ í´ë¦­ì‹œ ë‹¤ìŒ í´ë˜ìŠ¤ ë³´ì„
     /// </summary>
     public void OnClickNext()
     {
@@ -186,147 +176,69 @@ public class RoomManager : MonoBehaviourPunCallbacks
 
         if (btnClassParentName == "Player")
         {
-            if (playerClass[0].alpha == 1)
+            int nowClassIdx = (int)PhotonNetwork.LocalPlayer.CustomProperties["class"];
+            switch (nowClassIdx)
             {
-                CanvasGroupOnOff(playerClass[0], Off);
-                CanvasGroupOnOff(playerClass[1], On);
-                btnPrevious[0].enabled = true;
+                case (int)PlayerClassType.Supporter :
+                    ChangeClass(PlayerClassType.Dealer);
+                    break;
+                case (int)PlayerClassType.Healer:
+                    ChangeClass(PlayerClassType.Supporter);
+                    break;
+                case (int)PlayerClassType.Tanker:
+                    ChangeClass(PlayerClassType.Healer);
+                    break;
+                case (int)PlayerClassType.Dealer :
+                    ChangeClass(PlayerClassType.Tanker);
+                    break;
+                
             }
-            else if (playerClass[1].alpha == 1)
-            {
-                CanvasGroupOnOff(playerClass[1], Off);
-                CanvasGroupOnOff(playerClass[2], On);
-            }
-            else
-            {
-                CanvasGroupOnOff(playerClass[2], Off);
-                CanvasGroupOnOff(playerClass[3], On);
-
-                //ÀÌ°Å ¿ÏÀü ºñÈ°¼ºÈ­¶ó±âº¸´Ü È¸»öºûÀ¸·Î ³ªÅ¸³ª°Ô ÇØ¾ßÇÔ
-                btnNext[0].enabled = false;
-            }
-        }
-        else if (btnClassParentName == "Player_1")
-        {
-            if (player_1Class[0].alpha == 1)
-            {
-                CanvasGroupOnOff(player_1Class[0], Off);
-                CanvasGroupOnOff(player_1Class[1], On);
-                btnPrevious[1].enabled = true;
-            }
-            else if (player_1Class[1].alpha == 1)
-            {
-                CanvasGroupOnOff(player_1Class[1], Off);
-                CanvasGroupOnOff(player_1Class[2], On);
-            }
-            else
-            {
-                CanvasGroupOnOff(player_1Class[2], Off);
-                CanvasGroupOnOff(player_1Class[3], On);
-
-                //ÀÌ°Å ¿ÏÀü ºñÈ°¼ºÈ­¶ó±âº¸´Ü È¸»öºûÀ¸·Î ³ªÅ¸³ª°Ô ÇØ¾ßÇÔ
-                btnNext[1].enabled = false;
-            }
-        }
-        else if (btnClassParentName == "Player_2")
-        {
-            if (player_2Class[0].alpha == 1)
-            {
-                CanvasGroupOnOff(player_2Class[0], Off);
-                CanvasGroupOnOff(player_2Class[1], On);
-                btnPrevious[2].enabled = true;
-            }
-            else if (player_2Class[1].alpha == 1)
-            {
-                CanvasGroupOnOff(player_2Class[1], Off);
-                CanvasGroupOnOff(player_2Class[2], On);
-            }
-            else
-            {
-                CanvasGroupOnOff(player_2Class[2], Off);
-                CanvasGroupOnOff(player_2Class[3], On);
-
-                //ÀÌ°Å ¿ÏÀü ºñÈ°¼ºÈ­¶ó±âº¸´Ü È¸»öºûÀ¸·Î ³ªÅ¸³ª°Ô ÇØ¾ßÇÔ
-                btnNext[2].enabled = false;
-            }
-        }
-        else
-        {
-            if (player_3Class[0].alpha == 1)
-            {
-                CanvasGroupOnOff(player_3Class[0], Off);
-                CanvasGroupOnOff(player_3Class[1], On);
-                btnPrevious[3].enabled = true;
-            }
-            else if (player_3Class[1].alpha == 1)
-            {
-                CanvasGroupOnOff(player_3Class[1], Off);
-                CanvasGroupOnOff(player_3Class[2], On);
-            }
-            else
-            {
-                CanvasGroupOnOff(player_3Class[2], Off);
-                CanvasGroupOnOff(player_3Class[3], On);
-
-                //ÀÌ°Å ¿ÏÀü ºñÈ°¼ºÈ­¶ó±âº¸´Ü È¸»öºûÀ¸·Î ³ªÅ¸³ª°Ô ÇØ¾ßÇÔ
-                btnNext[3].enabled = false;
-            }
+            
         }
     }
 
     /// <summary>
-    /// Ready ¹öÆ° Å¬¸¯½Ã ÁØºñ UI ¶ç¿ì°í ¸ğµç ÇÃ·¹ÀÌ¾î ÁØºñ ¿Ï·á½Ã °ÔÀÓ ·Îµå UI È°¼ºÈ­
+    /// Ready ë²„íŠ¼ í´ë¦­ì‹œ ì¤€ë¹„ UI ë„ìš°ê³  ëª¨ë“  í”Œë ˆì´ì–´ ì¤€ë¹„ ì™„ë£Œì‹œ ê²Œì„ ë¡œë“œ UI í™œì„±í™”
     /// </summary>
     public void OnClickReady()
     {
-        //ÇöÀç ´©¸¥ ¹öÆ°ÀÇ ºÎ¸ğÀÇ CanvasGroupComponent: GettingReady PanelÀÇ CanvasGroup
-        CanvasGroup cGrp1 = EventSystem.current.currentSelectedGameObject.GetComponentInParent<CanvasGroup>();
-
-        //ÇöÀç ´©¸¥ ¹öÆ°ÀÇ ºÎ¸ğÀÇ ºÎ¸ğÀÇ 2¹øÂ° ÀÚ½ÄÀÇ CanvasGroupComponent: Ready PanelÀÇ CanvasGroup
-        CanvasGroup cGrp2 = EventSystem.current.currentSelectedGameObject.transform.parent.parent.GetChild(1).GetComponent<CanvasGroup>();
-
-        CanvasGroupOnOff(cGrp1, Off);
-        CanvasGroupOnOff(cGrp2, On);
-
-        if (playerReady[0].alpha == 1 && playerReady[1].alpha == 1 && playerReady[2].alpha == 1 && playerReady[3].alpha == 1)
-        {
-            for (int i = 0; i < 4; i++)
-            {
-                CanvasGroupOnOff(playerReady[i], Off);
-                CanvasGroupOnOff(playerReadyed[i], On);
-            }
-
-            loadingGame.text = "Starting in 5 Seconds";
-            sec = 5;
-            canvasChanging.gameObject.SetActive(true);
-            btnBackToTitle.gameObject.SetActive(false);
-        }
+        // btnClassParentName = EventSystem.current.currentSelectedGameObject?.transform.parent.parent.name;
+        //
+        // if (btnClassParentName == "Player")
+        // {
+        //     //í˜„ì¬ ëˆ„ë¥¸ ë²„íŠ¼ì˜ ë¶€ëª¨ì˜ CanvasGroupComponent: GettingReady Panelì˜ CanvasGroup
+        //     CanvasGroup cGrp1 = EventSystem.current.currentSelectedGameObject.GetComponentInParent<CanvasGroup>();
+        //
+        //     //í˜„ì¬ ëˆ„ë¥¸ ë²„íŠ¼ì˜ ë¶€ëª¨ì˜ ë¶€ëª¨ì˜ 2ë²ˆì§¸ ìì‹ì˜ CanvasGroupComponent: Ready Panelì˜ CanvasGroup
+        //     CanvasGroup cGrp2 = EventSystem.current.currentSelectedGameObject.transform.parent.parent.GetChild(1).GetComponent<CanvasGroup>();
+        //
+        //     CanvasGroupOnOff(cGrp1, false);
+        //     CanvasGroupOnOff(cGrp2, true);
+            GamePlayReady(true);
+        // }
+        
     }
 
     /// <summary>
-    /// ÁØºñ Ãë¼Ò½Ã ÃÊ±â UI °¡½ÃÈ­
+    /// ì¤€ë¹„ ì·¨ì†Œì‹œ ì´ˆê¸° UI ê°€ì‹œí™”
     /// </summary>
     public void OnClickReadyCancel()
     {
-        CanvasGroup cGrp1 = EventSystem.current.currentSelectedGameObject.GetComponentInParent<CanvasGroup>();
-        CanvasGroup cGrp2 = EventSystem.current.currentSelectedGameObject.transform.parent.parent.GetChild(0).GetComponent<CanvasGroup>();
-        CanvasGroupOnOff(cGrp1, Off);
-        CanvasGroupOnOff(cGrp2, On);
+        // CanvasGroup cGrp1 = EventSystem.current.currentSelectedGameObject.GetComponentInParent<CanvasGroup>();
+        // CanvasGroup cGrp2 = EventSystem.current.currentSelectedGameObject.transform.parent.parent.GetChild(0).GetComponent<CanvasGroup>();
+        // CanvasGroupOnOff(cGrp1, false);
+        // CanvasGroupOnOff(cGrp2, true);
+        GamePlayReady(false);
     }
 
-    public void OnClickBackToTitle()
-    {
-        //PhotonNetwork.LeaveRoom();
-        //SceneManager.LoadScene("Title_Test");
-        SceneManager.LoadScene("Title_AL");
-    }
+    
 
     /// <summary>
-    /// CanvasGroup ¼³Á¤ º¯°æ °£¼ÒÈ­
+    /// CanvasGroup ì„¤ì • ë³€ê²½ ê°„ì†Œí™”
     /// </summary>
-    bool CanvasGroupOnOff(CanvasGroup cGrp, String OnOff)
+    bool CanvasGroupOnOff(CanvasGroup cGrp, bool isOn)
     {
-        if (OnOff == On)
+        if (isOn)
         {
             cGrp.alpha = 1;
             cGrp.interactable = true;
@@ -342,4 +254,248 @@ public class RoomManager : MonoBehaviourPunCallbacks
         }
     }
     string On = "On"; string Off = "Off";
+
+    /// <summary>
+    /// í”Œë ˆì´ì–´ ë°© ì…ì¥ì‹œ
+    /// </summary>
+    /// <param name="newPlayer"></param>
+    public override void OnPlayerEnteredRoom(Player newPlayer)
+    {
+        print($"### Lobby : {PhotonNetwork.CurrentLobby.Name}");
+        print($"### Room : {PhotonNetwork.CurrentRoom.Name}");
+        print($"### User NickName : {PhotonNetwork.NickName}");
+        
+        print($"### New Player Enter Room : {newPlayer.NickName}");
+        Dictionary<int, Player> _players = PhotonNetwork.CurrentRoom.Players;
+        print($"### players count in room : {_players.Count}");
+
+        NicknameDisplay();
+
+    }
+    
+    /// <summary>
+    /// TESTìš© ë‹‰ë„¤ì„ í‘œì‹œê¸°. 
+    /// </summary>
+    [PunRPC]
+    private void NicknameDisplay()
+    {
+        // TODO : í´ë˜ìŠ¤ í‘œì‹œ ì—†ìŒ(í”Œë ˆì´ì–´ ì—†ìŒ) -> í´ë˜ìŠ¤ í‘œì‹œ
+        
+        // TODO : ë°©ì¥ì´ ë³¸ì¸ì´ë¼ë©´ ë³¸ì¸ì„ ì²«ë²ˆì§¸ í‘œì‹œ
+        
+        // TODO : ë°©ì¥ì´ ì•„ë‹ˆë¼ë©´ ë°©ì¥ì„ ì²«ë²ˆì§¸ í‘œì‹œ
+        Dictionary<int, Player> _players = PhotonNetwork.CurrentRoom.Players;
+        print($"### players count in room : {_players.Count}");
+        print($"### masterClientId : {PhotonNetwork.CurrentRoom.masterClientId}");
+
+        foreach (var _player in _players)
+        {
+            
+            print($" ### Player nickname check : {_player.Value.NickName}");
+            if (PhotonNetwork.NickName.Equals(_player.Value.NickName))
+            {
+                // TODO : í”Œë ˆì´ì–´ ìì‹ ì€ ê°€ì¥ ì™¼ìª½ì— í‘œê¸°
+                print("### This is ME!");
+                player1_nickname.GetComponent<Text>().text = _player.Value.NickName;
+            }
+            else
+            {
+                // TODO : ë‹¤ë¥¸ í”Œë ˆì´ì–´ëŠ” 2~4ë²ˆì§¸ì— ì°¨ë¡€ëŒ€ë¡œ í‘œì‹œ
+                print($"### This is not me, he/she is {_player.Value.NickName}");
+                player2_nickname.GetComponent<Text>().text = _player.Value.NickName;
+            }
+            
+            
+        }
+    }
+
+    /// <summary>
+    /// ë°© ë‚˜ê°€ê¸°
+    /// </summary>                                                                                      
+    public void OnClickBackToTitle()
+    {
+        //PhotonNetwork.LeaveRoom();
+        //SceneManager.LoadScene("Title_Test");
+        // SceneManager.LoadScene("Title_AL");
+        
+        PhotonNetwork.LeaveRoom();
+        
+    }
+
+    /// <summary>
+    /// ë‹¤ë¥¸ìœ ì € ë°© ë‚˜ê°„ í›„ callback
+    /// </summary>
+    /// <param name="otherPlayer"></param>
+    public override void OnPlayerLeftRoom(Player otherPlayer)
+    {
+        print("### other player room left");
+        // TODO : ì°¸ì—¬ì re-sorting
+        NicknameDisplay();
+    }
+
+    public override void OnLeftRoom()
+    {
+        SceneManager.LoadScene("Title_AL");
+    }
+
+    /// <summary>
+    /// ë°©ì¥ ë³€ê²½
+    /// </summary>
+    /// <param name="newMasterClient"> ìƒˆë¡œìš´ ë°©ì¥ì •ë³´</param>
+    public override void OnMasterClientSwitched(Player newMasterClient)
+    {
+        if (photonView.Owner.ActorNumber == newMasterClient.ActorNumber)
+        {
+            // TODO : ì°¸ì—¬ì re-sorting
+
+            // TODO : ì°¸ì—¬ì ì •ë³´ screen ì´ˆê¸°í™”
+
+        }
+    }
+    
+    /// <summary>
+    /// í”Œë ˆì´ì–´ í´ë˜ìŠ¤ ë³€ê²½
+    /// </summary>
+    private void ChangeClass(PlayerClassType classType)
+    {
+        Player thisPlayer = PhotonNetwork.LocalPlayer;
+        PhotonHashTable temp = thisPlayer.CustomProperties;
+        temp["class"] = classType;
+        PhotonNetwork.LocalPlayer.CustomProperties = temp;
+        
+        _photonView.RPC("ChangePlayersStatus", RpcTarget.AllBufferedViaServer, new System.Object[] {thisPlayer,temp});
+    }
+    
+    
+
+    /// <summary>
+    /// í”Œë ˆì´ì–´ ì¤€ë¹„ìƒíƒœ ë³€ê²½
+    /// </summary>
+    /// <param name="isReady"></param>
+    private void GamePlayReady(bool isReady)
+    {
+        Player thisPlayer = PhotonNetwork.LocalPlayer;
+        PhotonHashTable temp = thisPlayer.CustomProperties;
+        if (isReady) temp["status"] = PlayerReadyType.READY;
+        else temp["status"] = PlayerReadyType.SELECTING;
+        
+        
+        
+
+        
+        _photonView.RPC("ChangePlayersStatus", RpcTarget.AllBufferedViaServer, new System.Object[] {thisPlayer,temp});
+    }
+
+    /// <summary>
+    /// í”Œë ˆì´ì–´ ìƒíƒœ RPC ì—°ë™
+    /// </summary>
+    /// <param name="player"></param>
+    /// <param name="hash"></param>
+    [PunRPC]
+    private void ChangePlayersStatus(Player player, PhotonHashTable hash)
+    {
+        
+        // í”Œë ˆì´ì–´ ìƒíƒœë¥¼ ëª¨ë‘ì—ê²Œ ì ìš©
+        foreach (Player _player in PhotonNetwork.PlayerList)
+        {
+            if (player.Equals(_player)) _player.CustomProperties = hash;
+        }
+        // TODO : í•´ë‹¹í•˜ëŠ” í”Œë ˆì´ì–´ì˜ ìƒíƒœë¥¼ í™”ë©´ì— ì¶œë ¥
+        ChangeScreen();
+    }
+
+    private void ChangeScreen()
+    {
+        int isAllReady = 1;
+        foreach (var player in PhotonNetwork.CurrentRoom.Players)
+        {
+            // class canvas ì´ˆê¸°í™”
+            foreach (CanvasGroup canvas in playerClass)
+            {
+                CanvasGroupOnOff(canvas, false);
+            }
+            
+            // TODO : ìƒíƒœì— ë”°ë¼ í´ë˜ìŠ¤ í‘œì‹œ ë³€ê²½
+            
+            switch (player.Value.CustomProperties["class"])
+            {
+                case (int)PlayerClassType.Dealer:
+                    CanvasGroupOnOff(playerClass[0], true);
+                    break;
+                case (int)PlayerClassType.Tanker:
+                    CanvasGroupOnOff(playerClass[1], true);
+                    break;
+                case (int)PlayerClassType.Healer:
+                    CanvasGroupOnOff(playerClass[2], true);
+                    break;
+                case (int)PlayerClassType.Supporter:
+                    CanvasGroupOnOff(playerClass[3], true);
+                    break;
+            }
+            
+            // TODO : ìƒíƒœ ë”°ë¼ Ready í‘œì‹œ ë³€ê²½
+            switch (player.Value.CustomProperties["status"])
+            {
+                case PlayerReadyType.READY:
+                    btnClassParentName = EventSystem.current.currentSelectedGameObject?.transform.parent.parent.name;
+
+                    if (btnClassParentName == "Player")
+                    {
+                        //í˜„ì¬ ëˆ„ë¥¸ ë²„íŠ¼ì˜ ë¶€ëª¨ì˜ CanvasGroupComponent: GettingReady Panelì˜ CanvasGroup
+                        CanvasGroup cGrp1 = EventSystem.current.currentSelectedGameObject.GetComponentInParent<CanvasGroup>();
+
+                        //í˜„ì¬ ëˆ„ë¥¸ ë²„íŠ¼ì˜ ë¶€ëª¨ì˜ ë¶€ëª¨ì˜ 2ë²ˆì§¸ ìì‹ì˜ CanvasGroupComponent: Ready Panelì˜ CanvasGroup
+                        CanvasGroup cGrp2 = EventSystem.current.currentSelectedGameObject.transform.parent.parent.GetChild(1).GetComponent<CanvasGroup>();
+
+                        CanvasGroupOnOff(cGrp1, false);
+                        CanvasGroupOnOff(cGrp2, true);
+                    }
+                    break;
+                case PlayerReadyType.SELECTING:
+                    btnClassParentName = EventSystem.current.currentSelectedGameObject?.transform.parent.parent.name;
+
+                    if (btnClassParentName == "Player")
+                    {
+                        CanvasGroup cGrp1 = EventSystem.current.currentSelectedGameObject.GetComponentInParent<CanvasGroup>();
+                        CanvasGroup cGrp2 = EventSystem.current.currentSelectedGameObject.transform.parent.parent.GetChild(0).GetComponent<CanvasGroup>();
+                        CanvasGroupOnOff(cGrp1, false);
+                        CanvasGroupOnOff(cGrp2, true);
+                    }                         
+
+                    break;
+            }
+            
+    
+            // CanvasGroupOnOff(playerReady[i], false);
+            // CanvasGroupOnOff(playerReadyed[i], true);
+            
+            // í•œëª…ì´ë¼ë„ ì¤€ë¹„ìƒíƒœê°€ ìˆë‹¤ë©´ ì¹´ìš´íŠ¸ë‹¤ìš´ì„ í•˜ì§€ ì•ŠëŠ”ë‹¤
+
+            if (player.Value.CustomProperties["status"].Equals(PlayerReadyType.READY)) isAllReady *= 1;
+            else isAllReady *= 0;
+        }
+
+        // TODO : ì „ë¶€ ì¤€ë¹„ìƒíƒœë¼ë©´ -> ì¹´ìš´íŠ¸ë‹¤ìš´ ì‹œì‘
+        if (isAllReady == 1) StartCountDown();
+        else return;
+    }
+
+
+    /// <summary>
+    /// ê²Œì„ ì‹œì‘ ì¹´ìš´íŠ¸ë‹¤ìš´
+    /// </summary>
+    private void StartCountDown()
+    {
+        // for (int i = 0; i < 4; i++)
+        // {
+        //     CanvasGroupOnOff(playerReady[i], false);
+        //     CanvasGroupOnOff(playerReadyed[i], true);
+        // }
+
+        loadingGame.text = "Starting in 5 Seconds";
+        sec = 5;
+        canvasChanging.gameObject.SetActive(true);
+        btnBackToTitle.gameObject.SetActive(false);
+        
+    }
 }
