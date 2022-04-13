@@ -12,23 +12,29 @@ public class BriefingManager : MonoBehaviour
     public GameObject screenUI;
     
 
-    void Start()
+    IEnumerator Start()
     {
-        Invoke("Defence", 5f);
+
+        yield return new WaitForSeconds(5.0f);
+        Defence();
+
+        yield return new WaitForSeconds(5.0f);
+        Enemy();
+
+        yield return new WaitForSeconds(5.0f);
+        Ending();
     }
 
     void Defence()
     {
         defence.SetActive(false);
         enemy.SetActive(true);
-        Invoke("Enemy", 5f);
     }
 
     void Enemy()
     {
         enemy.SetActive(false);
         ending.SetActive(true);
-        Invoke("Ending", 5f);
     }
 
     void Ending()

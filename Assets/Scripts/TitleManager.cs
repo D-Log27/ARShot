@@ -57,7 +57,7 @@ public class TitleManager : MonoBehaviour
         Application.Quit();
     }
 
-        float threeSec = 3;
+    float threeSec = 3;
     /// <summary>
     /// Title -> Start Click
     /// </summary>

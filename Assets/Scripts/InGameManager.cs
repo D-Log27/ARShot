@@ -23,16 +23,16 @@ public class InGameManager : MonoBehaviour
     public Button clear;
     public Button fail;
 
-    //UIDrawer ¿©´Â ¹öÆ°
+    //UIDrawer ì—¬ëŠ” ë²„íŠ¼
     public Transform drawerOpener;
 
-    //UIDrawer ´İ´Â ¹öÆ°
+    //UIDrawer ë‹«ëŠ” ë²„íŠ¼
     public Transform drawerCloser;
 
-    //¼û°ÜÁø UIµé ¸ğÀ½
+    //ìˆ¨ê²¨ì§„ UIë“¤ ëª¨ìŒ
     public Transform uiBox;
 
-    //¿©´İÀÌ ¹öÆ°ÀÇ Äµ¹ö½º±×·ì
+    //ì—¬ë‹«ì´ ë²„íŠ¼ì˜ ìº”ë²„ìŠ¤ê·¸ë£¹
     public CanvasGroup cGrpDrawerOpener;
     public CanvasGroup cGrpDrawerCloser;
 
@@ -70,20 +70,20 @@ public class InGameManager : MonoBehaviour
     }
 
     /// <summary>
-    /// UI º¸ÀÌ±â
+    /// UI ë³´ì´ê¸°
     /// </summary>
     public void OnClickDrawerOpener()
     {
         drawerOpener.position = Vector3.MoveTowards(drawerOpener.position, drawerCloserPos, 1);
-        print("Àü");
+        print("ì „");
         uiBox.position = Vector3.MoveTowards(uiBox.position, new Vector3(uiBox.position.x, uiBoxPos.y + drawerOpenerPos.y - drawerCloserPos.y, uiBox.position.z), 1);
-        print("ÈÄ");
+        print("í›„");
         CanvasGroupOnOff(cGrpDrawerCloser, true);
         CanvasGroupOnOff(cGrpDrawerOpener, false);
     }
 
     /// <summary>
-    /// UI ¼û±â±â
+    /// UI ìˆ¨ê¸°ê¸°
     /// </summary>
     public void OnClickDrawerCloser()
     {
@@ -94,7 +94,7 @@ public class InGameManager : MonoBehaviour
     }
 
     /// <summary>
-    /// Äµ¹ö½º±×·ìÀÇ 3°¡Áö ¼Ó¼ºÀ» ÇÑ¹ø¿¡ Á¦¾î
+    /// ìº”ë²„ìŠ¤ê·¸ë£¹ì˜ 3ê°€ì§€ ì†ì„±ì„ í•œë²ˆì— ì œì–´
     /// </summary>
     /// <param name="cGrp"></param>
     /// <param name="isOn"></param>

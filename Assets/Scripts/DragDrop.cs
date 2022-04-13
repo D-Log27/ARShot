@@ -5,19 +5,19 @@ using UnityEngine.EventSystems;
 
 public class DragDrop : MonoBehaviour
 {
-    //½ºÅ³¹öÆ° ¾îµğ·Î µå·¡±×Çß´ÂÁö È®ÀÎÇÏ´Â º¯¼ö
+    //ìŠ¤í‚¬ë²„íŠ¼ ì–´ë””ë¡œ ë“œë˜ê·¸í–ˆëŠ”ì§€ í™•ì¸í•˜ëŠ” ë³€ìˆ˜
     Collider col;
 
-    //½ºÅ³ ¹öÆ° Æ®·£½ºÆû(Äµ¹ö½º¿ë)
+    //ìŠ¤í‚¬ ë²„íŠ¼ íŠ¸ëœìŠ¤í¼(ìº”ë²„ìŠ¤ìš©)
     RectTransform rTr;
 
-    //½ºÅ³ÀÌ ÇöÀç ÄğÅ¸ÀÓ¿¡ °É·È´ÂÁö ¿©ºÎ È®ÀÎÇÏ´Â º¯¼ö
+    //ìŠ¤í‚¬ì´ í˜„ì¬ ì¿¨íƒ€ì„ì— ê±¸ë ¸ëŠ”ì§€ ì—¬ë¶€ í™•ì¸í•˜ëŠ” ë³€ìˆ˜
     bool isCooling;
 
     // Start is called before the first frame update
     void Start()
     {
-        //ÃÊ±â ¼³Á¤ Àß ÇÏ¸é Áö¿öµµ µÊ
+        //ì´ˆê¸° ì„¤ì • ì˜ í•˜ë©´ ì§€ì›Œë„ ë¨
         rTr = GetComponent<RectTransform>();
         rTr.position = new Vector3(110, 140, 0);
     }
@@ -36,38 +36,38 @@ public class DragDrop : MonoBehaviour
     }
 
     /// <summary>
-    /// ½ºÅ³ ¹öÆ° µå·¡±× ÇÔ¼ö
+    /// ìŠ¤í‚¬ ë²„íŠ¼ ë“œë˜ê·¸ í•¨ìˆ˜
     /// </summary>
     void SkillButtonDrag()
     {
         if (EventSystem.current.currentSelectedGameObject != null)
         {
-            //ÇöÀç ¼±ÅÃ ÁßÀÎ ¹°Ã¼ÀÇ ÀÌ¸§ÀÌ "Btn_Skill"ÀÌ¸é
+            //í˜„ì¬ ì„ íƒ ì¤‘ì¸ ë¬¼ì²´ì˜ ì´ë¦„ì´ "Btn_Skill"ì´ë©´
             if (Input.GetKey(KeyCode.Mouse0) && EventSystem.current.currentSelectedGameObject.name == "Btn_Skill")
             {
-                //½ºÅ³ ¹öÆ° À§Ä¡ = ¸¶¿ì½º À§Ä¡
+                //ìŠ¤í‚¬ ë²„íŠ¼ ìœ„ì¹˜ = ë§ˆìš°ìŠ¤ ìœ„ì¹˜
                 rTr.position = Input.mousePosition;
             }
         }
     }
 
     /// <summary>
-    /// ½ºÅ³ ¹öÆ° µå¶ø ÇÔ¼ö; ±âº» ½ºÅ³, ½Ã³ÊÁö ½ºÅ³ µîÀÇ »ç¿ë ´ã´ç
+    /// ìŠ¤í‚¬ ë²„íŠ¼ ë“œë í•¨ìˆ˜; ê¸°ë³¸ ìŠ¤í‚¬, ì‹œë„ˆì§€ ìŠ¤í‚¬ ë“±ì˜ ì‚¬ìš© ë‹´ë‹¹
     /// </summary>
     void SkillButtonDrop()
     {
         if (EventSystem.current.currentSelectedGameObject != null)
         {
-            //½ºÅ³ ¹öÆ° µå¶ø½Ã
+            //ìŠ¤í‚¬ ë²„íŠ¼ ë“œëì‹œ
             if (Input.GetKeyUp(KeyCode.Mouse0) && EventSystem.current.currentSelectedGameObject.name == "Btn_Skill")
             {
-                //½ºÅ³ ¹öÆ° ¿øÀ§Ä¡
+                //ìŠ¤í‚¬ ë²„íŠ¼ ì›ìœ„ì¹˜
                 rTr.position = new Vector3(110, 140, 0);
 
-                //½ºÅ³ÀÌ ÄğÅ¸ÀÓ¿¡ ¾È °É·Á ÀÖ´Ù¸é && null ref ¿À·ù ¹æÁö
+                //ìŠ¤í‚¬ì´ ì¿¨íƒ€ì„ì— ì•ˆ ê±¸ë ¤ ìˆë‹¤ë©´ && null ref ì˜¤ë¥˜ ë°©ì§€
                 if (!isCooling && col != null)
                 {
-                    //°¢ case¿¡ ¸Â´Â ½Ã³ÊÁö ½ºÅ³ ÇÔ¼ö È£Ãâ
+                    //ê° caseì— ë§ëŠ” ì‹œë„ˆì§€ ìŠ¤í‚¬ í•¨ìˆ˜ í˜¸ì¶œ
                     switch (col.gameObject.name)
                     {
                         case "Skill_Player2": print(col.gameObject.name); break;
@@ -76,7 +76,7 @@ public class DragDrop : MonoBehaviour
                         default: print("default"); rTr.position = new Vector3(110, 140, 0); break;
                     }
                 }
-                col = null; //¹«ÇÑ¹İº¹ ¹æÁö
+                col = null; //ë¬´í•œë°˜ë³µ ë°©ì§€
             }
         }
     }
