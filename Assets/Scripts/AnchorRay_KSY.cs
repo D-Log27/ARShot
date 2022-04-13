@@ -13,7 +13,7 @@ public class AnchorRay_KSY : MonoBehaviour
     private ARRaycastManager raycastManager;
     private ARAnchorManager anchorManager;
     private ARAnchor anchor;
-    private GameObject anchorPrefab;
+    public GameObject anchorPrefab;
 
     List<ARRaycastHit> arRaycastHit = new List<ARRaycastHit>();
 
@@ -38,7 +38,7 @@ public class AnchorRay_KSY : MonoBehaviour
         if (raycastManager.Raycast(touch.position, arRaycastHit, TrackableType.Planes)) // 레이캐스트를 바닥에만 쏴서
         {
             var hitPose = arRaycastHit[0].pose; // arRaycastHit가 제일 먼저 맞은 곳
-            var instantiateObject = Instantiate(anchorPrefab, hitPose.position, hitPose.rotation); // 그 곳에 앵커를 생성한다.
+            var instantiateObject = Instantiate(anchorPrefab, hitPose.position, hitPose.rotation); // 그 곳에 프리팹을 생성한다.
             anchor = instantiateObject.AddComponent<ARAnchor>();
 
             if (arRaycastHit[0].trackable is ARPlane plane) 
