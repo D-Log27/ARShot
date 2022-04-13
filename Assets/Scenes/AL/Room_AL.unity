@@ -1802,14 +1802,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ObservedComponentsFoldoutOpen: 1
+  ObservedComponentsFoldoutOpen: 0
   Group: 0
   prefixField: -1
   Synchronization: 3
   OwnershipTransfer: 0
   observableSearch: 2
   ObservedComponents: []
-  sceneViewId: 1
+  sceneViewId: 99
   InstantiationId: 0
   isRuntimeInstantiated: 0
 --- !u!4 &155785179
@@ -1838,50 +1838,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 322b5040107284d4d82fd36f9a657cdf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  RoomPlayers:
+  - {fileID: 635110065}
+  - {fileID: 1944877686}
+  - {fileID: 1392499197}
+  - {fileID: 930040215}
   btnBackToTitle: {fileID: 91849102}
   loadingGame: {fileID: 1722169534}
-  roomID: {fileID: 1767972971}
-  playerGettingReady:
-  - {fileID: 2793514210093541036}
-  - {fileID: 322185895}
-  - {fileID: 184330917}
-  - {fileID: 1240193457}
-  playerReady:
-  - {fileID: 1403789421}
-  - {fileID: 392257207}
-  - {fileID: 2049141276}
-  - {fileID: 1926406555}
-  playerReadyed:
-  - {fileID: 58283907}
-  - {fileID: 556081814}
-  - {fileID: 659998099}
-  - {fileID: 1320640211}
-  playerClass:
-  - {fileID: 394132498}
-  - {fileID: 1128421399}
-  - {fileID: 1918449380}
-  - {fileID: 584957001}
-  player_1Class:
-  - {fileID: 511306619}
-  - {fileID: 1289756448}
-  - {fileID: 1361989820}
-  - {fileID: 1625965768}
-  player_2Class:
-  - {fileID: 868374953}
-  - {fileID: 152620872}
-  - {fileID: 1987425437}
-  - {fileID: 712909817}
-  player_3Class:
-  - {fileID: 528475879}
-  - {fileID: 787160368}
-  - {fileID: 550046923}
-  - {fileID: 1810192094}
   canvasChanging: {fileID: 750156627}
-  playerLabelSlots:
-  - {fileID: 1113960734}
-  - {fileID: 244508160}
-  - {fileID: 405690452}
-  - {fileID: 1840678723}
 --- !u!1 &156717113
 GameObject:
   m_ObjectHideFlags: 0
@@ -6499,6 +6463,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 635110065}
+  - component: {fileID: 635110067}
+  - component: {fileID: 635110066}
   m_Layer: 5
   m_Name: Player_1
   m_TagString: Untagged
@@ -6528,6 +6494,51 @@ RectTransform:
   m_AnchoredPosition: {x: -678, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &635110066
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 635110064}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d4380ae12a856240b621b753fc2323c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myClass: 0
+  myReady: 0
+  ReadyCanvas: {fileID: 1403789421}
+  SelectingCavans: {fileID: 2793514210093541036}
+  previousClassBtn: {fileID: 1965056919}
+  nextClassBtn: {fileID: 301395324}
+  readyBtn: {fileID: 1207706502}
+  cancelBtn: {fileID: 71690791}
+  classesTransform: {fileID: 86707806}
+  nickName: {fileID: 1113960735}
+  isReady: 0
+--- !u!114 &635110067
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 635110064}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 1
+  observableSearch: 2
+  ObservedComponents: []
+  sceneViewId: 1
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
 --- !u!1 &638493281
 GameObject:
   m_ObjectHideFlags: 0
@@ -9498,6 +9509,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 930040215}
+  - component: {fileID: 930040216}
+  - component: {fileID: 930040217}
   m_Layer: 5
   m_Name: Player_4
   m_TagString: Untagged
@@ -9527,6 +9540,51 @@ RectTransform:
   m_AnchoredPosition: {x: 672, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &930040216
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 930040214}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 1
+  observableSearch: 2
+  ObservedComponents: []
+  sceneViewId: 4
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
+--- !u!114 &930040217
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 930040214}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b49ee0a1dfcdc04b98b0a45058eea70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myClass: 0
+  myReady: 0
+  ReadyCanvas: {fileID: 1926406555}
+  SelectingCavans: {fileID: 1240193457}
+  previousClassBtn: {fileID: 759162978}
+  nextClassBtn: {fileID: 997173201}
+  readyBtn: {fileID: 522061893}
+  cancelBtn: {fileID: 1331300468}
+  classesTransform: {fileID: 233920649}
+  nickName: {fileID: 1840678724}
+  isReady: 0
 --- !u!1 &939202082
 GameObject:
   m_ObjectHideFlags: 0
@@ -15016,6 +15074,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1392499197}
+  - component: {fileID: 1392499198}
+  - component: {fileID: 1392499199}
   m_Layer: 5
   m_Name: Player_3
   m_TagString: Untagged
@@ -15045,6 +15105,51 @@ RectTransform:
   m_AnchoredPosition: {x: 222, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1392499198
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1392499196}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 1
+  observableSearch: 2
+  ObservedComponents: []
+  sceneViewId: 3
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
+--- !u!114 &1392499199
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1392499196}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a23394e79facde4ab6644ac5a9605d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myClass: 0
+  myReady: 0
+  ReadyCanvas: {fileID: 2049141276}
+  SelectingCavans: {fileID: 184330917}
+  previousClassBtn: {fileID: 1123058788}
+  nextClassBtn: {fileID: 677853900}
+  readyBtn: {fileID: 2061470240}
+  cancelBtn: {fileID: 1950989507}
+  classesTransform: {fileID: 1201659291}
+  nickName: {fileID: 405690453}
+  isReady: 0
 --- !u!1 &1394970985
 GameObject:
   m_ObjectHideFlags: 0
@@ -20647,6 +20752,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1944877686}
+  - component: {fileID: 1944877687}
+  - component: {fileID: 1944877688}
   m_Layer: 5
   m_Name: Player_2
   m_TagString: Untagged
@@ -20676,6 +20783,51 @@ RectTransform:
   m_AnchoredPosition: {x: -228, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1944877687
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1944877685}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 1
+  observableSearch: 2
+  ObservedComponents: []
+  sceneViewId: 2
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
+--- !u!114 &1944877688
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1944877685}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8378b05accd5c8478131ef5574c0e31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myClass: 0
+  myReady: 0
+  ReadyCanvas: {fileID: 392257207}
+  SelectingCavans: {fileID: 322185895}
+  previousClassBtn: {fileID: 1083211263}
+  nextClassBtn: {fileID: 2054968459}
+  readyBtn: {fileID: 860197605}
+  cancelBtn: {fileID: 709125932}
+  classesTransform: {fileID: 1105255696}
+  nickName: {fileID: 244508161}
+  isReady: 0
 --- !u!1 &1949357128
 GameObject:
   m_ObjectHideFlags: 0

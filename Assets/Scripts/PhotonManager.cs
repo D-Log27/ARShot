@@ -71,6 +71,10 @@ public class PhotonManager : MonoBehaviourPunCallbacks
         }
     }
 
+    /// <summary>
+    /// Room 정보 갱신시 callback
+    /// </summary>
+    /// <param name="roomList">Room 리스트</param>
     public override void OnRoomListUpdate(List<RoomInfo> roomList)
     {
         foreach (RoomInfo roomInfo in roomList)
@@ -91,8 +95,8 @@ public class PhotonManager : MonoBehaviourPunCallbacks
     /// <summary>
     /// 방 입장 실패 후 callback
     /// </summary>
-    /// <param name="returnCode">�����ڵ�</param>
-    /// <param name="message">�޽���</param>
+    /// <param name="returnCode">리턴코드</param>
+    /// <param name="message">메시지</param>
     public override void OnJoinRoomFailed(short returnCode, string message)
     {
         print($"### join Random room failed , code : {returnCode}, message : {message}");
@@ -111,8 +115,8 @@ public class PhotonManager : MonoBehaviourPunCallbacks
     /// <summary>
     /// 임의의 방 입장 실패 후 callback
     /// </summary>
-    /// <param name="returnCode">�����ڵ�</param>
-    /// <param name="message">�޽���</param>
+    /// <param name="returnCode">리턴코드</param>
+    /// <param name="message">메시지</param>
     public override void OnJoinRandomFailed(short returnCode, string message)
     {
         OnJoinRoomFailed(returnCode, message);
@@ -167,7 +171,7 @@ public class PhotonManager : MonoBehaviourPunCallbacks
             SetApProperty();
             if (PhotonNetwork.CountOfRooms == 0)
             {
-                print($"### Room Not Exist, create room");
+                //print($"### Room Not Exist, create room");
                 RoomOptions roomOptions = new RoomOptions();
                 roomOptions.IsOpen = true;
                 roomOptions.IsVisible = true;
@@ -176,7 +180,7 @@ public class PhotonManager : MonoBehaviourPunCallbacks
             }
             else
             {
-                print($"### Room Exist. join room");
+                //print($"### Room Exist. join room");
                 PhotonNetwork.JoinRoom("TEST");
             }
             

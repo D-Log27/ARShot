@@ -5,29 +5,18 @@ using System;
 using System.Net.NetworkInformation;
 
 /// <summary>
-/// AP ���� ����
+/// AP Helper
 /// </summary>
 public class NetworkAPHelper : MonoBehaviour
 {
-#if UNITY_IPHONE
-   
-           // On iOS plugins are statically linked into
-           // the executable, so we have to use __Internal as the
-           // library name.
-           [DllImport ("__Internal")]
-
-#elif UNITY_ANDROID
-
-#endif
-    /// <summary>
-    /// AP ���� ���� �ν��Ͻ�
-    /// </summary>
     private static NetworkAPHelper Instance;
-
     NetworkAPHelper() { }
 
     AndroidRuntimePermissions.Permission[] permissions;
+    // plugin package 경로
     const string pluginName = "com.example.wifigetter.WifiHelper";
+    
+    // permission 리스트
     string[] permissionList = {
         "android.permission.INTERNET",
         "android.permission.ACCESS_NETWORK_STATE", 
@@ -38,9 +27,9 @@ public class NetworkAPHelper : MonoBehaviour
         "android.permission.CAMERA"
     };
     /// <summary>
-    /// AP ���� ���� �ν��Ͻ� ��ȯ
+    /// AP Help Singleton Instance
     /// </summary>
-    /// <returns>AP ���� ���� �ν��Ͻ�</returns>
+    /// <returns>AP Helper instance</returns>
     public static NetworkAPHelper GetInstance()
     {
         if (Instance == null) Instance = new NetworkAPHelper();
@@ -48,7 +37,7 @@ public class NetworkAPHelper : MonoBehaviour
     }
 
     /// <summary>
-    /// AP �̸�
+    /// AP 이름
     /// </summary>
     public string ApName { get; set; }
 
@@ -64,13 +53,8 @@ public class NetworkAPHelper : MonoBehaviour
         this.GetAPInfo();
     }
 
-    void Update()
-    {
-        
-    }
-
     /// <summary>
-    /// AP ������ �����´�
+    /// AP 획득
     /// </summary>
     public void GetAPInfo()
     {
