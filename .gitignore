@@ -11,8 +11,12 @@
 /[Mm]emoryCaptures/
 /[Uu]ser[Ss]ettings/
 EditorUserSettings.asset
+
 # Asset meta data should only be ignored when the corresponding asset is also ignored
 !/[Aa]ssets/**/*.meta
+
+# editor config
+.editorconfig
 
 # Uncomment this line if you wish to ignore the asset store tools plugin
 # /[Aa]ssets/AssetStoreTools*
@@ -22,6 +26,9 @@ EditorUserSettings.asset
 
 # Visual Studio cache directory
 .vs/
+
+# JetBrain Rider directory
+/.idea
 
 # Gradle cache directory
 .gradle/

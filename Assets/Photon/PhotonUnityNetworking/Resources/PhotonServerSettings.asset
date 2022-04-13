@@ -39,6 +39,15 @@ MonoBehaviour:
   - DestroySpaceship
   - Fire
   - RespawnSpaceship
+  - ChangeClass
+  - GamePlayReady
+  - NicknameDisplay
+  - StartCountDown
+  - ChangePlayerReadyStatus
+  - ChangePlayersStatus
+  - ChangeScreen
+  - StartRoom
+  - UpdateUsersInfo
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1

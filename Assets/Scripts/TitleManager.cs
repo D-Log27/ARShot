@@ -6,10 +6,19 @@ using UnityEngine.UI;
 //using UnityEngine.UIElements;
 
 /// <summary>
-/// Title È­¸é ÀÌº¥Æ®
+/// Title È­ï¿½ï¿½ ï¿½Ìºï¿½Æ®
 /// </summary>
 public class TitleManager : MonoBehaviour
 {
+    private static TitleManager _instance;
+    TitleManager() { }
+
+    public static TitleManager GetInstance()
+    {
+        Screen.sleepTimeout = SleepTimeout.NeverSleep;
+        return _instance;
+    }
+    
     public Transform startBtn;
     public Transform optionBtn;
     public Transform exitBtn;
@@ -18,6 +27,7 @@ public class TitleManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        _instance = this;
         startBtn.GetComponent<Button>().onClick.AddListener(() => OnClickStartButton());
         optionBtn.GetComponent<Button>().onClick.AddListener(() => OnClickOptionButton());
         exitBtn.GetComponent<Button>().onClick.AddListener(() => OnClickExitButton());
@@ -47,29 +57,17 @@ public class TitleManager : MonoBehaviour
         Application.Quit();
     }
 
-        float threeSec = 3;
+    float threeSec = 3;
     /// <summary>
     /// Title -> Start Click
     /// </summary>
     public void OnClickStartButton()
     {
         TitleLoadingImage(true);
-        threeSec -= Time.deltaTime;
-        //¾Æ·¡ ÇÔ¼ö¿¡ Å×½ºÆ®¿ëÀ¸·Î if¸¸ ÀÔÈû
-        //if (threeSec < 0)
-        //{
-        //    bool isSuccess = true;//PhotonManager.GetInstance().ConnectingRoom();
-        //    if (isSuccess)
-        //    {
-        //        TitleLoadingImage(false);
-        //        SceneManager.LoadScene("Room_AL");
-        //    }
-        //}
         bool isSuccess = PhotonManager.GetInstance().ConnectingRoom();
         if (isSuccess)
         {
             TitleLoadingImage(false);
-            //SceneManager.LoadScene("Room_AL");
         }
     }
 
