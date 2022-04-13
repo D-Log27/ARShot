@@ -1,23 +1,27 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
 public class DragDrop : MonoBehaviour
 {
-    //ìŠ¤í‚¬ë²„íŠ¼ ì–´ë””ë¡œ ë“œë˜ê·¸í–ˆëŠ”ì§€ í™•ì¸í•˜ëŠ” ë³€ìˆ˜
+    //±âº» ½ºÅ³ È°¼ºÈ­ ¹üÀ§ Ç¥½Ã¶óÀÎ
+    public Image skillGuideLine;
+
+    //½ºÅ³¹öÆ° ¾îµğ·Î µå·¡±×Çß´ÂÁö È®ÀÎÇÏ´Â º¯¼ö
     Collider col;
 
-    //ìŠ¤í‚¬ ë²„íŠ¼ íŠ¸ëœìŠ¤í¼(ìº”ë²„ìŠ¤ìš©)
+    //½ºÅ³ ¹öÆ° Æ®·£½ºÆû(Äµ¹ö½º¿ë)
     RectTransform rTr;
 
-    //ìŠ¤í‚¬ì´ í˜„ì¬ ì¿¨íƒ€ì„ì— ê±¸ë ¸ëŠ”ì§€ ì—¬ë¶€ í™•ì¸í•˜ëŠ” ë³€ìˆ˜
+    //½ºÅ³ÀÌ ÇöÀç ÄğÅ¸ÀÓ¿¡ °É·È´ÂÁö ¿©ºÎ È®ÀÎÇÏ´Â º¯¼ö
     bool isCooling;
 
     // Start is called before the first frame update
     void Start()
     {
-        //ì´ˆê¸° ì„¤ì • ì˜ í•˜ë©´ ì§€ì›Œë„ ë¨
+        //ÃÊ±â ¼³Á¤ Àß ÇÏ¸é Áö¿öµµ µÊ
         rTr = GetComponent<RectTransform>();
         rTr.position = new Vector3(110, 140, 0);
     }
@@ -30,64 +34,163 @@ public class DragDrop : MonoBehaviour
         SkillButtonDrop();
     }
 
+    /// <summary>
+    /// SkillButtonDrop()ÀÇ switch¹®¿¡ µé¾î°¥ ±âº» ½ºÅ³ ÇÔ¼ö; instance·Î ¿ÜºÎ ÂüÁ¶ÇØµµ µÉ µí
+    /// </summary>
+    void OriginalSkill()
+    {
+
+    }
+
+    /// <summary>
+    /// SkillButtonDrop()ÀÇ switch¹®¿¡ µé¾î°¥ ½Ã³ÊÁö ½ºÅ³ ÇÔ¼ö; instance·Î ¿ÜºÎ ÂüÁ¶ÇØµµ µÉ µí
+    /// </summary>
     void SkillSynergy()
     {
 
     }
 
     /// <summary>
-    /// ìŠ¤í‚¬ ë²„íŠ¼ ë“œë˜ê·¸ í•¨ìˆ˜
+    /// ½ºÅ³ ¹öÆ° µå·¡±× ÇÔ¼ö
     /// </summary>
     void SkillButtonDrag()
     {
         if (EventSystem.current.currentSelectedGameObject != null)
         {
-            //í˜„ì¬ ì„ íƒ ì¤‘ì¸ ë¬¼ì²´ì˜ ì´ë¦„ì´ "Btn_Skill"ì´ë©´
+            //ÇöÀç ¼±ÅÃ ÁßÀÎ ¹°Ã¼ÀÇ ÀÌ¸§ÀÌ "Btn_Skill"ÀÌ¸é
             if (Input.GetKey(KeyCode.Mouse0) && EventSystem.current.currentSelectedGameObject.name == "Btn_Skill")
             {
-                //ìŠ¤í‚¬ ë²„íŠ¼ ìœ„ì¹˜ = ë§ˆìš°ìŠ¤ ìœ„ì¹˜
+                //½ºÅ³ ¹öÆ° À§Ä¡ = ¸¶¿ì½º À§Ä¡
                 rTr.position = Input.mousePosition;
             }
         }
     }
 
     /// <summary>
-    /// ìŠ¤í‚¬ ë²„íŠ¼ ë“œë í•¨ìˆ˜; ê¸°ë³¸ ìŠ¤í‚¬, ì‹œë„ˆì§€ ìŠ¤í‚¬ ë“±ì˜ ì‚¬ìš© ë‹´ë‹¹
+    /// ½ºÅ³ ¹öÆ° µå¶ø ÇÔ¼ö; ±âº» ½ºÅ³, ½Ã³ÊÁö ½ºÅ³ µîÀÇ »ç¿ë ´ã´ç
     /// </summary>
     void SkillButtonDrop()
     {
+        //null ref ¿À·ù ¹æÁö
         if (EventSystem.current.currentSelectedGameObject != null)
         {
-            //ìŠ¤í‚¬ ë²„íŠ¼ ë“œëì‹œ
+            //½ºÅ³ ¹öÆ° µå¶ø½Ã
             if (Input.GetKeyUp(KeyCode.Mouse0) && EventSystem.current.currentSelectedGameObject.name == "Btn_Skill")
             {
-                //ìŠ¤í‚¬ ë²„íŠ¼ ì›ìœ„ì¹˜
+                //½ºÅ³ ¹öÆ° ¿øÀ§Ä¡
                 rTr.position = new Vector3(110, 140, 0);
 
-                //ìŠ¤í‚¬ì´ ì¿¨íƒ€ì„ì— ì•ˆ ê±¸ë ¤ ìˆë‹¤ë©´ && null ref ì˜¤ë¥˜ ë°©ì§€
+                //½ºÅ³ÀÌ ÄğÅ¸ÀÓ¿¡ ¾È °É·Á ÀÖ´Ù¸é && null ref ¿À·ù ¹æÁö
                 if (!isCooling && col != null)
                 {
-                    //ê° caseì— ë§ëŠ” ì‹œë„ˆì§€ ìŠ¤í‚¬ í•¨ìˆ˜ í˜¸ì¶œ
+
+
+                    //°¢ case¿¡ ¸Â´Â ½ºÅ³ ÇÔ¼ö È£Ãâ
+                    //print(col.gameObject.name) ´ë½Å ½ºÅ³ ÇÔ¼ö ³Ö¾î¾ß µÊ
+                    //default..¹ºÁö Àß ¸ğ¸£°ÚÀ½
                     switch (col.gameObject.name)
                     {
-                        case "Skill_Player2": print(col.gameObject.name); break;
-                        case "Skill_Player3": print(col.gameObject.name); break;
-                        case "Skill_Player4": print(col.gameObject.name); break;
-                        default: print("default"); rTr.position = new Vector3(110, 140, 0); break;
+                        case "Img_SkillGuideLine":
+                            print(col.gameObject.name);
+
+
+                            //OnTriggerExitÀÌ ÀÖ¾î¾ß ±âº» ½ºÅ³ ´ÙÀ½ ±âº» ½ºÅ³À» ¾µ ¼ö ÀÖÀ½
+                            //OnTriggerExitÀÌ ¾øÀ¸¸é ±âº» ½ºÅ³ ´ÙÀ½¿£ ±âº» ½ºÅ³ È£Ãâ ¾È µÉ ¶§µµ ÀÖÀ½
+                            skillGuideLine.gameObject.SetActive(false);
+                            skillGuideLine.gameObject.SetActive(true);
+                            break;
+
+                        case "Skill_Player2":
+                            print(col.gameObject.name);
+                            break;
+
+                        case "Skill_Player3":
+                            print(col.gameObject.name);
+                            break;
+
+                        case "Skill_Player4":
+                            print(col.gameObject.name);
+                            break;
+
+                        default:
+                            print("default");
+                            rTr.position = new Vector3(110, 140, 0);
+                            break;
                     }
                 }
-                col = null; //ë¬´í•œë°˜ë³µ ë°©ì§€
+                col = null; //¹«ÇÑ¹İº¹ ¹æÁö
             }
         }
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        col = other;
+        col = other;    //other ¸¦ Àü¿ªº¯¼ö·Î ¹Ù²Ş
+
+
+        //±âÈ¹¿¡ µû¶ó ¾Æ·¡ switch¹® ÇÊ¿ä¼º °áÁ¤
+        //switch (col.gameObject.name)
+        //{
+        //    case "Img_SkillGuideLine":
+        //        skillGuideLine.color = Color.red;
+        //        break;
+
+        //    case "Img_Synergy2GuideLine":
+        //        synergy2GuideLine.color = Color.red;
+        //        break;
+
+        //    case "Img_Synergy3GuideLine":
+        //        synergy3GuideLine.color = Color.red;
+        //        break;
+
+        //    case "Img_Synergy4GuideLine":
+        //        synergy4GuideLine.color = Color.red;
+        //        break;
+
+        //    default:
+        //        print("default");
+        //        break;
+        //}
+
+        //±âº» ½ºÅ³ È°¼ºÈ­ Ç¥½Ã
+        if (other.gameObject.name == "Img_SkillGuideLine")
+        {
+            skillGuideLine.color = Color.red;
+        }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        col = null;
+        col = null; //trigger ÃÊ±âÈ­(½ºÅ³ »ç¿ë½Ã ´ÙÀ½¿¡µµ °°Àº ½ºÅ³ÀÌ ¹ßµ¿µÇ´Â °Í ¹æÁö)
+
+        //±âº» ½ºÅ³ ºñÈ°¼ºÈ­ Ç¥½Ã
+        if (other.gameObject.name == "Img_SkillGuideLine")
+        {
+            skillGuideLine.color = Color.gray;
+        }
+        
+        //±âÈ¹¿¡ µû¶ó ¾Æ·¡ switch¹® ÇÊ¿ä¼º °áÁ¤
+        //switch (col.gameObject.name)
+        //{
+        //    case "Img_SkillGuideLine":
+        //        skillGuideLine.color = Color.gray;
+        //        break;
+        
+        //    case "Img_Synergy2GuideLine":
+        //        synergy2GuideLine.color = Color.gray;
+        //        break;
+        
+        //    case "Img_Synergy3GuideLine":
+        //        synergy3GuideLine.color = Color.gray;
+        //        break;
+        
+        //    case "Img_Synergy4GuideLine":
+        //        synergy4GuideLine.color = Color.gray;
+        //        break;
+        
+        //    default:
+        //        print("default");
+        //        break;
+        //}
     }
 }

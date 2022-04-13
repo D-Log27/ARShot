@@ -78,6 +78,7 @@ public class RoomManager : MonoBehaviourPunCallbacks
             CanvasGroupOnOff(playerReadyed[i], false);
         }
         _photonView.RPC("StartRoom",RpcTarget.AllBufferedViaServer);
+        _photonView.RPC("ChangeScreen",RpcTarget.AllBufferedViaServer);
         // StartRoom();
     }
 
@@ -366,9 +367,13 @@ public class RoomManager : MonoBehaviourPunCallbacks
     public override void OnPlayerLeftRoom(Player otherPlayer)
     {
         print("### other player room left");
+        // TODO : Screen Initialize
         _photonView.RPC("NicknameDisplay",RpcTarget.AllBufferedViaServer);
     }
 
+    /// <summary>
+    /// 방 퇴장후 callback
+    /// </summary>
     public override void OnLeftRoom()
     {
         SceneManager.LoadScene("Title_AL");
@@ -400,7 +405,13 @@ public class RoomManager : MonoBehaviourPunCallbacks
 
         foreach (var currentRoomPlayer in PhotonNetwork.CurrentRoom.Players)
         {
-            if(currentRoomPlayer.Value.NickName.Equals(player.NickName)) currentRoomPlayer.Value.CustomProperties["class"] = classType;
+            if (currentRoomPlayer.Value.NickName.Equals(player.NickName))
+            {
+                currentRoomPlayer.Value.CustomProperties["class"] = classType;
+                print($"### {currentRoomPlayer.Value.NickName} select {currentRoomPlayer.Value.CustomProperties["class"]}");
+            }
+
+            
         }
             
         ChangeScreen();
@@ -442,7 +453,7 @@ public class RoomManager : MonoBehaviourPunCallbacks
         
         foreach (var player in PhotonNetwork.CurrentRoom.Players)
         {
-            print($"### player key check :{player.Key}");
+            // print($"### player key check :{player.Key}");
             switch (player.Key)
             {
                 case 1:
@@ -457,7 +468,6 @@ public class RoomManager : MonoBehaviourPunCallbacks
                 case 4:
                     userClassCanvas = player_3Class;
                     break;
-                
             }
 
             if (userClassCanvas == null) throw new Exception($"### Key not valid for canvas, player.key:{player.Key}");
@@ -469,7 +479,6 @@ public class RoomManager : MonoBehaviourPunCallbacks
             }
             
             // TODO : 상태에 따라 클래스 표시 변경
-            print($"### Player :{player.Value.NickName} selected class {player.Value.CustomProperties["class"]}");
             
             switch (player.Value.CustomProperties["class"])
             {
@@ -488,40 +497,55 @@ public class RoomManager : MonoBehaviourPunCallbacks
                 default:
                     print($"### player nickname : {player.Value.NickName}");
                     print($"### player status : {player.Value.CustomProperties["status"]}");
-                    throw new Exception($"NOT VALID CLASS ENUM :{player.Value.CustomProperties["class"]}");
-                    
+                    SetClassCanvasByLocalVariable(userClassCanvas, myClass);
+                    break;
             }
 
+            print($"### User: {player.Value.NickName}");
+            print($"### check status from customProperties : {player.Value.CustomProperties["status"]}");
+            print($"### check status from variable : {myReady}");
             
             
             // Ready 표시 변경
-            if (player.Value.CustomProperties["status"].Equals(PlayerReadyType.READY))
+            CanvasGroup gettingReady = playerGettingReady[player.Key-1];
+            CanvasGroup ready = playerReady[player.Key-1];
+            if (player.Value.CustomProperties["status"] == null)
             {
-                //현재 누른 버튼의 부모의 CanvasGroupComponent: GettingReady Panel의 CanvasGroup
-                CanvasGroup cGrp1 = EventSystem.current.currentSelectedGameObject.GetComponentInParent<CanvasGroup>();
-
-                //현재 누른 버튼의 부모의 부모의 2번째 자식의 CanvasGroupComponent: Ready Panel의 CanvasGroup
-                CanvasGroup cGrp2 = EventSystem.current.currentSelectedGameObject.transform.parent.parent.GetChild(1).GetComponent<CanvasGroup>();
-            
-                CanvasGroupOnOff(cGrp1, false);
-                CanvasGroupOnOff(cGrp2, true);
+                if (player.Value.NickName.Equals(PhotonNetwork.LocalPlayer.NickName))
+                {
+                    switch (myReady)
+                    {
+                        case PlayerReadyType.READY :
+                            CanvasGroupOnOff(gettingReady, false);
+                            CanvasGroupOnOff(ready, true);
+                            break;
+                        case PlayerReadyType.SELECTING:
+                            CanvasGroupOnOff(gettingReady, true);
+                            CanvasGroupOnOff(ready, false);
+                            break;
+                    }
+                }
             }
             else
             {
-                CanvasGroup cGrp1 = EventSystem.current.currentSelectedGameObject.GetComponentInParent<CanvasGroup>();
-                if (cGrp1 == null) print("### cgrp1 is null");
-                CanvasGroup cGrp2 = EventSystem.current.currentSelectedGameObject.transform.parent.parent.GetChild(0).GetComponent<CanvasGroup>();
-                CanvasGroupOnOff(cGrp1, false);
-                CanvasGroupOnOff(cGrp2, true);
+                switch (player.Value.CustomProperties["status"])
+                {
+                    case PlayerReadyType.READY :
+                        CanvasGroupOnOff(gettingReady, false);
+                        CanvasGroupOnOff(ready, true);
+                        break;
+                    case PlayerReadyType.SELECTING:
+                        CanvasGroupOnOff(gettingReady, true);
+                        CanvasGroupOnOff(ready, false);
+                        break;
+                }
             }
-            
-            
             
             // CanvasGroupOnOff(playerReady[i], false);
             // CanvasGroupOnOff(playerReadyed[i], true);
             
             // 카운트다운 확인
-
+            // TODO : Exception 발생하므로 대비책 준비
             if (player.Value.CustomProperties["status"].Equals(PlayerReadyType.READY)) isAllReady *= 1;
             else isAllReady *= 0;
         }
@@ -531,6 +555,34 @@ public class RoomManager : MonoBehaviourPunCallbacks
         else return;
     }
 
+    /// <summary>
+    ///  클래스 프로퍼티 미확인시 변수값으로 지정하여 클래스 화면 변경
+    /// </summary>
+    /// <param name="canvasGroups">유저 캔버스 그룹</param>
+    /// <param name="classType">클래스 타입</param>
+    /// <exception cref="Exception">클래스타입이 저장되어있지 않은경우</exception>
+    private void SetClassCanvasByLocalVariable(CanvasGroup[] canvasGroups, PlayerClassType classType)
+    {
+        switch (classType)
+        {
+            case PlayerClassType.Dealer:
+                CanvasGroupOnOff(canvasGroups[0], true);
+                break;
+            case PlayerClassType.Tanker:
+                CanvasGroupOnOff(canvasGroups[1], true);
+                break;
+            case PlayerClassType.Healer:
+                CanvasGroupOnOff(canvasGroups[2], true);
+                break;
+            case PlayerClassType.Supporter:
+                CanvasGroupOnOff(canvasGroups[3], true);
+                break;
+            default:
+                throw new Exception($"NOT VALID CLASS : {classType}");
+                    
+        }
+    }
+    
 
     /// <summary>
     /// 게임 시작 카운트다운
