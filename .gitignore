@@ -28,7 +28,7 @@ EditorUserSettings.asset
 .vs/
 
 # JetBrain Rider directory
-./idea
+/.idea
 
 # Gradle cache directory
 .gradle/
