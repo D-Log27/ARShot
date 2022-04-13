@@ -4,40 +4,51 @@ using UnityEngine;
 using UnityEngine.XR.ARFoundation;
 using UnityEngine.XR.ARSubsystems;
 
-// <¸ñÇ¥>
-// 1. »ç¿ëÀÚ°¡ ½ºÅ©¸°À» ÅÍÄ¡ÇÏ¸é,
-// 2. ½ºÅ©¸°ÀÇ Á¤Áß¾Ó¿¡¼­ ·¹ÀÌ¸¦ ½î¾Æ¼­ Plan¸¸ °ËÃâÇÑ´Ù.
-// 2.1) ·¹ÀÌ¸¦ »ç¿ëÇÏ±â À§ÇØ AR Raycast Manager¸¦ °¡Á®¿Â´Ù.
-// 2.2) ARRaycastManager Å¬·¡½ºÀÇ Raycast(Vector2 screenPoint, List<ARRaycastHit> hitResults, TrackableType trackableTypes = (TrackableType)(-1)); ¸Ş¼­µå »ç¿ë
-//2.2.1) Vector2¿¡ ½ºÅ©¸°ÀÇ Á¤Áß¾Ó À§Ä¡¸¦ ´ã¾Æ º¯¼ö ¼±¾ğ
-//2.2.2) List<ARRaycastHit> º¯¼ö ¼±¾ğ
-//2.2.3) TrackableTypeÀ» »ç¿ëÇØ Plan¸¸ °ËÃâÇÏµµ·Ï
-// 3. ±× °÷¿¡ ¾ŞÄ¿¸¦ »ı¼º
+
 
 
 public class AnchorRay_KSY : MonoBehaviour
 {
+    private GameObject introAnchorObj; 
+    private ARRaycastManager raycastManager;
+    private ARAnchorManager anchorManager;
+    private ARAnchor anchor;
+    private GameObject anchorPrefab;
 
-    private GameObject introAnchorObj; //·¹ÀÌ¸¦ ½÷¼­ »ı¼ºÇÒ ¿ÀºêÁ§Æ®ÀÌ¹Ç·Î privateÀ¸·Î »ı¼º
-    private ARRaycastManager arManager;
-    private ARAnchorManager aRAnchor;
+    List<ARRaycastHit> arRaycastHit = new List<ARRaycastHit>();
 
     void Start()
     {
-        arManager = GetComponent<ARRaycastManager>();
+        anchorManager = GetComponent<ARAnchorManager>();
+        raycastManager = GetComponent<ARRaycastManager>();
+        anchor = GetComponent<ARAnchor>();
     }
 
     void Update()
     {
-        // TODO: ¼Õ°¡¶ô ÅÍÄ¡ ±¸ÇöºÎ ¾²±â(
+        if (Input.touchCount == 0) return;
+
+        // í„°ì¹˜í•˜ë©´
+        Touch touch = Input.GetTouch(0); 
 
         //public bool Raycast(Vector2 screenPoint, List<ARRaycastHit> hitResults, TrackableType trackableTypes = (TrackableType)(-1));
-        Vector2 screenCenter = new Vector2(Screen.width * 0.5f, Screen.height * 0.5f); //ScreenÅ¬·¡½º¸¦ »ç¿ëÇØ È­¸éÀÇ Á¤Áß¾Ó 
-        List<ARRaycastHit> arRaycastHit = new List<ARRaycastHit>();
 
-        if (arManager.Raycast(screenCenter, arRaycastHit, TrackableType.Planes)) //
+        Vector2 screenCenter = new Vector2(Screen.width * 0.5f, Screen.height * 0.5f); //í™”ë©´ ì¤‘ì•™ì—ì„œ ìœ„ì¹˜ ìƒì„±
+
+        if (raycastManager.Raycast(touch.position, arRaycastHit, TrackableType.Planes)) // ë ˆì´ìºìŠ¤íŠ¸ë¥¼ ë°”ë‹¥ì—ë§Œ ì´ì„œ
         {
-            // : AnchorÇÔ¼ö È£ÃâÇÏ±â
+            var hitPose = arRaycastHit[0].pose; // arRaycastHitê°€ ì œì¼ ë¨¼ì € ë§ì€ ê³³
+            var instantiateObject = Instantiate(anchorPrefab, hitPose.position, hitPose.rotation); // ê·¸ ê³³ì— ì•µì»¤ë¥¼ ìƒì„±í•œë‹¤.
+            anchor = instantiateObject.AddComponent<ARAnchor>();
+
+            if (arRaycastHit[0].trackable is ARPlane plane) 
+            {
+                anchor = anchorManager.AttachAnchor(plane, hitPose);
+            }
+            //anchor = an
+
+            //public ARAnchor AttachAnchor(ARPlane plane, Pose pose);
+            
         }
     }
 }
