@@ -4,53 +4,55 @@ using UnityEngine;
 using UnityEngine.XR.ARFoundation;
 using UnityEngine.XR.ARSubsystems;
 
-
-
-
-public class AnchorRay_KSY : MonoBehaviour
+public class AnchorRay_KSY : MonoBehaviour 
 {
-    private GameObject introAnchorObj; 
+    public GameObject anchorPrefab;
     private ARRaycastManager raycastManager;
     private ARAnchorManager anchorManager;
     private ARAnchor anchor;
-    public GameObject anchorPrefab;
-
-    List<ARRaycastHit> arRaycastHit = new List<ARRaycastHit>();
+    List<ARRaycastHit> arRaycastHit = new List<ARRaycastHit>(); 
+    private bool isCreated;
 
     void Start()
     {
         anchorManager = GetComponent<ARAnchorManager>();
         raycastManager = GetComponent<ARRaycastManager>();
+
+
+
+
+
+
+        
         anchor = GetComponent<ARAnchor>();
     }
 
     void Update()
     {
-        if (Input.touchCount == 0) return;
+        if (isCreated == true) return; 
+        Debug.Log("### isCreated : " + isCreated); // Console:False (��ü�� ���� �ȵǾ�����)
 
-        // 터치하면
-        Touch touch = Input.GetTouch(0); 
+        if (Input.touchCount == 0) return; 
+        Debug.Log("### istouchCount==0: " + Input.touchCount);
 
-        //public bool Raycast(Vector2 screenPoint, List<ARRaycastHit> hitResults, TrackableType trackableTypes = (TrackableType)(-1));
+        Touch touch = Input.GetTouch(0);
 
-        Vector2 screenCenter = new Vector2(Screen.width * 0.5f, Screen.height * 0.5f); //화면 중앙에서 위치 생성
 
-        if (raycastManager.Raycast(touch.position, arRaycastHit, TrackableType.Planes)) // 레이캐스트를 바닥에만 쏴서
+        if (touch.phase != TouchPhase.Began) return;
+        Debug.Log("### isTouchBegan" + touch.phase);
+
+        if (raycastManager.Raycast(touch.position, arRaycastHit, TrackableType.Planes)) 
         {
-            var hitPose = arRaycastHit[0].pose; // arRaycastHit가 제일 먼저 맞은 곳
-            var instantiateObject = Instantiate(anchorPrefab, hitPose.position, hitPose.rotation); // 그 곳에 프리팹을 생성한다.
+            var hitPose = arRaycastHit[0].pose; 
+            var instantiateObject = Instantiate(anchorPrefab, hitPose.position, hitPose.rotation);
             anchor = instantiateObject.AddComponent<ARAnchor>();
 
             if (arRaycastHit[0].trackable is ARPlane plane) 
             {
                 anchor = anchorManager.AttachAnchor(plane, hitPose);
-            }
-            //anchor = an
-
-            //public ARAnchor AttachAnchor(ARPlane plane, Pose pose);
-            
+                isCreated = true;
+            } 
         }
     }
+    //
 }
-
-  
