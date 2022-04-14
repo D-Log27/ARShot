@@ -23,7 +23,7 @@ MonoBehaviour:
     m_SerializedTextureGuid:
       m_GuidLow: 4662632808302917522
       m_GuidHigh: 14811987341839155705
-    m_Size: {x: 0.02, y: 0.020026384}
+    m_Size: {x: 1, y: 1.0013193}
     m_SpecifySize: 1
     m_Name: Hologram
     m_Texture: {fileID: 0}

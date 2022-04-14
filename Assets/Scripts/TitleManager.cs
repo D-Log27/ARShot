@@ -6,7 +6,7 @@ using UnityEngine.UI;
 //using UnityEngine.UIElements;
 
 /// <summary>
-/// Title ȭ�� �̺�Ʈ
+/// Title Manager
 /// </summary>
 public class TitleManager : MonoBehaviour
 {
