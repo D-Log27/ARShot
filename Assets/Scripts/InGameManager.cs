@@ -33,44 +33,12 @@ public class InGameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        skillGuideLine.color = Color.gray;
+
     }
 
     public void OnClickAttack()
     {
         print("Attack");
-    }
-
-    public void OnClickClassSkill()
-    {
-        if (Input.GetKeyUp(KeyCode.Mouse0))
-        {
-            print("Skill");
-        }
-    }
-
-    /// <summary>
-    /// UI 보이기
-    /// </summary>
-    public void OnClickDrawerOpener()
-    {
-        drawerOpener.position = Vector3.MoveTowards(drawerOpener.position, drawerCloserPos, 1);
-        print("전");
-        uiBox.position = Vector3.MoveTowards(uiBox.position, new Vector3(uiBox.position.x, uiBoxPos.y + drawerOpenerPos.y - drawerCloserPos.y, uiBox.position.z), 1);
-        print("후");
-        CanvasGroupOnOff(cGrpDrawerCloser, true);
-        CanvasGroupOnOff(cGrpDrawerOpener, false);
-    }
-
-    /// <summary>
-    /// UI 숨기기
-    /// </summary>
-    public void OnClickDrawerCloser()
-    {
-        drawerCloser.position = Vector3.MoveTowards(drawerCloser.position, drawerOpenerPos, 1);
-        uiBox.position = Vector3.MoveTowards(uiBox.position, new Vector3(uiBox.position.x, uiBoxPos.y + drawerCloserPos.y - drawerOpenerPos.y, uiBox.position.z), 1);
-        CanvasGroupOnOff(cGrpDrawerOpener, true);
-        CanvasGroupOnOff(cGrpDrawerCloser, false);
     }
 
     /// <summary>
