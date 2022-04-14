@@ -1,0 +1,263 @@
+fileFormatVersion: 2
+guid: 34ba8dd2702be6646887a2693641d36d
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: ball_l
+    100004: ball_r
+    100006: calf_l
+    100008: calf_r
+    100010: CTRL_Head
+    100012: CTRL_Hip
+    100014: CTRL_L_Finger1
+    100016: CTRL_L_Finger2
+    100018: CTRL_L_Finger3
+    100020: CTRL_L_Finger4
+    100022: CTRL_L_Hand
+    100024: CTRL_L_Leg
+    100026: CTRL_L_Toe
+    100028: CTRL_Neck
+    100030: CTRL_R_Finger1
+    100032: CTRL_R_Finger2
+    100034: CTRL_R_Finger3
+    100036: CTRL_R_Finger4
+    100038: CTRL_R_Hand
+    100040: CTRL_R_Leg
+    100042: CTRL_R_Toe
+    100044: CTRL_Spine1
+    100046: CTRL_Spine2
+    100048: CTRL_Spine3
+    100050: CTRL_Total
+    100052: finger1_l
+    100054: finger1_r
+    100056: finger2_l
+    100058: finger2_r
+    100060: finger3_l
+    100062: finger3_r
+    100064: finger4_l
+    100066: finger4_r
+    100068: foot_l
+    100070: foot_r
+    100072: Funny_Robot_Arms
+    100074: Funny_Robot_Body1
+    100076: Funny_Robot_Body2
+    100078: Funny_Robot_Fingers
+    100080: Funny_Robot_Foot
+    100082: Funny_Robot_Head
+    100084: Funny_Robot_Hip
+    100086: Funny_Robot_Leg1
+    100088: Funny_Robot_Leg2
+    100090: Funny_Robot_Neck
+    100092: Funny_Robot_Rig
+    100094: hand_l
+    100096: hand_r
+    100098: head
+    100100: lowerarm_l
+    100102: lowerarm_r
+    100104: neck_01
+    100106: pelvis
+    100108: spine_01
+    100110: spine_02
+    100112: spine_03
+    100114: spine_04
+    100116: thigh_l
+    100118: thigh_r
+    100120: upperarm_l
+    100122: upperarm_r
+    400000: //RootNode
+    400002: ball_l
+    400004: ball_r
+    400006: calf_l
+    400008: calf_r
+    400010: CTRL_Head
+    400012: CTRL_Hip
+    400014: CTRL_L_Finger1
+    400016: CTRL_L_Finger2
+    400018: CTRL_L_Finger3
+    400020: CTRL_L_Finger4
+    400022: CTRL_L_Hand
+    400024: CTRL_L_Leg
+    400026: CTRL_L_Toe
+    400028: CTRL_Neck
+    400030: CTRL_R_Finger1
+    400032: CTRL_R_Finger2
+    400034: CTRL_R_Finger3
+    400036: CTRL_R_Finger4
+    400038: CTRL_R_Hand
+    400040: CTRL_R_Leg
+    400042: CTRL_R_Toe
+    400044: CTRL_Spine1
+    400046: CTRL_Spine2
+    400048: CTRL_Spine3
+    400050: CTRL_Total
+    400052: finger1_l
+    400054: finger1_r
+    400056: finger2_l
+    400058: finger2_r
+    400060: finger3_l
+    400062: finger3_r
+    400064: finger4_l
+    400066: finger4_r
+    400068: foot_l
+    400070: foot_r
+    400072: Funny_Robot_Arms
+    400074: Funny_Robot_Body1
+    400076: Funny_Robot_Body2
+    400078: Funny_Robot_Fingers
+    400080: Funny_Robot_Foot
+    400082: Funny_Robot_Head
+    400084: Funny_Robot_Hip
+    400086: Funny_Robot_Leg1
+    400088: Funny_Robot_Leg2
+    400090: Funny_Robot_Neck
+    400092: Funny_Robot_Rig
+    400094: hand_l
+    400096: hand_r
+    400098: head
+    400100: lowerarm_l
+    400102: lowerarm_r
+    400104: neck_01
+    400106: pelvis
+    400108: spine_01
+    400110: spine_02
+    400112: spine_03
+    400114: spine_04
+    400116: thigh_l
+    400118: thigh_r
+    400120: upperarm_l
+    400122: upperarm_r
+    2100000: Funny_Robot
+    4300000: Funny_Robot_Head
+    4300002: Funny_Robot_Neck
+    4300004: Funny_Robot_Body1
+    4300006: Funny_Robot_Body2
+    4300008: Funny_Robot_Hip
+    4300010: Funny_Robot_Arms
+    4300012: Funny_Robot_Fingers
+    4300014: Funny_Robot_Leg1
+    4300016: Funny_Robot_Leg2
+    4300018: Funny_Robot_Foot
+    7400000: Funny_Walk
+    9500000: //RootNode
+    13700000: Funny_Robot_Arms
+    13700002: Funny_Robot_Body1
+    13700004: Funny_Robot_Body2
+    13700006: Funny_Robot_Fingers
+    13700008: Funny_Robot_Foot
+    13700010: Funny_Robot_Head
+    13700012: Funny_Robot_Hip
+    13700014: Funny_Robot_Leg1
+    13700016: Funny_Robot_Leg2
+    13700018: Funny_Robot_Neck
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Funny_Walk
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 35
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 1
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 0.01
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
