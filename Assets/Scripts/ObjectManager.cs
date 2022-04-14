@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 /// <summary>
-/// GameObject ¹× Component ÀúÀå/°ü¸® manager
+/// GameObject ì •ë³´ ì •ë³´ Manager
 /// </summary>
 public class ObjectManager : MonoBehaviour
 {

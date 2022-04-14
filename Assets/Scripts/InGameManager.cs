@@ -33,7 +33,6 @@ public class InGameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
     }
 
     public void OnClickAttack()
@@ -42,7 +41,7 @@ public class InGameManager : MonoBehaviour
     }
 
     /// <summary>
-    /// Äµ¹ö½º±×·ìÀÇ 3°¡Áö ¼Ó¼ºÀ» ÇÑ¹ø¿¡ Á¦¾î
+    /// Äµï¿½ï¿½ï¿½ï¿½ï¿½×·ï¿½ï¿½ï¿½ 3ï¿½ï¿½ï¿½ï¿½ ï¿½Ó¼ï¿½ï¿½ï¿½ ï¿½Ñ¹ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
     /// </summary>
     /// <param name="cGrp"></param>
     /// <param name="isOn"></param>
