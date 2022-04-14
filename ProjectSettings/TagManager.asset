@@ -7,6 +7,10 @@ TagManager:
   - SpawnZone
   - VIP
   - Intro
+  - UI_OPT_SFX_SLIDER
+  - UI_OPT_SFX_VALUE
+  - UI_OPT_BGM_SLIDER
+  - UI_OPT_BGM_VALUE
   layers:
   - Default
   - TransparentFX

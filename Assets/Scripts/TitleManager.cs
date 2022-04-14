@@ -33,12 +33,6 @@ public class TitleManager : MonoBehaviour
         exitBtn.GetComponent<Button>().onClick.AddListener(() => OnClickExitButton());
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
     /// <summary>
     /// Title -> Option Click
     /// </summary>
