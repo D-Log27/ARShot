@@ -1,28 +1,51 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement; //LoadScene»ç¿ëÇÒ ¶§ ¼±¾ğÇØ¾ß ÇÏ´Â °Å
+using UnityEngine.SceneManagement;
 
 public class AREftSt_Mgr : MonoBehaviour
 {
-    private bool Bl_Btn = true;
+    private bool GetButtonDown = true;
+
+    private void Update() 
+    {
+        Btn();
+    }
 
     public void Btn()
     {
-        if (Bl_Btn)//¹öÆ°À» ´©¸£¸é 
+        if (Input.GetButtonDown("Fire1"))
         {
-            AREftSt();//Start ·ÎÁ÷ ½ÇÇà
+            AREftSt();
         }
-        else //´©¸£Áö¾ÊÀº »óÅÂ
-        {
-            AREftRe(); //Re·ÎÁ÷ ½ÇÇà
-        }
-        Bl_Btn = !Bl_Btn; // ¾ÕÀ» A, µÚ¸¦ B¶ó°í ÇÒ ¶§ A°¡ ÂüÀÌ¸é B°¡ °ÅÁşÀÌ µÇ°í A°¡ °ÅÁşÀÌ¸é B°¡ ÂüÀÌ µÈ´Ù. 
+        // else
+        // {
+        //     return;
+        //     //AREftRe();
+        // }
+        //GetButtonDown = !GetButtonDown;
+        //GetButtonDown = false;
+        //return;
     }
 
-    public void AREftSt() //Start ¹öÆ°À» ´©¸£¸é
+    //  private bool Bl_Btn = true;
+
+    // public void Btn()
+    // {
+    //     if (Bl_Btn)//ë²„íŠ¼ì„ ëˆ„ë¥´ë©´ 
+    //     {
+    //         AREftSt();//Start ë¡œì§ ì‹¤í–‰
+    //     }
+    //     else //ëˆ„ë¥´ì§€ì•Šì€ ìƒíƒœ
+    //     {
+    //         AREftRe(); //Reë¡œì§ ì‹¤í–‰
+    //     }
+    //     Bl_Btn = !Bl_Btn; // ì•ì„ A, ë’¤ë¥¼ Bë¼ê³  í•  ë•Œ Aê°€ ì°¸ì´ë©´ Bê°€ ê±°ì§“ì´ ë˜ê³  Aê°€ ê±°ì§“ì´ë©´ Bê°€ ì°¸ì´ ëœë‹¤. 
+    // }
+
+    public void AREftSt()
     {
-        ARHoloAtv_Mgr.Ins.SwHoloEarth(true,3f); //3ÃÊµÚ¿¡ ÄÒ´Ù.
+        ARHoloAtv_Mgr.Ins.SwHoloEarth(true,3f);
         ARHoloAtv_Mgr.Ins.SwHoloSdLg(true,2.7f);
         ARHoloAtv_Mgr.Ins.SwVi_01(true,3.5f);
         ARHoloAtv_Mgr.Ins.SwHoloCEft(true,0.5f);
@@ -38,9 +61,9 @@ public class AREftSt_Mgr : MonoBehaviour
         AREft_Ani_Mgr.Ins.ReAni();
     }
 
-    public void BtnBack()
-    {
-        SceneManager.LoadScene(1);
-    }
+    // public void BtnBack()
+    // {
+    //     SceneManager.LoadScene(1);
+    // }
 
 }

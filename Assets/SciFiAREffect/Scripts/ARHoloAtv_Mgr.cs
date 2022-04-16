@@ -3,21 +3,20 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Video;
 
-//TODO:
-//FIXME:
-
 public class ARHoloAtv_Mgr: MonoBehaviour
 {
+
     public GameObject Vi_01;
     public GameObject HoloEarth;
     public GameObject HoloSdLg;
     public GameObject HoloCEft;
-    public static ARHoloAtv_Mgr Ins; //➡️코루틴
+    public static ARHoloAtv_Mgr Ins;
 
     void Awake()
     {
         Ins = this;
     }
+
 
 #region Active HoloGameObject
 
@@ -45,15 +44,17 @@ public class ARHoloAtv_Mgr: MonoBehaviour
         StartCoroutine(LateSwHoloCEft(Bl, Tm));
     }
 
-    //➡️IEnumerator: Coroutine을 선언할 때 사용하는 반환형은 void가 아닌 IEnumerator 사용
+    #endregion
+
+
+    #region 具体执行
+
+    //全息地球
     IEnumerator LateSwHoloEarth(bool Bl,float Tm)
     {
         if (Bl)
         {
-            //➡️yield return: Coroutine에서 동작하는 제어권을 유니티에 다시 돌려줌
-            //yield return 뒤에 명시한 시간만큼 코드 동작을 중지하고 제어권을 유니티에 돌려줌
-            //명시한 시간이 끝나면 다시 Coroutine이 동작한다.
-            yield return new WaitForSeconds(Tm); //➡️WaitForSeconds: 생성자의 매개변수로 넣어준 시간만큼
+            yield return new WaitForSeconds(Tm);
             HoloEarth.SetActive(Bl);
         }
         else
@@ -64,8 +65,8 @@ public class ARHoloAtv_Mgr: MonoBehaviour
     }
 
 
-    //
-    IEnumerator LateSwHoloVi_01(bool Bl, float Tm) 
+    //有任务视频
+    IEnumerator LateSwHoloVi_01(bool Bl, float Tm)
     {
         
         if (Bl)

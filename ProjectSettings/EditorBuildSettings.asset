@@ -6,20 +6,8 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/AL/Title_AL.unity
-    guid: 338981eb4e456704da9628a8f1f45cf7
-  - enabled: 1
-    path: Assets/Scenes/AL/Room_AL_RENEWAL_S2B.unity
-    guid: 0cca011075845744787a027f81863024
-  - enabled: 0
-    path: Assets/Scenes/AL/Room_AL.unity
-    guid: 5bbf9b88807f97e43a08a36c19ef2557
-  - enabled: 0
-    path: Assets/Scenes/AL/Option_AL.unity
-    guid: 6eca59bf43eadd84fa3c62b10d748726
-  - enabled: 1
-    path: Assets/Scenes/AL/InGame_AL_Options.unity
-    guid: cfc403f73b3f9bb47aeec926b98a61bc
+    path: Assets/Scenes/KSY/InGame_Anchor_test.unity
+    guid: adfe72f6a034d8743b800984970d7a05
   m_configObjects:
     UnityEditor.XR.ARCore.ARCoreSettings: {fileID: 11400000, guid: 8c77fb1aeafb04646bcac395cf535831, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 169bd886722cb3a428b2989fe2a140a5, type: 2}
