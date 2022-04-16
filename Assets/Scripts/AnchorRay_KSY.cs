@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.XR.ARFoundation;
 using UnityEngine.XR.ARSubsystems;
 
+//TODO: 바닥을 보고 화면을 터치하면 Plan에 
 public class AnchorRay_KSY : MonoBehaviour 
 {
     public GameObject anchorPrefab;

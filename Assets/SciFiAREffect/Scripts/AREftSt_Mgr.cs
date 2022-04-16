@@ -1,30 +1,28 @@
-癤퓎sing System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
+using UnityEngine.SceneManagement; //LoadScene사용할 때 선언해야 하는 거
 
 public class AREftSt_Mgr : MonoBehaviour
 {
-
     private bool Bl_Btn = true;
-
 
     public void Btn()
     {
-        if (Bl_Btn)
+        if (Bl_Btn)//버튼을 누르면 
         {
-            AREftSt();
+            AREftSt();//Start 로직 실행
         }
-        else
+        else //누르지않은 상태
         {
-            AREftRe();
+            AREftRe(); //Re로직 실행
         }
-        Bl_Btn = !Bl_Btn;
+        Bl_Btn = !Bl_Btn; // 앞을 A, 뒤를 B라고 할 때 A가 참이면 B가 거짓이 되고 A가 거짓이면 B가 참이 된다. 
     }
 
-    public void AREftSt()
+    public void AREftSt() //Start 버튼을 누르면
     {
-        ARHoloAtv_Mgr.Ins.SwHoloEarth(true,3f);
+        ARHoloAtv_Mgr.Ins.SwHoloEarth(true,3f); //3초뒤에 켠다.
         ARHoloAtv_Mgr.Ins.SwHoloSdLg(true,2.7f);
         ARHoloAtv_Mgr.Ins.SwVi_01(true,3.5f);
         ARHoloAtv_Mgr.Ins.SwHoloCEft(true,0.5f);
