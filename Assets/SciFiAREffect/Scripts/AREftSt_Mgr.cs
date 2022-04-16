@@ -9,15 +9,19 @@ public class AREftSt_Mgr : MonoBehaviour
 
     private void Update() 
     {
-        Btn();
+        Click();
     }
 
-    public void Btn()
+    public void Click()
     {
         if (Input.GetButtonDown("Fire1"))
         {
             AREftSt();
         }
+        
+
+
+
         // else
         // {
         //     return;
@@ -50,6 +54,9 @@ public class AREftSt_Mgr : MonoBehaviour
         ARHoloAtv_Mgr.Ins.SwVi_01(true,3.5f);
         ARHoloAtv_Mgr.Ins.SwHoloCEft(true,0.5f);
         AREft_Ani_Mgr.Ins.StAni();
+
+
+
     }
 
     public void AREftRe()
@@ -65,5 +72,5 @@ public class AREftSt_Mgr : MonoBehaviour
     // {
     //     SceneManager.LoadScene(1);
     // }
-
 }
+
