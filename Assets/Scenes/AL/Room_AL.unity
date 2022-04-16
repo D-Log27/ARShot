@@ -3166,7 +3166,7 @@ MonoBehaviour:
   ObservedComponentsFoldoutOpen: 0
   Group: 0
   prefixField: -1
-  Synchronization: 3
+  Synchronization: 0
   OwnershipTransfer: 0
   observableSearch: 2
   ObservedComponents: []
@@ -3204,9 +3204,11 @@ MonoBehaviour:
   - {fileID: 1944877686}
   - {fileID: 1392499197}
   - {fileID: 930040215}
+  _userInstance: {fileID: 2769590461233339932, guid: b70e41622321ff240be6534bceb16fc9, type: 3}
   btnBackToTitle: {fileID: 91849102}
   loadingGame: {fileID: 1722169534}
   canvasChanging: {fileID: 750156627}
+  photonViewIdArr: e9030000d1070000b90b0000a10f0000
 --- !u!1 &156717113
 GameObject:
   m_ObjectHideFlags: 0
@@ -9702,7 +9704,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 635110065}
-  - component: {fileID: 635110067}
   - component: {fileID: 635110066}
   m_Layer: 5
   m_Name: Player_1
@@ -9747,8 +9748,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myClass: 0
   myReady: 0
-  ReadyCanvas: {fileID: 1403789421}
-  SelectingCavans: {fileID: 2793514210093541036}
   previousClassBtn: {fileID: 1965056919}
   nextClassBtn: {fileID: 301395324}
   readyBtn: {fileID: 1207706502}
@@ -9756,28 +9755,6 @@ MonoBehaviour:
   classesTransform: {fileID: 86707806}
   nickName: {fileID: 1113960735}
   isReady: 0
---- !u!114 &635110067
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 635110064}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ObservedComponentsFoldoutOpen: 1
-  Group: 0
-  prefixField: -1
-  Synchronization: 3
-  OwnershipTransfer: 1
-  observableSearch: 2
-  ObservedComponents: []
-  sceneViewId: 1
-  InstantiationId: 0
-  isRuntimeInstantiated: 0
 --- !u!1 &638493281
 GameObject:
   m_ObjectHideFlags: 0
@@ -14378,7 +14355,6 @@ GameObject:
   m_Component:
   - component: {fileID: 930040215}
   - component: {fileID: 930040216}
-  - component: {fileID: 930040217}
   m_Layer: 5
   m_Name: Player_4
   m_TagString: Untagged
@@ -14417,35 +14393,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 930040214}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ObservedComponentsFoldoutOpen: 1
-  Group: 0
-  prefixField: -1
-  Synchronization: 3
-  OwnershipTransfer: 1
-  observableSearch: 2
-  ObservedComponents: []
-  sceneViewId: 4
-  InstantiationId: 0
-  isRuntimeInstantiated: 0
---- !u!114 &930040217
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 930040214}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0b49ee0a1dfcdc04b98b0a45058eea70, type: 3}
+  m_Script: {fileID: 11500000, guid: 9d4380ae12a856240b621b753fc2323c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   myClass: 0
   myReady: 0
-  ReadyCanvas: {fileID: 1926406555}
-  SelectingCavans: {fileID: 1240193457}
   previousClassBtn: {fileID: 759162978}
   nextClassBtn: {fileID: 997173201}
   readyBtn: {fileID: 522061893}
@@ -22835,7 +22787,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1392499197}
   - component: {fileID: 1392499198}
-  - component: {fileID: 1392499199}
   m_Layer: 5
   m_Name: Player_3
   m_TagString: Untagged
@@ -22874,35 +22825,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1392499196}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ObservedComponentsFoldoutOpen: 1
-  Group: 0
-  prefixField: -1
-  Synchronization: 3
-  OwnershipTransfer: 1
-  observableSearch: 2
-  ObservedComponents: []
-  sceneViewId: 3
-  InstantiationId: 0
-  isRuntimeInstantiated: 0
---- !u!114 &1392499199
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1392499196}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4a23394e79facde4ab6644ac5a9605d0, type: 3}
+  m_Script: {fileID: 11500000, guid: 9d4380ae12a856240b621b753fc2323c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   myClass: 0
   myReady: 0
-  ReadyCanvas: {fileID: 2049141276}
-  SelectingCavans: {fileID: 184330917}
   previousClassBtn: {fileID: 1123058788}
   nextClassBtn: {fileID: 677853900}
   readyBtn: {fileID: 2061470240}
@@ -31629,7 +31556,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1944877686}
   - component: {fileID: 1944877687}
-  - component: {fileID: 1944877688}
   m_Layer: 5
   m_Name: Player_2
   m_TagString: Untagged
@@ -31668,35 +31594,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1944877685}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ObservedComponentsFoldoutOpen: 1
-  Group: 0
-  prefixField: -1
-  Synchronization: 3
-  OwnershipTransfer: 1
-  observableSearch: 2
-  ObservedComponents: []
-  sceneViewId: 2
-  InstantiationId: 0
-  isRuntimeInstantiated: 0
---- !u!114 &1944877688
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1944877685}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b8378b05accd5c8478131ef5574c0e31, type: 3}
+  m_Script: {fileID: 11500000, guid: 9d4380ae12a856240b621b753fc2323c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   myClass: 0
   myReady: 0
-  ReadyCanvas: {fileID: 392257207}
-  SelectingCavans: {fileID: 322185895}
   previousClassBtn: {fileID: 1083211263}
   nextClassBtn: {fileID: 2054968459}
   readyBtn: {fileID: 860197605}
