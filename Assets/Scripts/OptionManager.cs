@@ -10,13 +10,9 @@ using TMPro;
 //플레이어마다 개별적인 설정이 가능해야 함
 public class OptionManager : MonoBehaviour
 {
-    //OptionManagerDTO 싱글톤
+    #region 변수 영역
+    //OptionManager 싱글톤
     public static OptionManager instance;
-
-    /// <summary>
-    /// 플레이어 ID
-    /// </summary>
-    public string PlayerID { get; set; }
 
     /*
      * Audio
@@ -25,32 +21,17 @@ public class OptionManager : MonoBehaviour
      * SFX: 특수효과
      */
 
-    /// <summary>
-    /// 브금 볼륨 크기
-    /// </summary>
-    public int BGMVolume { get; set; }
+    //Option씬 연결 버튼들 모은 부모
+    public CanvasGroup cGrpConnector;
 
-    /// <summary>
-    /// 특수효과 볼륨
-    /// </summary>
-    public int SFXVolume { get; set; }
-
-    /// <summary>
-    /// 플레이어의 현재 Scene 정보
-    /// </summary>
-    public string PlayerScene { get; set; }
-
-    /// <summary>
-    /// 화면 밝기
-    /// </summary>
-    public float Brightness { get; set; }
-
-
-    //옵션 캔버스그룹
-    public CanvasGroup optionCGrp;
+    //유저명 입력창
+    public TMP_InputField inputField;
 
     //유저명
     public TMP_Text txt_UserID;
+
+    //옵션 캔버스그룹
+    public CanvasGroup optionCGrp;
 
     //사운드 텍스트 표시
     public TMP_Text txt_bgmValue;
@@ -60,13 +41,7 @@ public class OptionManager : MonoBehaviour
     public Slider bgmSlider;
     public Slider sfxSlider;
 
-
-    public float bgmVolume;
-    public float sfxVolume;
-
-    public Transform backBtn;
-
-
+    #endregion
     private void Awake()
     {
         //instance가 할당되지 않은 경우
@@ -85,55 +60,25 @@ public class OptionManager : MonoBehaviour
         DontDestroyOnLoad(this.gameObject);
     }
 
-    private void Start()
-    {
-        backBtn.GetComponent<Button>().onClick.AddListener(() => OnClickBackButton());
-    }
-
-    void OnEnable()
-    {
-        SceneManager.sceneLoaded += OnSceneLoaded;
-    }
-
     private void Update()
     {
-        //txt_bgmValue.text = Convert.ToString(bgmVolume.value) + "%";
-        //txt_sfxValue.text = Convert.ToString(sfxVolume.value) + "%";
+        txt_bgmValue.text = Convert.ToString(bgmSlider.value) + "%";
+        txt_sfxValue.text = Convert.ToString(sfxSlider.value) + "%";
     }
 
-    void OnSceneLoaded(Scene scene, LoadSceneMode loadSceneMode)
+    public void OnClickOptionButton()
     {
-        if (scene.name == "Option_AL")
-        {
-            // Tag Canvas UI를 연결
-            bgmSlider = GameObject.FindGameObjectWithTag("UI_OPT_BGM_SLIDER").GetComponent<Slider>();
-            txt_bgmValue = GameObject.FindGameObjectWithTag("UI_OPT_BGM_VALUE").GetComponent<TMP_Text>();
-
-            // Slider Event Connect
-            bgmSlider.onValueChanged.AddListener(OnChangeBGMVolume);
-            
-            // Tag Canvas UI를 연결
-            sfxSlider = GameObject.FindGameObjectWithTag("UI_OPT_SFX_SLIDER").GetComponent<Slider>();
-            txt_sfxValue = GameObject.FindGameObjectWithTag("UI_OPT_SFX_VALUE").GetComponent<TMP_Text>();
-
-            // Slider Event Connect
-            sfxSlider.onValueChanged.AddListener(OnChangeSFXVolume);
-        }
-    }
-
-    void OnChangeBGMVolume(float value)
-    {
-        bgmVolume = value;
-        txt_bgmValue.text = $"{bgmVolume} %";
-    }
-    
-    void OnChangeSFXVolume(float value)
-    {
-        sfxVolume = value;
-        txt_sfxValue.text = $"{sfxVolume} %";
+        optionCGrp.alpha = 1;
+        optionCGrp.interactable = optionCGrp.blocksRaycasts = true;
+        cGrpConnector.alpha = 0;
+        cGrpConnector.interactable = cGrpConnector.blocksRaycasts = false;
     }
 
     public void OnClickBackButton()
     {
+        optionCGrp.alpha = 0;
+        optionCGrp.interactable = optionCGrp.blocksRaycasts = false;
+        cGrpConnector.alpha = 1;
+        cGrpConnector.interactable = cGrpConnector.blocksRaycasts = true;
     }
 }
