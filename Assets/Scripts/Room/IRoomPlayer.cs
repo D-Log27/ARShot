@@ -1,3 +1,4 @@
+using Photon.Pun;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,7 +9,6 @@ public enum PlayerClassType { Tanker, Dealer, Healer, Supporter }
 
 // 플레이어 상태
 public enum PlayerReadyType { SELECTING, READY }
-
 
 public interface IRoomPlayer
 {
@@ -24,4 +24,34 @@ public interface IRoomPlayer
     /// </summary>
     /// <returns>PlayerReadyType</returns>
     PlayerReadyType GetReadyType();
+
+    /// <summary>
+    /// Player select previous class
+    /// </summary>
+    public void previousClass();
+
+    /// <summary>
+    /// Player select next class
+    /// </summary>
+    public void NextClass();
+
+    /// <summary>
+    /// player ready
+    /// </summary>
+    public void Ready();
+
+    /// <summary>
+    /// player canceled ready
+    /// </summary>
+    public void ReadyCancel();
+
+    /// <summary>
+    /// start Countdown
+    /// </summary>
+    public void StartCountDown();
+
+    /// <summary>
+    /// Set PhotonView
+    /// </summary>
+    public void SetPhotonView(PhotonView photonView);
 }
