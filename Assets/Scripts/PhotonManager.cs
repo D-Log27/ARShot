@@ -138,7 +138,8 @@ public class PhotonManager : MonoBehaviourPunCallbacks
         print($"### joined : {PhotonNetwork.CurrentRoom.Name}");
         if (PhotonNetwork.IsMasterClient)
         {
-            PhotonNetwork.LoadLevel("Room_AL");
+            // PhotonNetwork.LoadLevel("Room_AL");
+            PhotonNetwork.LoadLevel("Room_AL_RENEWAL_S2B");
         }
     }
 
