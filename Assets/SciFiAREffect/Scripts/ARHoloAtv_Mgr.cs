@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using Photon.Pun.Demo.PunBasics;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Video;
@@ -41,8 +42,7 @@ public class ARHoloAtv_Mgr: MonoBehaviour
     {
         StartCoroutine(LateSwHoloVi_01(Bl, Tm));
     }
-
-
+    
     public void SwHoloCEft(bool Bl, float Tm)
     {
         StartCoroutine(LateSwHoloCEft(Bl, Tm));
@@ -56,7 +56,7 @@ public class ARHoloAtv_Mgr: MonoBehaviour
     #endregion
 
 
-    #region 
+    #region COROUTINE
 
     IEnumerator LateSwHoloEarth(bool Bl,float Tm) //IEnumerator: 코루틴을 만들때는 void대신 IEnumerator을 사용
     {
@@ -160,8 +160,15 @@ public class ARHoloAtv_Mgr: MonoBehaviour
     {
         image03.SetActive(false);
         aRHoloEft.SetActive(false);
+        // print($"### image03 will be inactive");
         //차례대로 움직이기
 
+        // TODO : 홀로그램 지우기
+        
+        // TODO : 코어 anchor 생성하기
+        
+        // TODO : GameUI On
+        InGameManager.GetInstance().BriefEnd();
     }
 
 

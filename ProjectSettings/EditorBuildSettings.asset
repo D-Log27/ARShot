@@ -6,6 +6,18 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/AL/Title_AL.unity
+    guid: 338981eb4e456704da9628a8f1f45cf7
+  - enabled: 1
+    path: Assets/Scenes/AL/Room_AL_RENEWAL_S2B.unity
+    guid: 0cca011075845744787a027f81863024
+  - enabled: 1
+    path: Assets/Scenes/AL/InGame_AL.unity
+    guid: 5031ff57f2b1c6c47b776274a96bc801
+  - enabled: 0
+    path: Assets/Scenes/AL/Option_AL.unity
+    guid: 6eca59bf43eadd84fa3c62b10d748726
+  - enabled: 0
     path: Assets/Scenes/KSY/InGame_Anchor_test.unity
     guid: adfe72f6a034d8743b800984970d7a05
   m_configObjects:
