@@ -12,7 +12,13 @@ public class ARHoloAtv_Mgr: MonoBehaviour
     public GameObject HoloEarth;
     public GameObject HoloSdLg;
     public GameObject HoloCEft;
+    public GameObject image00;
+    public GameObject image01;
+    public GameObject image02;
+    public GameObject image03;
+    public GameObject aRHoloEft;
     public static ARHoloAtv_Mgr Ins;
+  
 
     void Awake()
     {
@@ -26,19 +32,25 @@ public class ARHoloAtv_Mgr: MonoBehaviour
         StartCoroutine(LateSwHoloEarth(Bl, Tm)); //StartCoroutine: 코루틴 함수를 호출할 때
     }
 
+     public void SwHoloSdLg(bool Bl, float Tm)
+    {
+        StartCoroutine(LateSwHoloHoloSdLg(Bl, Tm));
+    }
+
     public void SwVi_01(bool Bl, float Tm)
     {
         StartCoroutine(LateSwHoloVi_01(Bl, Tm));
     }
 
-    public void SwHoloSdLg(bool Bl, float Tm)
-    {
-        StartCoroutine(LateSwHoloHoloSdLg(Bl, Tm));
-    }
 
     public void SwHoloCEft(bool Bl, float Tm)
     {
         StartCoroutine(LateSwHoloCEft(Bl, Tm));
+    }
+
+    public void SwImage00(bool Bl, float Tm)
+    {
+        StartCoroutine(LateSwImage00(Bl, Tm));
     }
 
     #endregion
@@ -61,25 +73,7 @@ public class ARHoloAtv_Mgr: MonoBehaviour
         }     
     }
 
-
-    IEnumerator LateSwHoloVi_01(bool Bl, float Tm)
-    {
-        
-        if (Bl)
-        {
-            yield return new WaitForSeconds(Tm);
-            Vi_01.SetActive(Bl);
-            //Vi_01.transform.Find("Vi").GetComponent<VideoPlayer>().Play();
-        }
-        else
-        {
-            yield return new WaitForEndOfFrame();
-            //Vi_01.transform.Find("Vi").GetComponent<VideoPlayer>().Stop();
-            Vi_01.SetActive(Bl);
-        }      
-    }
-
-    IEnumerator LateSwHoloHoloSdLg(bool Bl, float Tm)
+     IEnumerator LateSwHoloHoloSdLg(bool Bl, float Tm)
     {
         if (Bl)
         {
@@ -93,6 +87,7 @@ public class ARHoloAtv_Mgr: MonoBehaviour
         }
     }
 
+   
     IEnumerator LateSwHoloCEft(bool Bl, float Tm)
     {
         if (Bl)
@@ -107,6 +102,69 @@ public class ARHoloAtv_Mgr: MonoBehaviour
         }
     }
 
-    #endregion
+     IEnumerator LateSwHoloVi_01(bool Bl, float Tm)
+    {
+        
+        if (Bl)
+        {
+            yield return new WaitForSeconds(Tm);
+            Vi_01.SetActive(Bl);
+           
+            //Vi_01.transform.Find("Vi").GetComponent<VideoPlayer>().Play();
+        }
+        else
+        {
+            yield return new WaitForEndOfFrame();
+            //Vi_01.transform.Find("Vi").GetComponent<VideoPlayer>().Stop();
+            Vi_01.SetActive(Bl);
+        }      
+    }
+
+    IEnumerator LateSwImage00(bool Bl, float Tm)
+    {
+        if (Bl)
+        {
+            yield return new WaitForSeconds(Tm);
+            image00.SetActive(Bl);
+            Invoke ("LateSwImage01", 3f);
+        }
+        else
+        {
+            yield return new WaitForEndOfFrame();
+            image00.SetActive(Bl);
+        }
+    }
+
+    void LateSwImage01()
+    {
+        image00.SetActive(false);
+        image01.SetActive(true);
+        Invoke ("LateSwImage02", 3f);
+    }
+
+    void LateSwImage02()
+    {
+        image01.SetActive(false);
+        image02.SetActive(true);
+        Invoke ("LateSwImage03", 3f);
+    }
+
+     void LateSwImage03()
+    {
+        image02.SetActive(false);
+        image03.SetActive(true);
+        Invoke ("Late", 3f);
+    }
+
+    void Late()
+    {
+        image03.SetActive(false);
+        aRHoloEft.SetActive(false);
+        //차례대로 움직이기
+
+    }
+
+
+  #endregion
 
 }

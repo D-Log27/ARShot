@@ -5,20 +5,15 @@ using UnityEngine;
 
 public class AREft_Ani_Mgr : MonoBehaviour
 {
-
     public Animator[] AniAry;
     public static AREft_Ani_Mgr Ins;
-
     private float tmCount = 0;
-    //计时器
     private bool blAni = true;
-    //动画开关
-
+    
     void Awake()
     {
         Ins = this;
     }
-
 
     public void StAni()
     {
@@ -33,7 +28,6 @@ public class AREft_Ani_Mgr : MonoBehaviour
         }
     }
 
-    //按全息喷射顺序进行播放
     IEnumerator crc02()
     {
 

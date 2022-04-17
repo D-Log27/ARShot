@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class AREftSt_Mgr : MonoBehaviour
 {
-    private bool GetButtonDown = true;
+    //private bool Bl_Btn = true; //
 
     private void Update() 
     {
@@ -17,22 +18,8 @@ public class AREftSt_Mgr : MonoBehaviour
         if (Input.GetButtonDown("Fire1"))
         {
             AREftSt();
-        }
-        
-
-
-
-        // else
-        // {
-        //     return;
-        //     //AREftRe();
-        // }
-        //GetButtonDown = !GetButtonDown;
-        //GetButtonDown = false;
-        //return;
+        }  
     }
-
-    //  private bool Bl_Btn = true;
 
     // public void Btn()
     // {
@@ -53,10 +40,11 @@ public class AREftSt_Mgr : MonoBehaviour
         ARHoloAtv_Mgr.Ins.SwHoloSdLg(true,2.7f);
         ARHoloAtv_Mgr.Ins.SwVi_01(true,3.5f);
         ARHoloAtv_Mgr.Ins.SwHoloCEft(true,0.5f);
+        ARHoloAtv_Mgr.Ins.SwImage00(true, 5f);
         AREft_Ani_Mgr.Ins.StAni();
+        
 
-
-
+        //4초 뒤에 Image Invoke
     }
 
     public void AREftRe()
@@ -65,6 +53,7 @@ public class AREftSt_Mgr : MonoBehaviour
         ARHoloAtv_Mgr.Ins.SwHoloSdLg(false, 0.1f);
         ARHoloAtv_Mgr.Ins.SwVi_01(false, 0.1f);
         ARHoloAtv_Mgr.Ins.SwHoloCEft(false, 0.1f);
+
         AREft_Ani_Mgr.Ins.ReAni();
     }
 
@@ -73,4 +62,3 @@ public class AREftSt_Mgr : MonoBehaviour
     //     SceneManager.LoadScene(1);
     // }
 }
-

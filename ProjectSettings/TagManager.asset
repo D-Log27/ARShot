@@ -11,6 +11,7 @@ TagManager:
   - UI_OPT_SFX_VALUE
   - UI_OPT_BGM_SLIDER
   - UI_OPT_BGM_VALUE
+  - UI_Hologram
   layers:
   - Default
   - TransparentFX
