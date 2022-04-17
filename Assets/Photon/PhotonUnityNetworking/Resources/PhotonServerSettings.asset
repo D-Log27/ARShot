@@ -48,6 +48,15 @@ MonoBehaviour:
   - ChangeScreen
   - StartRoom
   - UpdateUsersInfo
+  - SetMyInfo
+  - MonitoringReadyState
+  - CountDown
+  - ChangeClassRPC
+  - ChangeReadyRPC
+  - NextClass
+  - previousClass
+  - Ready
+  - ReadyCancel
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1

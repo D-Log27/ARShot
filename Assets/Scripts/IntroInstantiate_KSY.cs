@@ -10,7 +10,6 @@ public class IntroInstantiate_KSY : MonoBehaviour
     
     void Start()
     {
-
         // 씬에 생성된 Intro 게임오브젝트 검색 및 추출
         vip  = GameObject.FindWithTag("VIP");
         

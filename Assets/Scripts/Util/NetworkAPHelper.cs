@@ -2,30 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using System.Net.NetworkInformation;
+
 /// <summary>
-/// AP ¡§∫∏ «Ô∆€
+/// AP Helper
 /// </summary>
 public class NetworkAPHelper : MonoBehaviour
 {
-#if UNITY_IPHONE
-   
-           // On iOS plugins are statically linked into
-           // the executable, so we have to use __Internal as the
-           // library name.
-           [DllImport ("__Internal")]
-
-#elif UNITY_ANDROID
-
-#endif
-    /// <summary>
-    /// AP ¡§∫∏ «Ô∆€ ¿ŒΩ∫≈œΩ∫
-    /// </summary>
     private static NetworkAPHelper Instance;
-
     NetworkAPHelper() { }
 
     AndroidRuntimePermissions.Permission[] permissions;
+    // plugin package Í≤ΩÎ°ú
     const string pluginName = "com.example.wifigetter.WifiHelper";
+    
+    // permission Î¶¨Ïä§Ìä∏
     string[] permissionList = {
         "android.permission.INTERNET",
         "android.permission.ACCESS_NETWORK_STATE", 
@@ -36,9 +27,9 @@ public class NetworkAPHelper : MonoBehaviour
         "android.permission.CAMERA"
     };
     /// <summary>
-    /// AP ¡§∫∏ «Ô∆€ ¿ŒΩ∫≈œΩ∫ π›»Ø
+    /// AP Help Singleton Instance
     /// </summary>
-    /// <returns>AP ¡§∫∏ «Ô∆€ ¿ŒΩ∫≈œΩ∫</returns>
+    /// <returns>AP Helper instance</returns>
     public static NetworkAPHelper GetInstance()
     {
         if (Instance == null) Instance = new NetworkAPHelper();
@@ -46,7 +37,7 @@ public class NetworkAPHelper : MonoBehaviour
     }
 
     /// <summary>
-    /// AP ¿Ã∏ß
+    /// AP Ïù¥Î¶Ñ
     /// </summary>
     public string ApName { get; set; }
 
@@ -57,18 +48,13 @@ public class NetworkAPHelper : MonoBehaviour
 
     void Start()
     {
-        permissions = AndroidRuntimePermissions.RequestPermissions(permissionList);
+        //permissions = AndroidRuntimePermissions.RequestPermissions(permissionList);
 
         this.GetAPInfo();
     }
 
-    void Update()
-    {
-        
-    }
-
     /// <summary>
-    /// AP ¡§∫∏∏¶ ∞°¡Æø¬¥Ÿ
+    /// AP ÌöçÎìù
     /// </summary>
     public void GetAPInfo()
     {
@@ -97,10 +83,13 @@ public class NetworkAPHelper : MonoBehaviour
 
 
                 // Solution 2 : android native
+                
+                /*
                 var helperClass = new AndroidJavaClass(pluginName);
                 AndroidJavaObject helperInstance = helperClass.CallStatic<AndroidJavaObject>("getInstance");
                 ApName = helperInstance.Call<string>("getApName");
                 print($"### new test : {ApName}");
+                */
                 
 
 
@@ -127,7 +116,7 @@ public class NetworkAPHelper : MonoBehaviour
                 //print($"### device Namce Check : {SystemInfo.deviceName}");
                 String strHostName = string.Empty;
                 
-/*
+
                 foreach (NetworkInterface adapter in NetworkInterface.GetAllNetworkInterfaces())
                 {
                     foreach (var x in adapter.GetIPProperties().UnicastAddresses)
@@ -135,6 +124,7 @@ public class NetworkAPHelper : MonoBehaviour
                         if (x.IPv4Mask.ToString().Equals("255.255.255.0"))
                         {
                             print($"### IPAddress : {x.Address} / IPv4Mask : {x.IPv4Mask}");
+                            ApName = x.Address.ToString();
                         }
                     }
                     foreach(var y in adapter.GetIPProperties().GatewayAddresses)
@@ -142,7 +132,7 @@ public class NetworkAPHelper : MonoBehaviour
                         //print($"### GateWay : {y.Address}");
                     }
                 }
-*/
+
 
 
 
